@@ -46,6 +46,7 @@ html.theme-loaded body {
     --primary-color: #008060;
     --sidebar-bg: #f6f6f7;
     --text-color: #202223;
+    --foucesed-inbut-border: #afc4ff;
     --card-bg: #ffffff;
     --border-color: #e1e3e5;
     --hover-color: #f1f2f3;
@@ -286,7 +287,7 @@ h2 {
 
 .content-section {
     display: none;
-    max-width: 1050px;
+    max-width: -webkit-fill-available;
     flex-direction: column;
 }
 
@@ -2463,7 +2464,7 @@ body {
 
 .form-control:focus {
     outline: none;
-    border-color: var(--primary-color);
+    border-color: var(--foucesed-inbut-border);
     box-shadow: 0 0 0 3px rgba(58, 123, 213, 0.1);
 }
 
@@ -2937,6 +2938,7 @@ html {
     display: flex;
     gap: 10px;
     margin-bottom: 15px;
+    justify-content: center;
 }
 
 .color-picker-container,
@@ -3213,7 +3215,7 @@ html {
     background: var(--card-bg);
     color: var(--text-color);
     height: 46px !important;
-    background-color: white;
+    background-color: var(--card-bg);
     border-radius: 8px;
     padding: 1rem 1.2rem;
     cursor: pointer;
@@ -3227,7 +3229,7 @@ html {
 }
 
 .select-selected:hover {
-    border-color: var(--primary-color);
+    border-color: var(--foucesed-inbut-border);
     box-shadow: 0 4px 12px rgba(78, 115, 223, 0.1);
 }
 
@@ -3252,8 +3254,9 @@ html {
 }
 
 .select-items {
+    color: var(--text-color);
     position: absolute;
-    background-color: white;
+    background-color: var(--card-bg);
     top: 100%;
     left: 0;
     right: 0;
@@ -3266,7 +3269,7 @@ html {
     transform: translateY(-10px);
     transition: all var(--transition-time) var(--transition-type);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border: 1px solid var(--primary-color);
+    border: 1px solid var(--foucesed-inbut-border);
     border-top: none;
 }
 
@@ -3280,7 +3283,7 @@ html {
     padding: 1rem 1.2rem;
     cursor: pointer;
     transition: all 0.2s var(--transition-type);
-    border-bottom: 1px solid #f1f3f5;
+    border-bottom: 1px solid var(--border-color);
     display: flex;
     align-items: center;
 }
@@ -3295,7 +3298,7 @@ html {
 
 .select-item.selected {
     background-color: rgba(78, 115, 223, 0.1);
-    color: var(--primary-color);
+    color: var(--foucesed-inbut-border);
     font-weight: 500;
 }
 
