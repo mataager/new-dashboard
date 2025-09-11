@@ -3130,94 +3130,98 @@
                     </button>
                 </div>
             </div>
+            <div class="form-container animatedtoup">
+                <div class="marketing-tabs">
+                    <button class="tab-button active" data-tab="campaigns">Campaign History</button>
+                    <button class="tab-button" data-tab="pixels">Pixel Management</button>
+                </div>
 
-            <div class="marketing-tabs">
-                <button class="tab-button active" data-tab="campaigns">Campaign History</button>
-                <button class="tab-button" data-tab="pixels">Pixel Management</button>
-            </div>
+                <div class="site-table-container tab-content active animatedtoup" id="campaigns-content">
+                    <table class="site-table">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" id="selectAllCampaigns"></th>
+                                <th>Campaign Name</th>
+                                <th>Platform</th>
+                                <th>Start Date</th>
+                                <th>Status</th>
+                                <th>Total Spend</th>
+                                <th>Conversions</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="campaign-row" data-status="active">
+                                <td><input type="checkbox" class="campaign-checkbox"></td>
+                                <td>Summer Sale 2025</td>
+                                <td>Facebook / Instagram</td>
+                                <td>Aug 1, 2025</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td>1,200 E£</td>
+                                <td>850</td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn-view" title="View Details"><i class="bi bi-eye"></i></button>
+                                        <button class="btn-pause" title="Pause Campaign"><i
+                                                class="bi bi-pause-circle"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="campaign-row" data-status="completed">
+                                <td><input type="checkbox" class="campaign-checkbox"></td>
+                                <td>New Arrivals - Q2</td>
+                                <td>TikTok</td>
+                                <td>Mar 15, 2025</td>
+                                <td><span class="status-badge completed">Completed</span></td>
+                                <td>2,250 E£</td>
+                                <td>690</td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn-view" title="View Details"><i class="bi bi-eye"></i></button>
+                                        <button class="btn-clone" title="Clone Campaign"><i
+                                                class="bi bi-clipboard"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-            <div class="site-table-container tab-content active" id="campaigns-content">
-                <table class="site-table">
-                    <thead>
-                        <tr>
-                            <th><input type="checkbox" id="selectAllCampaigns"></th>
-                            <th>Campaign Name</th>
-                            <th>Platform</th>
-                            <th>Start Date</th>
-                            <th>Status</th>
-                            <th>Total Spend</th>
-                            <th>Conversions</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="campaign-row" data-status="active">
-                            <td><input type="checkbox" class="campaign-checkbox"></td>
-                            <td>Summer Sale 2025</td>
-                            <td>Facebook / Instagram</td>
-                            <td>Aug 1, 2025</td>
-                            <td><span class="status-badge active">Active</span></td>
-                            <td>1,200 E£</td>
-                            <td>850</td>
-                            <td>
-                                <div class="action-buttons">
-                                    <button class="btn-view" title="View Details"><i class="bi bi-eye"></i></button>
-                                    <button class="btn-pause" title="Pause Campaign"><i
-                                            class="bi bi-pause-circle"></i></button>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="campaign-row" data-status="completed">
-                            <td><input type="checkbox" class="campaign-checkbox"></td>
-                            <td>New Arrivals - Q2</td>
-                            <td>TikTok</td>
-                            <td>Mar 15, 2025</td>
-                            <td><span class="status-badge completed">Completed</span></td>
-                            <td>2,250 E£</td>
-                            <td>690</td>
-                            <td>
-                                <div class="action-buttons">
-                                    <button class="btn-view" title="View Details"><i class="bi bi-eye"></i></button>
-                                    <button class="btn-clone" title="Clone Campaign"><i
-                                            class="bi bi-clipboard"></i></button>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class=" dashboard-right-header tab-content" id="pixels-content">
-                <h2>Connected Pixels</h2>
-                <p>A pixel is a snippet of code that tracks user actions on your website. Use the IDs below to connect
-                    your accounts
-                    and collect valuable data for your ad campaigns.</p>
-                <div class="pixels-list">
-                    <div class="pixel-card animatedtoup">
-                        <i class="bi bi-facebook pixel-icon"></i>
-                        <div class="pixel-details">
-                            <h4>Facebook / Instagram Pixel</h4>
-                            <p>ID: <code>1234567890123456</code></p>
-                            <button class="btn btn-outline" title="Copy Code"><i class="bi bi-clipboard"></i> Copy
-                                Code</button>
+                <div class="dashboard-right-header tab-content" id="pixels-content">
+                    <h2 class="animatedtoup">Connected Pixels</h2>
+                    <p class="animatedtoup">A pixel is a snippet of code that tracks user actions on your website. Use
+                        the IDs below to
+                        connect
+                        your accounts
+                        and collect valuable data for your ad campaigns.</p>
+                    <div class="pixels-list">
+                        <div class="pixel-card animatedtoup">
+                            <i class="bi bi-facebook pixel-icon"></i>
+                            <div class="pixel-details">
+                                <h4>Facebook / Instagram Pixel</h4>
+                                <p>ID: <code>1234567890123456</code></p>
+                                <button class="btn btn-outline" title="Copy Code"><i class="bi bi-clipboard"></i> Copy
+                                    Code</button>
+                            </div>
+                        </div>
+                        <div class="pixel-card animatedtoup">
+                            <i class="bi bi-tiktok pixel-icon"></i>
+                            <div class="pixel-details">
+                                <h4>TikTok Pixel</h4>
+                                <p>ID: <code>AB1CD2EF3GH4IJ5K</code></p>
+                                <button class="btn btn-outline" title="Copy Code"><i class="bi bi-clipboard"></i> Copy
+                                    Code</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="pixel-card animatedtoup">
-                        <i class="bi bi-tiktok pixel-icon"></i>
-                        <div class="pixel-details">
-                            <h4>TikTok Pixel</h4>
-                            <p>ID: <code>AB1CD2EF3GH4IJ5K</code></p>
-                            <button class="btn btn-outline" title="Copy Code"><i class="bi bi-clipboard"></i> Copy
-                                Code</button>
-                        </div>
+                    <div class="add-pixel-section">
+                        <button class="btn btn-outline">
+                            <i class="bi bi-plugin"></i>Connect A New Pixel
+                        </button>
                     </div>
                 </div>
-                <div class="add-pixel-section">
-                    <button class="btn btn-outline">
-                        <i class="bi bi-plus-circle"></i> Add New Pixel
-                    </button>
-                </div>
             </div>
+
 
 
 
@@ -3236,10 +3240,12 @@
                 });
 
                 function initMarketingSection() {
-                    // Tab functionality
-                    const tabButtons = document.querySelectorAll('.tab-button');
-                    const tabContents = document.querySelectorAll('.tab-content');
+                    // Scope tab functionality to marketing section only
+                    const marketingContainer = document.querySelector('#marketing .form-container');
+                    const tabButtons = marketingContainer.querySelectorAll('.tab-button');
+                    const tabContents = marketingContainer.querySelectorAll('.tab-content');
 
+                    // Tab functionality
                     tabButtons.forEach(button => {
                         button.addEventListener('click', () => {
                             const tabId = button.getAttribute('data-tab');
@@ -3254,20 +3260,25 @@
                         });
                     });
 
-                    // Copy pixel code functionality
-                    const copyButtons = document.querySelectorAll('.btn-copy');
+                    // Copy pixel code functionality - FIXED SELECTOR
+                    const copyButtons = marketingContainer.querySelectorAll('.btn-outline');
                     copyButtons.forEach(button => {
-                        button.addEventListener('click', function () {
-                            const pixelId = this.parentElement.querySelector('code').textContent;
-                            navigator.clipboard.writeText(pixelId).then(() => {
-                                const originalHtml = this.innerHTML;
-                                this.innerHTML = '<i class="bi bi-check"></i> Copied!';
+                        // Only apply to buttons that contain "Copy Code" text
+                        if (button.textContent.includes('Copy Code')) {
+                            button.addEventListener('click', function () {
+                                const pixelId = this.parentElement.querySelector('code').textContent;
+                                navigator.clipboard.writeText(pixelId).then(() => {
+                                    const originalHtml = this.innerHTML;
+                                    this.innerHTML = '<i class="bi bi-check"></i> Copied!';
 
-                                setTimeout(() => {
-                                    this.innerHTML = originalHtml;
-                                }, 2000);
+                                    setTimeout(() => {
+                                        this.innerHTML = originalHtml;
+                                    }, 2000);
+                                }).catch(err => {
+                                    console.error('Failed to copy: ', err);
+                                });
                             });
-                        });
+                        }
                     });
 
                     // Campaign search functionality
@@ -3300,6 +3311,47 @@
                             });
                         });
                     }
+
+                    // Add event listeners for action buttons
+                    const viewButtons = marketingContainer.querySelectorAll('.btn-view');
+                    viewButtons.forEach(button => {
+                        button.addEventListener('click', function () {
+                            const campaignName = this.closest('tr').querySelector('td:nth-child(2)').textContent;
+                            alert(`Viewing details for: ${campaignName}`);
+                        });
+                    });
+
+                    const pauseButtons = marketingContainer.querySelectorAll('.btn-pause');
+                    pauseButtons.forEach(button => {
+                        button.addEventListener('click', function () {
+                            const campaignName = this.closest('tr').querySelector('td:nth-child(2)').textContent;
+                            alert(`Pausing campaign: ${campaignName}`);
+                        });
+                    });
+
+                    const cloneButtons = marketingContainer.querySelectorAll('.btn-clone');
+                    cloneButtons.forEach(button => {
+                        button.addEventListener('click', function () {
+                            const campaignName = this.closest('tr').querySelector('td:nth-child(2)').textContent;
+                            alert(`Cloning campaign: ${campaignName}`);
+                        });
+                    });
+
+                    // Add new campaign button
+                    const addCampaignBtn = document.getElementById('addCampaignBtn');
+                    if (addCampaignBtn) {
+                        addCampaignBtn.addEventListener('click', function () {
+                            alert('Opening campaign creation form...');
+                        });
+                    }
+
+                    // Add new pixel button
+                    const addPixelBtn = marketingContainer.querySelector('.add-pixel-section .btn-outline');
+                    if (addPixelBtn) {
+                        addPixelBtn.addEventListener('click', function () {
+                            alert('Opening pixel addition form...');
+                        });
+                    }
                 }
             </script>
         </div>
@@ -3315,10 +3367,491 @@
             <h2>Payment</h2>
             <p>Create and manage discounts here.</p>
         </div>
-        <div id="Subscription" class="content-section">
-            <h2>subscription</h2>
-            <p>Create and manage discounts here.</p>
+        <div id="Subscription" class="content-section active">
+            <!-- Plan Details Container -->
+
+            <div class="form-container subscription-plan-container animatedtoup show"
+                style="opacity: 1; transform: translateY(0px);">
+                <div class="plan-header">
+                    <h3>Current Subscription Plan</h3>
+                </div>
+                <div class="plan-content">
+                    <div class="plan-details">
+                        <div class="plan-info-main">
+                            <span class="plan-name">Premium Plan</span>
+                            <span class="plan-price">$99/month</span>
+                            <span class="status-badge active">Active</span>
+                        </div>
+                        <div class="plan-features">
+                            <ul>
+                                <li><i class="bi bi-check-circle"></i> Unlimited products</li>
+                                <li><i class="bi bi-check-circle"></i> Advanced analytics</li>
+                                <li><i class="bi bi-check-circle"></i> Priority support</li>
+                                <li><i class="bi bi-check-circle"></i> Custom domain</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="plan-actions">
+                        <button class="btn btn-primary">Upgrade Plan</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Countdown Timer Container -->
+            <div class="form-container subscription-timer-container animatedtoup show"
+                style="opacity: 1; transform: translateY(0px);">
+                <div class="timer-header">
+                    <h3>Subscription Countdown</h3>
+                </div>
+                <div class="timer-content">
+                    <div class="countdown-timer" id="subscriptionCountdown">
+                        <div class="timer-unit">
+                            <span class="timer-value" id="days">23</span>
+                            <span class="timer-label">Days</span>
+                        </div>
+                        <div class="timer-unit">
+                            <span class="timer-value" id="hours">12</span>
+                            <span class="timer-label">Hours</span>
+                        </div>
+                        <div class="timer-unit">
+                            <span class="timer-value" id="minutes">45</span>
+                            <span class="timer-label">Minutes</span>
+                        </div>
+                        <div class="timer-unit">
+                            <span class="timer-value" id="seconds">30</span>
+                            <span class="timer-label">Seconds</span>
+                        </div>
+                    </div>
+                    <div class="timer-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 65%"></div>
+                        </div>
+                        <div class="progress-text">65% of subscription period completed</div>
+                    </div>
+                    <div class="expiry-date">
+                        Subscription expires on: <strong>June 30, 2023</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search Controls -->
+            <div class="marketing-controls animatedtoup show" style="opacity: 1; transform: translateY(0px);">
+                <div class="search-box animatedtoup show" style="opacity: 1; transform: translateY(0px);">
+                    <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Search subscriptions..." id="subscriptionSearch">
+                </div>
+                <div class="filter-controls animatedtoup show" style="opacity: 1; transform: translateY(0px);">
+                    <button class="btn btn-outline" id="addSubscriptionBtn">
+                        <i class="bi bi-plus-circle"></i> Add New Subscription
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tabbed Content -->
+            <div class="form-container animatedtoup show" style="opacity: 1; transform: translateY(0px);">
+                <div class="marketing-tabs">
+                    <button class="tab-button active" data-tab="subscriptions">Subscription History</button>
+                    <button class="tab-button" data-tab="billing">Billing Information</button>
+                </div>
+
+                <!-- Subscription History Tab -->
+                <div class="site-table-container tab-content active animatedtoup show" id="subscriptions-content"
+                    style="opacity: 1; transform: translateY(0px);">
+                    <table class="site-table">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" id="selectAllSubscriptions"></th>
+                                <th>Plan Name</th>
+                                <th>Period</th>
+                                <th>Status</th>
+                                <th>Orders</th>
+                                <th>Revenue</th>
+                                <th>Days Left</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="subscription-row" data-status="active">
+                                <td><input type="checkbox" class="subscription-checkbox"></td>
+                                <td>Premium Plan</td>
+                                <td>Jun 1, 2023 - Jun 30, 2023</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td>127</td>
+                                <td>$3,450.75</td>
+                                <td>
+                                    <div class="days-progress">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 65%"></div>
+                                        </div>
+                                        <span class="days-text">23 days</span>
+                                    </div>
+                                </td>
+
+                            </tr>
+                            <tr class="subscription-row" data-status="expired">
+                                <td><input type="checkbox" class="subscription-checkbox"></td>
+                                <td>Standard Plan</td>
+                                <td>May 1, 2023 - May 31, 2023</td>
+                                <td><span class="status-badge completed">Expired</span></td>
+                                <td>98</td>
+                                <td>$2,150.50</td>
+                                <td>
+                                    <div class="days-progress">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill expired" style="width: 100%"></div>
+                                        </div>
+                                        <span class="days-text">0 days</span>
+                                    </div>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Billing Information Tab -->
+                <div class="dashboard-right-header tab-content" id="billing-content"
+                    style="opacity: 1; transform: translateY(0px);">
+                    <h2 class="animatedtoup show" style="opacity: 1; transform: translateY(0px);">Billing Information
+                    </h2>
+                    <p class="animatedtoup show" style="opacity: 1; transform: translateY(0px);">Manage your billing
+                        details and payment methods for subscription renewals.</p>
+
+                    <div class="billing-cards">
+                        <div class="billing-card animatedtoup show" style="opacity: 1; transform: translateY(0px);">
+                            <i class="bi bi-credit-card billing-icon"></i>
+                            <div class="billing-details">
+                                <h4>Payment Method</h4>
+                                <p>Visa ending in 4567</p>
+                                <button class="btn btn-outline" title="Update Payment"><i class="bi bi-pencil"></i>
+                                    Update</button>
+                            </div>
+                        </div>
+                        <div class="billing-card animatedtoup show" style="opacity: 1; transform: translateY(0px);">
+                            <i class="bi bi-receipt billing-icon"></i>
+                            <div class="billing-details">
+                                <h4>Billing History</h4>
+                                <p>Last payment: Jun 1, 2023</p>
+                                <button class="btn btn-outline" title="View Invoices"><i class="bi bi-file-text"></i>
+                                    View Invoices</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="add-billing-section">
+                        <button class="btn btn-outline">
+                            <i class="bi bi-plus-circle"></i> Add Payment Method
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+                .subscription-plan-container {
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    color: white;
+                    border-radius: 12px;
+                    margin-bottom: 20px;
+                    padding: 20px;
+                }
+
+                .plan-header h3 {
+                    margin: 0 0 15px 0;
+                    font-weight: 600;
+                }
+
+                .plan-content {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                .plan-details {
+                    flex: 1;
+                }
+
+                .plan-info-main {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 15px;
+                    gap: 15px;
+                }
+
+                .plan-name {
+                    font-size: 20px;
+                    font-weight: 700;
+                }
+
+                .plan-price {
+                    font-size: 18px;
+                    opacity: 0.9;
+                }
+
+                .plan-features ul {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                }
+
+                .plan-features li {
+                    margin-bottom: 8px;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                }
+
+                .plan-features i {
+                    color: #4cd964;
+                }
+
+                .subscription-timer-container {
+                    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+                    color: white;
+                    border-radius: 12px;
+                    margin-bottom: 20px;
+                    padding: 20px;
+                }
+
+                .timer-header h3 {
+                    margin: 0 0 15px 0;
+                    font-weight: 600;
+                }
+
+                .countdown-timer {
+                    display: flex;
+                    gap: 15px;
+                    margin-bottom: 15px;
+                    justify-content: center;
+                }
+
+                .timer-unit {
+                    text-align: center;
+                    background: rgba(255, 255, 255, 0.15);
+                    padding: 15px;
+                    border-radius: 8px;
+                    min-width: 80px;
+                }
+
+                .timer-value {
+                    display: block;
+                    font-size: 28px;
+                    font-weight: 700;
+                }
+
+                .timer-label {
+                    font-size: 14px;
+                    opacity: 0.8;
+                }
+
+                .timer-progress {
+                    margin: 20px 0;
+                }
+
+                .progress-bar {
+                    height: 8px;
+                    background: rgba(255, 255, 255, 0.2);
+                    border-radius: 4px;
+                    overflow: hidden;
+                    margin-bottom: 5px;
+                }
+
+                .progress-fill {
+                    height: 100%;
+                    background: white;
+                    border-radius: 4px;
+                }
+
+                .progress-text {
+                    font-size: 14px;
+                    opacity: 0.8;
+                    text-align: center;
+                }
+
+                .expiry-date {
+                    text-align: center;
+                    font-size: 16px;
+                    margin-top: 15px;
+                }
+
+                @media (max-width: 768px) {
+                    .plan-content {
+                        flex-direction: column;
+                        gap: 20px;
+                    }
+
+                    .countdown-timer {
+                        flex-wrap: wrap;
+                    }
+
+                    .timer-unit {
+                        flex: 1;
+                        min-width: 60px;
+                    }
+                }
+            </style>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    initSubscriptionSection();
+                });
+
+                function initSubscriptionSection() {
+                    // FIXED: Better way to find the tab container
+                    // Get ALL form containers in the Subscription section
+                    const formContainers = document.querySelectorAll('#Subscription .form-container');
+
+                    // The tab container is the last form-container that has tabs
+                    let subscriptionContainer = null;
+
+                    // Loop through form containers to find the one with tabs
+                    for (let i = formContainers.length - 1; i >= 0; i--) {
+                        if (formContainers[i].querySelector('.marketing-tabs')) {
+                            subscriptionContainer = formContainers[i];
+                            break;
+                        }
+                    }
+
+                    if (!subscriptionContainer) {
+                        console.error('Subscription tab container not found!');
+                        // Try alternative selector as fallback
+                        subscriptionContainer = document.querySelector('#Subscription .form-container:last-child');
+                        if (!subscriptionContainer) return;
+                    }
+
+                    const tabButtons = subscriptionContainer.querySelectorAll('.tab-button');
+                    const tabContents = subscriptionContainer.querySelectorAll('.tab-content');
+
+                    // Tab navigation
+                    tabButtons.forEach(button => {
+                        button.addEventListener('click', () => {
+                            const tabId = button.getAttribute('data-tab');
+
+                            // Update active tab button
+                            tabButtons.forEach(btn => btn.classList.remove('active'));
+                            button.classList.add('active');
+
+                            // Show active tab content
+                            tabContents.forEach(content => content.classList.remove('active'));
+                            const targetContent = document.getElementById(`${tabId}-content`);
+                            if (targetContent) {
+                                targetContent.classList.add('active');
+                            }
+                        });
+                    });
+
+                    // Add event listeners for billing buttons
+                    const updatePaymentBtn = subscriptionContainer.querySelector('.billing-card:first-child .btn-outline');
+                    if (updatePaymentBtn) {
+                        updatePaymentBtn.addEventListener('click', function () {
+                            alert('Opening payment method update form...');
+                        });
+                    }
+
+                    const viewInvoicesBtn = subscriptionContainer.querySelector('.billing-card:last-child .btn-outline');
+                    if (viewInvoicesBtn) {
+                        viewInvoicesBtn.addEventListener('click', function () {
+                            alert('Viewing billing history...');
+                        });
+                    }
+
+                    const addPaymentBtn = subscriptionContainer.querySelector('.add-billing-section .btn-outline');
+                    if (addPaymentBtn) {
+                        addPaymentBtn.addEventListener('click', function () {
+                            alert('Opening add payment method form...');
+                        });
+                    }
+
+                    // Subscription search functionality
+                    const subscriptionSearch = document.getElementById('subscriptionSearch');
+                    if (subscriptionSearch) {
+                        subscriptionSearch.addEventListener('input', function () {
+                            const searchTerm = this.value.toLowerCase();
+                            const rows = document.querySelectorAll('.subscription-row');
+
+                            rows.forEach(row => {
+                                const planName = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+                                const status = row.querySelector('td:nth-child(4)').textContent.toLowerCase();
+
+                                if (planName.includes(searchTerm) || status.includes(searchTerm)) {
+                                    row.style.display = '';
+                                } else {
+                                    row.style.display = 'none';
+                                }
+                            });
+                        });
+                    }
+
+                    // Select all subscriptions checkbox
+                    const selectAllCheckbox = document.getElementById('selectAllSubscriptions');
+                    if (selectAllCheckbox) {
+                        selectAllCheckbox.addEventListener('change', function () {
+                            const checkboxes = document.querySelectorAll('.subscription-checkbox');
+                            checkboxes.forEach(checkbox => {
+                                checkbox.checked = this.checked;
+                            });
+                        });
+                    }
+
+                    // Renew subscription buttons
+                    const renewButtons = document.querySelectorAll('.btn-renew');
+                    renewButtons.forEach(button => {
+                        button.addEventListener('click', function () {
+                            const planName = this.closest('tr').querySelector('td:nth-child(2)').textContent;
+                            alert(`Renewing subscription: ${planName}`);
+                        });
+                    });
+
+                    // Upgrade subscription buttons
+                    const upgradeButtons = document.querySelectorAll('.btn-upgrade');
+                    upgradeButtons.forEach(button => {
+                        button.addEventListener('click', function () {
+                            const planName = this.closest('tr').querySelector('td:nth-child(2)').textContent;
+                            alert(`Upgrading subscription: ${planName}`);
+                        });
+                    });
+
+                    // Add new subscription button
+                    const addSubscriptionBtn = document.getElementById('addSubscriptionBtn');
+                    if (addSubscriptionBtn) {
+                        addSubscriptionBtn.addEventListener('click', function () {
+                            alert('Opening subscription creation form...');
+                        });
+                    }
+
+                    console.log('Subscription section initialized successfully!');
+                }
+            </script>
         </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                // Animate elements on page load
+                setTimeout(() => {
+                    const animatedElements = document.querySelectorAll('.animatedtoup');
+                    animatedElements.forEach(el => {
+                        el.classList.add('show');
+                    });
+                }, 100);
+
+                // Add event listeners for buttons
+                const renewButtons = document.querySelectorAll('.btn-renew');
+                renewButtons.forEach(button => {
+                    button.addEventListener('click', function () {
+                        const planName = this.closest('tr').querySelector('td:first-child').textContent;
+                        alert(`Renewing plan: ${planName}`);
+                    });
+                });
+
+                const upgradeButtons = document.querySelectorAll('.btn-upgrade');
+                upgradeButtons.forEach(button => {
+                    button.addEventListener('click', function () {
+                        const planName = this.closest('tr').querySelector('td:first-child').textContent;
+                        alert(`Upgrading plan: ${planName}`);
+                    });
+                });
+            });
+        </script>
+
 
         <div id="profile" class="content-section">
             <h2>Profile</h2>
