@@ -60,10 +60,6 @@
                 <i class="bi bi-people"></i>
                 <span class="nav-text">Customers</span>
             </a>
-            <a href="#" class="nav-item" data-target="analytics">
-                <i class="bi bi-bar-chart"></i>
-                <span class="nav-text">Analytics</span>
-            </a>
             <a href="#" class="nav-item" data-target="marketing">
                 <i class="bi bi-megaphone"></i>
                 <span class="nav-text">Marketing</span>
@@ -72,9 +68,25 @@
                 <i class="bi bi-tag"></i>
                 <span class="nav-text">Discounts</span>
             </a>
+            <a href="#" class="nav-item" data-target="payment">
+                <i class="bi bi-credit-card-2-front"></i>
+                <span class="nav-text">Payment</span>
+            </a>
+            <a href="#" class="nav-item" data-target="Subscription">
+                <i class="bi bi-hourglass-split"></i>
+                <span class="nav-text">Subscription</span>
+            </a>
+            <a href="#" class="nav-item" data-target="profile">
+                <i class="bi bi-person"></i>
+                <span class="nav-text">Profile</span>
+            </a>
             <a href="#" class="nav-item" data-target="settings">
                 <i class="bi bi-gear"></i>
                 <span class="nav-text">Settings</span>
+            </a>
+            <a href="#" class="nav-item" data-target="analytics">
+                <i class="bi bi-bar-chart"></i>
+                <span class="nav-text">Analytics</span>
             </a>
         </div>
     </div>
@@ -257,29 +269,53 @@
                 </div>
             </div>
 
-            <div class="orders-controls">
+            <div class="orders-controls animatedtoup">
                 <div class="search-box animatedtoup">
                     <i class="bi bi-search"></i>
                     <input type="text" placeholder="Search orders..." id="orderSearch">
                 </div>
                 <div class="filter-controls animatedtoup">
-                    <select id="statusFilter">
-                        <option value="all">All Statuses</option>
-                        <option value="pending">Pending</option>
-                        <option value="accepted">Accepted</option>
-                        <option value="shipped">Shipped</option>
-                        <option value="completed">Completed</option>
-                        <option value="cancelled">Cancelled</option>
-                    </select>
                     <button class="export-btn" id="exportBtn">
                         <i class="bi bi-file-earmark-spreadsheet"></i> Export to Excel
                     </button>
                 </div>
+                <div class="elegant-select animatedtoup" id="statusFilter">
+                    <div class="select-selected">
+                        <span>All Statuses</span>
+                    </div>
+                    <div class="select-items">
+                        <div class="select-item selected" data-value="all">
 
+                            <span>All Statuses</span>
+                        </div>
+                        <div class="select-item" data-value="pending">
+
+                            <span>Pending</span>
+                        </div>
+                        <div class="select-item" data-value="accepted">
+
+                            <span>Accepted</span>
+                        </div>
+                        <div class="select-item" data-value="shipped">
+
+                            <span>Shipped</span>
+                        </div>
+                        <div class="select-item" data-value="completed">
+
+                            <span>Completed</span>
+                        </div>
+                        <div class="select-item" data-value="returned">
+
+                            <span>Returned</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="orders-table-container">
-                <table class="orders-table">
+
+            <div class="site-table-container">
+
+                <table class="site-table">
                     <thead>
                         <tr>
                             <th><input type="checkbox" id="selectAllOrders"></th>
@@ -578,24 +614,34 @@
                             </div>
                             <div class="select-items" id="standardSelectItems">
                                 <div class="select-item" data-value="option1">
-
+                                    <div class="icon">
+                                        <i class="bi bi-gender-male"></i>
+                                    </div>
                                     <span>Men</span>
                                 </div>
                                 <div class="select-item" data-value="option1">
-
+                                    <div class="icon">
+                                        <i class="bi bi-gender-female"></i>
+                                    </div>
                                     <span>Women</span>
                                 </div>
                                 <div class="select-item" data-value="option2">
-
+                                    <div class="icon">
+                                        <i class="bi bi-gender-ambiguous"></i>
+                                    </div>
                                     <span>Unisex</span>
                                 </div>
 
                                 <div class="select-item" data-value="option2">
-
+                                    <div class="icon">
+                                        <i class="bi bi-gender-male"></i>
+                                    </div>
                                     <span>Kids (Boy)</span>
                                 </div>
                                 <div class="select-item" data-value="option2">
-
+                                    <div class="icon">
+                                        <i class="bi bi-gender-female"></i>
+                                    </div>
                                     <span>Kids (Girl)</span>
                                 </div>
 
@@ -794,10 +840,28 @@
                     </div>
                     <div class="form-group">
                         <label class="form-label">Size Chart</label>
-                        <select class="form-select">
-                            <option value="menTopChart">men Top Chart</option>
-                            <option value=">menbottomchart">men bottom chart</option>
-                        </select>
+                        <div class="elegant-select">
+                            <div class="select-selected" id="standardSelect">
+                                <span>Choose a Chart</span>
+                            </div>
+                            <div class="select-items" id="standardSelectItems">
+                                <div class="select-item" data-value="mentopchart">
+                                    <span>men top chart</span>
+                                </div>
+                                <div class="select-item" data-value="menbottomchart">
+                                    <span>men bottom chart</span>
+                                </div>
+                                <div class="select-item" data-value="womentopchart">
+                                    <span>men top chart</span>
+                                </div>
+                                <div class="select-item" data-value="womenbottomchart">
+                                    <span>women bottom chart</span>
+                                </div>
+
+
+                            </div>
+                        </div>
+
                     </div>
                     <div class="form-group">
                         <label class="form-label">Default Quantity</label>
@@ -1903,16 +1967,573 @@
             </div>
         </div>
 
+
+
+        <style>
+            .toggle-switch {
+                position: relative;
+                display: inline-block;
+                width: 50px;
+                height: 24px;
+            }
+
+            .toggle-switch input {
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+
+            .switch {
+                position: relative;
+                display: inline-block;
+                width: 44px;
+                height: 22px;
+                margin-right: 10px;
+            }
+
+            .switch-container {
+                margin-block: 20px;
+            }
+
+            .switch input {
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+
+            .slider {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #ccc;
+                transition: .3s;
+                border-radius: 22px;
+            }
+
+            .slider:before {
+                position: absolute;
+                content: "";
+                height: 18px;
+                width: 18px;
+                left: 2px;
+                bottom: 2px;
+                background-color: white;
+                transition: .3s;
+                border-radius: 50%;
+            }
+
+            input:checked+.slider {
+                background-color: #4e73df;
+            }
+
+            input:checked+.slider:before {
+                transform: translateX(22px);
+            }
+
+            .save-btn {
+                background: #4e73df;
+                background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
+                color: white;
+                border: none;
+                padding: 12px 25px;
+                border-radius: 8px;
+                font-weight: 600;
+                cursor: pointer;
+                display: block;
+                width: 100%;
+                margin-top: 20px;
+                transition: all 0.3s;
+            }
+
+            .save-btn:hover {
+                background: linear-gradient(135deg, #3a56c4 0%, #1a3bb8 100%);
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .save-btn i {
+                margin-right: 8px;
+            }
+
+            .image-upload {
+                border: 2px dashed #e9ecef;
+                border-radius: 8px;
+                padding: 24px;
+                text-align: center;
+                margin-bottom: 16px;
+                cursor: pointer;
+                transition: border-color 0.2s ease;
+            }
+
+            .image-upload:hover {
+                border-color: #4e73df;
+            }
+
+            .upload-icon {
+                font-size: 32px;
+                color: #adb5bd;
+                margin-bottom: 12px;
+            }
+
+            .upload-text {
+                color: #6c757d;
+                margin-bottom: 12px;
+            }
+
+            .upload-hint {
+                font-size: 12px;
+                color: #adb5bd;
+            }
+
+            .theme-selector {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 16px;
+                margin-bottom: 20px;
+            }
+
+            .theme-option {
+                border: 2px solid #e9ecef;
+                border-radius: 8px;
+                overflow: hidden;
+                cursor: pointer;
+                transition: border-color 0.2s ease;
+            }
+
+            .theme-option:hover,
+            .theme-option.selected {
+                border-color: #4e73df;
+            }
+
+            .theme-preview {
+                height: 120px;
+                background: linear-gradient(135deg, #f8f9fa 25%, #e9ecef 25%, #e9ecef 50%, #f8f9fa 50%, #f8f9fa 75%, #e9ecef 75%, #e9ecef 100%);
+                background-size: 20px 20px;
+            }
+
+            .theme-info {
+                padding: 12px;
+                text-align: center;
+                background: #fff;
+            }
+
+            .theme-name {
+                font-weight: 500;
+                color: #495057;
+            }
+
+            .shipping-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr 100px;
+                gap: 12px;
+                margin-bottom: 16px;
+                align-items: end;
+            }
+
+            .brands-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 16px;
+                margin-bottom: 20px;
+            }
+
+            .brand-card {
+                border: 1px solid #e9ecef;
+                border-radius: 8px;
+                padding: 16px;
+                text-align: center;
+                background: #fff;
+            }
+
+            .brand-logo {
+                height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 12px;
+                font-size: 32px;
+                color: #4e73df;
+            }
+
+            .brand-name {
+                font-weight: 500;
+                margin-bottom: 8px;
+            }
+
+            .brand-actions {
+                display: flex;
+                justify-content: center;
+                gap: 8px;
+            }
+
+            .action-buttons {
+                display: flex;
+                justify-content: flex-end;
+                gap: 12px;
+                margin-top: 24px;
+            }
+
+            .btn-danger {
+                background: #dc3545;
+                color: #fff;
+                border: none;
+            }
+
+            .btn-danger:hover {
+                background: #bd2130;
+            }
+
+            .btn-success {
+                background: #28a745;
+                color: #fff;
+                border: none;
+            }
+
+            .btn-success:hover {
+                background: #218838;
+            }
+
+            .section-title {
+                font-size: 16px;
+                font-weight: 600;
+                margin: 24px 0 16px;
+                color: #2d3748;
+                padding-bottom: 8px;
+                border-bottom: 1px solid #e9ecef;
+            }
+        </style>
         <div id="site" class="content-section">
-            <h2>site Management</h2>
-            <p>View and manage your site configration here.</p>
+            <div class="dashboard-container">
+                <div class="dashboard-right-header">
+                    <div>
+                        <h2>Site Management</h2>
+                        <p>View and manage your site configuration here</p>
+                    </div>
+                </div>
+
+                <!-- Theme Selection -->
+                <div class="form-container">
+                    <div class="form-header">
+                        <h4 class="form-title"><i class="bi bi-palette"></i> Theme Selection</h4>
+                        <div class="form-actions">
+                            <button class="btn btn-outline">
+                                <i class="bi bi-eye"></i> Preview
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="theme-selector">
+                        <div class="theme-option selected">
+                            <div class="theme-preview" style="background: linear-gradient(to right, #4e73df, #224abe);">
+                            </div>
+                            <div class="theme-info">
+                                <div class="theme-name">Modern Blue</div>
+                            </div>
+                        </div>
+
+                        <div class="theme-option">
+                            <div class="theme-preview" style="background: linear-gradient(to right, #1cc88a, #13855c);">
+                            </div>
+                            <div class="theme-info">
+                                <div class="theme-name">Green Nature</div>
+                            </div>
+                        </div>
+
+                        <div class="theme-option">
+                            <div class="theme-preview" style="background: linear-gradient(to right, #5a5c69, #3a3b45);">
+                            </div>
+                            <div class="theme-info">
+                                <div class="theme-name">Dark Professional</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button class="btn btn-primary">
+                            <i class="bi bi-check-circle"></i> Apply Theme
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Homepage Images -->
+                <div class="form-container">
+                    <div class="form-header">
+                        <h4 class="form-title"><i class="bi bi-images"></i> Homepage Images</h4>
+                    </div>
+
+                    <div class="section-title">Banner Image</div>
+                    <div class="image-upload">
+                        <div class="upload-icon"><i class="bi bi-cloud-arrow-up"></i></div>
+                        <div class="upload-text">Drag & drop banner image or click to browse</div>
+                        <div class="upload-hint">Recommended size: 1200x400px | Max size: 2MB</div>
+                    </div>
+
+                    <div class="section-title">New Arrivals Section</div>
+                    <div class="image-upload">
+                        <div class="upload-icon"><i class="bi bi-cloud-arrow-up"></i></div>
+                        <div class="upload-text">Drag & drop new arrivals image or click to browse</div>
+                        <div class="upload-hint">Recommended size: 800x600px | Max size: 1.5MB</div>
+                    </div>
+
+                    <div class="section-title">Sale Section</div>
+                    <div class="image-upload">
+                        <div class="upload-icon"><i class="bi bi-cloud-arrow-up"></i></div>
+                        <div class="upload-text">Drag & drop sale section image or click to browse</div>
+                        <div class="upload-hint">Recommended size: 800x600px | Max size: 1.5MB</div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button class="btn btn-primary">
+                            <i class="bi bi-check-circle"></i> Save Images
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Brands Management -->
+                <div class="form-container">
+                    <div class="form-header">
+                        <h4 class="form-title"><i class="bi bi-tags"></i> Brands Management</h4>
+                        <div class="form-actions">
+                            <button class="btn btn-outline" id="addBrandBtn">
+                                <i class="bi bi-plus-circle"></i> Add Brand
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="brands-grid">
+                        <div class="brand-card">
+                            <div class="brand-logo">
+                                <i class="bi bi-building"></i>
+                            </div>
+                            <div class="brand-name">Nike</div>
+                            <div class="brand-actions">
+                                <button class="btn-icon btn-sm" title="Edit"><i class="bi bi-pencil"></i></button>
+                                <button class="btn-icon btn-sm" title="Delete"><i class="bi bi-trash"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="brand-card">
+                            <div class="brand-logo">
+                                <i class="bi bi-building"></i>
+                            </div>
+                            <div class="brand-name">Adidas</div>
+                            <div class="brand-actions">
+                                <button class="btn-icon btn-sm" title="Edit"><i class="bi bi-pencil"></i></button>
+                                <button class="btn-icon btn-sm" title="Delete"><i class="bi bi-trash"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="brand-card">
+                            <div class="brand-logo">
+                                <i class="bi bi-building"></i>
+                            </div>
+                            <div class="brand-name">Puma</div>
+                            <div class="brand-actions">
+                                <button class="btn-icon btn-sm" title="Edit"><i class="bi bi-pencil"></i></button>
+                                <button class="btn-icon btn-sm" title="Delete"><i class="bi bi-trash"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="brand-card">
+                            <div class="brand-logo">
+                                <i class="bi bi-building"></i>
+                            </div>
+                            <div class="brand-name">Reebok</div>
+                            <div class="brand-actions">
+                                <button class="btn-icon btn-sm" title="Edit"><i class="bi bi-pencil"></i></button>
+                                <button class="btn-icon btn-sm" title="Delete"><i class="bi bi-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add Brand Form (Initially Hidden) -->
+                    <div id="addBrandForm" style="display: none;">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label class="form-label">Brand Name</label>
+                                <input type="text" class="form-input" placeholder="Enter brand name">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Brand Logo</label>
+                                <div class="image-upload">
+                                    <div class="upload-icon"><i class="bi bi-cloud-arrow-up"></i></div>
+                                    <div class="upload-text">Upload brand logo</div>
+                                    <div class="upload-hint">Recommended: 200x200px | Max size: 1MB</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Brand Description</label>
+                            <textarea class="form-textarea" placeholder="Enter brand description"></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button class="btn btn-outline" id="cancelAddBrand">
+                                Cancel
+                            </button>
+                            <button class="btn btn-primary">
+                                <i class="bi bi-check-circle"></i> Save Brand
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shipping Settings -->
+                <div class="form-container">
+                    <div class="form-header">
+                        <h4 class="form-title"><i class="bi bi-truck"></i> Shipping Settings</h4>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Default Shipping Fee</label>
+                        <input type="number" class="form-input" placeholder="Enter default shipping fee" value="50">
+                        <div class="upload-hint">This fee will apply to all cities unless specified below</div>
+                    </div>
+
+                    <div class="section-title">Special City Shipping Fees</div>
+
+                    <div class="shipping-grid">
+                        <div class="form-group">
+                            <label class="form-label">City</label>
+                            <select class="form-select">
+                                <option value="">Select a city</option>
+                                <option value="cairo">Cairo</option>
+                                <option value="alexandria">Alexandria</option>
+                                <option value="giza">Giza</option>
+                                <option value="luxor">Luxor</option>
+                                <option value="aswan">Aswan</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Special Fee (EGP)</label>
+                            <input type="number" class="form-input" placeholder="Enter special fee">
+                        </div>
+
+                        <div class="form-group">
+                            <button class="btn btn-sm btn-outline" style="height: 42px;">
+                                <i class="bi bi-plus"></i> Add
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Current Special Fees</label>
+                        <div class="upload-hint">Cairo: 25 EGP | Alexandria: 30 EGP | Giza: 35 EGP</div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button class="btn btn-primary">
+                            <i class="bi bi-check-circle"></i> Save Shipping Settings
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Inventory Settings -->
+                <div class="form-container">
+                    <div class="form-header">
+                        <h4 class="form-title"><i class="bi bi-box-seam"></i> Inventory Settings</h4>
+                    </div>
+
+                    <div class="switch-container">
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                        <span class="switch-label">Show out of stock products</span>
+                    </div>
+
+                    <div class="switch-container">
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                        <span class="switch-label">Hide products when stock reaches zero</span>
+                    </div>
+
+                    <div class="switch-container">
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                        <span class="switch-label">Allow backorders</span>
+                    </div>
+
+                    <div class="switch-container">
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                        <span class="switch-label">Show stock quantity on product page</span>
+                    </div>
+
+                    <div class="form-actions">
+                        <button class="btn btn-primary">
+                            <i class="bi bi-check-circle"></i> Save Inventory Settings
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button class="btn btn-outline">
+                        <i class="bi bi-arrow-clockwise"></i> Reset Changes
+                    </button>
+                    <button class="btn btn-primary">
+                        <i class="bi bi-check-circle"></i> Save All Settings
+                    </button>
+                </div>
+            </div>
         </div>
 
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Brand management toggle
+                const addBrandBtn = document.getElementById('addBrandBtn');
+                const addBrandForm = document.getElementById('addBrandForm');
+                const cancelAddBrand = document.getElementById('cancelAddBrand');
 
+                if (addBrandBtn && addBrandForm) {
+                    addBrandBtn.addEventListener('click', function () {
+                        addBrandForm.style.display = 'block';
+                        addBrandBtn.style.display = 'none';
+                    });
+                }
 
+                if (cancelAddBrand && addBrandForm) {
+                    cancelAddBrand.addEventListener('click', function () {
+                        addBrandForm.style.display = 'none';
+                        addBrandBtn.style.display = 'block';
+                    });
+                }
 
+                // Theme selection
+                const themeOptions = document.querySelectorAll('.theme-option');
 
-        <!-- Other content sections would follow the same pattern -->
+                themeOptions.forEach(option => {
+                    option.addEventListener('click', function () {
+                        themeOptions.forEach(opt => opt.classList.remove('selected'));
+                        this.classList.add('selected');
+                    });
+                });
+
+                // Switch functionality
+                const switches = document.querySelectorAll('.switch input');
+
+                switches.forEach(switchEl => {
+                    switchEl.addEventListener('change', function () {
+                        console.log('Switch toggled:', this.checked);
+                        // Here you would handle the switch change event
+                    });
+                });
+            });
+        </script>
+
 
         <div id="customers" class="content-section">
             <div class="dashboard-container">
@@ -1978,7 +2599,7 @@
                 </div>
 
                 <!-- Action Buttons -->
-               
+
 
                 <!-- Search Area -->
                 <div class="header-actions animatedtoup" id="customerSearchArea">
@@ -1990,64 +2611,65 @@
                     </button>
                 </div>
 
+                <div class="site-table-container">
+                    <table class="site-table">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" id="selectAllCustomers"></th>
+                                <th>Customer Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Orders</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox" class="customer-checkbox"></td>
+                                <td>John Doe</td>
+                                <td>john.doe@example.com</td>
+                                <td>+1234567890</td>
+                                <td>12</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td>
+                                    <button class="btn-icon" title="View Details"><i class="bi bi-eye"></i></button>
+                                    <button class="btn-icon" title="Edit"><i class="bi bi-pencil"></i></button>
+                                    <button class="btn-icon" title="Delete"><i class="bi bi-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="customer-checkbox"></td>
+                                <td>Jane Smith</td>
+                                <td>jane.smith@example.com</td>
+                                <td>+1987654321</td>
+                                <td>8</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td>
+                                    <button class="btn-icon" title="View Details"><i class="bi bi-eye"></i></button>
+                                    <button class="btn-icon" title="Edit"><i class="bi bi-pencil"></i></button>
+                                    <button class="btn-icon" title="Delete"><i class="bi bi-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="customer-checkbox"></td>
+                                <td>Robert Johnson</td>
+                                <td>robert.j@example.com</td>
+                                <td>+1122334455</td>
+                                <td>3</td>
+                                <td><span class="status-badge inactive">Inactive</span></td>
+                                <td>
+                                    <button class="btn-icon" title="View Details"><i class="bi bi-eye"></i></button>
+                                    <button class="btn-icon" title="Edit"><i class="bi bi-pencil"></i></button>
+                                    <button class="btn-icon" title="Delete"><i class="bi bi-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 <!-- Customer List Table -->
                 <div class="table-container animatedtoup">
-                    <div class="table-responsive">
-                        <table class="data-table">
-                            <thead>
-                                <tr>
-                                    <th><input type="checkbox" id="selectAllCustomers"></th>
-                                    <th>Customer Name</th>
-                                    <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Orders</th>
-                                    <th>Status</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><input type="checkbox" class="customer-checkbox"></td>
-                                    <td>John Doe</td>
-                                    <td>john.doe@example.com</td>
-                                    <td>+1234567890</td>
-                                    <td>12</td>
-                                    <td><span class="status-badge active">Active</span></td>
-                                    <td>
-                                        <button class="btn-icon" title="View Details"><i class="bi bi-eye"></i></button>
-                                        <button class="btn-icon" title="Edit"><i class="bi bi-pencil"></i></button>
-                                        <button class="btn-icon" title="Delete"><i class="bi bi-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox" class="customer-checkbox"></td>
-                                    <td>Jane Smith</td>
-                                    <td>jane.smith@example.com</td>
-                                    <td>+1987654321</td>
-                                    <td>8</td>
-                                    <td><span class="status-badge active">Active</span></td>
-                                    <td>
-                                        <button class="btn-icon" title="View Details"><i class="bi bi-eye"></i></button>
-                                        <button class="btn-icon" title="Edit"><i class="bi bi-pencil"></i></button>
-                                        <button class="btn-icon" title="Delete"><i class="bi bi-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox" class="customer-checkbox"></td>
-                                    <td>Robert Johnson</td>
-                                    <td>robert.j@example.com</td>
-                                    <td>+1122334455</td>
-                                    <td>3</td>
-                                    <td><span class="status-badge inactive">Inactive</span></td>
-                                    <td>
-                                        <button class="btn-icon" title="View Details"><i class="bi bi-eye"></i></button>
-                                        <button class="btn-icon" title="Edit"><i class="bi bi-pencil"></i></button>
-                                        <button class="btn-icon" title="Delete"><i class="bi bi-trash"></i></button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+
                 </div>
 
                 <!-- Customer Reviews Section -->
@@ -2205,197 +2827,7 @@
             </div>
         </div>
 
-        <style>
-            /* Customer-specific styles */
-            .card.total .stat-card-icon {
-                background-color: rgba(78, 115, 223, 0.2);
-                color: #4e73df;
-            }
 
-            .card.active .stat-card-icon {
-                background-color: rgba(40, 167, 69, 0.2);
-                color: #28a745;
-            }
-
-            .card.new .stat-card-icon {
-                background-color: rgba(253, 126, 20, 0.2);
-                color: #fd7e14;
-            }
-
-            .status-badge {
-                padding: 4px 8px;
-                border-radius: 12px;
-                font-size: 12px;
-                font-weight: 500;
-            }
-
-            .status-badge.active {
-                background-color: #e0f7ea;
-                color: #28a745;
-            }
-
-            .status-badge.inactive {
-                background-color: #f8f9fa;
-                color: #6c757d;
-            }
-
-            .status-badge.warning {
-                background-color: #fff3cd;
-                color: #856404;
-            }
-
-            .table-container {
-                background: #fff;
-                border-radius: 8px;
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-                margin-bottom: 24px;
-                overflow: hidden;
-            }
-
-            .data-table {
-                width: 100%;
-                border-collapse: collapse;
-            }
-
-            .data-table th {
-                background-color: #f8f9fa;
-                padding: 12px 16px;
-                text-align: left;
-                font-weight: 600;
-                color: #495057;
-                border-bottom: 1px solid #e9ecef;
-            }
-
-            .data-table td {
-                padding: 12px 16px;
-                border-bottom: 1px solid #e9ecef;
-            }
-
-            .data-table tr:hover {
-                background-color: #f8f9fa;
-            }
-
-            .btn-icon {
-                background: none;
-                border: none;
-                color: #6c757d;
-                padding: 4px 8px;
-                cursor: pointer;
-                border-radius: 4px;
-            }
-
-            .btn-icon:hover {
-                color: #4e73df;
-                background-color: #f8f9fa;
-            }
-
-            /* Reviews Section */
-            .filter-bar {
-                display: flex;
-                gap: 16px;
-                margin-bottom: 20px;
-                flex-wrap: wrap;
-            }
-
-            .filter-group {
-                display: flex;
-                align-items: center;
-                gap: 8px;
-            }
-
-            .filter-group label {
-                font-weight: 500;
-                margin-bottom: 0;
-            }
-
-            .reviews-list {
-                border: 1px solid #e9ecef;
-                border-radius: 8px;
-                overflow: hidden;
-            }
-
-            .review-item {
-                padding: 16px;
-                border-bottom: 1px solid #e9ecef;
-            }
-
-            .review-item:last-child {
-                border-bottom: none;
-            }
-
-            .review-item.reported {
-                background-color: #fff9f9;
-                border-left: 3px solid #dc3545;
-            }
-
-            .review-header {
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
-                margin-bottom: 8px;
-            }
-
-            .reviewer-name {
-                font-weight: 600;
-                color: #495057;
-            }
-
-            .review-date {
-                font-size: 12px;
-                color: #6c757d;
-            }
-
-            .review-rating {
-                display: flex;
-                align-items: center;
-            }
-
-            .stars {
-                color: #ffc107;
-                font-size: 14px;
-            }
-
-            .review-product {
-                margin-bottom: 8px;
-                font-size: 14px;
-            }
-
-            .review-product a {
-                color: #4e73df;
-                text-decoration: none;
-            }
-
-            .review-product a:hover {
-                text-decoration: underline;
-            }
-
-            .review-content {
-                margin-bottom: 12px;
-                line-height: 1.5;
-            }
-
-            .review-actions {
-                display: flex;
-                gap: 8px;
-            }
-
-            .review-status-badge {
-                margin-bottom: 8px;
-            }
-
-            .pagination {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 16px;
-                margin-top: 20px;
-            }
-
-            .pagination-info {
-                color: #6c757d;
-                font-size: 14px;
-            }
-        </style>
 
         <script>
             document.addEventListener("DOMContentLoaded", function () {
@@ -2524,6 +2956,378 @@
             });
         </script>
 
+
+
+        <style>
+            .pixel-list {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                margin-top: 1rem;
+            }
+
+            .pixel-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0.75rem 1rem;
+                border-radius: 8px;
+                background-color: var(--bg-light);
+            }
+
+            .pixel-name {
+                font-weight: 500;
+            }
+
+            .pixel-actions {
+                display: flex;
+                gap: 0.5rem;
+            }
+
+
+
+            /* --- Carousel Specific Styles --- */
+            .marketing-content {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .ad-carousel-preview {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background: linear-gradient(135deg, #1f2937 0%, #3b82f6 100%);
+                padding: 2rem;
+                border-radius: 12px;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+                transition: all 0.5s ease;
+            }
+
+            .device-frame {
+                position: relative;
+                background: #ffffff;
+                border: 10px solid #2d3748;
+                border-radius: 40px;
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25),
+                    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+                    inset 0 0 10px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+                transition: all 0.7s ease-in-out;
+                transform-style: preserve-3d;
+            }
+
+            .mobile-frame {
+                width: 375px;
+                height: 667px;
+            }
+
+            .laptop-frame {
+                width: 900px;
+                height: 600px;
+                border-radius: 20px;
+                border-width: 15px;
+                transform: rotateX(10deg);
+            }
+
+            .hidden {
+                display: none;
+            }
+
+            .carousel-container {
+                width: 100%;
+                height: 100%;
+                background-color: #ffffff;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .product-card-container {
+                display: flex;
+                overflow-x: scroll;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            .product-card-container::-webkit-scrollbar {
+                display: none;
+            }
+
+            .product-card {
+                min-width: 85%;
+                flex-shrink: 0;
+                scroll-snap-align: start;
+                background-color: #ffffff;
+                border-radius: 8px;
+                overflow: hidden;
+                border: 1px solid #e5e7eb;
+            }
+
+            .product-card img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+
+            .nav-btn {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: rgba(0, 0, 0, 0.5);
+                color: #ffffff;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                z-index: 10;
+                transition: background-color 0.2s ease-in-out;
+            }
+
+            .nav-btn:hover {
+                background-color: rgba(0, 0, 0, 0.7);
+            }
+
+            .nav-btn.left {
+                left: 10px;
+            }
+
+            .nav-btn.right {
+                right: 10px;
+            }
+
+            .laptop-frame .product-card-container {
+                padding: 2rem;
+                gap: 2rem;
+            }
+
+            .laptop-frame .product-card {
+                min-width: 300px;
+            }
+
+            .laptop-frame .nav-btn {
+                width: 50px;
+                height: 50px;
+            }
+        </style>
+
+
+
+        <div id="marketing" class="content-section">
+
+            <div class="marketing-controls animatedtoup">
+                <div class="search-box animatedtoup">
+                    <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Search campaigns..." id="campaignSearch">
+                </div>
+                <div class="filter-controls animatedtoup">
+                    <button class="btn btn-outline" id="addCampaignBtn">
+                        <i class="bi bi-plus-circle"></i> Add New Campaign
+                    </button>
+                </div>
+            </div>
+
+            <div class="marketing-tabs">
+                <button class="tab-button active" data-tab="campaigns">Campaign History</button>
+                <button class="tab-button" data-tab="pixels">Pixel Management</button>
+            </div>
+
+            <div class="site-table-container tab-content active" id="campaigns-content">
+                <table class="site-table">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" id="selectAllCampaigns"></th>
+                            <th>Campaign Name</th>
+                            <th>Platform</th>
+                            <th>Start Date</th>
+                            <th>Status</th>
+                            <th>Total Spend</th>
+                            <th>Conversions</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="campaign-row" data-status="active">
+                            <td><input type="checkbox" class="campaign-checkbox"></td>
+                            <td>Summer Sale 2025</td>
+                            <td>Facebook / Instagram</td>
+                            <td>Aug 1, 2025</td>
+                            <td><span class="status-badge active">Active</span></td>
+                            <td>1,200 E£</td>
+                            <td>850</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn-view" title="View Details"><i class="bi bi-eye"></i></button>
+                                    <button class="btn-pause" title="Pause Campaign"><i
+                                            class="bi bi-pause-circle"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="campaign-row" data-status="completed">
+                            <td><input type="checkbox" class="campaign-checkbox"></td>
+                            <td>New Arrivals - Q2</td>
+                            <td>TikTok</td>
+                            <td>Mar 15, 2025</td>
+                            <td><span class="status-badge completed">Completed</span></td>
+                            <td>2,250 E£</td>
+                            <td>690</td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button class="btn-view" title="View Details"><i class="bi bi-eye"></i></button>
+                                    <button class="btn-clone" title="Clone Campaign"><i
+                                            class="bi bi-clipboard"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class=" dashboard-right-header tab-content" id="pixels-content">
+                <h2>Connected Pixels</h2>
+                <p>A pixel is a snippet of code that tracks user actions on your website. Use the IDs below to connect
+                    your accounts
+                    and collect valuable data for your ad campaigns.</p>
+                <div class="pixels-list">
+                    <div class="pixel-card animatedtoup">
+                        <i class="bi bi-facebook pixel-icon"></i>
+                        <div class="pixel-details">
+                            <h4>Facebook / Instagram Pixel</h4>
+                            <p>ID: <code>1234567890123456</code></p>
+                            <button class="btn btn-outline" title="Copy Code"><i class="bi bi-clipboard"></i> Copy
+                                Code</button>
+                        </div>
+                    </div>
+                    <div class="pixel-card animatedtoup">
+                        <i class="bi bi-tiktok pixel-icon"></i>
+                        <div class="pixel-details">
+                            <h4>TikTok Pixel</h4>
+                            <p>ID: <code>AB1CD2EF3GH4IJ5K</code></p>
+                            <button class="btn btn-outline" title="Copy Code"><i class="bi bi-clipboard"></i> Copy
+                                Code</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="add-pixel-section">
+                    <button class="btn btn-outline">
+                        <i class="bi bi-plus-circle"></i> Add New Pixel
+                    </button>
+                </div>
+            </div>
+
+
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    // Initialize marketing section
+                    initMarketingSection();
+
+                    // Animate elements on page load
+                    setTimeout(() => {
+                        const animatedElements = document.querySelectorAll('.animatedtoup');
+                        animatedElements.forEach(el => {
+                            el.classList.add('show');
+                        });
+                    }, 100);
+                });
+
+                function initMarketingSection() {
+                    // Tab functionality
+                    const tabButtons = document.querySelectorAll('.tab-button');
+                    const tabContents = document.querySelectorAll('.tab-content');
+
+                    tabButtons.forEach(button => {
+                        button.addEventListener('click', () => {
+                            const tabId = button.getAttribute('data-tab');
+
+                            // Update active tab button
+                            tabButtons.forEach(btn => btn.classList.remove('active'));
+                            button.classList.add('active');
+
+                            // Show active tab content
+                            tabContents.forEach(content => content.classList.remove('active'));
+                            document.getElementById(`${tabId}-content`).classList.add('active');
+                        });
+                    });
+
+                    // Copy pixel code functionality
+                    const copyButtons = document.querySelectorAll('.btn-copy');
+                    copyButtons.forEach(button => {
+                        button.addEventListener('click', function () {
+                            const pixelId = this.parentElement.querySelector('code').textContent;
+                            navigator.clipboard.writeText(pixelId).then(() => {
+                                const originalHtml = this.innerHTML;
+                                this.innerHTML = '<i class="bi bi-check"></i> Copied!';
+
+                                setTimeout(() => {
+                                    this.innerHTML = originalHtml;
+                                }, 2000);
+                            });
+                        });
+                    });
+
+                    // Campaign search functionality
+                    const campaignSearch = document.getElementById('campaignSearch');
+                    if (campaignSearch) {
+                        campaignSearch.addEventListener('input', function () {
+                            const searchTerm = this.value.toLowerCase();
+                            const rows = document.querySelectorAll('.campaign-row');
+
+                            rows.forEach(row => {
+                                const campaignName = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+                                const platform = row.querySelector('td:nth-child(3)').textContent.toLowerCase();
+
+                                if (campaignName.includes(searchTerm) || platform.includes(searchTerm)) {
+                                    row.style.display = '';
+                                } else {
+                                    row.style.display = 'none';
+                                }
+                            });
+                        });
+                    }
+
+                    // Select all campaigns checkbox
+                    const selectAllCheckbox = document.getElementById('selectAllCampaigns');
+                    if (selectAllCheckbox) {
+                        selectAllCheckbox.addEventListener('change', function () {
+                            const checkboxes = document.querySelectorAll('.campaign-checkbox');
+                            checkboxes.forEach(checkbox => {
+                                checkbox.checked = this.checked;
+                            });
+                        });
+                    }
+                }
+            </script>
+        </div>
+
+
+
+
+        <div id="discounts" class="content-section">
+            <h2>Discounts</h2>
+            <p>Create and manage discounts here.</p>
+        </div>
+        <div id="payment" class="content-section">
+            <h2>Payment</h2>
+            <p>Create and manage discounts here.</p>
+        </div>
+        <div id="Subscription" class="content-section">
+            <h2>subscription</h2>
+            <p>Create and manage discounts here.</p>
+        </div>
+
+        <div id="profile" class="content-section">
+            <h2>Profile</h2>
+            <p>Configure your store settings here.</p>
+        </div>
+        <div id="settings" class="content-section">
+            <h2>Settings</h2>
+            <p>Configure your store settings here.</p>
+        </div>
         <div id="analytics" class="content-section">
             <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
             <div class="dashboard-container">
@@ -2813,21 +3617,6 @@
                 </div>
             </div>
         </div>
-
-        <div id="marketing" class="content-section">
-            <h2>Marketing</h2>
-            <p>Manage your marketing campaigns here.</p>
-        </div>
-
-        <div id="discounts" class="content-section">
-            <h2>Discounts</h2>
-            <p>Create and manage discounts here.</p>
-        </div>
-
-        <div id="settings" class="content-section">
-            <h2>Settings</h2>
-            <p>Configure your store settings here.</p>
-        </div>
     </div>
 
     <script>
@@ -2928,21 +3717,66 @@
             });
         });
 
-        // Filter by status
-        document.getElementById('statusFilter').addEventListener('change', function () {
-            const status = this.value;
-            const rows = document.querySelectorAll('.order-row');
 
-            rows.forEach(row => {
-                if (status === 'all') {
-                    row.style.display = '';
-                } else {
-                    row.style.display = row.getAttribute('data-status') === status ? '' : 'none';
-                }
+
+        // Filter by status
+        document.querySelectorAll('#statusFilter .select-item').forEach(item => {
+            item.addEventListener('click', function () {
+                // Remove selected class from all items
+                document.querySelectorAll('#statusFilter .select-item').forEach(i => {
+                    i.classList.remove('selected');
+                });
+
+                // Add selected class to clicked item
+                this.classList.add('selected');
+
+                // Update the displayed text
+                const selectedText = this.querySelector('span').textContent;
+                document.querySelector('#statusFilter .select-selected span').textContent = selectedText;
+
+                // Close the dropdown (if needed)
+                document.querySelector('#statusFilter .select-items').style.display = 'none';
+
+                // Trigger the filter
+                const status = this.getAttribute('data-value');
+                const rows = document.querySelectorAll('.order-row');
+
+                rows.forEach(row => {
+                    if (status === 'all') {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = row.getAttribute('data-status') === status ? '' : 'none';
+                    }
+                });
+
+                // Also hide the details rows for hidden orders
+                document.querySelectorAll('.order-details').forEach(detailRow => {
+                    const orderId = detailRow.id.replace('details-', '');
+                    const orderRow = document.querySelector(`.order-row[data-id="${orderId}"]`);
+
+                    if (orderRow.style.display === 'none') {
+                        detailRow.style.display = 'none';
+                    } else {
+                        detailRow.style.display = '';
+                    }
+                });
             });
         });
+        // Filter by status
 
-        // Theme persistence functionality
+        // Toggle dropdown visibility
+        document.querySelector('#statusFilter .select-selected').addEventListener('click', function () {
+            const items = document.querySelector('#statusFilter .select-items');
+            items.style.display = items.style.display === 'none' ? 'block' : 'none';
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function (e) {
+            if (!e.target.closest('#statusFilter')) {
+                document.querySelector('#statusFilter .select-items').style.display = 'none';
+            }
+        });
+
         document.addEventListener('DOMContentLoaded', function () {
             // Check for saved theme preference
             const savedTheme = localStorage.getItem('theme');
@@ -3020,7 +3854,7 @@
             const section = document.getElementById(sectionId);
             if (!section) return;
 
-            const elementsToAnimate = section.querySelectorAll('.dashboard-right-header, .stats-container, .charts-container, .data-grid, .search-box, .orders-controls, .orders-table-container, .form-container  ,.animatedtoup');
+            const elementsToAnimate = section.querySelectorAll('.dashboard-right-header, .stats-container, .charts-container, .data-grid, .search-box, .orders-controls, .site-table-container, .form-container  ,.animatedtoup');
 
             // Also get header and main-content if they exist (they're outside sections)
             const header = document.querySelector('.header');
@@ -3050,7 +3884,7 @@
             const section = document.getElementById(sectionId);
             if (!section) return;
 
-            const elementsToAnimate = section.querySelectorAll(' .dashboard-right-header, .stats-container, .charts-container, .data-grid, .search-box, .orders-controls, .orders-table-container, .form-container  ,.animatedtoup');
+            const elementsToAnimate = section.querySelectorAll(' .dashboard-right-header, .stats-container, .charts-container, .data-grid, .search-box, .orders-controls, .site-table-container, .form-container  ,.animatedtoup');
 
             // Also get header and main-content if they exist
             const header = document.querySelector('.header');
@@ -3081,7 +3915,7 @@
             const section = document.getElementById(sectionId);
             if (!section) return;
 
-            const elementsToAnimate = section.querySelectorAll(' .dashboard-right-header, .stats-container, .charts-container, .data-grid, .search-box, .orders-controls, .orders-table-container, .form-container , .animatedtoup');
+            const elementsToAnimate = section.querySelectorAll(' .dashboard-right-header, .stats-container, .charts-container, .data-grid, .search-box, .orders-controls, .site-table-container, .form-container , .animatedtoup');
             elementsToAnimate.forEach(element => {
                 element.style.opacity = '0';
                 element.style.transform = 'translateY(20px)';
