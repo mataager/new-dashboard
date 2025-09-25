@@ -543,980 +543,595 @@
                 </div>
 
 
-                <div class="btn-group-unique-container animatedtoup">
-                    <div class="btn-group-unique-wrapper">
-                        <div class="btn-group-unique-buttons" style="transform: translateY(0px);">
-                            <button class="btn-group-unique-btn btn-group-unique-primary" id="addProduct">
-                                <i class="bi bi-plus-circle"></i> Add Product
-                            </button>
-                            <button class="btn-group-unique-btn btn-group-unique-secondary" id="editProduct">
-                                <i class="bi bi-pencil-square"></i> Edit Product
-                            </button>
-                            <button class="btn-group-unique-btn btn-group-unique-tertiary" id="deleteProduct">
-                                <i class="bi bi-trash"></i> Delete Product
-                            </button>
-                        </div>
-                    </div>
 
-                    <div class="btn-group-unique-nav">
-                        <button class="btn-group-unique-arrow" id="btnGroupUniqueUpArrow" disabled>
-                            <i class="bi bi-chevron-up"></i>
-                        </button>
-                        <button class="btn-group-unique-arrow" id="btnGroupUniqueDownArrow">
-                            <i class="bi bi-chevron-down"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="header-actions animatedtoup" id="productSearchArea">
-                    <div class="search-box" id="searchBox">
-                        <input style="padding: 10px 15px 10px 15px;" type="text" placeholder="Search By SKU..."
-                            id="productSearch">
-                    </div>
-                    <button class="btn btn-outline">
-                        Find<i class="bi bi-search"></i>
-                    </button>
-                </div>
             </div>
-
-            <!-- Product Form -->
             <div class="form-container animatedtoup">
-                <div class="form-header">
-                    <h4 class="form-title"><i class="bi bi-tag"></i> Product Information</h4>
-                    <div class="form-actions">
-                        <button class="btn btn-outline">
-                            <i class="bi bi-eye"></i> Preview
-                        </button>
-                        <button class="btn btn-outline">
-                            <i class="bi bi-gear"></i> Set as Default
-                        </button>
-                    </div>
+                <div class="tabs-btn-area">
+                    <button class="tab-button active" data-tab="addProduct">Add Product <i
+                            class="bi bi-plus-circle"></i></button>
+                    <button class="tab-button" data-tab="editProduct">Edit Product <i
+                            class="bi bi-pencil-square"></i></button>
+                    <button class="tab-button" data-tab="deleteProduct">Delete Product <i
+                            class="bi bi-x-circle"></i></button>
                 </div>
-
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label class="form-label">Product Title</label>
-                        <input type="text" class="form-input form-control " placeholder="Enter your product title">
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">Brand Name</label>
-                        <input type="text" class="form-input form-control " placeholder="Enter your brand">
-                    </div>
-
-
-
-                    <div class="form-group">
-                        <label class="form-label">Gender</label>
-                        <div class="elegant-select">
-                            <div class="select-selected" id="standardSelect">
-                                <span>Choose a gender</span>
-                            </div>
-                            <div class="select-items" id="standardSelectItems">
-                                <div class="select-item" data-value="option1">
-                                    <div class="icon">
-                                        <i class="bi bi-gender-male"></i>
-                                    </div>
-                                    <span>Men</span>
-                                </div>
-                                <div class="select-item" data-value="option1">
-                                    <div class="icon">
-                                        <i class="bi bi-gender-female"></i>
-                                    </div>
-                                    <span>Women</span>
-                                </div>
-                                <div class="select-item" data-value="option2">
-                                    <div class="icon">
-                                        <i class="bi bi-gender-ambiguous"></i>
-                                    </div>
-                                    <span>Unisex</span>
-                                </div>
-
-                                <div class="select-item" data-value="option2">
-                                    <div class="icon">
-                                        <i class="bi bi-gender-male"></i>
-                                    </div>
-                                    <span>Kids (Boy)</span>
-                                </div>
-                                <div class="select-item" data-value="option2">
-                                    <div class="icon">
-                                        <i class="bi bi-gender-female"></i>
-                                    </div>
-                                    <span>Kids (Girl)</span>
-                                </div>
-
-                            </div>
+                <!-- Product Form -->
+                <div class="form-container animatedtoup">
+                    <div class="form-header">
+                        <h4 class="form-title"><i class="bi bi-tag"></i> Product Information</h4>
+                        <div class="form-actions">
+                            <button class="btn btn-outline">
+                                <i class="bi bi-eye"></i> Preview
+                            </button>
+                            <button class="btn btn-outline">
+                                <i class="bi bi-gear"></i> Set as Default
+                            </button>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label class="form-label">Product Category</label>
-                        <div class="elegant-select">
-                            <div class="select-selected" id="standardSelect">
-                                <span>Choose a Category</span>
-                            </div>
-                            <div class="select-items" id="standardSelectItems">
-                                <div class="select-item" data-value="option1">
-                                    <span>T-Shirt</span>
-                                </div>
-                                <div class="select-item" data-value="option1">
-
-                                    <span>Polo-Shirt</span>
-                                </div>
-
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">Wear Type</label>
-                        <div class="elegant-select">
-                            <div class="select-selected" id="standardSelect">
-                                <span>Choose a type</span>
-                            </div>
-                            <div class="select-items" id="standardSelectItems">
-                                <div class="select-item" data-value="option1">
-                                    <div class="icon"><img src="https://peacockstorebunny.b-cdn.net/icons/tshirt.svg">
-                                    </div>
-                                    <span>Top</span>
-                                </div>
-                                <div class="select-item" data-value="option1">
-                                    <div class="icon"><img src="https://peacockstorebunny.b-cdn.net/icons/pants.svg">
-                                    </div>
-                                    <span>Bottom</span>
-                                </div>
-                                <div class="select-item" data-value="option2">
-                                    <div class="icon"><img src="https://peacockstorebunny.b-cdn.net/icons/shose.svg">
-                                    </div>
-                                    <span>footwear</span>
-                                </div>
-                                <div class="select-item" data-value="option2">
-                                    <div class="icon"><img src="https://peacockstorebunny.b-cdn.net/icons/cap.svg">
-                                    </div>
-                                    <span>Head wear</span>
-                                </div>
-                                <div class="select-item" data-value="option2">
-                                    <div class="icon"><img src="https://peacockstorebunny.b-cdn.net/icons/glove.svg">
-                                    </div>
-                                    <span>Hand wear</span>
-                                </div>
-                                <div class="select-item" data-value="option2">
-                                    <div class="icon"><img src="https://peacockstorebunny.b-cdn.net/icons/glasses.svg">
-                                    </div>
-                                    <span>Eye wear</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label">Product Description</label>
-                    <textarea class="form-textarea" placeholder="Type product description here..."></textarea>
-                </div>
-            </div>
-
-            <!-- Pricing Form -->
-            <div class="form-container animatedtoup">
-                <div class="form-header">
-                    <h4 class="form-title"><i class="bi bi-currency-exchange"></i> Pricing</h4>
-                    <div class="form-actions">
-                        <button class="btn btn-outline">
-                            <i class="bi bi-gear"></i> Set as Default
-                        </button>
-                    </div>
-                </div>
-
-                <div class="pricing-grid">
-                    <div class="form-group">
-                        <label class="form-label">Base Price</label>
-                        <input type="text" class="form-input form-control " placeholder="EGP">
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">Discount</label>
-                        <input type="text" class="form-input form-control " placeholder="%">
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">You Earnings</label>
-                        <input type="text" class="form-input form-control " placeholder="EGP" readonly>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">System Cut</label>
-                        <input type="text" class="form-input form-control " placeholder="EGP" readonly>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">Store Price</label>
-                        <input type="text" class="form-input form-control " placeholder="EGP" readonly>
-                    </div>
-
-                </div>
-                <div class="form-group enhancePriceArea">
-                    <button class="btn btn-outline btn-outline-selected">
-                        <i class="bi bi-magic"></i> Enhance Price on
-                    </button>
-                </div>
-                <div class="pricing-summary">
-                    <div class="summary-item">
-                        <span class="summary-label">Customer Pays:</span>
-                        <span class="summary-value">$0</span>
-                    </div>
-                    <div class="summary-item">
-                        <span class="summary-label">System Fee:</span>
-                        <span class="summary-value system-cut">$0</span>
-                    </div>
-                    <div class="summary-item">
-                        <span class="summary-label">Your Earnings:</span>
-                        <span class="summary-value profit">$0</span>
-                    </div>
-                </div>
-
-
-            </div>
-
-
-            <div class="form-container animatedtoup" id="sizeFormContainer">
-                <div class="form-header">
-                    <h4 class="form-title"><i class="bi bi-rulers"></i> Size &amp; Quantity</h4>
-                    <div class="form-actions">
-                        <button class="btn btn-outline">
-                            <i class="bi bi-gear"></i> Set as Default
-                        </button>
-                    </div>
-                </div>
-                <div class="form-actions center mb-25">
-                    <button class="btn btn-outline" id="btnAddPackage">Add Size Package</button>
-                    <button class="btn btn-outline" id="btnSavedPackages">Saved Size Packages</button>
-                </div>
-                <!-- PAGE 1: Add Size Package -->
-                <div id="addPackagePage">
-
-                    <div class="form-group">
-                        <label class="form-label">Package Name</label>
-                        <input type="text" class="form-input form-control " id="packageName"
-                            placeholder="Enter package name">
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">Size Type</label>
-                        <div class="size-toggle">
-                            <div class="toggle-option active" id="numericToggle">
-                                <i class="bi bi-123"></i> <span class="toggle-text">Numeric</span>
-                            </div>
-                            <div class="toggle-option" id="alphaToggle">
-                                <i class="bi bi-fonts"></i> <span class="toggle-text">Alphabetical</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="range-selector">
+                    <div class="form-grid">
                         <div class="form-group">
-                            <label class="form-label">From</label>
-                            <input type="number" class="form-input form-control " id="fromSize" value="35">
+                            <label class="form-label">Product Title</label>
+                            <input type="text" class="form-input form-control " placeholder="Enter your product title">
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label">To</label>
-                            <input type="number" class="form-input form-control " id="toSize" value="45">
+                            <label class="form-label">Brand Name</label>
+                            <input type="text" class="form-input form-control " placeholder="Enter your brand">
                         </div>
 
 
-                    </div>
 
-                    <div class="form-group">
-                        <label class="form-label">Exceptions (Select sizes to exclude)</label>
-                        <div class="exceptions-grid" id="exceptionsGrid">
-                            <div class="exception-chip">36</div>
-                            <div class="exception-chip">38</div>
-                            <div class="exception-chip">40</div>
-                            <div class="exception-chip">42</div>
-                            <div class="exception-chip">44</div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Size Chart</label>
-                        <div class="elegant-select">
-                            <div class="select-selected" id="standardSelect">
-                                <span>Choose a Chart</span>
+                        <div class="form-group">
+                            <label class="form-label">Gender</label>
+                            <div class="elegant-select">
+                                <div class="select-selected" id="standardSelect">
+                                    <span>Choose a gender</span>
+                                </div>
+                                <div class="select-items" id="standardSelectItems">
+                                    <div class="select-item" data-value="option1">
+                                        <div class="icon">
+                                            <i class="bi bi-gender-male"></i>
+                                        </div>
+                                        <span>Men</span>
+                                    </div>
+                                    <div class="select-item" data-value="option1">
+                                        <div class="icon">
+                                            <i class="bi bi-gender-female"></i>
+                                        </div>
+                                        <span>Women</span>
+                                    </div>
+                                    <div class="select-item" data-value="option2">
+                                        <div class="icon">
+                                            <i class="bi bi-gender-ambiguous"></i>
+                                        </div>
+                                        <span>Unisex</span>
+                                    </div>
+
+                                    <div class="select-item" data-value="option2">
+                                        <div class="icon">
+                                            <i class="bi bi-gender-male"></i>
+                                        </div>
+                                        <span>Kids (Boy)</span>
+                                    </div>
+                                    <div class="select-item" data-value="option2">
+                                        <div class="icon">
+                                            <i class="bi bi-gender-female"></i>
+                                        </div>
+                                        <span>Kids (Girl)</span>
+                                    </div>
+
+                                </div>
                             </div>
-                            <div class="select-items" id="standardSelectItems">
-                                <div class="select-item" data-value="mentopchart">
-                                    <span>men top chart</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Product Category</label>
+                            <div class="elegant-select">
+                                <div class="select-selected" id="standardSelect">
+                                    <span>Choose a Category</span>
                                 </div>
-                                <div class="select-item" data-value="menbottomchart">
-                                    <span>men bottom chart</span>
-                                </div>
-                                <div class="select-item" data-value="womentopchart">
-                                    <span>men top chart</span>
-                                </div>
-                                <div class="select-item" data-value="womenbottomchart">
-                                    <span>women bottom chart</span>
-                                </div>
+                                <div class="select-items" id="standardSelectItems">
+                                    <div class="select-item" data-value="option1">
+                                        <span>T-Shirt</span>
+                                    </div>
+                                    <div class="select-item" data-value="option1">
+
+                                        <span>Polo-Shirt</span>
+                                    </div>
 
 
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Wear Type</label>
+                            <div class="elegant-select">
+                                <div class="select-selected" id="standardSelect">
+                                    <span>Choose a type</span>
+                                </div>
+                                <div class="select-items" id="standardSelectItems">
+                                    <div class="select-item" data-value="option1">
+                                        <div class="icon"><img
+                                                src="https://peacockstorebunny.b-cdn.net/icons/tshirt.svg">
+                                        </div>
+                                        <span>Top</span>
+                                    </div>
+                                    <div class="select-item" data-value="option1">
+                                        <div class="icon"><img
+                                                src="https://peacockstorebunny.b-cdn.net/icons/pants.svg">
+                                        </div>
+                                        <span>Bottom</span>
+                                    </div>
+                                    <div class="select-item" data-value="option2">
+                                        <div class="icon"><img
+                                                src="https://peacockstorebunny.b-cdn.net/icons/shose.svg">
+                                        </div>
+                                        <span>footwear</span>
+                                    </div>
+                                    <div class="select-item" data-value="option2">
+                                        <div class="icon"><img src="https://peacockstorebunny.b-cdn.net/icons/cap.svg">
+                                        </div>
+                                        <span>Head wear</span>
+                                    </div>
+                                    <div class="select-item" data-value="option2">
+                                        <div class="icon"><img
+                                                src="https://peacockstorebunny.b-cdn.net/icons/glove.svg">
+                                        </div>
+                                        <span>Hand wear</span>
+                                    </div>
+                                    <div class="select-item" data-value="option2">
+                                        <div class="icon"><img
+                                                src="https://peacockstorebunny.b-cdn.net/icons/glasses.svg">
+                                        </div>
+                                        <span>Eye wear</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
                     </div>
-                    <div class="form-group">
-                        <label class="form-label">Default Quantity</label>
-                        <input type="number" class="form-input form-control " id="defaultQuantity" value="10">
-                    </div>
 
-                    <div class="form-actions">
-                        <button class="btn btn-outline" id="savePackage">Save Package</button>
+                    <div class="form-group">
+                        <label class="form-label">Product Description</label>
+                        <textarea class="form-textarea" placeholder="Type product description here..."></textarea>
                     </div>
                 </div>
 
-                <!-- PAGE 2: Saved Size Packages -->
-                <div id="savedPackagesPage" style="display:none;">
-                    <h5>Saved Size Packages</h5>
-                    <ul id="packagesList"></ul>
+                <!-- Pricing Form -->
+                <div class="form-container animatedtoup">
+                    <div class="form-header">
+                        <h4 class="form-title"><i class="bi bi-currency-exchange"></i> Pricing</h4>
+                        <div class="form-actions">
+                            <button class="btn btn-outline">
+                                <i class="bi bi-gear"></i> Set as Default
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="pricing-grid">
+                        <div class="form-group">
+                            <label class="form-label">Base Price</label>
+                            <input type="text" class="form-input form-control " placeholder="EGP">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Discount</label>
+                            <input type="text" class="form-input form-control " placeholder="%">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">You Earnings</label>
+                            <input type="text" class="form-input form-control " placeholder="EGP" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">System Cut</label>
+                            <input type="text" class="form-input form-control " placeholder="EGP" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Store Price</label>
+                            <input type="text" class="form-input form-control " placeholder="EGP" readonly>
+                        </div>
+
+                    </div>
+                    <div class="form-group enhancePriceArea">
+                        <button class="btn btn-outline btn-outline-selected">
+                            <i class="bi bi-magic"></i> Enhance Price on
+                        </button>
+                    </div>
+                    <div class="pricing-summary">
+                        <div class="summary-item">
+                            <span class="summary-label">Customer Pays:</span>
+                            <span class="summary-value">$0</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">System Fee:</span>
+                            <span class="summary-value system-cut">$0</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Your Earnings:</span>
+                            <span class="summary-value profit">$0</span>
+                        </div>
+                    </div>
+
+
                 </div>
 
 
-            </div>
+                <div class="form-container animatedtoup" id="sizeFormContainer">
+                    <div class="form-header">
+                        <h4 class="form-title"><i class="bi bi-rulers"></i> Size &amp; Quantity</h4>
+                        <div class="form-actions">
+                            <button class="btn btn-outline">
+                                <i class="bi bi-gear"></i> Set as Default
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-actions center mb-25">
+                        <button class="btn btn-outline" id="btnAddPackage">Add Size Package</button>
+                        <button class="btn btn-outline" id="btnSavedPackages">Saved Size Packages</button>
+                    </div>
+                    <!-- PAGE 1: Add Size Package -->
+                    <div id="addPackagePage">
+
+                        <div class="form-group">
+                            <label class="form-label">Package Name</label>
+                            <input type="text" class="form-input form-control " id="packageName"
+                                placeholder="Enter package name">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Size Type</label>
+                            <div class="size-toggle">
+                                <div class="toggle-option active" id="numericToggle">
+                                    <i class="bi bi-123"></i> <span class="toggle-text">Numeric</span>
+                                </div>
+                                <div class="toggle-option" id="alphaToggle">
+                                    <i class="bi bi-fonts"></i> <span class="toggle-text">Alphabetical</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="range-selector">
+                            <div class="form-group">
+                                <label class="form-label">From</label>
+                                <input type="number" class="form-input form-control " id="fromSize" value="35">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">To</label>
+                                <input type="number" class="form-input form-control " id="toSize" value="45">
+                            </div>
 
 
-            <script>
-                document.addEventListener("DOMContentLoaded", () => {
-                    const btnAdd = document.getElementById("btnAddPackage");
-                    const btnSaved = document.getElementById("btnSavedPackages");
-                    const addPage = document.getElementById("addPackagePage");
-                    const savedPage = document.getElementById("savedPackagesPage");
-                    const saveBtn = document.getElementById("savePackage");
-                    const packagesList = document.getElementById("packagesList");
-                    const exceptionsGrid = document.getElementById("exceptionsGrid");
-                    const fromSize = document.getElementById("fromSize");
-                    const toSize = document.getElementById("toSize");
-                    const numericToggle = document.getElementById("numericToggle");
-                    const alphaToggle = document.getElementById("alphaToggle");
+                        </div>
 
-                    let selectedExceptions = [];
-                    let sizeType = "numeric"; // default
+                        <div class="form-group">
+                            <label class="form-label">Exceptions (Select sizes to exclude)</label>
+                            <div class="exceptions-grid" id="exceptionsGrid">
+                                <div class="exception-chip">36</div>
+                                <div class="exception-chip">38</div>
+                                <div class="exception-chip">40</div>
+                                <div class="exception-chip">42</div>
+                                <div class="exception-chip">44</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Size Chart</label>
+                            <div class="elegant-select">
+                                <div class="select-selected" id="standardSelect">
+                                    <span>Choose a Chart</span>
+                                </div>
+                                <div class="select-items" id="standardSelectItems">
+                                    <div class="select-item" data-value="mentopchart">
+                                        <span>men top chart</span>
+                                    </div>
+                                    <div class="select-item" data-value="menbottomchart">
+                                        <span>men bottom chart</span>
+                                    </div>
+                                    <div class="select-item" data-value="womentopchart">
+                                        <span>men top chart</span>
+                                    </div>
+                                    <div class="select-item" data-value="womenbottomchart">
+                                        <span>women bottom chart</span>
+                                    </div>
 
-                    const alphaSizes = ["XXS", "XS", "S", "M", "L", "XL", "XXL", "3XL", "4XL", "5XL"];
 
-                    // Switch between pages
-                    btnAdd.addEventListener("click", () => {
-                        addPage.style.display = "block";
-                        savedPage.style.display = "none";
-                    });
+                                </div>
+                            </div>
 
-                    btnSaved.addEventListener("click", () => {
-                        addPage.style.display = "none";
-                        savedPage.style.display = "block";
-                        loadPackages();
-                    });
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Default Quantity</label>
+                            <input type="number" class="form-input form-control " id="defaultQuantity" value="10">
+                        </div>
 
-                    // Toggle size type
-                    numericToggle.addEventListener("click", () => {
-                        sizeType = "numeric";
-                        numericToggle.classList.add("active");
-                        alphaToggle.classList.remove("active");
+                        <div class="form-actions">
+                            <button class="btn btn-outline" id="savePackage">Save Package</button>
+                        </div>
+                    </div>
 
-                        fromSize.type = "number";
-                        toSize.type = "number";
-                        fromSize.value = 35;
-                        toSize.value = 45;
-                        generateExceptions();
-                    });
+                    <!-- PAGE 2: Saved Size Packages -->
+                    <div id="savedPackagesPage" style="display:none;">
+                        <h5>Saved Size Packages</h5>
+                        <ul id="packagesList"></ul>
+                    </div>
 
-                    alphaToggle.addEventListener("click", () => {
-                        sizeType = "alpha";
-                        alphaToggle.classList.add("active");
-                        numericToggle.classList.remove("active");
 
-                        // Replace inputs with dropdowns
-                        fromSize.type = "text";
-                        toSize.type = "text";
+                </div>
+                <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                        const btnAdd = document.getElementById("btnAddPackage");
+                        const btnSaved = document.getElementById("btnSavedPackages");
+                        const addPage = document.getElementById("addPackagePage");
+                        const savedPage = document.getElementById("savedPackagesPage");
+                        const saveBtn = document.getElementById("savePackage");
+                        const packagesList = document.getElementById("packagesList");
+                        const exceptionsGrid = document.getElementById("exceptionsGrid");
+                        const fromSize = document.getElementById("fromSize");
+                        const toSize = document.getElementById("toSize");
+                        const numericToggle = document.getElementById("numericToggle");
+                        const alphaToggle = document.getElementById("alphaToggle");
 
-                        fromSize.value = "XXS";
-                        toSize.value = "5XL";
-                        generateExceptions();
-                    });
+                        let selectedExceptions = [];
+                        let sizeType = "numeric"; // default
 
-                    // Generate exceptions dynamically
-                    function generateExceptions() {
-                        exceptionsGrid.innerHTML = "";
-                        selectedExceptions = [];
+                        const alphaSizes = ["XXS", "XS", "S", "M", "L", "XL", "XXL", "3XL", "4XL", "5XL"];
 
-                        let from = fromSize.value;
-                        let to = toSize.value;
+                        // Switch between pages
+                        btnAdd.addEventListener("click", () => {
+                            addPage.style.display = "block";
+                            savedPage.style.display = "none";
+                        });
 
-                        if (sizeType === "numeric") {
-                            from = parseInt(from);
-                            to = parseInt(to);
-                            if (isNaN(from) || isNaN(to)) return;
-                            for (let i = from; i <= to; i++) {
-                                createChip(i.toString());
-                            }
-                        } else {
-                            const start = alphaSizes.indexOf(from.toUpperCase());
-                            const end = alphaSizes.indexOf(to.toUpperCase());
-                            if (start !== -1 && end !== -1 && start <= end) {
-                                for (let i = start; i <= end; i++) {
-                                    createChip(alphaSizes[i]);
+                        btnSaved.addEventListener("click", () => {
+                            addPage.style.display = "none";
+                            savedPage.style.display = "block";
+                            loadPackages();
+                        });
+
+                        // Toggle size type
+                        numericToggle.addEventListener("click", () => {
+                            sizeType = "numeric";
+                            numericToggle.classList.add("active");
+                            alphaToggle.classList.remove("active");
+
+                            fromSize.type = "number";
+                            toSize.type = "number";
+                            fromSize.value = 35;
+                            toSize.value = 45;
+                            generateExceptions();
+                        });
+
+                        alphaToggle.addEventListener("click", () => {
+                            sizeType = "alpha";
+                            alphaToggle.classList.add("active");
+                            numericToggle.classList.remove("active");
+
+                            // Replace inputs with dropdowns
+                            fromSize.type = "text";
+                            toSize.type = "text";
+
+                            fromSize.value = "XXS";
+                            toSize.value = "5XL";
+                            generateExceptions();
+                        });
+
+                        // Generate exceptions dynamically
+                        function generateExceptions() {
+                            exceptionsGrid.innerHTML = "";
+                            selectedExceptions = [];
+
+                            let from = fromSize.value;
+                            let to = toSize.value;
+
+                            if (sizeType === "numeric") {
+                                from = parseInt(from);
+                                to = parseInt(to);
+                                if (isNaN(from) || isNaN(to)) return;
+                                for (let i = from; i <= to; i++) {
+                                    createChip(i.toString());
+                                }
+                            } else {
+                                const start = alphaSizes.indexOf(from.toUpperCase());
+                                const end = alphaSizes.indexOf(to.toUpperCase());
+                                if (start !== -1 && end !== -1 && start <= end) {
+                                    for (let i = start; i <= end; i++) {
+                                        createChip(alphaSizes[i]);
+                                    }
                                 }
                             }
                         }
-                    }
 
-                    // Create clickable exception chip
-                    function createChip(size) {
-                        const chip = document.createElement("div");
-                        chip.classList.add("exception-chip");
-                        chip.textContent = size;
-                        chip.addEventListener("click", () => {
-                            chip.classList.toggle("selected");
-                            if (chip.classList.contains("selected")) {
-                                selectedExceptions.push(size);
-                            } else {
-                                selectedExceptions = selectedExceptions.filter(s => s !== size);
-                            }
-                        });
-                        exceptionsGrid.appendChild(chip);
-                    }
-
-                    fromSize.addEventListener("input", generateExceptions);
-                    toSize.addEventListener("input", generateExceptions);
-                    generateExceptions();
-
-                    // Save package to localStorage
-                    saveBtn.addEventListener("click", () => {
-                        const name = document.getElementById("packageName").value.trim();
-                        const from = fromSize.value;
-                        const to = toSize.value;
-                        const quantity = document.getElementById("defaultQuantity").value;
-
-                        if (!name) {
-                            alert("Please enter a package name!");
-                            return;
-                        }
-
-                        const packageData = {
-                            name,
-                            from,
-                            to,
-                            quantity,
-                            exceptions: selectedExceptions,
-                            date: new Date().toLocaleString()
-                        };
-
-                        let packages = JSON.parse(localStorage.getItem("sizePackages")) || [];
-                        packages.push(packageData);
-                        localStorage.setItem("sizePackages", JSON.stringify(packages));
-
-                        alert("Package saved!");
-                        document.getElementById("packageName").value = "";
-                    });
-
-                    // Load saved packages
-                    function loadPackages() {
-                        packagesList.innerHTML = "";
-                        let packages = JSON.parse(localStorage.getItem("sizePackages")) || [];
-                        if (packages.length === 0) {
-                            packagesList.innerHTML = "<li>No saved packages yet</li>";
-                            return;
-                        }
-                        packages.forEach(pkg => {
-                            const li = document.createElement("li");
-                            const excluded = pkg.exceptions && pkg.exceptions.length > 0 ? pkg.exceptions.join(", ") : "None";
-                            li.textContent = `${pkg.name} → Sizes ${pkg.from}-${pkg.to} | Qty: ${pkg.quantity} | Excluded: ${excluded}`;
-                            packagesList.appendChild(li);
-                        });
-                    }
-                });
-            </script>
-
-
-
-
-
-            <!-- Images Form -->
-            <div class="form-container animatedtoup">
-                <div class="form-header">
-                    <h4 class="form-title"><i class="bi bi-images"></i> Images</h4>
-                    <div class="form-actions">
-                        <button class="btn btn-outline">
-                            <i class="bi bi-gear"></i> Set as Default
-                        </button>
-                    </div>
-                </div>
-
-                <div id="dropzonesContainer">
-                    <!-- Drop zones will be added dynamically -->
-                </div>
-
-                <button id="addDropzoneBtn" class="btn btn-outline">+ Add Collection Zone</button>
-                <!-- Modal for color selection from image -->
-                <div id="colorPickerModal" class="modal">
-                    <div class="modal-content">
-                        <h3>Select Color from Image</h3>
-                        <p>Drag the circle to choose a color from the image</p>
-
-                        <div class="circle-size-control">
-                            <label>Circle Size:</label>
-                            <input type="range" id="circleSize" min="20" max="100" value="50">
-                            <span id="circleSizeValue">50px</span>
-                        </div>
-
-                        <div class="crop-container">
-                            <img id="colorSourceImage" src="" alt="Source for color selection">
-                            <div class="crop-circle" id="colorPicker"></div>
-                        </div>
-
-                        <div id="selectedColorInfo"
-                            style="margin: 15px 0; padding: 10px; background: #f8f9fa; border-radius: 6px; display: none;">
-                            <p>Selected Color: <span id="selectedColorHex"></span></p>
-                            <div id="selectedColorPreview"
-                                style="width: 30px; height: 30px; border: 1px solid #ddd; border-radius: 4px; display: inline-block; vertical-align: middle; margin-left: 10px;">
-                            </div>
-                        </div>
-
-                        <div style="display: flex; justify-content: space-between; margin-top: 20px;">
-                            <button id="cancelColorPick" class="btn btn-outline">Cancel</button>
-                            <button id="confirmColorPick" class="btn btn-primary">Select Color</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- <script>
-                document.addEventListener("DOMContentLoaded", () => {
-                    // Initialize sample data if not exists
-                    if (!localStorage.getItem("sizePackages")) {
-                        const sampleData = [
-                            {
-                                "name": "men shoes",
-                                "from": "40",
-                                "to": "45",
-                                "quantity": "10",
-                                "exceptions": [],
-                                "date": "07/09/2025, 14:02:10"
-                            },
-                            {
-                                "name": "me shose 1",
-                                "from": "35",
-                                "to": "45",
-                                "quantity": "10",
-                                "exceptions": [],
-                                "date": "07/09/2025, 15:31:46"
-                            },
-                            {
-                                "name": "men shose 2",
-                                "from": "40",
-                                "to": "45",
-                                "quantity": "20",
-                                "exceptions": [],
-                                "date": "07/09/2025, 15:32:00"
-                            }
-                        ];
-                        localStorage.setItem("sizePackages", JSON.stringify(sampleData));
-                    }
-
-                    const dropzonesContainer = document.getElementById("dropzonesContainer");
-                    const addDropzoneBtn = document.getElementById("addDropzoneBtn");
-                    const colorPickerModal = document.getElementById("colorPickerModal");
-                    const colorSourceImage = document.getElementById("colorSourceImage");
-                    const colorPicker = document.getElementById("colorPicker");
-                    const cancelColorPick = document.getElementById("cancelColorPick");
-                    const confirmColorPick = document.getElementById("confirmColorPick");
-                    const circleSize = document.getElementById("circleSize");
-                    const circleSizeValue = document.getElementById("circleSizeValue");
-                    const selectedColorInfo = document.getElementById("selectedColorInfo");
-                    const selectedColorHex = document.getElementById("selectedColorHex");
-                    const selectedColorPreview = document.getElementById("selectedColorPreview");
-
-                    let dropzoneCount = 0;
-                    let currentColorPickerContext = null;
-                    let isDragging = false;
-                    let selectedColor = null;
-
-                    // Get size packages from local DB
-                    function getSizePackages() {
-                        return JSON.parse(localStorage.getItem("sizePackages")) || [];
-                    }
-
-                    function createDropzone() {
-                        dropzoneCount++;
-                        const dz = document.createElement("div");
-                        dz.classList.add("dropzone");
-                        dz.dataset.index = dropzoneCount;
-
-                        const packages = getSizePackages();
-                        const packageOptions = packages.map(p =>
-                            `<option value="${p.name}">${p.name} (${p.from}-${p.to})</option>`
-                        ).join("");
-
-                        dz.innerHTML = `
-                                <h5>Collection Zone ${dropzoneCount}</h5>
-                                <p>Drag & drop images or paste URLs here (max 10)</p>
-                                <div><i class="bi bi-cloud-arrow-up"></i></div>
-                                <div class="image-list"></div>
-                                
-                                <div class="color-size-controls">
-                                    <div class="color-section">
-                                        <label>Color Selection</label>
-                                        <div class="toggle-buttons">
-                                            <button type="button" class="btn btn-sm btn-outline toggle-color-mode active" data-mode="picker">
-                                                <i class="bi bi-eyedropper"></i> Color Picker
-                                            </button>
-                                            <button type="button" class="btn btn-sm btn-outline toggle-color-mode" data-mode="image">
-                                                <i class="bi bi-image"></i> From Image
-                                            </button>
-                                        </div>
-                                        
-                                        <div class="color-picker-container">
-                                            <div class="elegant-color-input">
-                                                <div class="color-display" style="background-color: #4e73df"></div>
-                                                <input type="text" class="form-input form-control " placeholder="Color Name" value="Blue">
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="color-image-container" style="display:none;">
-                                            <p>Select an image to use as color source:</p>
-                                            <div class="image-swatches"></div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="size-section">
-                                        <label>Size Selection</label>
-                                        <div class="package-selector">
-                                            <select class="form-select package-selector">
-                                                <option value="">Select Package</option>
-                                                ${packageOptions}
-                                            </select>
-                                            <div class="size-preview"></div>
-                                        </div>
-                                        
-                                        <div class="size-creator">
-                                            <p>Create new size range:</p>
-                                            <div class="size-inputs">
-                                                <input type="text" class="form-input form-control  from-size" placeholder="From">
-                                                <input type="text" class="form-input form-control  to-size" placeholder="To">
-                                            </div>
-                                            <button class="btn btn-sm btn-primary save-size">Save Size Range</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            `;
-
-                        const imageList = dz.querySelector(".image-list");
-                        const swatchContainer = dz.querySelector(".image-swatches");
-                        const pickContainer = dz.querySelector(".color-picker-container");
-                        const imageContainer = dz.querySelector(".color-image-container");
-                        const colorDisplay = dz.querySelector(".color-display");
-                        const colorName = dz.querySelector(".color-name");
-                        const packageSelector = dz.querySelector(".package-selector");
-                        const sizePreview = dz.querySelector(".size-preview");
-                        const sizeCreator = dz.querySelector(".size-creator");
-                        const saveSizeBtn = dz.querySelector(".save-size");
-
-                        // Color display click handler - opens the color picker modal
-                        colorDisplay.addEventListener("click", function () {
-                            // In a real implementation, this would open a color picker
-                            // For now, we'll just show a temporary alert
-                            alert("Color picker would open here. In a real implementation, this would allow color selection.");
-                        });
-
-                        // Package selector change handler
-                        packageSelector.addEventListener("change", function () {
-                            const selectedPackage = packages.find(p => p.name === this.value);
-                            if (selectedPackage) {
-                                sizePreview.textContent = `Sizes: ${selectedPackage.from} to ${selectedPackage.to}`;
-                            } else {
-                                sizePreview.textContent = "";
-                            }
-                        });
-
-                        // Color mode toggle
-                        dz.querySelectorAll(".toggle-color-mode").forEach(btn => {
-                            btn.addEventListener("click", () => {
-                                dz.querySelectorAll(".toggle-color-mode").forEach(b => b.classList.remove("active"));
-                                btn.classList.add("active");
-
-                                if (btn.dataset.mode === "picker") {
-                                    pickContainer.style.display = "block";
-                                    imageContainer.style.display = "none";
+                        // Create clickable exception chip
+                        function createChip(size) {
+                            const chip = document.createElement("div");
+                            chip.classList.add("exception-chip");
+                            chip.textContent = size;
+                            chip.addEventListener("click", () => {
+                                chip.classList.toggle("selected");
+                                if (chip.classList.contains("selected")) {
+                                    selectedExceptions.push(size);
                                 } else {
-                                    pickContainer.style.display = "none";
-                                    imageContainer.style.display = "block";
+                                    selectedExceptions = selectedExceptions.filter(s => s !== size);
                                 }
                             });
-                        });
-
-                        // Drag and Drop for images
-                        dz.addEventListener("dragover", (e) => {
-                            e.preventDefault();
-                            dz.classList.add("dragover");
-                        });
-
-                        dz.addEventListener("dragleave", () => {
-                            dz.classList.remove("dragover");
-                        });
-
-                        dz.addEventListener("drop", (e) => {
-                            e.preventDefault();
-                            dz.classList.remove("dragover");
-
-                            const files = e.dataTransfer.files;
-                            if (files.length > 0) {
-                                [...files].forEach(file => {
-                                    if (file.type.startsWith("image/")) {
-                                        const url = URL.createObjectURL(file);
-                                        renderImage(url, imageList, swatchContainer, dz);
-                                    }
-                                });
-                            }
-
-                            const url = e.dataTransfer.getData("text/plain");
-                            if (url && (url.startsWith("http://") || url.startsWith("https://"))) {
-                                renderImage(url, imageList, swatchContainer, dz);
-                            }
-                        });
-
-                        // Allow pasting image URLs
-                        dz.addEventListener("paste", (e) => {
-                            const text = e.clipboardData.getData("text");
-                            if (text && (text.startsWith("http://") || text.startsWith("https://"))) {
-                                renderImage(text, imageList, swatchContainer, dz);
-                            }
-                        });
-
-                        dropzonesContainer.appendChild(dz);
-                    }
-
-                    function renderImage(src, container, swatchContainer, dropzone) {
-                        if (container.querySelectorAll(".image-card-upload").length >= 10) {
-                            alert("Maximum 10 images per Collection Zone");
-                            return;
+                            exceptionsGrid.appendChild(chip);
                         }
 
-                        const card = document.createElement("div");
-                        card.classList.add("image-card-upload");
-                        card.innerHTML = `
-                                <img src="${src}" onerror="this.src='https://via.placeholder.com/120?text=Invalid+Image'">
-                                <div class="main-label">Set Main</div>
-                            `;
+                        fromSize.addEventListener("input", generateExceptions);
+                        toSize.addEventListener("input", generateExceptions);
+                        generateExceptions();
 
-                        // Allow selecting image as swatch
-                        const swatch = document.createElement("div");
-                        swatch.classList.add("swatch-circle");
-                        swatch.style.backgroundImage = `url(${src})`;
-                        swatch.title = "Click to select color from this image";
+                        // Save package to localStorage
+                        saveBtn.addEventListener("click", () => {
+                            const name = document.getElementById("packageName").value.trim();
+                            const from = fromSize.value;
+                            const to = toSize.value;
+                            const quantity = document.getElementById("defaultQuantity").value;
 
-                        swatch.addEventListener("click", () => {
-                            // Set up modal for color selection
-                            colorSourceImage.src = src;
-                            currentColorPickerContext = {
-                                dropzone: dropzone,
-                                swatch: swatch
+                            if (!name) {
+                                alert("Please enter a package name!");
+                                return;
+                            }
+
+                            const packageData = {
+                                name,
+                                from,
+                                to,
+                                quantity,
+                                exceptions: selectedExceptions,
+                                date: new Date().toLocaleString()
                             };
 
-                            // Reset picker position and size
-                            colorPicker.style.left = "50%";
-                            colorPicker.style.top = "50%";
-                            colorPicker.style.transform = "translate(-50%, -50%)";
-                            colorPicker.style.width = "50px";
-                            colorPicker.style.height = "50px";
-                            circleSize.value = 50;
-                            circleSizeValue.textContent = "50px";
+                            let packages = JSON.parse(localStorage.getItem("sizePackages")) || [];
+                            packages.push(packageData);
+                            localStorage.setItem("sizePackages", JSON.stringify(packages));
 
-                            // Reset color info
-                            selectedColorInfo.style.display = "none";
-                            selectedColor = null;
-
-                            // Show modal
-                            colorPickerModal.style.display = "flex";
-
-                            // Select this swatch visually
-                            swatchContainer.querySelectorAll(".swatch-circle").forEach(s => s.classList.remove("selected"));
-                            swatch.classList.add("selected");
+                            alert("Package saved!");
+                            document.getElementById("packageName").value = "";
                         });
 
-                        swatchContainer.appendChild(swatch);
-
-                        // Main image selector
-                        const label = card.querySelector(".main-label");
-                        label.addEventListener("click", () => {
-                            const existing = container.querySelectorAll(".main-label.selected");
-                            if (existing.length < 2 || label.classList.contains("selected")) {
-                                label.classList.toggle("selected");
-                                label.textContent = label.classList.contains("selected")
-                                    ? `Main ${existing.length + 1}`
-                                    : "Set Main";
-                            } else {
-                                alert("You can only select up to 2 main images!");
+                        // Load saved packages
+                        function loadPackages() {
+                            packagesList.innerHTML = "";
+                            let packages = JSON.parse(localStorage.getItem("sizePackages")) || [];
+                            if (packages.length === 0) {
+                                packagesList.innerHTML = "<li>No saved packages yet</li>";
+                                return;
                             }
-                        });
-
-                        container.appendChild(card);
-                    }
-
-                    // Circle size control
-                    circleSize.addEventListener("input", function () {
-                        const size = this.value + "px";
-                        colorPicker.style.width = size;
-                        colorPicker.style.height = size;
-                        circleSizeValue.textContent = size;
-                    });
-
-                    // Color picker modal functionality
-                    colorPicker.addEventListener("mousedown", function (e) {
-                        isDragging = true;
-                        updatePickerPosition(e);
-                        sampleColor(e);
-                    });
-
-                    document.addEventListener("mousemove", function (e) {
-                        if (isDragging) {
-                            updatePickerPosition(e);
-                            sampleColor(e);
+                            packages.forEach(pkg => {
+                                const li = document.createElement("li");
+                                const excluded = pkg.exceptions && pkg.exceptions.length > 0 ? pkg.exceptions.join(", ") : "None";
+                                li.textContent = `${pkg.name} → Sizes ${pkg.from}-${pkg.to} | Qty: ${pkg.quantity} | Excluded: ${excluded}`;
+                                packagesList.appendChild(li);
+                            });
                         }
                     });
+                </script>
+                <!-- Images Form -->
+                <div class="form-container animatedtoup">
+                    <div class="form-header">
+                        <h4 class="form-title"><i class="bi bi-images"></i> Images</h4>
+                        <div class="form-actions">
+                            <button class="btn btn-outline">
+                                <i class="bi bi-gear"></i> Set as Default
+                            </button>
+                        </div>
+                    </div>
 
-                    document.addEventListener("mouseup", function () {
-                        isDragging = false;
-                    });
+                    <div id="dropzonesContainer">
+                        <!-- Drop zones will be added dynamically -->
+                    </div>
 
-                    function updatePickerPosition(e) {
-                        if (!isDragging) return;
+                    <button id="addDropzoneBtn" class="btn btn-outline">+ Add Collection Zone</button>
+                    <!-- Modal for color selection from image -->
+                    <div id="colorPickerModal" class="modal">
+                        <div class="modal-content">
+                            <h3>Select Color from Image</h3>
+                            <p>Drag the circle to choose a color from the image</p>
 
-                        const container = colorPicker.parentElement;
-                        const rect = container.getBoundingClientRect();
+                            <div class="circle-size-control">
+                                <label>Circle Size:</label>
+                                <input type="range" id="circleSize" min="20" max="100" value="50">
+                                <span id="circleSizeValue">50px</span>
+                            </div>
 
-                        let x = e.clientX - rect.left;
-                        let y = e.clientY - rect.top;
+                            <div class="crop-container">
+                                <img id="colorSourceImage" src="" alt="Source for color selection">
+                                <div class="crop-circle" id="colorPicker"></div>
+                            </div>
 
-                        // Keep within bounds
-                        const circleSize = parseInt(getComputedStyle(colorPicker).width) / 2;
-                        x = Math.max(circleSize, Math.min(rect.width - circleSize, x));
-                        y = Math.max(circleSize, Math.min(rect.height - circleSize, y));
+                            <div id="selectedColorInfo"
+                                style="margin: 15px 0; padding: 10px; background: #f8f9fa; border-radius: 6px; display: none;">
+                                <p>Selected Color: <span id="selectedColorHex"></span></p>
+                                <div id="selectedColorPreview"
+                                    style="width: 30px; height: 30px; border: 1px solid #ddd; border-radius: 4px; display: inline-block; vertical-align: middle; margin-left: 10px;">
+                                </div>
+                            </div>
 
-                        colorPicker.style.left = x + "px";
-                        colorPicker.style.top = y + "px";
-                        colorPicker.style.transform = "translate(-50%, -50%)";
-                    }
-
-                    function sampleColor(e) {
-                        // In a real implementation, this would sample the color from the image
-                        // at the current cursor position. For this example, we'll generate a random color.
-                        const r = Math.floor(Math.random() * 255);
-                        const g = Math.floor(Math.random() * 255);
-                        const b = Math.floor(Math.random() * 255);
-                        selectedColor = `rgb(${r}, ${g}, ${b})`;
-
-                        // Update the display
-                        selectedColorInfo.style.display = "block";
-                        selectedColorHex.textContent = selectedColor;
-                        selectedColorPreview.style.backgroundColor = selectedColor;
-                    }
-
-                    confirmColorPick.addEventListener("click", function () {
-                        if (currentColorPickerContext && selectedColor) {
-                            const colorDisplay = currentColorPickerContext.dropzone.querySelector(".color-display");
-                            const colorNameInput = currentColorPickerContext.dropzone.querySelector(".color-name");
-
-                            colorDisplay.style.backgroundColor = selectedColor;
-                            colorNameInput.value = "Selected Color";
-
-                            // Close modal
-                            colorPickerModal.style.display = "none";
+                            <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+                                <button id="cancelColorPick" class="btn btn-outline">Cancel</button>
+                                <button id="confirmColorPick" class="btn btn-primary">Select Color</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                        // Initialize sample data if not exists
+                        if (!localStorage.getItem("sizePackages")) {
+                            const sampleData = [
+                                {
+                                    "name": "men shoes",
+                                    "from": "40",
+                                    "to": "45",
+                                    "quantity": "10",
+                                    "exceptions": ["39", "46"],
+                                    "date": "07/09/2025, 14:02:10"
+                                },
+                                {
+                                    "name": "me shose 1",
+                                    "from": "35",
+                                    "to": "45",
+                                    "quantity": "10",
+                                    "exceptions": ["34", "47"],
+                                    "date": "07/09/2025, 15:31:46"
+                                },
+                                {
+                                    "name": "men shose 2",
+                                    "from": "40",
+                                    "to": "45",
+                                    "quantity": "20",
+                                    "exceptions": ["38"],
+                                    "date": "07/09/2025, 15:32:00"
+                                }
+                            ];
+                            localStorage.setItem("sizePackages", JSON.stringify(sampleData));
                         }
-                    });
 
-                    cancelColorPick.addEventListener("click", function () {
-                        colorPickerModal.style.display = "none";
-                    });
+                        const dropzonesContainer = document.getElementById("dropzonesContainer");
+                        const addDropzoneBtn = document.getElementById("addDropzoneBtn");
+                        const colorPickerModal = document.getElementById("colorPickerModal");
+                        const colorSourceImage = document.getElementById("colorSourceImage");
+                        const colorPicker = document.getElementById("colorPicker");
+                        const cancelColorPick = document.getElementById("cancelColorPick");
+                        const confirmColorPick = document.getElementById("confirmColorPick");
+                        const circleSize = document.getElementById("circleSize");
+                        const circleSizeValue = document.getElementById("circleSizeValue");
+                        const selectedColorInfo = document.getElementById("selectedColorInfo");
+                        const selectedColorHex = document.getElementById("selectedColorHex");
+                        const selectedColorPreview = document.getElementById("selectedColorPreview");
+                        const sizeSection = document.querySelector('.size-section');
+                        const toggleButtons = document.querySelectorAll('.size-toggle-btn');
+                        const packageSelector = document.querySelector('.package-selector');
+                        const sizeCreator = document.querySelector('.size-creator');
 
-                    // Add initial dropzone
-                    createDropzone();
+                        let dropzoneCount = 0;
+                        let currentColorPickerContext = null;
+                        let isDragging = false;
+                        let selectedColor = null;
+                        let currentExceptions = [];
 
-                    // Add more dropzones
-                    addDropzoneBtn.addEventListener("click", () => createDropzone());
-                });
-            </script> -->
+                        // Get size packages from local DB
+                        function getSizePackages() {
+                            return JSON.parse(localStorage.getItem("sizePackages")) || [];
+                        }
 
-            <!-- images form 2 -->
+                        function createDropzone() {
+                            dropzoneCount++;
+                            const dz = document.createElement("div");
+                            dz.classList.add("dropzone");
+                            dz.dataset.index = dropzoneCount;
 
-            <script>
-                document.addEventListener("DOMContentLoaded", () => {
-                    // Initialize sample data if not exists
-                    if (!localStorage.getItem("sizePackages")) {
-                        const sampleData = [
-                            {
-                                "name": "men shoes",
-                                "from": "40",
-                                "to": "45",
-                                "quantity": "10",
-                                "exceptions": ["39", "46"],
-                                "date": "07/09/2025, 14:02:10"
-                            },
-                            {
-                                "name": "me shose 1",
-                                "from": "35",
-                                "to": "45",
-                                "quantity": "10",
-                                "exceptions": ["34", "47"],
-                                "date": "07/09/2025, 15:31:46"
-                            },
-                            {
-                                "name": "men shose 2",
-                                "from": "40",
-                                "to": "45",
-                                "quantity": "20",
-                                "exceptions": ["38"],
-                                "date": "07/09/2025, 15:32:00"
-                            }
-                        ];
-                        localStorage.setItem("sizePackages", JSON.stringify(sampleData));
-                    }
+                            const packages = getSizePackages();
+                            const packageOptions = packages.map(p =>
+                                `<option value="${p.name}">${p.name} (${p.from}-${p.to})</option>`
+                            ).join("");
 
-                    const dropzonesContainer = document.getElementById("dropzonesContainer");
-                    const addDropzoneBtn = document.getElementById("addDropzoneBtn");
-                    const colorPickerModal = document.getElementById("colorPickerModal");
-                    const colorSourceImage = document.getElementById("colorSourceImage");
-                    const colorPicker = document.getElementById("colorPicker");
-                    const cancelColorPick = document.getElementById("cancelColorPick");
-                    const confirmColorPick = document.getElementById("confirmColorPick");
-                    const circleSize = document.getElementById("circleSize");
-                    const circleSizeValue = document.getElementById("circleSizeValue");
-                    const selectedColorInfo = document.getElementById("selectedColorInfo");
-                    const selectedColorHex = document.getElementById("selectedColorHex");
-                    const selectedColorPreview = document.getElementById("selectedColorPreview");
-                    const sizeSection = document.querySelector('.size-section');
-                    const toggleButtons = document.querySelectorAll('.size-toggle-btn');
-                    const packageSelector = document.querySelector('.package-selector');
-                    const sizeCreator = document.querySelector('.size-creator');
-
-                    let dropzoneCount = 0;
-                    let currentColorPickerContext = null;
-                    let isDragging = false;
-                    let selectedColor = null;
-                    let currentExceptions = [];
-
-                    // Get size packages from local DB
-                    function getSizePackages() {
-                        return JSON.parse(localStorage.getItem("sizePackages")) || [];
-                    }
-
-                    function createDropzone() {
-                        dropzoneCount++;
-                        const dz = document.createElement("div");
-                        dz.classList.add("dropzone");
-                        dz.dataset.index = dropzoneCount;
-
-                        const packages = getSizePackages();
-                        const packageOptions = packages.map(p =>
-                            `<option value="${p.name}">${p.name} (${p.from}-${p.to})</option>`
-                        ).join("");
-
-                        dz.innerHTML = `
+                            dz.innerHTML = `
                                 <h5>Collection Zone ${dropzoneCount}</h5>
                                 <p>Drag & drop images or paste URLs here (max 10)</p>
                                 <div><i class="bi bi-cloud-arrow-up"></i></div>
@@ -1589,382 +1204,382 @@
                                 </div>
                             `;
 
-                        const imageList = dz.querySelector(".image-list");
-                        const swatchContainer = dz.querySelector(".image-swatches");
-                        const pickContainer = dz.querySelector(".color-picker-container");
-                        const imageContainer = dz.querySelector(".color-image-container");
-                        const colorDisplay = dz.querySelector(".color-display");
-                        const colorName = dz.querySelector(".color-name");
-                        const packageSelect = dz.querySelector(".package-select");
-                        const sizePreview = dz.querySelector(".size-preview");
-                        const sizeCreator = dz.querySelector(".size-creator");
-                        const createSizeBtn = dz.querySelector(".create-size-btn");
-                        const saveSizeBtn = dz.querySelector(".save-size");
-                        const fromSize = dz.querySelector(".from-size");
-                        const toSize = dz.querySelector(".to-size");
-                        const exceptionValue = dz.querySelector(".exception-value");
-                        const addExceptionBtn = dz.querySelector(".add-exception");
-                        const exceptionsListCreator = dz.querySelector(".exceptions-list-creator");
+                            const imageList = dz.querySelector(".image-list");
+                            const swatchContainer = dz.querySelector(".image-swatches");
+                            const pickContainer = dz.querySelector(".color-picker-container");
+                            const imageContainer = dz.querySelector(".color-image-container");
+                            const colorDisplay = dz.querySelector(".color-display");
+                            const colorName = dz.querySelector(".color-name");
+                            const packageSelect = dz.querySelector(".package-select");
+                            const sizePreview = dz.querySelector(".size-preview");
+                            const sizeCreator = dz.querySelector(".size-creator");
+                            const createSizeBtn = dz.querySelector(".create-size-btn");
+                            const saveSizeBtn = dz.querySelector(".save-size");
+                            const fromSize = dz.querySelector(".from-size");
+                            const toSize = dz.querySelector(".to-size");
+                            const exceptionValue = dz.querySelector(".exception-value");
+                            const addExceptionBtn = dz.querySelector(".add-exception");
+                            const exceptionsListCreator = dz.querySelector(".exceptions-list-creator");
 
-                        // Reset exceptions for this dropzone
-                        currentExceptions = [];
+                            // Reset exceptions for this dropzone
+                            currentExceptions = [];
 
-                        // Color display click handler - opens the color picker modal
-                        colorDisplay.addEventListener("click", function () {
-                            // In a real implementation, this would open a color picker
-                            alert("Color picker would open here. In a real implementation, this would allow color selection.");
-                        });
+                            // Color display click handler - opens the color picker modal
+                            colorDisplay.addEventListener("click", function () {
+                                // In a real implementation, this would open a color picker
+                                alert("Color picker would open here. In a real implementation, this would allow color selection.");
+                            });
 
-                        // Package selector change handler
-                        packageSelect.addEventListener("change", function () {
-                            const selectedPackage = packages.find(p => p.name === this.value);
-                            if (selectedPackage) {
-                                let exceptionsHtml = "";
-                                if (selectedPackage.exceptions && selectedPackage.exceptions.length > 0) {
-                                    exceptionsHtml = `<div class="exceptions-list">
+                            // Package selector change handler
+                            packageSelect.addEventListener("change", function () {
+                                const selectedPackage = packages.find(p => p.name === this.value);
+                                if (selectedPackage) {
+                                    let exceptionsHtml = "";
+                                    if (selectedPackage.exceptions && selectedPackage.exceptions.length > 0) {
+                                        exceptionsHtml = `<div class="exceptions-list">
                                             <strong>Exceptions:</strong> 
                                             ${selectedPackage.exceptions.map(e => `<span class="exception-chip selected">${e}</span>`).join("")}
                                         </div>`;
-                                }
+                                    }
 
-                                sizePreview.innerHTML = `
+                                    sizePreview.innerHTML = `
                                         <div class="size-range">Sizes: ${selectedPackage.from} to ${selectedPackage.to}</div>
                                         <div>Quantity: ${selectedPackage.quantity}</div>
                                         ${exceptionsHtml}
                                     `;
-                            } else {
-                                sizePreview.innerHTML = "";
-                            }
-                        });
+                                } else {
+                                    sizePreview.innerHTML = "";
+                                }
+                            });
 
-                        toggleButtons.forEach(button => {
+                            toggleButtons.forEach(button => {
 
-                            button.addEventListener('click', () => {
+                                button.addEventListener('click', () => {
 
-                                const targetDivClass = button.getAttribute('data-target');
+                                    const targetDivClass = button.getAttribute('data-target');
 
-                                const targetDiv = document.querySelector(`.${targetDivClass}`);
+                                    const targetDiv = document.querySelector(`.${targetDivClass}`);
 
-                                const otherDiv = targetDiv === packageSelector ? sizeCreator : packageSelector;
+                                    const otherDiv = targetDiv === packageSelector ? sizeCreator : packageSelector;
 
-                                targetDiv.classList.remove('none');
-                                otherDiv.classList.add('none');
-                                setTimeout(() => {
+                                    targetDiv.classList.remove('none');
+                                    otherDiv.classList.add('none');
+                                    setTimeout(() => {
 
-                                    // Remove the 'visible' class from all other divs
+                                        // Remove the 'visible' class from all other divs
 
-                                    [packageSelector, sizeCreator].forEach(div => {
+                                        [packageSelector, sizeCreator].forEach(div => {
 
-                                        if (div !== targetDiv) {
+                                            if (div !== targetDiv) {
 
-                                            div.classList.remove('visible');
+                                                div.classList.remove('visible');
 
-                                        }
+                                            }
 
-                                    });
-                                    // Add the 'visible' class to the target div to trigger opacity and transform transition
+                                        });
+                                        // Add the 'visible' class to the target div to trigger opacity and transform transition
 
-                                    targetDiv.classList.add('visible');
+                                        targetDiv.classList.add('visible');
 
-                                }, 10);
+                                    }, 10);
+
+                                });
 
                             });
 
-                        });
+                            // Add exception
+                            addExceptionBtn.addEventListener("click", function () {
+                                const value = exceptionValue.value.trim();
+                                if (value && !currentExceptions.includes(value)) {
+                                    currentExceptions.push(value);
+                                    updateExceptionsList();
+                                    exceptionValue.value = "";
+                                }
+                            });
 
-                        // Add exception
-                        addExceptionBtn.addEventListener("click", function () {
-                            const value = exceptionValue.value.trim();
-                            if (value && !currentExceptions.includes(value)) {
-                                currentExceptions.push(value);
-                                updateExceptionsList();
-                                exceptionValue.value = "";
-                            }
-                        });
-
-                        function updateExceptionsList() {
-                            exceptionsListCreator.innerHTML = currentExceptions.map(exp => `
+                            function updateExceptionsList() {
+                                exceptionsListCreator.innerHTML = currentExceptions.map(exp => `
                                     <div class="exception-tag">
                                         ${exp}
                                         <span class="remove" data-value="${exp}">&times;</span>
                                     </div>
                                 `).join("");
 
-                            // Add event listeners to remove buttons
-                            exceptionsListCreator.querySelectorAll(".remove").forEach(btn => {
-                                btn.addEventListener("click", function () {
-                                    const value = this.getAttribute("data-value");
-                                    currentExceptions = currentExceptions.filter(e => e !== value);
-                                    updateExceptionsList();
+                                // Add event listeners to remove buttons
+                                exceptionsListCreator.querySelectorAll(".remove").forEach(btn => {
+                                    btn.addEventListener("click", function () {
+                                        const value = this.getAttribute("data-value");
+                                        currentExceptions = currentExceptions.filter(e => e !== value);
+                                        updateExceptionsList();
+                                    });
+                                });
+                            }
+
+                            // Save size range
+                            saveSizeBtn.addEventListener("click", function () {
+                                const fromVal = fromSize.value.trim();
+                                const toVal = toSize.value.trim();
+
+                                if (!fromVal || !toVal) {
+                                    alert("Please enter both 'From' and 'To' values");
+                                    return;
+                                }
+
+                                const packageName = prompt("Enter a name for this size package:");
+                                if (!packageName) return;
+
+                                const newPackage = {
+                                    name: packageName,
+                                    from: fromVal,
+                                    to: toVal,
+                                    quantity: "10", // Default value
+                                    exceptions: currentExceptions,
+                                    date: new Date().toLocaleString()
+                                };
+
+                                // Save to local storage
+                                const packages = getSizePackages();
+                                packages.push(newPackage);
+                                localStorage.setItem("sizePackages", JSON.stringify(packages));
+
+                                // Update select options
+                                const newOption = document.createElement("option");
+                                newOption.value = newPackage.name;
+                                newOption.textContent = `${newPackage.name} (${newPackage.from}-${newPackage.to})`;
+                                packageSelect.appendChild(newOption);
+
+                                // Select the new option
+                                packageSelect.value = newPackage.name;
+                                packageSelect.dispatchEvent(new Event("change"));
+
+                                // Reset form
+                                fromSize.value = "";
+                                toSize.value = "";
+                                currentExceptions = [];
+                                updateExceptionsList();
+                                sizeCreator.style.display = "none";
+
+                                alert("Size package saved successfully!");
+                            });
+
+                            // Color mode toggle
+                            dz.querySelectorAll(".toggle-color-mode").forEach(btn => {
+                                btn.addEventListener("click", () => {
+                                    dz.querySelectorAll(".toggle-color-mode").forEach(b => b.classList.remove("active"));
+                                    btn.classList.add("active");
+
+                                    if (btn.dataset.mode === "picker") {
+                                        pickContainer.style.display = "block";
+                                        imageContainer.style.display = "none";
+                                    } else {
+                                        pickContainer.style.display = "none";
+                                        imageContainer.style.display = "block";
+                                    }
                                 });
                             });
+
+                            // Drag and Drop for images
+                            dz.addEventListener("dragover", (e) => {
+                                e.preventDefault();
+                                dz.classList.add("dragover");
+                            });
+
+                            dz.addEventListener("dragleave", () => {
+                                dz.classList.remove("dragover");
+                            });
+
+                            dz.addEventListener("drop", (e) => {
+                                e.preventDefault();
+                                dz.classList.remove("dragover");
+
+                                const files = e.dataTransfer.files;
+                                if (files.length > 0) {
+                                    [...files].forEach(file => {
+                                        if (file.type.startsWith("image/")) {
+                                            const url = URL.createObjectURL(file);
+                                            renderImage(url, imageList, swatchContainer, dz);
+                                        }
+                                    });
+                                }
+
+                                const url = e.dataTransfer.getData("text/plain");
+                                if (url && (url.startsWith("http://") || url.startsWith("https://"))) {
+                                    renderImage(url, imageList, swatchContainer, dz);
+                                }
+                            });
+
+                            // Allow pasting image URLs
+                            dz.addEventListener("paste", (e) => {
+                                const text = e.clipboardData.getData("text");
+                                if (text && (text.startsWith("http://") || text.startsWith("https://"))) {
+                                    renderImage(text, imageList, swatchContainer, dz);
+                                }
+                            });
+
+                            dropzonesContainer.appendChild(dz);
                         }
 
-                        // Save size range
-                        saveSizeBtn.addEventListener("click", function () {
-                            const fromVal = fromSize.value.trim();
-                            const toVal = toSize.value.trim();
-
-                            if (!fromVal || !toVal) {
-                                alert("Please enter both 'From' and 'To' values");
+                        function renderImage(src, container, swatchContainer, dropzone) {
+                            if (container.querySelectorAll(".image-card-upload").length >= 10) {
+                                alert("Maximum 10 images per Collection Zone");
                                 return;
                             }
 
-                            const packageName = prompt("Enter a name for this size package:");
-                            if (!packageName) return;
-
-                            const newPackage = {
-                                name: packageName,
-                                from: fromVal,
-                                to: toVal,
-                                quantity: "10", // Default value
-                                exceptions: currentExceptions,
-                                date: new Date().toLocaleString()
-                            };
-
-                            // Save to local storage
-                            const packages = getSizePackages();
-                            packages.push(newPackage);
-                            localStorage.setItem("sizePackages", JSON.stringify(packages));
-
-                            // Update select options
-                            const newOption = document.createElement("option");
-                            newOption.value = newPackage.name;
-                            newOption.textContent = `${newPackage.name} (${newPackage.from}-${newPackage.to})`;
-                            packageSelect.appendChild(newOption);
-
-                            // Select the new option
-                            packageSelect.value = newPackage.name;
-                            packageSelect.dispatchEvent(new Event("change"));
-
-                            // Reset form
-                            fromSize.value = "";
-                            toSize.value = "";
-                            currentExceptions = [];
-                            updateExceptionsList();
-                            sizeCreator.style.display = "none";
-
-                            alert("Size package saved successfully!");
-                        });
-
-                        // Color mode toggle
-                        dz.querySelectorAll(".toggle-color-mode").forEach(btn => {
-                            btn.addEventListener("click", () => {
-                                dz.querySelectorAll(".toggle-color-mode").forEach(b => b.classList.remove("active"));
-                                btn.classList.add("active");
-
-                                if (btn.dataset.mode === "picker") {
-                                    pickContainer.style.display = "block";
-                                    imageContainer.style.display = "none";
-                                } else {
-                                    pickContainer.style.display = "none";
-                                    imageContainer.style.display = "block";
-                                }
-                            });
-                        });
-
-                        // Drag and Drop for images
-                        dz.addEventListener("dragover", (e) => {
-                            e.preventDefault();
-                            dz.classList.add("dragover");
-                        });
-
-                        dz.addEventListener("dragleave", () => {
-                            dz.classList.remove("dragover");
-                        });
-
-                        dz.addEventListener("drop", (e) => {
-                            e.preventDefault();
-                            dz.classList.remove("dragover");
-
-                            const files = e.dataTransfer.files;
-                            if (files.length > 0) {
-                                [...files].forEach(file => {
-                                    if (file.type.startsWith("image/")) {
-                                        const url = URL.createObjectURL(file);
-                                        renderImage(url, imageList, swatchContainer, dz);
-                                    }
-                                });
-                            }
-
-                            const url = e.dataTransfer.getData("text/plain");
-                            if (url && (url.startsWith("http://") || url.startsWith("https://"))) {
-                                renderImage(url, imageList, swatchContainer, dz);
-                            }
-                        });
-
-                        // Allow pasting image URLs
-                        dz.addEventListener("paste", (e) => {
-                            const text = e.clipboardData.getData("text");
-                            if (text && (text.startsWith("http://") || text.startsWith("https://"))) {
-                                renderImage(text, imageList, swatchContainer, dz);
-                            }
-                        });
-
-                        dropzonesContainer.appendChild(dz);
-                    }
-
-                    function renderImage(src, container, swatchContainer, dropzone) {
-                        if (container.querySelectorAll(".image-card-upload").length >= 10) {
-                            alert("Maximum 10 images per Collection Zone");
-                            return;
-                        }
-
-                        const card = document.createElement("div");
-                        card.classList.add("image-card-upload");
-                        card.innerHTML = `
+                            const card = document.createElement("div");
+                            card.classList.add("image-card-upload");
+                            card.innerHTML = `
                                 <img src="${src}" onerror="this.src='https://via.placeholder.com/120?text=Invalid+Image'">
                                 <div class="main-label">Set Main</div>
                             `;
 
-                        // Allow selecting image as swatch
-                        const swatch = document.createElement("div");
-                        swatch.classList.add("swatch-circle");
-                        swatch.style.backgroundImage = `url(${src})`;
-                        swatch.title = "Click to select color from this image";
+                            // Allow selecting image as swatch
+                            const swatch = document.createElement("div");
+                            swatch.classList.add("swatch-circle");
+                            swatch.style.backgroundImage = `url(${src})`;
+                            swatch.title = "Click to select color from this image";
 
-                        swatch.addEventListener("click", () => {
-                            // Set up modal for color selection
-                            colorSourceImage.src = src;
-                            currentColorPickerContext = {
-                                dropzone: dropzone,
-                                swatch: swatch
-                            };
+                            swatch.addEventListener("click", () => {
+                                // Set up modal for color selection
+                                colorSourceImage.src = src;
+                                currentColorPickerContext = {
+                                    dropzone: dropzone,
+                                    swatch: swatch
+                                };
 
-                            // Reset picker position and size
-                            colorPicker.style.left = "50%";
-                            colorPicker.style.top = "50%";
-                            colorPicker.style.transform = "translate(-50%, -50%)";
-                            colorPicker.style.width = "100px";
-                            colorPicker.style.height = "100px";
-                            circleSize.value = 100;
-                            circleSizeValue.textContent = "100px";
+                                // Reset picker position and size
+                                colorPicker.style.left = "50%";
+                                colorPicker.style.top = "50%";
+                                colorPicker.style.transform = "translate(-50%, -50%)";
+                                colorPicker.style.width = "100px";
+                                colorPicker.style.height = "100px";
+                                circleSize.value = 100;
+                                circleSizeValue.textContent = "100px";
 
-                            // Reset color info
-                            selectedColorInfo.style.display = "none";
-                            selectedColor = null;
+                                // Reset color info
+                                selectedColorInfo.style.display = "none";
+                                selectedColor = null;
 
-                            // Show modal
-                            colorPickerModal.style.display = "flex";
+                                // Show modal
+                                colorPickerModal.style.display = "flex";
 
-                            // Select this swatch visually
-                            swatchContainer.querySelectorAll(".swatch-circle").forEach(s => s.classList.remove("selected"));
-                            swatch.classList.add("selected");
+                                // Select this swatch visually
+                                swatchContainer.querySelectorAll(".swatch-circle").forEach(s => s.classList.remove("selected"));
+                                swatch.classList.add("selected");
+                            });
+
+                            swatchContainer.appendChild(swatch);
+
+                            // Main image selector
+                            const label = card.querySelector(".main-label");
+                            label.addEventListener("click", () => {
+                                const existing = container.querySelectorAll(".main-label.selected");
+                                if (existing.length < 2 || label.classList.contains("selected")) {
+                                    label.classList.toggle("selected");
+                                    label.textContent = label.classList.contains("selected")
+                                        ? `Main ${existing.length + 1}`
+                                        : "Set Main";
+                                } else {
+                                    alert("You can only select up to 2 main images!");
+                                }
+                            });
+
+                            container.appendChild(card);
+                        }
+
+                        // Circle size control
+                        circleSize.addEventListener("input", function () {
+                            const size = this.value + "px";
+                            colorPicker.style.width = size;
+                            colorPicker.style.height = size;
+                            circleSizeValue.textContent = size;
                         });
 
-                        swatchContainer.appendChild(swatch);
+                        // Color picker modal functionality
+                        colorSourceImage.addEventListener("mousedown", function (e) {
+                            isDragging = true;
+                            updatePickerPosition(e);
+                            sampleColor(e);
+                        });
 
-                        // Main image selector
-                        const label = card.querySelector(".main-label");
-                        label.addEventListener("click", () => {
-                            const existing = container.querySelectorAll(".main-label.selected");
-                            if (existing.length < 2 || label.classList.contains("selected")) {
-                                label.classList.toggle("selected");
-                                label.textContent = label.classList.contains("selected")
-                                    ? `Main ${existing.length + 1}`
-                                    : "Set Main";
-                            } else {
-                                alert("You can only select up to 2 main images!");
+                        document.addEventListener("mousemove", function (e) {
+                            if (isDragging) {
+                                updatePickerPosition(e);
+                                sampleColor(e);
                             }
                         });
 
-                        container.appendChild(card);
-                    }
+                        document.addEventListener("mouseup", function () {
+                            isDragging = false;
+                        });
 
-                    // Circle size control
-                    circleSize.addEventListener("input", function () {
-                        const size = this.value + "px";
-                        colorPicker.style.width = size;
-                        colorPicker.style.height = size;
-                        circleSizeValue.textContent = size;
-                    });
+                        function updatePickerPosition(e) {
+                            if (!isDragging) return;
 
-                    // Color picker modal functionality
-                    colorSourceImage.addEventListener("mousedown", function (e) {
-                        isDragging = true;
-                        updatePickerPosition(e);
-                        sampleColor(e);
-                    });
+                            const container = colorPicker.parentElement;
+                            const rect = container.getBoundingClientRect();
 
-                    document.addEventListener("mousemove", function (e) {
-                        if (isDragging) {
-                            updatePickerPosition(e);
-                            sampleColor(e);
+                            let x = e.clientX - rect.left;
+                            let y = e.clientY - rect.top;
+
+                            // Keep within bounds
+                            const circleSizeVal = parseInt(getComputedStyle(colorPicker).width) / 2;
+                            x = Math.max(circleSizeVal, Math.min(rect.width - circleSizeVal, x));
+                            y = Math.max(circleSizeVal, Math.min(rect.height - circleSizeVal, y));
+
+                            colorPicker.style.left = x + "px";
+                            colorPicker.style.top = y + "px";
+                            colorPicker.style.transform = "translate(-50%, -50%)";
                         }
-                    });
 
-                    document.addEventListener("mouseup", function () {
-                        isDragging = false;
-                    });
+                        function sampleColor(e) {
+                            // In a real implementation, this would sample the color from the image
+                            // at the current cursor position. For this example, we'll generate a random color.
+                            const r = Math.floor(Math.random() * 255);
+                            const g = Math.floor(Math.random() * 255);
+                            const b = Math.floor(Math.random() * 255);
+                            selectedColor = `rgb(${r}, ${g}, ${b})`;
 
-                    function updatePickerPosition(e) {
-                        if (!isDragging) return;
+                            // Update the display
+                            selectedColorInfo.style.display = "block";
+                            selectedColorHex.textContent = selectedColor;
+                            selectedColorPreview.style.backgroundColor = selectedColor;
+                        }
 
-                        const container = colorPicker.parentElement;
-                        const rect = container.getBoundingClientRect();
+                        confirmColorPick.addEventListener("click", function () {
+                            if (currentColorPickerContext && selectedColor) {
+                                const colorDisplay = currentColorPickerContext.dropzone.querySelector(".color-display");
+                                const colorNameInput = currentColorPickerContext.dropzone.querySelector(".color-name");
 
-                        let x = e.clientX - rect.left;
-                        let y = e.clientY - rect.top;
+                                colorDisplay.style.backgroundColor = selectedColor;
+                                colorNameInput.value = "Selected Color";
 
-                        // Keep within bounds
-                        const circleSizeVal = parseInt(getComputedStyle(colorPicker).width) / 2;
-                        x = Math.max(circleSizeVal, Math.min(rect.width - circleSizeVal, x));
-                        y = Math.max(circleSizeVal, Math.min(rect.height - circleSizeVal, y));
+                                // Close modal
+                                colorPickerModal.style.display = "none";
+                            }
+                        });
 
-                        colorPicker.style.left = x + "px";
-                        colorPicker.style.top = y + "px";
-                        colorPicker.style.transform = "translate(-50%, -50%)";
-                    }
-
-                    function sampleColor(e) {
-                        // In a real implementation, this would sample the color from the image
-                        // at the current cursor position. For this example, we'll generate a random color.
-                        const r = Math.floor(Math.random() * 255);
-                        const g = Math.floor(Math.random() * 255);
-                        const b = Math.floor(Math.random() * 255);
-                        selectedColor = `rgb(${r}, ${g}, ${b})`;
-
-                        // Update the display
-                        selectedColorInfo.style.display = "block";
-                        selectedColorHex.textContent = selectedColor;
-                        selectedColorPreview.style.backgroundColor = selectedColor;
-                    }
-
-                    confirmColorPick.addEventListener("click", function () {
-                        if (currentColorPickerContext && selectedColor) {
-                            const colorDisplay = currentColorPickerContext.dropzone.querySelector(".color-display");
-                            const colorNameInput = currentColorPickerContext.dropzone.querySelector(".color-name");
-
-                            colorDisplay.style.backgroundColor = selectedColor;
-                            colorNameInput.value = "Selected Color";
-
-                            // Close modal
+                        cancelColorPick.addEventListener("click", function () {
                             colorPickerModal.style.display = "none";
-                        }
+                        });
+
+                        // Add initial dropzone
+                        createDropzone();
+
+                        // Add more dropzones
+                        addDropzoneBtn.addEventListener("click", () => createDropzone());
                     });
-
-                    cancelColorPick.addEventListener("click", function () {
-                        colorPickerModal.style.display = "none";
-                    });
-
-                    // Add initial dropzone
-                    createDropzone();
-
-                    // Add more dropzones
-                    addDropzoneBtn.addEventListener("click", () => createDropzone());
-                });
-            </script>
-
-
-            <!-- Action Buttons -->
-            <div class="action-buttons">
-                <button class="btn btn-outline">
-                    <i class="bi bi-arrow-clockwise"></i> Reset
-                </button>
-                <button class="btn btn-primary">
-                    <i class="bi bi-check-circle"></i> Submit Product
-                </button>
+                </script>
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button class="btn btn-outline">
+                        <i class="bi bi-arrow-clockwise"></i> Reset
+                    </button>
+                    <button class="btn btn-primary">
+                        <i class="bi bi-check-circle"></i> Submit Product
+                    </button>
+                </div>
             </div>
+
         </div>
 
 
@@ -2213,6 +1828,255 @@
                         <p>View and manage your site configuration here</p>
                     </div>
                 </div>
+
+
+                <!-- Domain Management Section -->
+                <div class="form-container">
+                    <div class="form-header">
+                        <h4 class="form-title"><i class="bi bi-globe"></i> Domain Management</h4>
+                        <div class="form-actions">
+                            <button class="btn btn-outline">
+                                <i class="bi bi-info-circle"></i> Help
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="domain-input-container">
+                        <div class="form-group">
+                            <label class="form-label">Add a new domain to your site:</label>
+                            <div class="input-with-button">
+                                <input class="form-input" type="text" id="domainInput"
+                                    placeholder="Enter your domain (e.g., example.com)">
+                                <button class="btn btn-outline" id="checkDomainBtn">
+                                    <i class="bi bi-search"></i> Check Availability
+                                </button>
+                            </div>
+                            <div id="validationMessage" class="validation-message"></div>
+                        </div>
+
+                        <!-- Test domains for demonstration -->
+                        <div class="test-domains">
+                            <p><strong>Test with these domains:</strong></p>
+                            <button class="test-domain-btn" data-domain="example-shop.com">example-shop.com
+                                (Available)</button>
+                            <button class="test-domain-btn" data-domain="mystore-test.com">mystore-test.com
+                                (Available)</button>
+                            <button class="test-domain-btn" data-domain="existing-domain.com">existing-domain.com (Not
+                                Available)</button>
+                            <button class="test-domain-btn" data-domain="taken-website.com">taken-website.com (Not
+                                Available)</button>
+                        </div>
+
+                        <!-- Add Domain button container (hidden by default) -->
+                        <div class="add-domain-container" id="addDomainContainer">
+                            <div class="form-actions">
+                                <button class="btn btn-outline" id="addDomainBtn">
+                                    <i class="bi bi-plus-circle"></i> Add Domain
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="domain-list" id="domainList">
+                        <div class="form-group">
+                            <div class="empty-state" id="emptyState">
+                                <i class="bi bi-globe2"></i>
+                                <label class="form-label">No domains added yet. Add your first domain to get
+                                    started.</label>
+                            </div>
+                        </div>
+                        <!-- Domain items will be added here dynamically -->
+                    </div>
+
+                    <div class="form-actions">
+                        <button class="btn btn-primary" id="saveDomainsBtn">
+                            <i class="bi bi-check-circle"></i> Save Changes
+                        </button>
+                    </div>
+                </div>
+
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        // Domain management functionality
+                        const domainInput = document.getElementById('domainInput');
+                        const checkDomainBtn = document.getElementById('checkDomainBtn');
+                        const addDomainBtn = document.getElementById('addDomainBtn');
+                        const addDomainContainer = document.getElementById('addDomainContainer');
+                        const domainList = document.getElementById('domainList');
+                        const emptyState = document.getElementById('emptyState');
+                        const saveDomainsBtn = document.getElementById('saveDomainsBtn');
+                        const validationMessage = document.getElementById('validationMessage');
+                        const testDomainBtns = document.querySelectorAll('.test-domain-btn');
+
+                        // Default domain
+                        const defaultDomain = "www.matager/shop/-3hf3hf483yffbaie3.com";
+                        let domains = [defaultDomain];
+                        let currentDomain = defaultDomain;
+                        let isDomainAvailable = false;
+
+                        // Add domain function
+                        function addDomain() {
+                            const domainValue = domainInput.value.trim();
+
+                            if (!domainValue) {
+                                alert('Please enter a domain name');
+                                return;
+                            }
+
+                            // Check if domain already exists
+                            if (domains.includes(domainValue)) {
+                                alert('This domain has already been added');
+                                return;
+                            }
+
+                            // Replace the default domain with the new one
+                            if (domains.length === 1 && domains[0] === defaultDomain) {
+                                domains = [domainValue];
+                            } else {
+                                domains.push(domainValue);
+                            }
+
+                            currentDomain = domainValue;
+                            renderDomains();
+                            domainInput.value = '';
+                            addDomainContainer.style.display = 'none';
+                            validationMessage.innerHTML = '';
+                        }
+
+                        // Remove domain function
+                        function removeDomain(domain) {
+                            domains = domains.filter(d => d !== domain);
+
+                            // If no domains left, add the default one
+                            if (domains.length === 0) {
+                                domains = [defaultDomain];
+                                currentDomain = defaultDomain;
+                            }
+
+                            renderDomains();
+                        }
+
+                        // Check domain availability
+                        function checkDomainAvailability() {
+                            const domainValue = domainInput.value.trim();
+
+                            if (!domainValue) {
+                                validationMessage.innerHTML = '<span class="validation-error">Please enter a domain name</span>';
+                                addDomainContainer.style.display = 'none';
+                                return;
+                            }
+
+                            // Simple domain validation
+                            const domainRegex = /^[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]\.[a-zA-Z]{2,}$/;
+                            if (!domainRegex.test(domainValue)) {
+                                validationMessage.innerHTML = '<span class="validation-error">Please enter a valid domain name</span>';
+                                addDomainContainer.style.display = 'none';
+                                return;
+                            }
+
+                            // Show loader
+                            validationMessage.innerHTML = '<div class="loader"></div> Checking domain availability...';
+                            addDomainContainer.style.display = 'none';
+
+                            // Simulate API call with timeout
+                            setTimeout(() => {
+                                // For demo purposes, domains containing "example" or "test" are considered available
+                                // Others are considered taken
+                                if (domainValue.includes('example') || domainValue.includes('test')) {
+                                    validationMessage.innerHTML = '<i class="bi bi-check-circle validation-success"></i> <span class="validation-success">Domain is available!</span>';
+                                    addDomainContainer.style.display = 'block';
+                                    isDomainAvailable = true;
+                                } else {
+                                    validationMessage.innerHTML = '<i class="bi bi-x-circle validation-error"></i> <span class="validation-error">Domain is already in use</span>';
+                                    addDomainContainer.style.display = 'none';
+                                    isDomainAvailable = false;
+                                }
+                            }, 1500);
+                        }
+
+                        // Visit site function
+                        function visitSite(url) {
+                            window.open(url, '_blank');
+                        }
+
+                        // Render domains list
+                        function renderDomains() {
+                            if (domains.length === 0) {
+                                emptyState.style.display = 'block';
+                                domainList.innerHTML = '';
+                                domainList.appendChild(emptyState);
+                                return;
+                            }
+
+                            emptyState.style.display = 'none';
+
+                            let domainsHTML = '';
+                            domains.forEach(domain => {
+                                const isDefault = domain === defaultDomain && domains.length === 1;
+                                const status = isDefault ? 'active' : 'pending';
+
+                                domainsHTML += `
+                                            <div class="domain-item ${isDefault ? 'default-domain' : ''}">
+                                                <div class="domain-status">
+                                                    <span class="status-indicator status-${status}"></span>
+                                                    <span>${domain}</span>
+                                                </div>
+                                                <div class="domain-actions">
+                                                    <button class="btn btn-outline btn-sm" onclick="visitSite('http://${domain}')">
+                                                        <i class="bi bi-box-arrow-up-right"></i> Visit Site
+                                                    </button>
+                                                    ${!isDefault ? `
+                                                    <button class="btn btn-danger btn-sm" onclick="removeDomain('${domain}')">
+                                                        <i class="bi bi-trash"></i> Remove
+                                                    </button>
+                                                    ` : ''}
+                                                </div>
+                                            </div>
+                                        `;
+                            });
+
+                            domainList.innerHTML = domainsHTML;
+                        }
+
+                        // Event listeners
+                        checkDomainBtn.addEventListener('click', checkDomainAvailability);
+
+                        addDomainBtn.addEventListener('click', addDomain);
+
+                        domainInput.addEventListener('keypress', function (e) {
+                            if (e.key === 'Enter') {
+                                checkDomainAvailability();
+                            }
+                        });
+
+                        // Test domain buttons
+                        testDomainBtns.forEach(btn => {
+                            btn.addEventListener('click', function () {
+                                const domain = this.getAttribute('data-domain');
+                                domainInput.value = domain;
+                                checkDomainAvailability();
+                            });
+                        });
+
+                        saveDomainsBtn.addEventListener('click', function () {
+                            if (domains.length === 0) {
+                                alert('No domains to save');
+                                return;
+                            }
+
+                            // In a real application, you would send this data to a server
+                            alert(`Domains saved successfully!\n\nCurrent domain: ${currentDomain}\n\nAll domains:\n${domains.join('\n')}`);
+                        });
+
+                        // Make functions available globally for onclick events
+                        window.removeDomain = removeDomain;
+                        window.visitSite = visitSite;
+
+                        // Initialize with default domain
+                        renderDomains();
+                    });
+                </script>
 
                 <!-- Theme Selection -->
                 <div class="form-container">
@@ -2599,74 +2463,273 @@
                 </div>
 
                 <!-- Action Buttons -->
+                <!-- Stuck Carts Section -->
+                <div class="form-container animatedtoup" id="stuckCartsContainer">
+                    <div class="form-header">
+                        <h4 class="form-title"><i class="bi bi-cart-x"></i> Stuck Carts</h4>
+                        <div class="form-actions">
+                            <button class="btn btn-outline" id="exportCarts">
+                                <i class="bi bi-download"></i> Export
+                            </button>
+                            <button class="btn btn-primary" id="sendReminders">
+                                <i class="bi bi-send"></i> Send Reminders
+                            </button>
+                        </div>
+                    </div>
 
+                    <!-- Carts Filter -->
+                    <div class="filter-bar">
+                        <div class="filter-group">
+                            <label>Filter by:</label>
+                            <select class="form-select" id="cartFilter">
+                                <option value="all">All Carts</option>
+                                <option value="today">Abandoned Today</option>
+                                <option value="week">Abandoned This Week</option>
+                                <option value="month">Abandoned This Month</option>
+                                <option value="high-value">High Value Carts</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>Sort by:</label>
+                            <select class="form-select" id="cartSort">
+                                <option value="newest">Newest First</option>
+                                <option value="oldest">Oldest First</option>
+                                <option value="value">Cart Value</option>
+                                <option value="items">Number of Items</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Carts List -->
+                    <div class="stuck-carts-list">
+                        <div class="stuck-cart-item">
+                            <div class="cart-avatar">JD</div>
+                            <div class="cart-info">
+                                <div class="cart-customer">John Doe</div>
+                                <div class="cart-details">
+                                    <span><i class="bi bi-clock"></i> 2 hours ago</span>
+                                    <span><i class="bi bi-cart"></i> 3 items</span>
+                                    <span> 147.50 EGP</span>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <span class="cart-status-badge status-new">New</span>
+                                <button class="btn btn-sm btn-outline">
+                                    <i class="bi bi-eye"></i> View
+                                </button>
+                                <button class="btn btn-sm btn-primary">
+                                    <i class="bi bi-send"></i> Remind
+                                </button>
+                                <button class="btn btn-sm btn-primary">
+                                    <i class="bi bi-telephone-forward"></i> Call
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="stuck-cart-item">
+                            <div class="cart-avatar">JS</div>
+                            <div class="cart-info">
+                                <div class="cart-customer">Jane Smith</div>
+                                <div class="cart-details">
+                                    <span><i class="bi bi-clock"></i> 1 day ago</span>
+                                    <span><i class="bi bi-cart"></i> 1 item</span>
+                                    <span> 49.99 EGP</span>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <span class="cart-status-badge status-warning">Reminder Sent</span>
+                                <button class="btn btn-sm btn-outline">
+                                    <i class="bi bi-eye"></i> View
+                                </button>
+                                <button class="btn btn-sm btn-primary">
+                                    <i class="bi bi-send"></i> Remind Again
+                                </button>
+                                <button class="btn btn-sm btn-primary">
+                                    <i class="bi bi-telephone-forward"></i> Call
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="stuck-cart-item">
+                            <div class="cart-avatar">RJ</div>
+                            <div class="cart-info">
+                                <div class="cart-customer">Robert Johnson</div>
+                                <div class="cart-details">
+                                    <span><i class="bi bi-clock"></i> 3 days ago</span>
+                                    <span><i class="bi bi-cart"></i> 5 items</span>
+                                    <span> 289.75 EGP</span>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <span class="cart-status-badge status-danger">High Value</span>
+                                <button class="btn btn-sm btn-outline">
+                                    <i class="bi bi-eye"></i> View
+                                </button>
+                                <button class="btn btn-sm btn-primary">
+                                    <i class="bi bi-send"></i> Remind
+                                </button>
+                                <button class="btn btn-sm btn-primary">
+                                    <i class="bi bi-telephone-forward"></i> Call
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="stuck-cart-item">
+                            <div class="cart-avatar">ES</div>
+                            <div class="cart-info">
+                                <div class="cart-customer">Emily Sanchez</div>
+                                <div class="cart-details">
+                                    <span><i class="bi bi-clock"></i> 5 days ago</span>
+                                    <span><i class="bi bi-cart"></i> 2 items</span>
+                                    <span> 78.30 EGP</span>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <span class="cart-status-badge status-warning">2 Reminders Sent</span>
+                                <button class="btn btn-sm btn-outline">
+                                    <i class="bi bi-eye"></i> View
+                                </button>
+                                <button class="btn btn-sm btn-primary">
+                                    <i class="bi bi-send"></i> Final Reminder
+                                </button>
+                                <button class="btn btn-sm btn-primary">
+                                    <i class="bi bi-telephone-forward"></i> Call
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <button class="btn btn-outline" disabled>
+                            <i class="bi bi-chevron-left"></i> Previous
+                        </button>
+                        <span class="pagination-info">Page 1 of 3</span>
+                        <button class="btn btn-outline">
+                            Next <i class="bi bi-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+
+                <script>
+                    // Simple JavaScript for interactive elements
+                    document.addEventListener('DOMContentLoaded', function () {
+                        // Export functionality
+                        document.getElementById('exportCarts').addEventListener('click', function () {
+                            alert('Exporting stuck carts data...');
+                        });
+
+                        // Send reminders functionality
+                        document.getElementById('sendReminders').addEventListener('click', function () {
+                            alert('Sending reminders to customers with stuck carts...');
+                        });
+
+                        // Filter and sort functionality
+                        document.getElementById('cartFilter').addEventListener('change', function () {
+                            // In a real app, this would filter the carts
+                            console.log('Filter changed to: ' + this.value);
+                        });
+
+                        document.getElementById('cartSort').addEventListener('change', function () {
+                            // In a real app, this would sort the carts
+                            console.log('Sort changed to: ' + this.value);
+                        });
+
+                        // View cart buttons
+                        document.querySelectorAll('.btn-outline').forEach(button => {
+                            if (button.textContent.includes('View')) {
+                                button.addEventListener('click', function () {
+                                    alert('Viewing cart details...');
+                                });
+                            }
+                        });
+
+                        // Remind buttons
+                        document.querySelectorAll('.btn-primary').forEach(button => {
+                            if (button.textContent.includes('Remind')) {
+                                button.addEventListener('click', function () {
+                                    alert('Sending reminder to customer...');
+                                });
+                            }
+                        });
+                    });
+                </script>
 
                 <!-- Search Area -->
-                <div class="header-actions animatedtoup" id="customerSearchArea">
-                    <div class="search-box" id="customerSearchBox">
-                        <input type="text" placeholder="Search by name, email or phone..." id="customerSearch">
+
+                <div class="form-container animatedtoup">
+                    <div class="form-header">
+                        <h4 class="form-title"><i class="bi bi-table"></i> Customers Information</h4>
+
                     </div>
-                    <button class="btn btn-outline">
-                        Find <i class="bi bi-search"></i>
-                    </button>
+                    <div class="header-actions animatedtoup" id="customerSearchArea">
+                        <div class="search-box" id="customerSearchBox">
+                            <input type="text" placeholder="Search by name, email or phone..." id="customerSearch">
+                        </div>
+                        <button class="btn btn-outline">
+                            Find <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                    <div class="site-table-container">
+                        <table class="site-table">
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox" id="selectAllCustomers"></th>
+                                    <th>Customer Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Orders</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="checkbox" class="customer-checkbox"></td>
+                                    <td>John Doe</td>
+                                    <td>john.doe@example.com</td>
+                                    <td>+1234567890</td>
+                                    <td>12</td>
+                                    <td><span class="status-badge active">Active</span></td>
+                                    <td>
+                                        <button class="btn-icon" title="View Details"><i class="bi bi-eye"></i></button>
+                                        <button class="btn-icon" title="Edit"><i class="bi bi-pencil"></i></button>
+                                        <button class="btn-icon" title="Delete"><i class="bi bi-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class="customer-checkbox"></td>
+                                    <td>Jane Smith</td>
+                                    <td>jane.smith@example.com</td>
+                                    <td>+1987654321</td>
+                                    <td>8</td>
+                                    <td><span class="status-badge active">Active</span></td>
+                                    <td>
+                                        <button class="btn-icon" title="View Details"><i class="bi bi-eye"></i></button>
+                                        <button class="btn-icon" title="Edit"><i class="bi bi-pencil"></i></button>
+                                        <button class="btn-icon" title="Delete"><i class="bi bi-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class="customer-checkbox"></td>
+                                    <td>Robert Johnson</td>
+                                    <td>robert.j@example.com</td>
+                                    <td>+1122334455</td>
+                                    <td>3</td>
+                                    <td><span class="status-badge inactive">Inactive</span></td>
+                                    <td>
+                                        <button class="btn-icon" title="View Details"><i class="bi bi-eye"></i></button>
+                                        <button class="btn-icon" title="Edit"><i class="bi bi-pencil"></i></button>
+                                        <button class="btn-icon" title="Delete"><i class="bi bi-trash"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
-                <div class="site-table-container">
-                    <table class="site-table">
-                        <thead>
-                            <tr>
-                                <th><input type="checkbox" id="selectAllCustomers"></th>
-                                <th>Customer Name</th>
-                                <th>Email</th>
-                                <th>Phone</th>
-                                <th>Orders</th>
-                                <th>Status</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><input type="checkbox" class="customer-checkbox"></td>
-                                <td>John Doe</td>
-                                <td>john.doe@example.com</td>
-                                <td>+1234567890</td>
-                                <td>12</td>
-                                <td><span class="status-badge active">Active</span></td>
-                                <td>
-                                    <button class="btn-icon" title="View Details"><i class="bi bi-eye"></i></button>
-                                    <button class="btn-icon" title="Edit"><i class="bi bi-pencil"></i></button>
-                                    <button class="btn-icon" title="Delete"><i class="bi bi-trash"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" class="customer-checkbox"></td>
-                                <td>Jane Smith</td>
-                                <td>jane.smith@example.com</td>
-                                <td>+1987654321</td>
-                                <td>8</td>
-                                <td><span class="status-badge active">Active</span></td>
-                                <td>
-                                    <button class="btn-icon" title="View Details"><i class="bi bi-eye"></i></button>
-                                    <button class="btn-icon" title="Edit"><i class="bi bi-pencil"></i></button>
-                                    <button class="btn-icon" title="Delete"><i class="bi bi-trash"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" class="customer-checkbox"></td>
-                                <td>Robert Johnson</td>
-                                <td>robert.j@example.com</td>
-                                <td>+1122334455</td>
-                                <td>3</td>
-                                <td><span class="status-badge inactive">Inactive</span></td>
-                                <td>
-                                    <button class="btn-icon" title="View Details"><i class="bi bi-eye"></i></button>
-                                    <button class="btn-icon" title="Edit"><i class="bi bi-pencil"></i></button>
-                                    <button class="btn-icon" title="Delete"><i class="bi bi-trash"></i></button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+
                 <!-- Customer List Table -->
                 <div class="table-container animatedtoup">
 
@@ -3124,14 +3187,14 @@
                     <i class="bi bi-search"></i>
                     <input type="text" placeholder="Search campaigns..." id="campaignSearch">
                 </div>
-                <div class="filter-controls animatedtoup">
+                <div class="form-group animatedtoup">
                     <button class="btn btn-outline" id="addCampaignBtn">
                         <i class="bi bi-plus-circle"></i> Add New Campaign
                     </button>
                 </div>
             </div>
             <div class="form-container animatedtoup">
-                <div class="marketing-tabs">
+                <div class="tabs-btn-area">
                     <button class="tab-button active" data-tab="campaigns">Campaign History</button>
                     <button class="tab-button" data-tab="pixels">Pixel Management</button>
                 </div>
@@ -3360,9 +3423,368 @@
 
 
         <div id="discounts" class="content-section">
-            <h2>Discounts</h2>
-            <p>Create and manage discounts here.</p>
+
+            <div class="dashboard-right-header">
+                <h2>Discounts</h2>
+                <p>Create and manage discounts here.</p>
+            </div>
+
+            <!-- Discounts Section -->
+            <div class="form-container animatedtoup">
+                <div class="form-header">
+                    <h4 class="form-title"><i class="bi bi-percent"></i> Discounts Management</h4>
+                    <div class="form-actions">
+                        <button class="btn btn-outline" id="exportDiscounts">
+                            <i class="bi bi-download"></i> Export
+                        </button>
+                        <button class="btn btn-primary" id="addDiscountBtn">
+                            <i class="bi bi-plus-circle"></i> Create Discount
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tabs -->
+                <div class="tabs-btn-area">
+                    <button class="tab-button active" data-tab="promo-codes">Promo Codes</button>
+                    <button class="tab-button" data-tab="site-sales">Site-wide Sales</button>
+                    <button class="tab-button" data-tab="category-sales">Category Sales</button>
+                    <button class="tab-button" data-tab="gift-cards">Gift Cards</button>
+                </div>
+
+                <!-- Promo Codes Tab -->
+                <div class="tab-content active" id="promo-codes-content">
+                    <!-- Filter Bar -->
+                    <div class="filter-bar">
+                        <div class="filter-group">
+                            <label>Filter by:</label>
+                            <select class="form-select" id="promoFilter">
+                                <option value="all">All Promo Codes</option>
+                                <option value="active">Active</option>
+                                <option value="expired">Expired</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>Sort by:</label>
+                            <select class="form-select" id="promoSort">
+                                <option value="newest">Newest First</option>
+                                <option value="oldest">Oldest First</option>
+                                <option value="usage">Most Used</option>
+                                <option value="discount">Highest Discount</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <input type="text" class="form-input" placeholder="Search promo codes..." id="promoSearch">
+                        </div>
+                    </div>
+
+                    <!-- Promo Codes List -->
+                    <div class="promo-codes-list">
+                        <div class="discount-card">
+                            <div class="discount-header">
+                                <div class="discount-name">SUMMER25</div>
+                                <span class="status-badge status-active">Active</span>
+                            </div>
+                            <div class="discount-details">
+                                <div class="discount-detail">
+                                    <span class="detail-label">Discount Amount</span>
+                                    <span class="detail-value">25% Off</span>
+                                </div>
+                                <div class="discount-detail">
+                                    <span class="detail-label">Expiration Date</span>
+                                    <span class="detail-value">Sep 30, 2025</span>
+                                </div>
+                                <div class="discount-detail">
+                                    <span class="detail-label">Usage Limit</span>
+                                    <span class="detail-value">500 uses</span>
+                                </div>
+                                <div class="discount-detail">
+                                    <span class="detail-label">Remaining Uses</span>
+                                    <span class="detail-value">347</span>
+                                </div>
+                                <div class="discount-detail">
+                                    <span class="detail-label">Total Revenue</span>
+                                    <span class="detail-value">$12,450</span>
+                                </div>
+                                <div class="discount-detail">
+                                    <span class="detail-label">Min. Order</span>
+                                    <span class="detail-value">$50</span>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button class="btn btn-sm btn-outline">
+                                    <i class="bi bi-eye"></i> View
+                                </button>
+                                <button class="btn btn-sm btn-outline">
+                                    <i class="bi bi-pencil"></i> Edit
+                                </button>
+                                <button class="btn btn-sm btn-outline">
+                                    <i class="bi bi-clipboard"></i> Copy Code
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i> Delete
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="discount-card">
+                            <div class="discount-header">
+                                <div class="discount-name">WELCOME10</div>
+                                <span class="status-badge status-active">Active</span>
+                            </div>
+                            <div class="discount-details">
+                                <div class="discount-detail">
+                                    <span class="detail-label">Discount Amount</span>
+                                    <span class="detail-value">$10 Off</span>
+                                </div>
+                                <div class="discount-detail">
+                                    <span class="detail-label">Expiration Date</span>
+                                    <span class="detail-value">No expiration</span>
+                                </div>
+                                <div class="discount-detail">
+                                    <span class="detail-label">Usage Limit</span>
+                                    <span class="detail-value">Unlimited</span>
+                                </div>
+                                <div class="discount-detail">
+                                    <span class="detail-label">Remaining Uses</span>
+                                    <span class="detail-value">-</span>
+                                </div>
+                                <div class="discount-detail">
+                                    <span class="detail-label">Total Revenue</span>
+                                    <span class="detail-value">$8,720</span>
+                                </div>
+                                <div class="discount-detail">
+                                    <span class="detail-label">Min. Order</span>
+                                    <span class="detail-value">$25</span>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button class="btn btn-sm btn-outline">
+                                    <i class="bi bi-eye"></i> View
+                                </button>
+                                <button class="btn btn-sm btn-outline">
+                                    <i class="bi bi-pencil"></i> Edit
+                                </button>
+                                <button class="btn btn-sm btn-outline">
+                                    <i class="bi bi-clipboard"></i> Copy Code
+                                </button>
+                                <button class="btn btn-sm btn-danger">
+                                    <i class="bi bi-trash"></i> Delete
+                                </button>
+                            </div>
+                        </div>
+
+
+
+                        <div class="discount-card">
+                            <div class="discount-header">
+                                <div class="discount-name">BACK2SCHOOL</div>
+                                <span class="status-badge status-expired">Expired</span>
+                            </div>
+                            <div class="discount-details">
+                                <div class="discount-detail">
+                                    <span class="detail-label">Discount Amount</span>
+                                    <span class="detail-value">15% Off</span>
+                                </div>
+                                <div class="discount-detail">
+                                    <span class="detail-label">Expiration Date</span>
+                                    <span class="detail-value">Aug 31, 2025</span>
+                                </div>
+                                <div class="discount-detail">
+                                    <span class="detail-label">Usage Limit</span>
+                                    <span class="detail-value">1000 uses</span>
+                                </div>
+                                <div class="discount-detail">
+                                    <span class="detail-label">Total Uses</span>
+                                    <span class="detail-value">892</span>
+                                </div>
+                                <div class="discount-detail">
+                                    <span class="detail-label">Total Revenue</span>
+                                    <span class="detail-value">$24,150</span>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button class="btn btn-sm btn-outline">
+                                    <i class="bi bi-eye"></i> View
+                                </button>
+                                <button class="btn btn-sm btn-outline">
+                                    <i class="bi bi-clipboard"></i> Copy Code
+                                </button>
+                                <button class="btn btn-sm btn-outline">
+                                    <i class="bi bi-arrow-repeat"></i> Renew
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <button class="btn btn-outline" disabled>
+                            <i class="bi bi-chevron-left"></i> Previous
+                        </button>
+                        <span class="pagination-info">Page 1 of 3</span>
+                        <button class="btn btn-outline">
+                            Next <i class="bi bi-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Site-wide Sales Tab -->
+                <div class="tab-content" id="site-sales-content">
+                    <div class="empty-state">
+                        <i class="bi bi-tag"></i>
+                        <h3>No Site-wide Sales</h3>
+                        <p>Create your first site-wide sale to offer discounts across your entire store.</p>
+                        <button class="btn btn-primary mt-3">
+                            <i class="bi bi-plus-circle"></i> Create Site-wide Sale
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Category Sales Tab -->
+                <div class="tab-content" id="category-sales-content">
+                    <div class="empty-state">
+                        <i class="bi bi-collection"></i>
+                        <h3>No Category Sales</h3>
+                        <p>Create category-specific sales to target discounts to particular product categories.</p>
+                        <button class="btn btn-primary mt-3">
+                            <i class="bi bi-plus-circle"></i> Create Category Sale
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Gift Cards Tab -->
+                <div class="tab-content" id="gift-cards-content">
+                    <div class="empty-state">
+                        <i class="bi bi-gift"></i>
+                        <h3>No Gift Cards</h3>
+                        <p>Create gift cards to offer as promotions or sell to customers.</p>
+                        <button class="btn btn-primary mt-3">
+                            <i class="bi bi-plus-circle"></i> Create Gift Card
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
+
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                // Tab functionality
+                const tabButtons = document.querySelectorAll('.tab-button');
+                const tabContents = document.querySelectorAll('.tab-content');
+
+                tabButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const tabId = button.getAttribute('data-tab');
+
+                        // Update active tab button
+                        tabButtons.forEach(btn => btn.classList.remove('active'));
+                        button.classList.add('active');
+
+                        // Show active tab content
+                        tabContents.forEach(content => content.classList.remove('active'));
+                        document.getElementById(`${tabId}-content`).classList.add('active');
+                    });
+                });
+
+                // Export functionality
+                document.getElementById('exportDiscounts').addEventListener('click', function () {
+                    alert('Exporting discounts data...');
+                });
+
+                // Add discount button
+                document.getElementById('addDiscountBtn').addEventListener('click', function () {
+                    alert('Opening discount creation form...');
+                });
+
+                // Filter and search functionality for promo codes
+                document.getElementById('promoFilter').addEventListener('change', function () {
+                    filterPromoCodes();
+                });
+
+                document.getElementById('promoSort').addEventListener('change', function () {
+                    sortPromoCodes();
+                });
+
+                document.getElementById('promoSearch').addEventListener('input', function () {
+                    searchPromoCodes();
+                });
+
+                // Action buttons for promo codes
+                document.querySelectorAll('.form-actions .btn').forEach(button => {
+                    button.addEventListener('click', function () {
+                        const action = this.textContent.trim();
+                        const discountName = this.closest('.discount-card').querySelector('.discount-name').textContent;
+
+                        if (action.includes('View')) {
+                            alert(`Viewing details for: ${discountName}`);
+                        } else if (action.includes('Edit')) {
+                            alert(`Editing: ${discountName}`);
+                        } else if (action.includes('Copy Code')) {
+                            const code = discountName;
+                            navigator.clipboard.writeText(code).then(() => {
+                                const originalHtml = this.innerHTML;
+                                this.innerHTML = '<i class="bi bi-check"></i> Copied!';
+
+                                setTimeout(() => {
+                                    this.innerHTML = originalHtml;
+                                }, 2000);
+                            });
+                        } else if (action.includes('Delete')) {
+                            if (confirm(`Are you sure you want to delete ${discountName}?`)) {
+                                alert(`Deleting: ${discountName}`);
+                            }
+                        } else if (action.includes('Schedule')) {
+                            alert(`Scheduling: ${discountName}`);
+                        } else if (action.includes('Renew')) {
+                            alert(`Renewing: ${discountName}`);
+                        }
+                    });
+                });
+
+                // Filter promo codes by status
+                function filterPromoCodes() {
+                    const filterValue = document.getElementById('promoFilter').value;
+                    const discountCards = document.querySelectorAll('.discount-card');
+
+                    discountCards.forEach(card => {
+                        const statusBadge = card.querySelector('.status-badge');
+                        const status = statusBadge.classList.contains('status-active') ? 'active' :
+                            statusBadge.classList.contains('status-expired') ? 'expired' :
+                                '';
+
+                        if (filterValue === 'all' || filterValue === status) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                }
+
+                // Sort promo codes
+                function sortPromoCodes() {
+                    // In a real application, this would sort the data
+                    console.log('Sorting promo codes...');
+                }
+
+                // Search promo codes
+                function searchPromoCodes() {
+                    const searchTerm = document.getElementById('promoSearch').value.toLowerCase();
+                    const discountCards = document.querySelectorAll('.discount-card');
+
+                    discountCards.forEach(card => {
+                        const discountName = card.querySelector('.discount-name').textContent.toLowerCase();
+
+                        if (discountName.includes(searchTerm)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                }
+            });
+        </script>
+
         <div id="payment" class="content-section">
             <h2>Payment</h2>
             <p>Create and manage discounts here.</p>
@@ -3450,7 +3872,7 @@
 
             <!-- Tabbed Content -->
             <div class="form-container animatedtoup show" style="opacity: 1; transform: translateY(0px);">
-                <div class="marketing-tabs">
+                <div class="tabs-btn-area">
                     <button class="tab-button active" data-tab="subscriptions">Subscription History</button>
                     <button class="tab-button" data-tab="billing">Billing Information</button>
                 </div>
@@ -3547,12 +3969,14 @@
             </div>
 
             <style>
-                .subscription-plan-container {
-                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                    color: white;
+                .subscription-plan-container,
+                .subscription-timer-container {
+                    background: linear-gradient(135deg, #ffffff 0%, #a8ceeb 100%);
+                    color: #000000;
                     border-radius: 12px;
                     margin-bottom: 20px;
                     padding: 20px;
+
                 }
 
                 .plan-header h3 {
@@ -3604,13 +4028,7 @@
                     color: #4cd964;
                 }
 
-                .subscription-timer-container {
-                    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-                    color: white;
-                    border-radius: 12px;
-                    margin-bottom: 20px;
-                    padding: 20px;
-                }
+
 
                 .timer-header h3 {
                     margin: 0 0 15px 0;
@@ -3705,7 +4123,7 @@
 
                     // Loop through form containers to find the one with tabs
                     for (let i = formContainers.length - 1; i >= 0; i--) {
-                        if (formContainers[i].querySelector('.marketing-tabs')) {
+                        if (formContainers[i].querySelector('.tabs-btn-area')) {
                             subscriptionContainer = formContainers[i];
                             break;
                         }
@@ -4704,94 +5122,7 @@
         }
     </script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const actionButtons = document.querySelector('.btn-group-unique-buttons');
-            const upArrow = document.getElementById('btnGroupUniqueUpArrow');
-            const downArrow = document.getElementById('btnGroupUniqueDownArrow');
-            const editButton = document.getElementById('editProduct');
-            const deleteButton = document.getElementById('deleteProduct');
-            const searchArea = document.getElementById('productSearchArea');
 
-            let currentPosition = 0;
-            const totalButtons = 3;
-            const buttonHeight = 44;
-
-            // Update button position
-            function updateButtonPosition() {
-                actionButtons.style.transform = `translateY(-${currentPosition * buttonHeight}px)`;
-
-                // Enable/disable arrows based on position
-                upArrow.disabled = currentPosition === 0;
-                downArrow.disabled = currentPosition === totalButtons - 1;
-            }
-
-            // Toggle search area visibility
-            function toggleSearchArea() {
-                searchArea.classList.toggle('visible');
-            }
-
-            // Initial update
-            updateButtonPosition();
-
-            // Up arrow click event
-            upArrow.addEventListener('click', function () {
-                if (currentPosition > 0) {
-                    currentPosition--;
-                    updateButtonPosition();
-                }
-            });
-
-            // Down arrow click event
-            downArrow.addEventListener('click', function () {
-                if (currentPosition < totalButtons - 1) {
-                    currentPosition++;
-                    updateButtonPosition();
-                }
-            });
-
-            // Edit and Delete buttons show search area
-            editButton.addEventListener('click', function () {
-                searchArea.classList.add('visible');
-            });
-
-            deleteButton.addEventListener('click', function () {
-                searchArea.classList.add('visible');
-            });
-
-            // Hide search area when clicking outside
-            document.addEventListener('click', function (event) {
-                if (searchArea.classList.contains('visible') &&
-                    !searchArea.contains(event.target) &&
-                    event.target !== editButton &&
-                    event.target !== deleteButton &&
-                    !editButton.contains(event.target) &&
-                    !deleteButton.contains(event.target)) {
-                    searchArea.classList.remove('visible');
-                }
-            });
-
-            // Keyboard navigation
-            document.addEventListener('keydown', function (event) {
-                if (event.key === 'ArrowUp') {
-                    event.preventDefault();
-                    if (currentPosition > 0) {
-                        currentPosition--;
-                        updateButtonPosition();
-                    }
-                } else if (event.key === 'ArrowDown') {
-                    event.preventDefault();
-                    if (currentPosition < totalButtons - 1) {
-                        currentPosition++;
-                        updateButtonPosition();
-                    }
-                } else if (event.key === 'Escape') {
-                    // Hide search area when pressing Escape
-                    searchArea.classList.remove('visible');
-                }
-            });
-        });
-    </script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             // Revenue Chart
