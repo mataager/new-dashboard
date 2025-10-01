@@ -78,7 +78,6 @@ body {
     width: 100%;
     background-color: var(--sidebar-bg);
     border-bottom: 1px solid var(--border-color);
-    padding: 10px 0;
     display: flex;
     flex-direction: row;
     overflow-x: auto;
@@ -611,28 +610,33 @@ h2 {
 }
 
 .status-badge.pending {
-    background-color: #fff0cc;
-    color: #c80
+    background-color: #fbb751;
+    color: #f9ffc2;
 }
 
 .status-badge.accepted {
     background-color: #e6f2ff;
-    color: #06c
+    color: #89a9c9;
 }
 
 .status-badge.shipped {
     background-color: #e6f2e6;
-    color: var(--primary-color)
+    color: #859bdd;
 }
 
 .status-badge.completed {
-    background-color: #e6f2e6;
-    color: var(--primary-color)
+    background-color: #76c176;
+    color: #ccffcc;
 }
 
 .status-badge.cancelled {
-    background-color: #ffe6e6;
-    color: #d82c0d
+    background-color: #ff3b3b;
+    color: #ffbeb2;
+}
+
+.status-badge.returned {
+    background-color: #ff4357;
+    color: #ffc6bc;
 }
 
 .action-buttons {
@@ -1053,6 +1057,11 @@ h2 {
     /* Red for cancelled */
 }
 
+.order-row[data-status="returned"] {
+    border-left: 4px solid #db6571;
+    /* Red for cancelled */
+}
+
 /* Status badges styling */
 .status-badge {
     padding: 5px 10px;
@@ -1061,30 +1070,6 @@ h2 {
     font-weight: 600;
 }
 
-.status-badge.pending {
-    background-color: #fff3cd;
-    color: #856404;
-}
-
-.status-badge.accepted {
-    background-color: #d1ecf1;
-    color: #0c5460;
-}
-
-.status-badge.shipped {
-    background-color: #cce5ff;
-    color: #004085;
-}
-
-.status-badge.completed {
-    background-color: #d4edda;
-    color: #155724;
-}
-
-.status-badge.cancelled {
-    background-color: #f8d7da;
-    color: #721c24;
-}
 
 :root {
     --secondary: #3f37c9;
@@ -1573,7 +1558,7 @@ body {
 }
 
 .stat-card-icon.uploaded {
-    background: linear-gradient(135deg, #f72585, #3a0ca3);
+    background: linear-gradient(to right, #4cc9f0, #4361ee);
 }
 
 .stat-card-value {
@@ -1585,7 +1570,7 @@ body {
 
 .stat-card-progress {
     height: 8px;
-    background-color: var(--light-gray);
+    background-color: #cbcbcb;
     border-radius: 4px;
     overflow: hidden;
     margin: 10px 0;
@@ -1602,7 +1587,7 @@ body {
 }
 
 .stat-card-progress-bar.uploaded {
-    background: linear-gradient(to right, #f72585, #3a0ca3);
+    background: linear-gradient(to right, #4cc9f0, #4361ee);
 }
 
 .progress-text {
@@ -2535,6 +2520,7 @@ html {
 }
 
 .dropzone-content {
+    color: var(--text-color);
     text-align: center;
     padding: 2rem;
 }
@@ -3346,6 +3332,7 @@ html {
 }
 
 .tab-button {
+    min-width: 130px;
     padding: 12px 20px;
     background: none;
     border: none;
@@ -3357,7 +3344,6 @@ html {
 
 .tab-button.active {
     color: #4e73df;
-    font-weight: 600;
 }
 
 .tab-button.active::after {
@@ -3395,10 +3381,7 @@ html {
     color: #1e7e34;
 }
 
-.status-badge.completed {
-    background-color: #e8f4ff;
-    color: #0a58ca;
-}
+
 
 .action-buttons {
     display: flex;
@@ -3504,10 +3487,8 @@ html {
     justify-content: space-between;
     align-items: center;
     padding: 15px;
-    border: 1px solid #e3e6f0;
     border-radius: 5px;
     margin-bottom: 10px;
-    background-color: #f8f9fc;
 }
 
 .domain-status {
@@ -3596,8 +3577,9 @@ html {
 }
 
 .default-domain {
-    background-color: #e8f4fd;
-    border-left: 4px solid #4e73df;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    background-color: var(--card-bg);
 }
 
 @media (max-width: 900px) {
@@ -3933,15 +3915,16 @@ html {
 }
 
 .right-folding-header {
+    height: 64px;
     padding: 24px 32px;
     border-bottom: 1px solid var(--border-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--primary-color) !important;
     color: white;
     position: relative;
-    min-height: 80px;
+    /* min-height: 80px; */
 }
 
 .right-folding-header::before {
@@ -3952,12 +3935,12 @@ html {
     right: 0;
     bottom: 0;
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+    /* backdrop-filter: blur(10px); */
 }
 
 .right-folding-header h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: 1.1rem;
+    font-weight: 400;
     margin: 0;
     position: relative;
     z-index: 1;
@@ -3978,13 +3961,13 @@ html {
 .close-right-folding {
     background: rgba(255, 255, 255, 0.2);
     border: none;
-    font-size: 1.5rem;
+    font-size: 0.8rem;
     cursor: pointer;
     color: white;
-    padding: 10px;
+    padding: 5px;
     border-radius: 50%;
-    width: 44px;
-    height: 44px;
+    width: 30px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -4003,7 +3986,7 @@ html {
     padding: 0;
     flex: 1;
     overflow-y: auto;
-    background: #f8fafc;
+    background: var(--card-bg);
 }
 
 
@@ -4058,33 +4041,6 @@ html {
     align-items: center;
 }
 
-/* Status Badges */
-.status-badge {
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.status-pending {
-    background: #fef3c7;
-    color: #d97706;
-    border: 1px solid #fbbf24;
-}
-
-.status-completed {
-    background: #d1fae5;
-    color: #065f46;
-    border: 1px solid #34d399;
-}
-
-.status-cancelled {
-    background: #fee2e2;
-    color: #dc2626;
-    border: 1px solid #f87171;
-}
 
 /* Action Buttons */
 .action-section {
@@ -4119,29 +4075,24 @@ html {
     text-decoration: none;
 }
 
-.btn-primary {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+.test-domain-btn {
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    background: transparent;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
 }
 
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-}
 
-.btn-outline {
-    background: white;
-    border: 2px solid #e2e8f0;
-    color: #64748b;
-}
 
-.btn-outline:hover {
-    border-color: var(--primary-color);
-    color: var(--primary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
+
 
 /* Enhanced Toggle Folding Area Button */
 .toggle-folding-area {
@@ -4591,4 +4542,13 @@ html {
 
 .default-item strong {
     color: #ffffff;
+}
+
+/* Section Styling */
+.settings-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
 }
