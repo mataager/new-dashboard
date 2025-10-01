@@ -347,7 +347,6 @@
                                 <th>Total</th>
                                 <th>Cut</th>
                                 <th>Status</th>
-                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -361,15 +360,7 @@
                                 <td>5,744 E£</td>
                                 <td>84 E£</td>
                                 <td><span class="status-badge pending">Pending</span></td>
-                                <td>
-                                    <div class="action-buttons">
-                                        <button class="btn-view" title="View Details"><i class="bi bi-eye"></i></button>
-                                        <button class="btn-accept" title="Accept Order"><i
-                                                class="bi bi-check-lg"></i></button>
-                                        <button class="btn-cancel" title="Cancel Order"><i
-                                                class="bi bi-x-lg"></i></button>
-                                    </div>
-                                </td>
+
                             </tr>
                             <tr class="order-details" id="details-OTIAjJYkpigIRshEPL">
                                 <td colspan="9">
@@ -411,15 +402,7 @@
                                 <td>3,250 E£</td>
                                 <td>45 E£</td>
                                 <td><span class="status-badge accepted">Accepted</span></td>
-                                <td>
-                                    <div class="action-buttons">
-                                        <button class="btn-view" title="View Details"><i class="bi bi-eye"></i></button>
-                                        <button class="btn-ship" title="Mark as Shipped"><i
-                                                class="bi bi-truck"></i></button>
-                                        <button class="btn-cancel" title="Cancel Order"><i
-                                                class="bi bi-x-lg"></i></button>
-                                    </div>
-                                </td>
+
                             </tr>
                             <tr class="order-details" id="details-OTI1234567890ABCDEF">
                                 <td colspan="9">
@@ -439,15 +422,7 @@
                                 <td>8,900 E£</td>
                                 <td>120 E£</td>
                                 <td><span class="status-badge shipped">Shipped</span></td>
-                                <td>
-                                    <div class="action-buttons">
-                                        <button class="btn-view" title="View Details"><i class="bi bi-eye"></i></button>
-                                        <button class="btn-complete" title="Mark as Completed"><i
-                                                class="bi bi-check-circle"></i></button>
-                                        <button class="btn-return" title="Mark as Returned"><i
-                                                class="bi bi-arrow-return-left"></i></button>
-                                    </div>
-                                </td>
+
                             </tr>
                             <tr class="order-details" id="details-OTI0987654321ZYXWVU">
                                 <td colspan="9">
@@ -467,18 +442,32 @@
                                 <td>2,100 E£</td>
                                 <td>30 E£</td>
                                 <td><span class="status-badge completed">Completed</span></td>
-                                <td>
-                                    <div class="action-buttons">
-                                        <button class="btn-view" title="View Details"><i class="bi bi-eye"></i></button>
-                                        <button class="btn-invoice" title="Download Invoice"><i
-                                                class="bi bi-receipt"></i></button>
-                                    </div>
-                                </td>
+
                             </tr>
                             <tr class="order-details" id="details-OTI5555555555ABCDEF">
                                 <td colspan="9">
                                     <div class="order-details-content">
                                         Delivered on Oct 12, 2023 - Customer confirmed receipt
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Cancelled Order -->
+                            <tr class="order-row" data-status="cancelled" data-id="OTI77778kcbl899990000">
+                                <td><input type="checkbox" class="order-checkbox"></td>
+                                <td>OTI7777888899990000</td>
+                                <td>Emily tiffany</td>
+                                <td>tiffany@example.com</td>
+                                <td>red sea</td>
+                                <td>4,700 E£</td>
+                                <td>20 E£</td>
+                                <td><span class="status-badge cancelled">Cancelled</span></td>
+
+                            </tr>
+                            <tr class="order-details" id="details-OTI7777888899990000">
+                                <td colspan="9">
+                                    <div class="order-details-content">
+                                        Cancelled on Oct 28, 2023 - Reason: Wrong size
                                     </div>
                                 </td>
                             </tr>
@@ -493,13 +482,7 @@
                                 <td>4,500 E£</td>
                                 <td>65 E£</td>
                                 <td><span class="status-badge returned">Returned</span></td>
-                                <td>
-                                    <div class="action-buttons">
-                                        <button class="btn-view" title="View Details"><i class="bi bi-eye"></i></button>
-                                        <button class="btn-restore" title="Restore Order"><i
-                                                class="bi bi-arrow-clockwise"></i></button>
-                                    </div>
-                                </td>
+
                             </tr>
                             <tr class="order-details" id="details-OTI7777888899990000">
                                 <td colspan="9">
@@ -2002,538 +1985,562 @@
             <div class="dashboard-container">
                 <div class="dashboard-right-header">
                     <div>
-                        <h2>Site Management</h2>
+                        <h2>Site</h2>
                         <p>View and manage your site configuration here</p>
                     </div>
                 </div>
 
-
-                <!-- Domain Management Section -->
-                <div class="form-container">
+                <div class="form-container animatedtoup ">
                     <div class="form-header">
-                        <h4 class="form-title"><i class="bi bi-globe"></i> Domain Management</h4>
+                        <h4 class="form-title"><i class="bi bi-globe"></i> Site Management</h4>
                         <div class="form-actions">
-                            <button class="btn btn-outline">
-                                <i class="bi bi-info-circle"></i> Help
+                            <button class="btn btn-primary" id="">
+                                <i class="bi bi-check-circle"></i> Save Changes
+                            </button>
+                            <button class="btn btn-outline" id="">
+                                <i class="bi bi-arrow-counterclockwise"></i>reset
                             </button>
                         </div>
                     </div>
+                    <div class="tabs-btn-area">
+                        <button class="tab-button active" data-tab="Domain">Domain <i class="bi bi-globe"></i></button>
+                        <button class="tab-button" data-tab="Modes">Modes <i class="bi bi-palette"></i></button>
+                        <button class="tab-button" data-tab="Images">Images <i class="bi bi-images"></i></button>
+                        <button class="tab-button" data-tab="Brands">Brands <i class="bi bi-tags"></i></button>
+                        <button class="tab-button" data-tab="Shipping">Shipping <i class="bi bi-truck"></i></button>
+                        <button class="tab-button" data-tab="Inventory">Inventory <i
+                                class="bi bi-box-seam"></i></button>
 
-                    <div class="domain-input-container">
-                        <div class="form-group">
-                            <label class="form-label">Add a new domain to your site:</label>
-                            <div class="input-with-button">
-                                <input class="form-input" type="text" id="domainInput"
-                                    placeholder="Enter your domain (e.g., example.com)">
-                                <button class="btn btn-outline" id="checkDomainBtn">
-                                    <i class="bi bi-search"></i> Check Availability
-                                </button>
-                            </div>
-                            <div id="validationMessage" class="validation-message"></div>
-                        </div>
-
-                        <!-- Test domains for demonstration -->
-                        <div class="test-domains">
-                            <p><strong>Test with these domains:</strong></p>
-                            <button class="test-domain-btn" data-domain="example-shop.com">example-shop.com
-                                (Available)</button>
-                            <button class="test-domain-btn" data-domain="mystore-test.com">mystore-test.com
-                                (Available)</button>
-                            <button class="test-domain-btn" data-domain="existing-domain.com">existing-domain.com (Not
-                                Available)</button>
-                            <button class="test-domain-btn" data-domain="taken-website.com">taken-website.com (Not
-                                Available)</button>
-                        </div>
-
-                        <!-- Add Domain button container (hidden by default) -->
-                        <div class="add-domain-container" id="addDomainContainer">
+                    </div>
+                    <!-- Domain Management Section -->
+                    <div class="tab-content animatedtoup active" id="Domain-content">
+                        <div class="form-header">
+                            <h4 class="form-title"><i class="bi bi-globe"></i> Domain Management</h4>
                             <div class="form-actions">
-                                <button class="btn btn-outline" id="addDomainBtn">
-                                    <i class="bi bi-plus-circle"></i> Add Domain
+                                <button class="btn btn-outline">
+                                    <i class="bi bi-info-circle"></i> Help
                                 </button>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="domain-list" id="domainList">
-                        <div class="form-group">
-                            <div class="empty-state" id="emptyState">
-                                <i class="bi bi-globe2"></i>
-                                <label class="form-label">No domains added yet. Add your first domain to get
-                                    started.</label>
-                            </div>
-                        </div>
-                        <!-- Domain items will be added here dynamically -->
-                    </div>
-
-                    <div class="form-actions">
-                        <button class="btn btn-primary" id="saveDomainsBtn">
-                            <i class="bi bi-check-circle"></i> Save Changes
-                        </button>
-                    </div>
-                </div>
-
-
-                <script>
-                    document.addEventListener('DOMContentLoaded', function () {
-                        // Domain management functionality
-                        const domainInput = document.getElementById('domainInput');
-                        const checkDomainBtn = document.getElementById('checkDomainBtn');
-                        const addDomainBtn = document.getElementById('addDomainBtn');
-                        const addDomainContainer = document.getElementById('addDomainContainer');
-                        const domainList = document.getElementById('domainList');
-                        const emptyState = document.getElementById('emptyState');
-                        const saveDomainsBtn = document.getElementById('saveDomainsBtn');
-                        const validationMessage = document.getElementById('validationMessage');
-                        const testDomainBtns = document.querySelectorAll('.test-domain-btn');
-
-                        // Default domain
-                        const defaultDomain = "www.matager/shop/-3hf3hf483yffbaie3.com";
-                        let domains = [defaultDomain];
-                        let currentDomain = defaultDomain;
-                        let isDomainAvailable = false;
-
-                        // Add domain function
-                        function addDomain() {
-                            const domainValue = domainInput.value.trim();
-
-                            if (!domainValue) {
-                                alert('Please enter a domain name');
-                                return;
-                            }
-
-                            // Check if domain already exists
-                            if (domains.includes(domainValue)) {
-                                alert('This domain has already been added');
-                                return;
-                            }
-
-                            // Replace the default domain with the new one
-                            if (domains.length === 1 && domains[0] === defaultDomain) {
-                                domains = [domainValue];
-                            } else {
-                                domains.push(domainValue);
-                            }
-
-                            currentDomain = domainValue;
-                            renderDomains();
-                            domainInput.value = '';
-                            addDomainContainer.style.display = 'none';
-                            validationMessage.innerHTML = '';
-                        }
-
-                        // Remove domain function
-                        function removeDomain(domain) {
-                            domains = domains.filter(d => d !== domain);
-
-                            // If no domains left, add the default one
-                            if (domains.length === 0) {
-                                domains = [defaultDomain];
-                                currentDomain = defaultDomain;
-                            }
-
-                            renderDomains();
-                        }
-
-                        // Check domain availability
-                        function checkDomainAvailability() {
-                            const domainValue = domainInput.value.trim();
-
-                            if (!domainValue) {
-                                validationMessage.innerHTML = '<span class="validation-error">Please enter a domain name</span>';
-                                addDomainContainer.style.display = 'none';
-                                return;
-                            }
-
-                            // Simple domain validation
-                            const domainRegex = /^[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]\.[a-zA-Z]{2,}$/;
-                            if (!domainRegex.test(domainValue)) {
-                                validationMessage.innerHTML = '<span class="validation-error">Please enter a valid domain name</span>';
-                                addDomainContainer.style.display = 'none';
-                                return;
-                            }
-
-                            // Show loader
-                            validationMessage.innerHTML = '<div class="loader"></div> Checking domain availability...';
-                            addDomainContainer.style.display = 'none';
-
-                            // Simulate API call with timeout
-                            setTimeout(() => {
-                                // For demo purposes, domains containing "example" or "test" are considered available
-                                // Others are considered taken
-                                if (domainValue.includes('example') || domainValue.includes('test')) {
-                                    validationMessage.innerHTML = '<i class="bi bi-check-circle validation-success"></i> <span class="validation-success">Domain is available!</span>';
-                                    addDomainContainer.style.display = 'block';
-                                    isDomainAvailable = true;
-                                } else {
-                                    validationMessage.innerHTML = '<i class="bi bi-x-circle validation-error"></i> <span class="validation-error">Domain is already in use</span>';
-                                    addDomainContainer.style.display = 'none';
-                                    isDomainAvailable = false;
-                                }
-                            }, 1500);
-                        }
-
-                        // Visit site function
-                        function visitSite(url) {
-                            window.open(url, '_blank');
-                        }
-
-                        // Render domains list
-                        function renderDomains() {
-                            if (domains.length === 0) {
-                                emptyState.style.display = 'block';
-                                domainList.innerHTML = '';
-                                domainList.appendChild(emptyState);
-                                return;
-                            }
-
-                            emptyState.style.display = 'none';
-
-                            let domainsHTML = '';
-                            domains.forEach(domain => {
-                                const isDefault = domain === defaultDomain && domains.length === 1;
-                                const status = isDefault ? 'active' : 'pending';
-
-                                domainsHTML += `
-                                            <div class="domain-item ${isDefault ? 'default-domain' : ''}">
-                                                <div class="domain-status">
-                                                    <span class="status-indicator status-${status}"></span>
-                                                    <span>${domain}</span>
-                                                </div>
-                                                <div class="domain-actions">
-                                                    <button class="btn btn-outline btn-sm" onclick="visitSite('http://${domain}')">
-                                                        <i class="bi bi-box-arrow-up-right"></i> Visit Site
-                                                    </button>
-                                                    ${!isDefault ? `
-                                                    <button class="btn btn-danger btn-sm" onclick="removeDomain('${domain}')">
-                                                        <i class="bi bi-trash"></i> Remove
-                                                    </button>
-                                                    ` : ''}
-                                                </div>
-                                            </div>
-                                        `;
-                            });
-
-                            domainList.innerHTML = domainsHTML;
-                        }
-
-                        // Event listeners
-                        checkDomainBtn.addEventListener('click', checkDomainAvailability);
-
-                        addDomainBtn.addEventListener('click', addDomain);
-
-                        domainInput.addEventListener('keypress', function (e) {
-                            if (e.key === 'Enter') {
-                                checkDomainAvailability();
-                            }
-                        });
-
-                        // Test domain buttons
-                        testDomainBtns.forEach(btn => {
-                            btn.addEventListener('click', function () {
-                                const domain = this.getAttribute('data-domain');
-                                domainInput.value = domain;
-                                checkDomainAvailability();
-                            });
-                        });
-
-                        saveDomainsBtn.addEventListener('click', function () {
-                            if (domains.length === 0) {
-                                alert('No domains to save');
-                                return;
-                            }
-
-                            // In a real application, you would send this data to a server
-                            alert(`Domains saved successfully!\n\nCurrent domain: ${currentDomain}\n\nAll domains:\n${domains.join('\n')}`);
-                        });
-
-                        // Make functions available globally for onclick events
-                        window.removeDomain = removeDomain;
-                        window.visitSite = visitSite;
-
-                        // Initialize with default domain
-                        renderDomains();
-                    });
-                </script>
-
-                <!-- Theme Selection -->
-                <div class="form-container">
-                    <div class="form-header">
-                        <h4 class="form-title"><i class="bi bi-palette"></i> Theme Selection</h4>
-                        <div class="form-actions">
-                            <button class="btn btn-outline">
-                                <i class="bi bi-eye"></i> Preview
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="theme-selector">
-                        <div class="theme-option selected">
-                            <div class="theme-preview" style="background: linear-gradient(to right, #4e73df, #224abe);">
-                            </div>
-                            <div class="theme-info">
-                                <div class="theme-name">Modern Blue</div>
-                            </div>
-                        </div>
-
-                        <div class="theme-option">
-                            <div class="theme-preview" style="background: linear-gradient(to right, #1cc88a, #13855c);">
-                            </div>
-                            <div class="theme-info">
-                                <div class="theme-name">Green Nature</div>
-                            </div>
-                        </div>
-
-                        <div class="theme-option">
-                            <div class="theme-preview" style="background: linear-gradient(to right, #5a5c69, #3a3b45);">
-                            </div>
-                            <div class="theme-info">
-                                <div class="theme-name">Dark Professional</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-actions">
-                        <button class="btn btn-primary">
-                            <i class="bi bi-check-circle"></i> Apply Theme
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Homepage Images -->
-                <div class="form-container">
-                    <div class="form-header">
-                        <h4 class="form-title"><i class="bi bi-images"></i> Homepage Images</h4>
-                    </div>
-
-                    <div class="section-title">Banner Image</div>
-                    <div class="image-upload">
-                        <div class="upload-icon"><i class="bi bi-cloud-arrow-up"></i></div>
-                        <div class="upload-text">Drag & drop banner image or click to browse</div>
-                        <div class="upload-hint">Recommended size: 1200x400px | Max size: 2MB</div>
-                    </div>
-
-                    <div class="section-title">New Arrivals Section</div>
-                    <div class="image-upload">
-                        <div class="upload-icon"><i class="bi bi-cloud-arrow-up"></i></div>
-                        <div class="upload-text">Drag & drop new arrivals image or click to browse</div>
-                        <div class="upload-hint">Recommended size: 800x600px | Max size: 1.5MB</div>
-                    </div>
-
-                    <div class="section-title">Sale Section</div>
-                    <div class="image-upload">
-                        <div class="upload-icon"><i class="bi bi-cloud-arrow-up"></i></div>
-                        <div class="upload-text">Drag & drop sale section image or click to browse</div>
-                        <div class="upload-hint">Recommended size: 800x600px | Max size: 1.5MB</div>
-                    </div>
-
-                    <div class="form-actions">
-                        <button class="btn btn-primary">
-                            <i class="bi bi-check-circle"></i> Save Images
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Brands Management -->
-                <div class="form-container">
-                    <div class="form-header">
-                        <h4 class="form-title"><i class="bi bi-tags"></i> Brands Management</h4>
-                        <div class="form-actions">
-                            <button class="btn btn-outline" id="addBrandBtn">
-                                <i class="bi bi-plus-circle"></i> Add Brand
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="brands-grid">
-                        <div class="brand-card">
-                            <div class="brand-logo">
-                                <i class="bi bi-building"></i>
-                            </div>
-                            <div class="brand-name">Nike</div>
-                            <div class="brand-actions">
-                                <button class="btn-icon btn-sm" title="Edit"><i class="bi bi-pencil"></i></button>
-                                <button class="btn-icon btn-sm" title="Delete"><i class="bi bi-trash"></i></button>
-                            </div>
-                        </div>
-
-                        <div class="brand-card">
-                            <div class="brand-logo">
-                                <i class="bi bi-building"></i>
-                            </div>
-                            <div class="brand-name">Adidas</div>
-                            <div class="brand-actions">
-                                <button class="btn-icon btn-sm" title="Edit"><i class="bi bi-pencil"></i></button>
-                                <button class="btn-icon btn-sm" title="Delete"><i class="bi bi-trash"></i></button>
-                            </div>
-                        </div>
-
-                        <div class="brand-card">
-                            <div class="brand-logo">
-                                <i class="bi bi-building"></i>
-                            </div>
-                            <div class="brand-name">Puma</div>
-                            <div class="brand-actions">
-                                <button class="btn-icon btn-sm" title="Edit"><i class="bi bi-pencil"></i></button>
-                                <button class="btn-icon btn-sm" title="Delete"><i class="bi bi-trash"></i></button>
-                            </div>
-                        </div>
-
-                        <div class="brand-card">
-                            <div class="brand-logo">
-                                <i class="bi bi-building"></i>
-                            </div>
-                            <div class="brand-name">Reebok</div>
-                            <div class="brand-actions">
-                                <button class="btn-icon btn-sm" title="Edit"><i class="bi bi-pencil"></i></button>
-                                <button class="btn-icon btn-sm" title="Delete"><i class="bi bi-trash"></i></button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Add Brand Form (Initially Hidden) -->
-                    <div id="addBrandForm">
-                        <div class="form-grid">
+                        <div class="domain-input-container">
                             <div class="form-group">
-                                <label class="form-label">Brand Name</label>
-                                <input type="text" class="form-input" placeholder="Enter brand name">
+                                <label class="form-label">Add a new domain to your site:</label>
+                                <div class="input-with-button">
+                                    <input class="form-input" type="text" id="domainInput"
+                                        placeholder="Enter your domain (e.g., example.com)">
+                                    <button class="btn btn-outline" id="checkDomainBtn">
+                                        <i class="bi bi-search"></i> Check Availability
+                                    </button>
+                                </div>
+                                <div id="validationMessage" class="validation-message"></div>
                             </div>
 
-                            <div class="form-group">
-                                <label class="form-label">Brand Logo</label>
-                                <div class="image-upload">
-                                    <div class="upload-icon"><i class="bi bi-cloud-arrow-up"></i></div>
-                                    <div class="upload-text">Upload brand logo</div>
-                                    <div class="upload-hint">Recommended: 200x200px | Max size: 1MB</div>
+                            <!-- Test domains for demonstration -->
+                            <div class="test-domains">
+                                <p><strong>Test with these domains:</strong></p>
+                                <button class="test-domain-btn" data-domain="example-shop.com">example-shop.com
+                                    (Available)</button>
+                                <button class="test-domain-btn" data-domain="mystore-test.com">mystore-test.com
+                                    (Available)</button>
+                                <button class="test-domain-btn" data-domain="existing-domain.com">existing-domain.com
+                                    (Not
+                                    Available)</button>
+                                <button class="test-domain-btn" data-domain="taken-website.com">taken-website.com (Not
+                                    Available)</button>
+                            </div>
+
+                            <!-- Add Domain button container (hidden by default) -->
+                            <div class="add-domain-container" id="addDomainContainer">
+                                <div class="form-actions">
+                                    <button class="btn btn-outline" id="addDomainBtn">
+                                        <i class="bi bi-plus-circle"></i> Add Domain
+                                    </button>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label class="form-label">Brand Description</label>
-                            <textarea class="form-textarea" placeholder="Enter brand description"></textarea>
+                        <div class="domain-list" id="domainList">
+                            <div class="form-group">
+                                <div class="empty-state" id="emptyState">
+                                    <i class="bi bi-globe2"></i>
+                                    <label class="form-label">No domains added yet. Add your first domain to get
+                                        started.</label>
+                                </div>
+                            </div>
+                            <!-- Domain items will be added here dynamically -->
                         </div>
 
                         <div class="form-actions">
-                            <button class="btn btn-outline" id="cancelAddBrand">
-                                Cancel
+                            <button class="btn btn-primary" id="saveDomainsBtn">
+                                <i class="bi bi-check-circle"></i> Save Changes
                             </button>
+                        </div>
+                    </div>
+
+
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                            // Domain management functionality
+                            const domainInput = document.getElementById('domainInput');
+                            const checkDomainBtn = document.getElementById('checkDomainBtn');
+                            const addDomainBtn = document.getElementById('addDomainBtn');
+                            const addDomainContainer = document.getElementById('addDomainContainer');
+                            const domainList = document.getElementById('domainList');
+                            const emptyState = document.getElementById('emptyState');
+                            const saveDomainsBtn = document.getElementById('saveDomainsBtn');
+                            const validationMessage = document.getElementById('validationMessage');
+                            const testDomainBtns = document.querySelectorAll('.test-domain-btn');
+
+                            // Default domain
+                            const defaultDomain = "www.matager/shop/-3hf3hf483yffbaie3.com";
+                            let domains = [defaultDomain];
+                            let currentDomain = defaultDomain;
+                            let isDomainAvailable = false;
+
+                            // Add domain function
+                            function addDomain() {
+                                const domainValue = domainInput.value.trim();
+
+                                if (!domainValue) {
+                                    alert('Please enter a domain name');
+                                    return;
+                                }
+
+                                // Check if domain already exists
+                                if (domains.includes(domainValue)) {
+                                    alert('This domain has already been added');
+                                    return;
+                                }
+
+                                // Replace the default domain with the new one
+                                if (domains.length === 1 && domains[0] === defaultDomain) {
+                                    domains = [domainValue];
+                                } else {
+                                    domains.push(domainValue);
+                                }
+
+                                currentDomain = domainValue;
+                                renderDomains();
+                                domainInput.value = '';
+                                addDomainContainer.style.display = 'none';
+                                validationMessage.innerHTML = '';
+                            }
+
+                            // Remove domain function
+                            function removeDomain(domain) {
+                                domains = domains.filter(d => d !== domain);
+
+                                // If no domains left, add the default one
+                                if (domains.length === 0) {
+                                    domains = [defaultDomain];
+                                    currentDomain = defaultDomain;
+                                }
+
+                                renderDomains();
+                            }
+
+                            // Check domain availability
+                            function checkDomainAvailability() {
+                                const domainValue = domainInput.value.trim();
+
+                                if (!domainValue) {
+                                    validationMessage.innerHTML = '<span class="validation-error">Please enter a domain name</span>';
+                                    addDomainContainer.style.display = 'none';
+                                    return;
+                                }
+
+                                // Simple domain validation
+                                const domainRegex = /^[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]\.[a-zA-Z]{2,}$/;
+                                if (!domainRegex.test(domainValue)) {
+                                    validationMessage.innerHTML = '<span class="validation-error">Please enter a valid domain name</span>';
+                                    addDomainContainer.style.display = 'none';
+                                    return;
+                                }
+
+                                // Show loader
+                                validationMessage.innerHTML = '<div class="loader"></div> Checking domain availability...';
+                                addDomainContainer.style.display = 'none';
+
+                                // Simulate API call with timeout
+                                setTimeout(() => {
+                                    // For demo purposes, domains containing "example" or "test" are considered available
+                                    // Others are considered taken
+                                    if (domainValue.includes('example') || domainValue.includes('test')) {
+                                        validationMessage.innerHTML = '<i class="bi bi-check-circle validation-success"></i> <span class="validation-success">Domain is available!</span>';
+                                        addDomainContainer.style.display = 'block';
+                                        isDomainAvailable = true;
+                                    } else {
+                                        validationMessage.innerHTML = '<i class="bi bi-x-circle validation-error"></i> <span class="validation-error">Domain is already in use</span>';
+                                        addDomainContainer.style.display = 'none';
+                                        isDomainAvailable = false;
+                                    }
+                                }, 1500);
+                            }
+
+                            // Visit site function
+                            function visitSite(url) {
+                                window.open(url, '_blank');
+                            }
+
+                            // Render domains list
+                            function renderDomains() {
+                                if (domains.length === 0) {
+                                    emptyState.style.display = 'block';
+                                    domainList.innerHTML = '';
+                                    domainList.appendChild(emptyState);
+                                    return;
+                                }
+
+                                emptyState.style.display = 'none';
+
+                                let domainsHTML = '';
+                                domains.forEach(domain => {
+                                    const isDefault = domain === defaultDomain && domains.length === 1;
+                                    const status = isDefault ? 'active' : 'pending';
+
+                                    domainsHTML += `
+                                                                <div class="domain-item ${isDefault ? 'default-domain' : ''}">
+                                                                    <div class="domain-status">
+                                                                        <span class="status-indicator status-${status}"></span>
+                                                                        <span>${domain}</span>
+                                                                    </div>
+                                                                    <div class="domain-actions">
+                                                                        <button class="btn btn-outline btn-sm" onclick="visitSite('http://${domain}')">
+                                                                            <i class="bi bi-box-arrow-up-right"></i> Visit Site
+                                                                        </button>
+                                                                        ${!isDefault ? `
+                                                                        <button class="btn btn-danger btn-sm" onclick="removeDomain('${domain}')">
+                                                                            <i class="bi bi-trash"></i> Remove
+                                                                        </button>
+                                                                        ` : ''}
+                                                                    </div>
+                                                                </div>
+                                                            `;
+                                });
+
+                                domainList.innerHTML = domainsHTML;
+                            }
+
+                            // Event listeners
+                            checkDomainBtn.addEventListener('click', checkDomainAvailability);
+
+                            addDomainBtn.addEventListener('click', addDomain);
+
+                            domainInput.addEventListener('keypress', function (e) {
+                                if (e.key === 'Enter') {
+                                    checkDomainAvailability();
+                                }
+                            });
+
+                            // Test domain buttons
+                            testDomainBtns.forEach(btn => {
+                                btn.addEventListener('click', function () {
+                                    const domain = this.getAttribute('data-domain');
+                                    domainInput.value = domain;
+                                    checkDomainAvailability();
+                                });
+                            });
+
+                            saveDomainsBtn.addEventListener('click', function () {
+                                if (domains.length === 0) {
+                                    alert('No domains to save');
+                                    return;
+                                }
+
+                                // In a real application, you would send this data to a server
+                                alert(`Domains saved successfully!\n\nCurrent domain: ${currentDomain}\n\nAll domains:\n${domains.join('\n')}`);
+                            });
+
+                            // Make functions available globally for onclick events
+                            window.removeDomain = removeDomain;
+                            window.visitSite = visitSite;
+
+                            // Initialize with default domain
+                            renderDomains();
+                        });
+                    </script>
+                    <!-- Theme Selection -->
+                    <div class="tab-content animatedtoup" id="Modes-content">
+                        <div class="form-header">
+                            <h4 class="form-title"><i class="bi bi-palette"></i> Modes Selection</h4>
+                            <div class="form-actions">
+                                <button class="btn btn-outline">
+                                    <i class="bi bi-eye"></i> Preview
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="theme-selector">
+                            <div class="theme-option selected">
+                                <div class="theme-preview"
+                                    style="background: linear-gradient(to right, #4e73df, #224abe);">
+                                </div>
+                                <div class="theme-info">
+                                    <div class="theme-name">Light Mode</div>
+                                </div>
+                            </div>
+
+                            <div class="theme-option">
+                                <div class="theme-preview"
+                                    style="background: linear-gradient(to right, #1cc88a, #13855c);">
+                                </div>
+                                <div class="theme-info">
+                                    <div class="theme-name">Grey Mode Nature</div>
+                                </div>
+                            </div>
+
+                            <div class="theme-option">
+                                <div class="theme-preview"
+                                    style="background: linear-gradient(to right, #5a5c69, #3a3b45);">
+                                </div>
+                                <div class="theme-info">
+                                    <div class="theme-name">Dark Mode</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
                             <button class="btn btn-primary">
-                                <i class="bi bi-check-circle"></i> Save Brand
+                                <i class="bi bi-check-circle"></i> Apply Mode
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Homepage Images -->
+                    <div class="tab-content animatedtoup" id="Images-content">
+                        <div class="form-header">
+                            <h4 class="form-title"><i class="bi bi-images"></i> Homepage Images</h4>
+                        </div>
+
+                        <div class="section-title">Banner Image</div>
+                        <div class="image-upload">
+                            <div class="upload-icon"><i class="bi bi-cloud-arrow-up"></i></div>
+                            <div class="upload-text">Drag & drop banner image or click to browse</div>
+                            <div class="upload-hint">Recommended size: 1200x400px | Max size: 2MB</div>
+                        </div>
+
+                        <div class="section-title">New Arrivals Section</div>
+                        <div class="image-upload">
+                            <div class="upload-icon"><i class="bi bi-cloud-arrow-up"></i></div>
+                            <div class="upload-text">Drag & drop new arrivals image or click to browse</div>
+                            <div class="upload-hint">Recommended size: 800x600px | Max size: 1.5MB</div>
+                        </div>
+
+                        <div class="section-title">Sale Section</div>
+                        <div class="image-upload">
+                            <div class="upload-icon"><i class="bi bi-cloud-arrow-up"></i></div>
+                            <div class="upload-text">Drag & drop sale section image or click to browse</div>
+                            <div class="upload-hint">Recommended size: 800x600px | Max size: 1.5MB</div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button class="btn btn-primary">
+                                <i class="bi bi-check-circle"></i> Save Images
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Brands Management -->
+                    <div class="tab-content animatedtoup" id="Brands-content">
+                        <div class="form-header">
+                            <h4 class="form-title"><i class="bi bi-tags"></i> Brands Management</h4>
+                            <div class="form-actions">
+                                <button class="btn btn-outline" id="addBrandBtn">
+                                    <i class="bi bi-plus-circle"></i> Add Brand
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="brands-grid">
+                            <div class="brand-card">
+                                <div class="brand-logo">
+                                    <i class="bi bi-building"></i>
+                                </div>
+                                <div class="brand-name">Nike</div>
+                                <div class="brand-actions">
+                                    <button class="btn-icon btn-sm" title="Edit"><i class="bi bi-pencil"></i></button>
+                                    <button class="btn-icon btn-sm" title="Delete"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </div>
+
+                            <div class="brand-card">
+                                <div class="brand-logo">
+                                    <i class="bi bi-building"></i>
+                                </div>
+                                <div class="brand-name">Adidas</div>
+                                <div class="brand-actions">
+                                    <button class="btn-icon btn-sm" title="Edit"><i class="bi bi-pencil"></i></button>
+                                    <button class="btn-icon btn-sm" title="Delete"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </div>
+
+                            <div class="brand-card">
+                                <div class="brand-logo">
+                                    <i class="bi bi-building"></i>
+                                </div>
+                                <div class="brand-name">Puma</div>
+                                <div class="brand-actions">
+                                    <button class="btn-icon btn-sm" title="Edit"><i class="bi bi-pencil"></i></button>
+                                    <button class="btn-icon btn-sm" title="Delete"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </div>
+
+                            <div class="brand-card">
+                                <div class="brand-logo">
+                                    <i class="bi bi-building"></i>
+                                </div>
+                                <div class="brand-name">Reebok</div>
+                                <div class="brand-actions">
+                                    <button class="btn-icon btn-sm" title="Edit"><i class="bi bi-pencil"></i></button>
+                                    <button class="btn-icon btn-sm" title="Delete"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Add Brand Form (Initially Hidden) -->
+                        <div id="addBrandForm">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label class="form-label">Brand Name</label>
+                                    <input type="text" class="form-input" placeholder="Enter brand name">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">Brand Logo</label>
+                                    <div class="image-upload">
+                                        <div class="upload-icon"><i class="bi bi-cloud-arrow-up"></i></div>
+                                        <div class="upload-text">Upload brand logo</div>
+                                        <div class="upload-hint">Recommended: 200x200px | Max size: 1MB</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Brand Description</label>
+                                <textarea class="form-textarea" placeholder="Enter brand description"></textarea>
+                            </div>
+
+                            <div class="form-actions">
+                                <button class="btn btn-outline" id="cancelAddBrand">
+                                    Cancel
+                                </button>
+                                <button class="btn btn-primary">
+                                    <i class="bi bi-check-circle"></i> Save Brand
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Shipping Settings -->
+                    <div class="tab-content animatedtoup" id="Shipping-content">
+                        <div class="form-header">
+                            <h4 class="form-title"><i class="bi bi-truck"></i> Shipping Settings</h4>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Default Shipping Fee</label>
+                            <input type="number" class="form-input" placeholder="Enter default shipping fee" value="50">
+                            <div class="upload-hint">This fee will apply to all cities unless specified below</div>
+                        </div>
+
+                        <div class="section-title">Special City Shipping Fees</div>
+
+                        <div class="shipping-grid">
+                            <div class="form-group">
+                                <label class="form-label">City</label>
+                                <select class="form-select">
+                                    <option value="">Select a city</option>
+                                    <option value="cairo">Cairo</option>
+                                    <option value="alexandria">Alexandria</option>
+                                    <option value="giza">Giza</option>
+                                    <option value="luxor">Luxor</option>
+                                    <option value="aswan">Aswan</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Special Fee (EGP)</label>
+                                <input type="number" class="form-input" placeholder="Enter special fee">
+                            </div>
+
+                            <div class="form-group">
+                                <button class="btn btn-sm btn-outline" style="height: 42px;">
+                                    <i class="bi bi-plus"></i> Add
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Current Special Fees</label>
+                            <div class="upload-hint">Cairo: 25 EGP | Alexandria: 30 EGP | Giza: 35 EGP</div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button class="btn btn-primary">
+                                <i class="bi bi-check-circle"></i> Save Shipping Settings
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Inventory Settings -->
+                    <div class="tab-content animatedtoup" id="Inventory-content">
+                        <div class="form-header">
+                            <h4 class="form-title"><i class="bi bi-box-seam"></i> Inventory Settings</h4>
+                        </div>
+
+                        <div class="settings-section">
+                            <h5 class="section-title"><i class="bi bi-box"></i> Stock Settings</h5>
+
+                            <div class="switch-container">
+                                <span class="switch-label">Show out of stock products</span>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="switch-container">
+                                <span class="switch-label">Hide products when stock reaches zero</span>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="switch-container">
+                                <span class="switch-label">When stock reaches zero, delete product automatically</span>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="switch-container">
+                            <span class="switch-label">Allow backorders</span>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+
+                        </div>
+
+                        <div class="switch-container">
+                            <span class="switch-label">Show stock quantity on product page</span>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+
+                        </div>
+
+                        <div class="form-actions">
+                            <button class="btn btn-primary">
+                                <i class="bi bi-check-circle"></i> Save Inventory Settings
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Shipping Settings -->
-                <div class="form-container">
-                    <div class="form-header">
-                        <h4 class="form-title"><i class="bi bi-truck"></i> Shipping Settings</h4>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">Default Shipping Fee</label>
-                        <input type="number" class="form-input" placeholder="Enter default shipping fee" value="50">
-                        <div class="upload-hint">This fee will apply to all cities unless specified below</div>
-                    </div>
-
-                    <div class="section-title">Special City Shipping Fees</div>
-
-                    <div class="shipping-grid">
-                        <div class="form-group">
-                            <label class="form-label">City</label>
-                            <select class="form-select">
-                                <option value="">Select a city</option>
-                                <option value="cairo">Cairo</option>
-                                <option value="alexandria">Alexandria</option>
-                                <option value="giza">Giza</option>
-                                <option value="luxor">Luxor</option>
-                                <option value="aswan">Aswan</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Special Fee (EGP)</label>
-                            <input type="number" class="form-input" placeholder="Enter special fee">
-                        </div>
-
-                        <div class="form-group">
-                            <button class="btn btn-sm btn-outline" style="height: 42px;">
-                                <i class="bi bi-plus"></i> Add
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">Current Special Fees</label>
-                        <div class="upload-hint">Cairo: 25 EGP | Alexandria: 30 EGP | Giza: 35 EGP</div>
-                    </div>
-
-                    <div class="form-actions">
-                        <button class="btn btn-primary">
-                            <i class="bi bi-check-circle"></i> Save Shipping Settings
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Inventory Settings -->
-                <div class="form-container">
-                    <div class="form-header">
-                        <h4 class="form-title"><i class="bi bi-box-seam"></i> Inventory Settings</h4>
-                    </div>
-
-                    <div class="switch-container">
-                        <span class="switch-label">Show out of stock products</span>
-                        <label class="switch">
-                            <input type="checkbox" checked>
-                            <span class="slider"></span>
-                        </label>
-
-                    </div>
-
-                    <div class="switch-container">
-                        <span class="switch-label">Hide products when stock reaches zero</span>
-                        <label class="switch">
-                            <input type="checkbox">
-                            <span class="slider"></span>
-                        </label>
-
-                    </div>
-
-                    <div class="switch-container">
-                        <span class="switch-label">Allow backorders</span>
-                        <label class="switch">
-                            <input type="checkbox" checked>
-                            <span class="slider"></span>
-                        </label>
-
-                    </div>
-
-                    <div class="switch-container">
-                        <span class="switch-label">Show stock quantity on product page</span>
-                        <label class="switch">
-                            <input type="checkbox">
-                            <span class="slider"></span>
-                        </label>
-
-                    </div>
-
-                    <div class="form-actions">
-                        <button class="btn btn-primary">
-                            <i class="bi bi-check-circle"></i> Save Inventory Settings
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Action Buttons -->
-                <div class="action-buttons">
-                    <button class="btn btn-outline">
-                        <i class="bi bi-arrow-clockwise"></i> Reset Changes
-                    </button>
-                    <button class="btn btn-primary">
-                        <i class="bi bi-check-circle"></i> Save All Settings
-                    </button>
-                </div>
             </div>
         </div>
 
@@ -2643,155 +2650,395 @@
                         </div>
                     </div>
                 </div>
+                <div class="form-container animatedtoup">
+                    <div class="tabs-btn-area">
+                        <button class="tab-button active" data-tab="stuckCarts">Stuck Carts</button>
+                        <button class="tab-button" data-tab="reviews">Reviews</button>
+                        <button class="tab-button" data-tab="customersInfo">Info</button>
+                    </div>
 
-                <!-- Action Buttons -->
-                <!-- Stuck Carts Section -->
-                <div class="form-container animatedtoup" id="stuckCartsContainer">
-                    <div class="form-header">
-                        <h4 class="form-title"><i class="bi bi-cart-x"></i> Stuck Carts</h4>
-                        <div class="form-actions">
-                            <button class="btn btn-outline" id="exportCarts">
-                                <i class="bi bi-download"></i> Export
+                    <div class="tab-content active animatedtoup" id="stuckCarts-content">
+                        <!-- Stuck Carts Section -->
+                        <div class="form-header">
+                            <h4 class="form-title"><i class="bi bi-cart-x"></i> Stuck Carts</h4>
+                            <div class="form-actions">
+                                <button class="btn btn-outline" id="exportCarts">
+                                    <i class="bi bi-download"></i> Export
+                                </button>
+                                <button class="btn btn-primary" id="sendReminders">
+                                    <i class="bi bi-send"></i> Send Reminders
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Carts Filter -->
+                        <div class="filter-bar">
+                            <div class="filter-group">
+                                <label>Filter by:</label>
+                                <select class="form-select" id="cartFilter">
+                                    <option value="all">All Carts</option>
+                                    <option value="today">Abandoned Today</option>
+                                    <option value="week">Abandoned This Week</option>
+                                    <option value="month">Abandoned This Month</option>
+                                    <option value="high-value">High Value Carts</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label>Sort by:</label>
+                                <select class="form-select" id="cartSort">
+                                    <option value="newest">Newest First</option>
+                                    <option value="oldest">Oldest First</option>
+                                    <option value="value">Cart Value</option>
+                                    <option value="items">Number of Items</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Carts List -->
+                        <div class="stuck-carts-list">
+                            <div class="stuck-cart-item">
+                                <div class="cart-avatar">JD</div>
+                                <div class="cart-info">
+                                    <div class="cart-customer">John Doe</div>
+                                    <div class="cart-details">
+                                        <span><i class="bi bi-clock"></i> 2 hours ago</span>
+                                        <span><i class="bi bi-cart"></i> 3 items</span>
+                                        <span> 147.50 EGP</span>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <span class="cart-status-badge status-new">New</span>
+                                    <button class="btn btn-sm btn-outline">
+                                        <i class="bi bi-eye"></i> View
+                                    </button>
+                                    <button class="btn btn-sm btn-primary">
+                                        <i class="bi bi-send"></i> Remind
+                                    </button>
+                                    <button class="btn btn-sm btn-primary">
+                                        <i class="bi bi-telephone-forward"></i> Call
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="stuck-cart-item">
+                                <div class="cart-avatar">JS</div>
+                                <div class="cart-info">
+                                    <div class="cart-customer">Jane Smith</div>
+                                    <div class="cart-details">
+                                        <span><i class="bi bi-clock"></i> 1 day ago</span>
+                                        <span><i class="bi bi-cart"></i> 1 item</span>
+                                        <span> 49.99 EGP</span>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <span class="cart-status-badge status-warning">Reminder Sent</span>
+                                    <button class="btn btn-sm btn-outline">
+                                        <i class="bi bi-eye"></i> View
+                                    </button>
+                                    <button class="btn btn-sm btn-primary">
+                                        <i class="bi bi-send"></i> Remind Again
+                                    </button>
+                                    <button class="btn btn-sm btn-primary">
+                                        <i class="bi bi-telephone-forward"></i> Call
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="stuck-cart-item">
+                                <div class="cart-avatar">RJ</div>
+                                <div class="cart-info">
+                                    <div class="cart-customer">Robert Johnson</div>
+                                    <div class="cart-details">
+                                        <span><i class="bi bi-clock"></i> 3 days ago</span>
+                                        <span><i class="bi bi-cart"></i> 5 items</span>
+                                        <span> 289.75 EGP</span>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <span class="cart-status-badge status-danger">High Value</span>
+                                    <button class="btn btn-sm btn-outline">
+                                        <i class="bi bi-eye"></i> View
+                                    </button>
+                                    <button class="btn btn-sm btn-primary">
+                                        <i class="bi bi-send"></i> Remind
+                                    </button>
+                                    <button class="btn btn-sm btn-primary">
+                                        <i class="bi bi-telephone-forward"></i> Call
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="stuck-cart-item">
+                                <div class="cart-avatar">ES</div>
+                                <div class="cart-info">
+                                    <div class="cart-customer">Emily Sanchez</div>
+                                    <div class="cart-details">
+                                        <span><i class="bi bi-clock"></i> 5 days ago</span>
+                                        <span><i class="bi bi-cart"></i> 2 items</span>
+                                        <span> 78.30 EGP</span>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <span class="cart-status-badge status-warning">2 Reminders Sent</span>
+                                    <button class="btn btn-sm btn-outline">
+                                        <i class="bi bi-eye"></i> View
+                                    </button>
+                                    <button class="btn btn-sm btn-primary">
+                                        <i class="bi bi-send"></i> Final Reminder
+                                    </button>
+                                    <button class="btn btn-sm btn-primary">
+                                        <i class="bi bi-telephone-forward"></i> Call
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="pagination">
+                            <button class="btn btn-outline" disabled>
+                                <i class="bi bi-chevron-left"></i> Previous
                             </button>
-                            <button class="btn btn-primary" id="sendReminders">
-                                <i class="bi bi-send"></i> Send Reminders
+                            <span class="pagination-info">Page 1 of 3</span>
+                            <button class="btn btn-outline">
+                                Next <i class="bi bi-chevron-right"></i>
+                            </button>
+
+                        </div>
+                    </div>
+                    <div class="tab-content active animatedtoup" id="reviews-content">
+
+                        <div class="form-header">
+                            <h4 class="form-title"><i class="bi bi-star"></i> Customer Reviews</h4>
+                            <div class="form-actions">
+                                <button class="btn btn-outline" id="exportReviews">
+                                    <i class="bi bi-download"></i> Export
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Reviews Filter -->
+                        <div class="filter-bar">
+                            <div class="filter-group">
+                                <label>Filter by:</label>
+                                <select class="form-select" id="reviewFilter">
+                                    <option value="all">All Reviews</option>
+                                    <option value="5">5 Stars</option>
+                                    <option value="4">4 Stars</option>
+                                    <option value="3">3 Stars</option>
+                                    <option value="2">2 Stars</option>
+                                    <option value="1">1 Star</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label>Sort by:</label>
+                                <select class="form-select" id="reviewSort">
+                                    <option value="newest">Newest First</option>
+                                    <option value="oldest">Oldest First</option>
+                                    <option value="highest">Highest Rating</option>
+                                    <option value="lowest">Lowest Rating</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Reviews List -->
+                        <div class="reviews-list">
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="reviewer-info">
+                                        <div class="reviewer-name">John Doe</div>
+                                        <div class="review-date">September 12, 2023</div>
+                                    </div>
+                                    <div class="review-rating">
+                                        <div class="stars">
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="review-product">
+                                    Product: <a href="#">Classic White T-Shirt</a>
+                                </div>
+                                <div class="review-content">
+                                    <p>Excellent product! The fabric quality is amazing and it fits perfectly. Will
+                                        definitely buy
+                                        again.</p>
+                                </div>
+                                <div class="review-actions">
+                                    <button class="btn btn-sm btn-outline report-review" data-review-id="1">
+                                        <i class="bi bi-flag"></i> Report
+                                    </button>
+                                    <button class="btn btn-sm btn-danger delete-review" data-review-id="1">
+                                        <i class="bi bi-trash"></i> Delete
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="reviewer-info">
+                                        <div class="reviewer-name">Jane Smith</div>
+                                        <div class="review-date">September 10, 2023</div>
+                                    </div>
+                                    <div class="review-rating">
+                                        <div class="stars">
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-half"></i>
+                                            <i class="bi bi-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="review-product">
+                                    Product: <a href="#">Blue Denim Jacket</a>
+                                </div>
+                                <div class="review-content">
+                                    <p>Good jacket overall, but the sizing runs a bit small. Would recommend
+                                        ordering
+                                        one
+                                        size up.
+                                    </p>
+                                </div>
+                                <div class="review-actions">
+                                    <button class="btn btn-sm btn-outline report-review" data-review-id="2">
+                                        <i class="bi bi-flag"></i> Report
+                                    </button>
+                                    <button class="btn btn-sm btn-danger delete-review" data-review-id="2">
+                                        <i class="bi bi-trash"></i> Delete
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="review-item reported">
+                                <div class="review-header">
+                                    <div class="reviewer-info">
+                                        <div class="reviewer-name">Anonymous User</div>
+                                        <div class="review-date">September 5, 2023</div>
+                                    </div>
+                                    <div class="review-rating">
+                                        <div class="stars">
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star"></i>
+                                            <i class="bi bi-star"></i>
+                                            <i class="bi bi-star"></i>
+                                            <i class="bi bi-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="review-product">
+                                    Product: <a href="#">Sports Running Shoes</a>
+                                </div>
+                                <div class="review-content">
+                                    <p>Terrible product! Fell apart after just two weeks. Complete waste of money.
+                                    </p>
+                                </div>
+                                <div class="review-status-badge">
+                                    <span class="status-badge warning">Reported</span>
+                                </div>
+                                <div class="review-actions">
+                                    <button class="btn btn-sm btn-success approve-review" data-review-id="3">
+                                        <i class="bi bi-check-circle"></i> Approve
+                                    </button>
+                                    <button class="btn btn-sm btn-danger delete-review" data-review-id="3">
+                                        <i class="bi bi-trash"></i> Delete
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="pagination">
+                            <button class="btn btn-outline" disabled>
+                                <i class="bi bi-chevron-left"></i> Previous
+                            </button>
+                            <span class="pagination-info">Page 1 of 5</span>
+                            <button class="btn btn-outline">
+                                Next <i class="bi bi-chevron-right"></i>
                             </button>
                         </div>
+
                     </div>
+                    <div class="tab-content active animatedtoup" id="customersInfo-content">
 
-                    <!-- Carts Filter -->
-                    <div class="filter-bar">
-                        <div class="filter-group">
-                            <label>Filter by:</label>
-                            <select class="form-select" id="cartFilter">
-                                <option value="all">All Carts</option>
-                                <option value="today">Abandoned Today</option>
-                                <option value="week">Abandoned This Week</option>
-                                <option value="month">Abandoned This Month</option>
-                                <option value="high-value">High Value Carts</option>
-                            </select>
-                        </div>
-                        <div class="filter-group">
-                            <label>Sort by:</label>
-                            <select class="form-select" id="cartSort">
-                                <option value="newest">Newest First</option>
-                                <option value="oldest">Oldest First</option>
-                                <option value="value">Cart Value</option>
-                                <option value="items">Number of Items</option>
-                            </select>
-                        </div>
-                    </div>
+                        <div class="form-header">
+                            <h4 class="form-title"><i class="bi bi-table"></i> Customers Information</h4>
 
-                    <!-- Carts List -->
-                    <div class="stuck-carts-list">
-                        <div class="stuck-cart-item">
-                            <div class="cart-avatar">JD</div>
-                            <div class="cart-info">
-                                <div class="cart-customer">John Doe</div>
-                                <div class="cart-details">
-                                    <span><i class="bi bi-clock"></i> 2 hours ago</span>
-                                    <span><i class="bi bi-cart"></i> 3 items</span>
-                                    <span> 147.50 EGP</span>
-                                </div>
-                            </div>
-                            <div class="form-actions">
-                                <span class="cart-status-badge status-new">New</span>
-                                <button class="btn btn-sm btn-outline">
-                                    <i class="bi bi-eye"></i> View
-                                </button>
-                                <button class="btn btn-sm btn-primary">
-                                    <i class="bi bi-send"></i> Remind
-                                </button>
-                                <button class="btn btn-sm btn-primary">
-                                    <i class="bi bi-telephone-forward"></i> Call
-                                </button>
-                            </div>
                         </div>
-
-                        <div class="stuck-cart-item">
-                            <div class="cart-avatar">JS</div>
-                            <div class="cart-info">
-                                <div class="cart-customer">Jane Smith</div>
-                                <div class="cart-details">
-                                    <span><i class="bi bi-clock"></i> 1 day ago</span>
-                                    <span><i class="bi bi-cart"></i> 1 item</span>
-                                    <span> 49.99 EGP</span>
-                                </div>
+                        <div class="header-actions animatedtoup" id="customerSearchArea">
+                            <div class="search-box" id="customerSearchBox">
+                                <input type="text" placeholder="Search by name, email or phone..." id="customerSearch">
                             </div>
-                            <div class="form-actions">
-                                <span class="cart-status-badge status-warning">Reminder Sent</span>
-                                <button class="btn btn-sm btn-outline">
-                                    <i class="bi bi-eye"></i> View
-                                </button>
-                                <button class="btn btn-sm btn-primary">
-                                    <i class="bi bi-send"></i> Remind Again
-                                </button>
-                                <button class="btn btn-sm btn-primary">
-                                    <i class="bi bi-telephone-forward"></i> Call
-                                </button>
-                            </div>
+                            <button class="btn btn-outline">
+                                Find <i class="bi bi-search"></i>
+                            </button>
                         </div>
-
-                        <div class="stuck-cart-item">
-                            <div class="cart-avatar">RJ</div>
-                            <div class="cart-info">
-                                <div class="cart-customer">Robert Johnson</div>
-                                <div class="cart-details">
-                                    <span><i class="bi bi-clock"></i> 3 days ago</span>
-                                    <span><i class="bi bi-cart"></i> 5 items</span>
-                                    <span> 289.75 EGP</span>
-                                </div>
-                            </div>
-                            <div class="form-actions">
-                                <span class="cart-status-badge status-danger">High Value</span>
-                                <button class="btn btn-sm btn-outline">
-                                    <i class="bi bi-eye"></i> View
-                                </button>
-                                <button class="btn btn-sm btn-primary">
-                                    <i class="bi bi-send"></i> Remind
-                                </button>
-                                <button class="btn btn-sm btn-primary">
-                                    <i class="bi bi-telephone-forward"></i> Call
-                                </button>
-                            </div>
+                        <div class="site-table-container">
+                            <table class="site-table">
+                                <thead>
+                                    <tr>
+                                        <th><input type="checkbox" id="selectAllCustomers"></th>
+                                        <th>Customer Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Orders</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="checkbox" class="customer-checkbox"></td>
+                                        <td>John Doe</td>
+                                        <td>john.doe@example.com</td>
+                                        <td>+1234567890</td>
+                                        <td>12</td>
+                                        <td><span class="status-badge active">Active</span></td>
+                                        <td>
+                                            <button class="btn-icon" title="View Details"><i
+                                                    class="bi bi-eye"></i></button>
+                                            <button class="btn-icon" title="Edit"><i class="bi bi-pencil"></i></button>
+                                            <button class="btn-icon" title="Delete"><i class="bi bi-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="customer-checkbox"></td>
+                                        <td>Jane Smith</td>
+                                        <td>jane.smith@example.com</td>
+                                        <td>+1987654321</td>
+                                        <td>8</td>
+                                        <td><span class="status-badge active">Active</span></td>
+                                        <td>
+                                            <button class="btn-icon" title="View Details"><i
+                                                    class="bi bi-eye"></i></button>
+                                            <button class="btn-icon" title="Edit"><i class="bi bi-pencil"></i></button>
+                                            <button class="btn-icon" title="Delete"><i class="bi bi-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" class="customer-checkbox"></td>
+                                        <td>Robert Johnson</td>
+                                        <td>robert.j@example.com</td>
+                                        <td>+1122334455</td>
+                                        <td>3</td>
+                                        <td><span class="status-badge inactive">Inactive</span></td>
+                                        <td>
+                                            <button class="btn-icon" title="View Details"><i
+                                                    class="bi bi-eye"></i></button>
+                                            <button class="btn-icon" title="Edit"><i class="bi bi-pencil"></i></button>
+                                            <button class="btn-icon" title="Delete"><i class="bi bi-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
 
-                        <div class="stuck-cart-item">
-                            <div class="cart-avatar">ES</div>
-                            <div class="cart-info">
-                                <div class="cart-customer">Emily Sanchez</div>
-                                <div class="cart-details">
-                                    <span><i class="bi bi-clock"></i> 5 days ago</span>
-                                    <span><i class="bi bi-cart"></i> 2 items</span>
-                                    <span> 78.30 EGP</span>
-                                </div>
-                            </div>
-                            <div class="form-actions">
-                                <span class="cart-status-badge status-warning">2 Reminders Sent</span>
-                                <button class="btn btn-sm btn-outline">
-                                    <i class="bi bi-eye"></i> View
-                                </button>
-                                <button class="btn btn-sm btn-primary">
-                                    <i class="bi bi-send"></i> Final Reminder
-                                </button>
-                                <button class="btn btn-sm btn-primary">
-                                    <i class="bi bi-telephone-forward"></i> Call
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Pagination -->
-                    <div class="pagination">
-                        <button class="btn btn-outline" disabled>
-                            <i class="bi bi-chevron-left"></i> Previous
-                        </button>
-                        <span class="pagination-info">Page 1 of 3</span>
-                        <button class="btn btn-outline">
-                            Next <i class="bi bi-chevron-right"></i>
-                        </button>
                     </div>
                 </div>
+                <!-- Action Buttons -->
+
 
 
                 <script>
@@ -2840,76 +3087,7 @@
 
                 <!-- Search Area -->
 
-                <div class="form-container animatedtoup">
-                    <div class="form-header">
-                        <h4 class="form-title"><i class="bi bi-table"></i> Customers Information</h4>
 
-                    </div>
-                    <div class="header-actions animatedtoup" id="customerSearchArea">
-                        <div class="search-box" id="customerSearchBox">
-                            <input type="text" placeholder="Search by name, email or phone..." id="customerSearch">
-                        </div>
-                        <button class="btn btn-outline">
-                            Find <i class="bi bi-search"></i>
-                        </button>
-                    </div>
-                    <div class="site-table-container">
-                        <table class="site-table">
-                            <thead>
-                                <tr>
-                                    <th><input type="checkbox" id="selectAllCustomers"></th>
-                                    <th>Customer Name</th>
-                                    <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Orders</th>
-                                    <th>Status</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><input type="checkbox" class="customer-checkbox"></td>
-                                    <td>John Doe</td>
-                                    <td>john.doe@example.com</td>
-                                    <td>+1234567890</td>
-                                    <td>12</td>
-                                    <td><span class="status-badge active">Active</span></td>
-                                    <td>
-                                        <button class="btn-icon" title="View Details"><i class="bi bi-eye"></i></button>
-                                        <button class="btn-icon" title="Edit"><i class="bi bi-pencil"></i></button>
-                                        <button class="btn-icon" title="Delete"><i class="bi bi-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox" class="customer-checkbox"></td>
-                                    <td>Jane Smith</td>
-                                    <td>jane.smith@example.com</td>
-                                    <td>+1987654321</td>
-                                    <td>8</td>
-                                    <td><span class="status-badge active">Active</span></td>
-                                    <td>
-                                        <button class="btn-icon" title="View Details"><i class="bi bi-eye"></i></button>
-                                        <button class="btn-icon" title="Edit"><i class="bi bi-pencil"></i></button>
-                                        <button class="btn-icon" title="Delete"><i class="bi bi-trash"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox" class="customer-checkbox"></td>
-                                    <td>Robert Johnson</td>
-                                    <td>robert.j@example.com</td>
-                                    <td>+1122334455</td>
-                                    <td>3</td>
-                                    <td><span class="status-badge inactive">Inactive</span></td>
-                                    <td>
-                                        <button class="btn-icon" title="View Details"><i class="bi bi-eye"></i></button>
-                                        <button class="btn-icon" title="Edit"><i class="bi bi-pencil"></i></button>
-                                        <button class="btn-icon" title="Delete"><i class="bi bi-trash"></i></button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
 
 
                 <!-- Customer List Table -->
@@ -2918,157 +3096,7 @@
                 </div>
 
                 <!-- Customer Reviews Section -->
-                <div class="form-container animatedtoup" id="reviewsContainer">
-                    <div class="form-header">
-                        <h4 class="form-title"><i class="bi bi-star"></i> Customer Reviews</h4>
-                        <div class="form-actions">
-                            <button class="btn btn-outline" id="exportReviews">
-                                <i class="bi bi-download"></i> Export
-                            </button>
-                        </div>
-                    </div>
 
-                    <!-- Reviews Filter -->
-                    <div class="filter-bar">
-                        <div class="filter-group">
-                            <label>Filter by:</label>
-                            <select class="form-select" id="reviewFilter">
-                                <option value="all">All Reviews</option>
-                                <option value="5">5 Stars</option>
-                                <option value="4">4 Stars</option>
-                                <option value="3">3 Stars</option>
-                                <option value="2">2 Stars</option>
-                                <option value="1">1 Star</option>
-                            </select>
-                        </div>
-                        <div class="filter-group">
-                            <label>Sort by:</label>
-                            <select class="form-select" id="reviewSort">
-                                <option value="newest">Newest First</option>
-                                <option value="oldest">Oldest First</option>
-                                <option value="highest">Highest Rating</option>
-                                <option value="lowest">Lowest Rating</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <!-- Reviews List -->
-                    <div class="reviews-list">
-                        <div class="review-item">
-                            <div class="review-header">
-                                <div class="reviewer-info">
-                                    <div class="reviewer-name">John Doe</div>
-                                    <div class="review-date">September 12, 2023</div>
-                                </div>
-                                <div class="review-rating">
-                                    <div class="stars">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="review-product">
-                                Product: <a href="#">Classic White T-Shirt</a>
-                            </div>
-                            <div class="review-content">
-                                <p>Excellent product! The fabric quality is amazing and it fits perfectly. Will
-                                    definitely buy
-                                    again.</p>
-                            </div>
-                            <div class="review-actions">
-                                <button class="btn btn-sm btn-outline report-review" data-review-id="1">
-                                    <i class="bi bi-flag"></i> Report
-                                </button>
-                                <button class="btn btn-sm btn-danger delete-review" data-review-id="1">
-                                    <i class="bi bi-trash"></i> Delete
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="review-item">
-                            <div class="review-header">
-                                <div class="reviewer-info">
-                                    <div class="reviewer-name">Jane Smith</div>
-                                    <div class="review-date">September 10, 2023</div>
-                                </div>
-                                <div class="review-rating">
-                                    <div class="stars">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-half"></i>
-                                        <i class="bi bi-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="review-product">
-                                Product: <a href="#">Blue Denim Jacket</a>
-                            </div>
-                            <div class="review-content">
-                                <p>Good jacket overall, but the sizing runs a bit small. Would recommend ordering one
-                                    size up.
-                                </p>
-                            </div>
-                            <div class="review-actions">
-                                <button class="btn btn-sm btn-outline report-review" data-review-id="2">
-                                    <i class="bi bi-flag"></i> Report
-                                </button>
-                                <button class="btn btn-sm btn-danger delete-review" data-review-id="2">
-                                    <i class="bi bi-trash"></i> Delete
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="review-item reported">
-                            <div class="review-header">
-                                <div class="reviewer-info">
-                                    <div class="reviewer-name">Anonymous User</div>
-                                    <div class="review-date">September 5, 2023</div>
-                                </div>
-                                <div class="review-rating">
-                                    <div class="stars">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star"></i>
-                                        <i class="bi bi-star"></i>
-                                        <i class="bi bi-star"></i>
-                                        <i class="bi bi-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="review-product">
-                                Product: <a href="#">Sports Running Shoes</a>
-                            </div>
-                            <div class="review-content">
-                                <p>Terrible product! Fell apart after just two weeks. Complete waste of money.</p>
-                            </div>
-                            <div class="review-status-badge">
-                                <span class="status-badge warning">Reported</span>
-                            </div>
-                            <div class="review-actions">
-                                <button class="btn btn-sm btn-success approve-review" data-review-id="3">
-                                    <i class="bi bi-check-circle"></i> Approve
-                                </button>
-                                <button class="btn btn-sm btn-danger delete-review" data-review-id="3">
-                                    <i class="bi bi-trash"></i> Delete
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Pagination -->
-                    <div class="pagination">
-                        <button class="btn btn-outline" disabled>
-                            <i class="bi bi-chevron-left"></i> Previous
-                        </button>
-                        <span class="pagination-info">Page 1 of 5</span>
-                        <button class="btn btn-outline">
-                            Next <i class="bi bi-chevron-right"></i>
-                        </button>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -3434,7 +3462,8 @@
 
                 <div class="dashboard-right-header tab-content" id="pixels-content">
                     <h2 class="animatedtoup">Connected Pixels</h2>
-                    <p class="animatedtoup">A pixel is a snippet of code that tracks user actions on your website. Use
+                    <p class="animatedtoup">A pixel is a snippet of code that tracks user actions on your website.
+                        Use
                         the IDs below to
                         connect
                         your accounts
@@ -3445,7 +3474,8 @@
                             <div class="pixel-details">
                                 <h4>Facebook / Instagram Pixel</h4>
                                 <p>ID: <code>1234567890123456</code></p>
-                                <button class="btn btn-outline" title="Copy Code"><i class="bi bi-clipboard"></i> Copy
+                                <button class="btn btn-outline" title="Copy Code"><i class="bi bi-clipboard"></i>
+                                    Copy
                                     Code</button>
                             </div>
                         </div>
@@ -3454,7 +3484,8 @@
                             <div class="pixel-details">
                                 <h4>TikTok Pixel</h4>
                                 <p>ID: <code>AB1CD2EF3GH4IJ5K</code></p>
-                                <button class="btn btn-outline" title="Copy Code"><i class="bi bi-clipboard"></i> Copy
+                                <button class="btn btn-outline" title="Copy Code"><i class="bi bi-clipboard"></i>
+                                    Copy
                                     Code</button>
                             </div>
                         </div>
@@ -4005,7 +4036,8 @@
                                 <i class="bi bi-credit-card-2-front"></i>
                                 <h5>Credit/Debit Cards</h5>
                             </div>
-                            <p>Accept payments via Visa, Mastercard, American Express, and other major credit cards.</p>
+                            <p>Accept payments via Visa, Mastercard, American Express, and other major credit cards.
+                            </p>
                             <div class="option-status">
                                 <span class="status-badge status-active">Enabled</span>
                             </div>
@@ -4690,117 +4722,7 @@
         </script>
 
         <div id="Subscription" class="content-section">
-            <!-- Plan Details Container -->
 
-            <div class="form-container subscription-plan-container animatedtoup show">
-                <div class="plan-header">
-                    <h3>Current Subscription Plan</h3>
-                </div>
-                <div class="plan-content">
-                    <div class="plan-details">
-                        <div class="plan-info-main">
-                            <span class="plan-name">Premium Plan</span>
-                            <span class="plan-price">$99/month</span>
-                            <span class="status-badge active">Active</span>
-                        </div>
-                        <div class="plan-features">
-                            <ul>
-                                <li><i class="bi bi-check-circle"></i> Unlimited products</li>
-                                <li><i class="bi bi-check-circle"></i> Advanced analytics</li>
-                                <li><i class="bi bi-check-circle"></i> Priority support</li>
-                                <li><i class="bi bi-check-circle"></i> Custom domain</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="plan-actions">
-                        <button class="btn btn-primary">Upgrade Plan</button>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Countdown Timer Container -->
-            <div class="form-container subscription-timer-container animatedtoup">
-                <div class="timer-header">
-                    <h3>Subscription Countdown</h3>
-                </div>
-                <div class="timer-content">
-                    <div class="countdown-timer" id="subscriptionCountdown">
-                        <div class="timer-unit">
-                            <span class="timer-value" id="days">23</span>
-                            <span class="timer-label">Days</span>
-                        </div>
-                        <div class="timer-unit">
-                            <span class="timer-value" id="hours">12</span>
-                            <span class="timer-label">Hours</span>
-                        </div>
-                        <div class="timer-unit">
-                            <span class="timer-value" id="minutes">45</span>
-                            <span class="timer-label">Minutes</span>
-                        </div>
-                        <div class="timer-unit">
-                            <span class="timer-value" id="seconds">30</span>
-                            <span class="timer-label">Seconds</span>
-                        </div>
-                    </div>
-                    <div class="timer-progress">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 65%"></div>
-                        </div>
-                        <div class="progress-text">65% of subscription period completed</div>
-                    </div>
-                    <div class="expiry-date">
-                        Subscription expires on: <strong>October29, 2025 23:59:59</strong>
-                    </div>
-                </div>
-            </div>
-
-            <script>
-                // Get expiry date string from the <strong> tag
-                const expiryDateStr = document.querySelector('.expiry-date strong').textContent.trim();
-                const expiryDate = new Date(expiryDateStr).getTime();
-
-                // Optionally set a start date (you could also store this in HTML if needed)
-                const startDate = new Date("January 1, 2025 00:00:00").getTime();
-
-                function updateCountdown() {
-                    const now = new Date().getTime();
-                    const distance = expiryDate - now;
-                    const totalDuration = expiryDate - startDate;
-
-                    if (distance < 0) {
-                        document.getElementById("subscriptionCountdown").innerHTML = "<strong>Expired</strong>";
-                        document.querySelector(".progress-fill").style.width = "100%";
-                        document.querySelector(".progress-text").innerText = "Subscription expired";
-                        return;
-                    }
-
-                    // Time calculations
-                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                    // Update DOM
-                    document.getElementById("days").textContent = String(days).padStart(2, '0');
-                    document.getElementById("hours").textContent = String(hours).padStart(2, '0');
-                    document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
-                    document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
-
-                    // Update progress bar
-                    const elapsed = now - startDate;
-                    const percent = Math.min(100, (elapsed / totalDuration) * 100);
-                    document.querySelector(".progress-fill").style.width = percent.toFixed(2) + "%";
-                    document.querySelector(".progress-text").innerText = `${percent.toFixed(0)}% of subscription period completed`;
-                }
-
-                updateCountdown();
-                setInterval(updateCountdown, 1000);
-            </script>
-
-
-
-            <!-- Search Controls -->
 
 
             <!-- Tabbed Content -->
@@ -4817,12 +4739,116 @@
                     </div>
                 </div>
                 <div class="tabs-btn-area">
-                    <button class="tab-button active" data-tab="subscriptions">Subscription History</button>
+                    <button class="tab-button active" data-tab="Countdown">Countdown</button>
+                    <button class="tab-button" data-tab="Plan">Subscription Plan</button>
+                    <button class="tab-button" data-tab="subscriptions">Subscription History</button>
                     <button class="tab-button" data-tab="billing">Billing Information</button>
                 </div>
 
+                <div class="tab-content subscription-timer-container active animatedtoup" id="Countdown-content">
+                    <div class="timer-header">
+                        <h3>Subscription Countdown</h3>
+                    </div>
+                    <div class="timer-content">
+                        <div class="countdown-timer" id="subscriptionCountdown">
+                            <div class="timer-unit">
+                                <span class="timer-value" id="days">23</span>
+                                <span class="timer-label">Days</span>
+                            </div>
+                            <div class="timer-unit">
+                                <span class="timer-value" id="hours">12</span>
+                                <span class="timer-label">Hours</span>
+                            </div>
+                            <div class="timer-unit">
+                                <span class="timer-value" id="minutes">45</span>
+                                <span class="timer-label">Minutes</span>
+                            </div>
+                            <div class="timer-unit">
+                                <span class="timer-value" id="seconds">30</span>
+                                <span class="timer-label">Seconds</span>
+                            </div>
+                        </div>
+                        <div class="timer-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 65%"></div>
+                            </div>
+                            <div class="progress-text">65% of subscription period completed</div>
+                        </div>
+                        <div class="expiry-date">
+                            Subscription expires on: <strong>October29, 2025 23:59:59</strong>
+                        </div>
+                    </div>
+                    <script>
+                        // Get expiry date string from the <strong> tag
+                        const expiryDateStr = document.querySelector('.expiry-date strong').textContent.trim();
+                        const expiryDate = new Date(expiryDateStr).getTime();
+
+                        // Optionally set a start date (you could also store this in HTML if needed)
+                        const startDate = new Date("January 1, 2025 00:00:00").getTime();
+
+                        function updateCountdown() {
+                            const now = new Date().getTime();
+                            const distance = expiryDate - now;
+                            const totalDuration = expiryDate - startDate;
+
+                            if (distance < 0) {
+                                document.getElementById("subscriptionCountdown").innerHTML = "<strong>Expired</strong>";
+                                document.querySelector(".progress-fill").style.width = "100%";
+                                document.querySelector(".progress-text").innerText = "Subscription expired";
+                                return;
+                            }
+
+                            // Time calculations
+                            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                            // Update DOM
+                            document.getElementById("days").textContent = String(days).padStart(2, '0');
+                            document.getElementById("hours").textContent = String(hours).padStart(2, '0');
+                            document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
+                            document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
+
+                            // Update progress bar
+                            const elapsed = now - startDate;
+                            const percent = Math.min(100, (elapsed / totalDuration) * 100);
+                            document.querySelector(".progress-fill").style.width = percent.toFixed(2) + "%";
+                            document.querySelector(".progress-text").innerText = `${percent.toFixed(0)}% of subscription period completed`;
+                        }
+
+                        updateCountdown();
+                        setInterval(updateCountdown, 1000);
+                    </script>
+                </div>
+
+                <div class="tab-content subscription-plan-container animatedtoup" id="Plan-content">
+                    <div class="plan-header">
+                        <h3>Current Subscription Plan</h3>
+                    </div>
+                    <div class="plan-content">
+                        <div class="plan-details">
+                            <div class="plan-info-main">
+                                <span class="plan-name">Premium Plan</span>
+                                <span class="plan-price">$99/month</span>
+                                <span class="status-badge active">Active</span>
+                            </div>
+                            <div class="plan-features">
+                                <ul>
+                                    <li><i class="bi bi-check-circle"></i> Unlimited products</li>
+                                    <li><i class="bi bi-check-circle"></i> Advanced analytics</li>
+                                    <li><i class="bi bi-check-circle"></i> Priority support</li>
+                                    <li><i class="bi bi-check-circle"></i> Custom domain</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="plan-actions">
+                            <button class="btn btn-primary">Upgrade Plan</button>
+                        </div>
+                    </div>
+                </div>
                 <!-- Subscription History Tab -->
-                <div class="site-table-container tab-content active animatedtoup show" id="subscriptions-content">
+                <div class="site-table-container tab-content animatedtoup" id="subscriptions-content">
                     <table class="site-table">
                         <thead>
                             <tr>
@@ -4908,6 +4934,8 @@
                         </button>
                     </div>
                 </div>
+
+
             </div>
 
             <style>
@@ -5216,6 +5244,20 @@
             <div class="dashboard-right-header">
                 <h2>Notification Settings</h2>
                 <p>Configure how and when you receive notifications.</p>
+            </div>
+
+            <div class="form-container animatedtoup">
+                <div class="tabs-btn-area">
+                    <button class="tab-button active" data-tab="1-content">1</button>
+                    <button class="tab-button" data-tab="2-content">2</button>
+                </div>
+
+                <div class="tab-content active animatedtoup" id="1-content">
+
+                </div>
+                <div class="tab-content active animatedtoup" id="2-content">
+
+                </div>
             </div>
 
             <!-- Notification Channels -->
@@ -5873,6 +5915,20 @@
                 <p>Configure your store settings here.</p>
             </div>
 
+            <div class="form-container animatedtoup">
+                <div class="tabs-btn-area">
+                    <button class="tab-button active" data-tab="1-content">1</button>
+                    <button class="tab-button" data-tab="2-content">2</button>
+                </div>
+
+                <div class="tab-content active animatedtoup" id="1-content">
+
+                </div>
+                <div class="tab-content active animatedtoup" id="2-content">
+
+                </div>
+            </div>
+
             <!-- Profile Information Section -->
             <div class="form-container">
                 <div class="form-header">
@@ -6514,7 +6570,8 @@
                         <h3>Permanent Account Deletion</h3>
                     </div>
                     <div class="warning-content">
-                        <p>This action will <strong>permanently delete your account</strong> and all associated data.
+                        <p>This action will <strong>permanently delete your account</strong> and all associated
+                            data.
                             This cannot be
                             undone.</p>
                         <div class="warning-list">
@@ -6626,7 +6683,8 @@
                                 <div class="confirmation-step">
                                     <label class="form-check">
                                         <input type="checkbox" class="form-check-input" id="understandPermanent">
-                                        <span class="form-check-label">I understand this action is permanent and cannot
+                                        <span class="form-check-label">I understand this action is permanent and
+                                            cannot
                                             be
                                             undone</span>
                                     </label>
@@ -6634,14 +6692,16 @@
                                 <div class="confirmation-step">
                                     <label class="form-check">
                                         <input type="checkbox" class="form-check-input" id="confirmCancellation">
-                                        <span class="form-check-label">I understand my subscription will be cancelled
+                                        <span class="form-check-label">I understand my subscription will be
+                                            cancelled
                                             immediately</span>
                                     </label>
                                 </div>
                                 <div class="confirmation-step">
                                     <label class="form-check">
                                         <input type="checkbox" class="form-check-input" id="confirmLoss">
-                                        <span class="form-check-label">I understand I will lose access to all my store
+                                        <span class="form-check-label">I understand I will lose access to all my
+                                            store
                                             data</span>
                                     </label>
                                 </div>
@@ -6649,7 +6709,8 @@
                         </div>
 
                         <div class="form-group full-width">
-                            <label class="form-label" for="passwordVerification">Enter Your Password to Confirm</label>
+                            <label class="form-label" for="passwordVerification">Enter Your Password to
+                                Confirm</label>
                             <input type="password" class="form-input" id="passwordVerification"
                                 placeholder="Enter your account password">
                         </div>
@@ -6676,7 +6737,8 @@
                             <div class="final-warning">
                                 <i class="bi bi-exclamation-triangle"></i>
                                 <h4>Are you absolutely sure?</h4>
-                                <p>This is your last chance to cancel. Once you proceed, your account and all associated
+                                <p>This is your last chance to cancel. Once you proceed, your account and all
+                                    associated
                                     data will
                                     be permanently deleted.</p>
                                 <p><strong>This action cannot be reversed.</strong></p>
@@ -7013,430 +7075,459 @@
                 <p>Configure your platform settings here.</p>
             </div>
 
-            <!-- General Settings Section -->
-            <div class="form-container">
-                <div class="form-header">
-                    <h4 class="form-title"><i class="bi bi-gear"></i> General Settings</h4>
-                    <div class="form-actions">
-                        <button class="btn btn-primary">
-                            <i class="bi bi-check-lg"></i> Save Changes
-                        </button>
+            <div class="form-container animatedtoup">
+                <div class="tabs-btn-area">
+                    <button class="tab-button active" data-tab="General">General</button>
+                    <button class="tab-button" data-tab="Email">Email</button>
+                    <button class="tab-button" data-tab="Advanced">Advanced</button>
+                    <button class="tab-button" data-tab="Integration">Integration</button>
+                    <button class="tab-button" data-tab="Backup">Backup</button>
+                </div>
+
+                <div class="tab-content active animatedtoup" id="General-content">
+                    <div class="form-container">
+                        <div class="form-header">
+                            <h4 class="form-title"><i class="bi bi-gear"></i> General Settings</h4>
+                            <div class="form-actions">
+                                <button class="btn btn-primary">
+                                    <i class="bi bi-check-lg"></i> Save Changes
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="profile-settings">
+                            <div class="form-group">
+                                <label class="form-label" for="platformName">Platform Name</label>
+                                <input type="text" class="form-input" id="platformName" value="MATAGER">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="platformUrl">Platform URL</label>
+                                <input type="text" class="form-input" id="platformUrl" value="https://matager.com">
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label class="form-label" for="platformDescription">Platform Description</label>
+                                <textarea class="form-textarea"
+                                    id="platformDescription">E-commerce platform for modern retailers.</textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="defaultCurrency">Default Currency</label>
+                                <select class="form-select" id="defaultCurrency">
+                                    <option selected="">USD ($)</option>
+                                    <option>EUR (€)</option>
+                                    <option>GBP (£)</option>
+                                    <option>CAD (C$)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="defaultLanguage">Default Language</label>
+                                <select class="form-select" id="defaultLanguage">
+                                    <option selected="">English</option>
+                                    <option>Spanish</option>
+                                    <option>French</option>
+                                    <option>German</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label class="form-label" for="timezone">Default Timezone</label>
+                                <select class="form-select" id="timezone">
+                                    <option selected="">Eastern Time (ET)</option>
+                                    <option>Central Time (CT)</option>
+                                    <option>Mountain Time (MT)</option>
+                                    <option>Pacific Time (PT)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content active animatedtoup" id="Email-content">
+                    <div class="form-container animatedtoup show">
+                        <div class="form-header">
+                            <h4 class="form-title"><i class="bi bi-envelope"></i> Email Settings</h4>
+                        </div>
+
+                        <div class="profile-settings">
+                            <div class="form-group full-width">
+                                <label class="form-label" for="smtpHost">SMTP Host</label>
+                                <input type="text" class="form-input" id="smtpHost" value="smtp.mailprovider.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="smtpPort">SMTP Port</label>
+                                <input type="number" class="form-input" id="smtpPort" value="587">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="smtpEncryption">Encryption</label>
+                                <select class="form-select" id="smtpEncryption">
+                                    <option selected="">TLS</option>
+                                    <option>SSL</option>
+                                    <option>None</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label class="form-label" for="smtpUsername">SMTP Username</label>
+                                <input type="text" class="form-input" id="smtpUsername" value="noreply@matager.com">
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label class="form-label" for="smtpPassword">SMTP Password</label>
+                                <input type="password" class="form-input" id="smtpPassword"
+                                    placeholder="Enter SMTP password">
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label class="form-label" for="fromEmail">From Email Address</label>
+                                <input type="email" class="form-input" id="fromEmail" value="noreply@matager.com">
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label class="form-label" for="fromName">From Name</label>
+                                <input type="text" class="form-input" id="fromName" value="MATAGER Platform">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content active animatedtoup" id="Advanced-content">
+                    <div class="form-container animatedtoup show">
+                        <div class="form-header">
+                            <h4 class="form-title"><i class="bi bi-tools"></i> Advanced Settings</h4>
+                        </div>
+
+                        <div class="notification-settings">
+                            <div class="switch-container">
+                                <div class="notification-info">
+                                    <span class="switch-label">Debug Mode</span>
+                                    <p>Enable detailed error logging and debugging</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="switch-container">
+                                <div class="notification-info">
+                                    <span class="switch-label">Maintenance Mode</span>
+                                    <p>Temporarily take the platform offline for maintenance</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="switch-container">
+                                <div class="notification-info">
+                                    <span class="switch-label">Auto Updates</span>
+                                    <p>Automatically install platform updates</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked="">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="switch-container">
+                                <div class="notification-info">
+                                    <span class="switch-label">Data Analytics</span>
+                                    <p>Collect anonymous usage data to improve the platform</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked="">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="switch-container">
+                                <div class="notification-info">
+                                    <span class="switch-label">Backup Automation</span>
+                                    <p>Automatically backup platform data daily</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked="">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="profile-settings" style="margin-top: 1.5rem;">
+                            <div class="form-group full-width">
+                                <label class="form-label" for="apiEndpoint">API Endpoint</label>
+                                <input type="text" class="form-input" id="apiEndpoint"
+                                    value="https://api.matager.com/v1">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="cacheTimeout">Cache Timeout (minutes)</label>
+                                <input type="number" class="form-input" id="cacheTimeout" value="60" min="1" max="1440">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="maxUploadSize">Max Upload Size (MB)</label>
+                                <input type="number" class="form-input" id="maxUploadSize" value="50" min="1" max="500">
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label class="form-label" for="allowedFileTypes">Allowed File Types</label>
+                                <input type="text" class="form-input" id="allowedFileTypes"
+                                    value="jpg,jpeg,png,gif,pdf,doc,docx,xls,xlsx">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content active animatedtoup" id="Integration-content">
+                    <div class="form-container animatedtoup show">
+                        <div class="form-header">
+                            <h4 class="form-title"><i class="bi bi-puzzle"></i> Integration Settings</h4>
+                        </div>
+
+                        <div class="team-members-list">
+                            <div class="member-card">
+                                <div class="member-header">
+                                    <div class="member-avatar" style="background-color: #4267B2;">FB</div>
+                                    <div class="member-info">
+                                        <div class="member-name">Facebook</div>
+                                        <div class="member-email">Connect with Facebook for marketing</div>
+                                    </div>
+                                    <span class="role-badge role-admin">Connected</span>
+                                </div>
+                                <div class="member-details">
+                                    <div class="member-detail">
+                                        <span class="detail-label">Status</span>
+                                        <span class="detail-value">Active</span>
+                                    </div>
+                                    <div class="member-detail">
+                                        <span class="detail-label">Last Sync</span>
+                                        <span class="detail-value">2 hours ago</span>
+                                    </div>
+                                    <div class="member-detail">
+                                        <span class="detail-label">Permissions</span>
+                                        <span class="detail-value">Pages, Ads</span>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button class="btn btn-sm btn-outline">
+                                        <i class="bi bi-pencil"></i> Configure
+                                    </button>
+                                    <button class="btn btn-sm btn-danger">
+                                        <i class="bi bi-plug"></i> Disconnect
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="member-card">
+                                <div class="member-header">
+                                    <div class="member-avatar" style="background-color: #1DA1F2;">TW</div>
+                                    <div class="member-info">
+                                        <div class="member-name">Twitter</div>
+                                        <div class="member-email">Connect with Twitter for social media</div>
+                                    </div>
+                                    <span class="role-badge role-data">Not Connected</span>
+                                </div>
+                                <div class="member-details">
+                                    <div class="member-detail">
+                                        <span class="detail-label">Status</span>
+                                        <span class="detail-value">Inactive</span>
+                                    </div>
+                                    <div class="member-detail">
+                                        <span class="detail-label">Last Sync</span>
+                                        <span class="detail-value">Never</span>
+                                    </div>
+                                    <div class="member-detail">
+                                        <span class="detail-label">Permissions</span>
+                                        <span class="detail-value">None</span>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button class="btn btn-sm btn-primary">
+                                        <i class="bi bi-plug"></i> Connect
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="member-card">
+                                <div class="member-header">
+                                    <div class="member-avatar" style="background-color: #0F9D58;">GG</div>
+                                    <div class="member-info">
+                                        <div class="member-name">Google Analytics</div>
+                                        <div class="member-email">Connect with Google for analytics</div>
+                                    </div>
+                                    <span class="role-badge role-admin">Connected</span>
+                                </div>
+                                <div class="member-details">
+                                    <div class="member-detail">
+                                        <span class="detail-label">Status</span>
+                                        <span class="detail-value">Active</span>
+                                    </div>
+                                    <div class="member-detail">
+                                        <span class="detail-label">Last Sync</span>
+                                        <span class="detail-value">1 hour ago</span>
+                                    </div>
+                                    <div class="member-detail">
+                                        <span class="detail-label">Tracking ID</span>
+                                        <span class="detail-value">UA-123456789-1</span>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button class="btn btn-sm btn-outline">
+                                        <i class="bi bi-pencil"></i> Configure
+                                    </button>
+                                    <button class="btn btn-sm btn-danger">
+                                        <i class="bi bi-plug"></i> Disconnect
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content active animatedtoup" id="Backup-content">
+                    <div class="form-container animatedtoup show">
+                        <div class="form-header">
+                            <h4 class="form-title"><i class="bi bi-cloud-arrow-down"></i> Backup & Restore</h4>
+                            <div class="form-actions">
+                                <button class="btn btn-outline">
+                                    <i class="bi bi-download"></i> Export All Data
+                                </button>
+                                <button class="btn btn-primary">
+                                    <i class="bi bi-cloud-arrow-up"></i> Create Backup
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="team-members-list">
+                            <div class="member-card">
+                                <div class="member-header">
+                                    <div class="member-avatar" style="background-color: #6c757d;">BD</div>
+                                    <div class="member-info">
+                                        <div class="member-name">Daily Backup - September 29, 2023</div>
+                                        <div class="member-email">Complete platform backup</div>
+                                    </div>
+                                    <span class="role-badge role-admin">2.4 GB</span>
+                                </div>
+                                <div class="member-details">
+                                    <div class="member-detail">
+                                        <span class="detail-label">Created</span>
+                                        <span class="detail-value">Today, 2:30 AM</span>
+                                    </div>
+                                    <div class="member-detail">
+                                        <span class="detail-label">Type</span>
+                                        <span class="detail-value">Automatic</span>
+                                    </div>
+                                    <div class="member-detail">
+                                        <span class="detail-label">Status</span>
+                                        <span class="detail-value">Completed</span>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button class="btn btn-sm btn-outline">
+                                        <i class="bi bi-download"></i> Download
+                                    </button>
+                                    <button class="btn btn-sm btn-outline">
+                                        <i class="bi bi-arrow-clockwise"></i> Restore
+                                    </button>
+                                    <button class="btn btn-sm btn-danger">
+                                        <i class="bi bi-trash"></i> Delete
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="member-card">
+                                <div class="member-header">
+                                    <div class="member-avatar" style="background-color: #6c757d;">BD</div>
+                                    <div class="member-info">
+                                        <div class="member-name">Weekly Backup - September 22, 2023</div>
+                                        <div class="member-email">Complete platform backup</div>
+                                    </div>
+                                    <span class="role-badge role-data">2.3 GB</span>
+                                </div>
+                                <div class="member-details">
+                                    <div class="member-detail">
+                                        <span class="detail-label">Created</span>
+                                        <span class="detail-value">7 days ago</span>
+                                    </div>
+                                    <div class="member-detail">
+                                        <span class="detail-label">Type</span>
+                                        <span class="detail-value">Automatic</span>
+                                    </div>
+                                    <div class="member-detail">
+                                        <span class="detail-label">Status</span>
+                                        <span class="detail-value">Completed</span>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button class="btn btn-sm btn-outline">
+                                        <i class="bi bi-download"></i> Download
+                                    </button>
+                                    <button class="btn btn-sm btn-outline">
+                                        <i class="bi bi-arrow-clockwise"></i> Restore
+                                    </button>
+                                    <button class="btn btn-sm btn-danger">
+                                        <i class="bi bi-trash"></i> Delete
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="profile-settings" style="margin-top: 1.5rem;">
+                            <div class="form-group full-width">
+                                <label class="form-label" for="backupFrequency">Backup Frequency</label>
+                                <select class="form-select" id="backupFrequency">
+                                    <option>Daily</option>
+                                    <option selected="">Weekly</option>
+                                    <option>Monthly</option>
+                                    <option>Manual Only</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label class="form-label" for="backupRetention">Backup Retention Period</label>
+                                <select class="form-select" id="backupRetention">
+                                    <option>7 days</option>
+                                    <option selected="">30 days</option>
+                                    <option>90 days</option>
+                                    <option>1 year</option>
+                                    <option>Forever</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label class="form-label" for="backupLocation">Backup Storage Location</label>
+                                <select class="form-select" id="backupLocation">
+                                    <option selected="">Platform Server</option>
+                                    <option>Amazon S3</option>
+                                    <option>Google Cloud Storage</option>
+                                    <option>Microsoft Azure</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="profile-settings">
-                    <div class="form-group">
-                        <label class="form-label" for="platformName">Platform Name</label>
-                        <input type="text" class="form-input" id="platformName" value="MATAGER">
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="platformUrl">Platform URL</label>
-                        <input type="text" class="form-input" id="platformUrl" value="https://matager.com">
-                    </div>
-
-                    <div class="form-group full-width">
-                        <label class="form-label" for="platformDescription">Platform Description</label>
-                        <textarea class="form-textarea"
-                            id="platformDescription">E-commerce platform for modern retailers.</textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="defaultCurrency">Default Currency</label>
-                        <select class="form-select" id="defaultCurrency">
-                            <option selected="">USD ($)</option>
-                            <option>EUR (€)</option>
-                            <option>GBP (£)</option>
-                            <option>CAD (C$)</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="defaultLanguage">Default Language</label>
-                        <select class="form-select" id="defaultLanguage">
-                            <option selected="">English</option>
-                            <option>Spanish</option>
-                            <option>French</option>
-                            <option>German</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group full-width">
-                        <label class="form-label" for="timezone">Default Timezone</label>
-                        <select class="form-select" id="timezone">
-                            <option selected="">Eastern Time (ET)</option>
-                            <option>Central Time (CT)</option>
-                            <option>Mountain Time (MT)</option>
-                            <option>Pacific Time (PT)</option>
-                        </select>
-                    </div>
-                </div>
             </div>
+
+            <!-- General Settings Section -->
+
 
 
             <!-- Email Settings -->
-            <div class="form-container animatedtoup show">
-                <div class="form-header">
-                    <h4 class="form-title"><i class="bi bi-envelope"></i> Email Settings</h4>
-                </div>
 
-                <div class="profile-settings">
-                    <div class="form-group full-width">
-                        <label class="form-label" for="smtpHost">SMTP Host</label>
-                        <input type="text" class="form-input" id="smtpHost" value="smtp.mailprovider.com">
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="smtpPort">SMTP Port</label>
-                        <input type="number" class="form-input" id="smtpPort" value="587">
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="smtpEncryption">Encryption</label>
-                        <select class="form-select" id="smtpEncryption">
-                            <option selected="">TLS</option>
-                            <option>SSL</option>
-                            <option>None</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group full-width">
-                        <label class="form-label" for="smtpUsername">SMTP Username</label>
-                        <input type="text" class="form-input" id="smtpUsername" value="noreply@matager.com">
-                    </div>
-
-                    <div class="form-group full-width">
-                        <label class="form-label" for="smtpPassword">SMTP Password</label>
-                        <input type="password" class="form-input" id="smtpPassword" placeholder="Enter SMTP password">
-                    </div>
-
-                    <div class="form-group full-width">
-                        <label class="form-label" for="fromEmail">From Email Address</label>
-                        <input type="email" class="form-input" id="fromEmail" value="noreply@matager.com">
-                    </div>
-
-                    <div class="form-group full-width">
-                        <label class="form-label" for="fromName">From Name</label>
-                        <input type="text" class="form-input" id="fromName" value="MATAGER Platform">
-                    </div>
-                </div>
-            </div>
 
 
 
             <!-- Advanced Settings -->
-            <div class="form-container animatedtoup show">
-                <div class="form-header">
-                    <h4 class="form-title"><i class="bi bi-tools"></i> Advanced Settings</h4>
-                </div>
 
-                <div class="notification-settings">
-                    <div class="switch-container">
-                        <div class="notification-info">
-                            <span class="switch-label">Debug Mode</span>
-                            <p>Enable detailed error logging and debugging</p>
-                        </div>
-                        <label class="switch">
-                            <input type="checkbox">
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-
-                    <div class="switch-container">
-                        <div class="notification-info">
-                            <span class="switch-label">Maintenance Mode</span>
-                            <p>Temporarily take the platform offline for maintenance</p>
-                        </div>
-                        <label class="switch">
-                            <input type="checkbox">
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-
-                    <div class="switch-container">
-                        <div class="notification-info">
-                            <span class="switch-label">Auto Updates</span>
-                            <p>Automatically install platform updates</p>
-                        </div>
-                        <label class="switch">
-                            <input type="checkbox" checked="">
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-
-                    <div class="switch-container">
-                        <div class="notification-info">
-                            <span class="switch-label">Data Analytics</span>
-                            <p>Collect anonymous usage data to improve the platform</p>
-                        </div>
-                        <label class="switch">
-                            <input type="checkbox" checked="">
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-
-                    <div class="switch-container">
-                        <div class="notification-info">
-                            <span class="switch-label">Backup Automation</span>
-                            <p>Automatically backup platform data daily</p>
-                        </div>
-                        <label class="switch">
-                            <input type="checkbox" checked="">
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-                </div>
-
-                <div class="profile-settings" style="margin-top: 1.5rem;">
-                    <div class="form-group full-width">
-                        <label class="form-label" for="apiEndpoint">API Endpoint</label>
-                        <input type="text" class="form-input" id="apiEndpoint" value="https://api.matager.com/v1">
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="cacheTimeout">Cache Timeout (minutes)</label>
-                        <input type="number" class="form-input" id="cacheTimeout" value="60" min="1" max="1440">
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="maxUploadSize">Max Upload Size (MB)</label>
-                        <input type="number" class="form-input" id="maxUploadSize" value="50" min="1" max="500">
-                    </div>
-
-                    <div class="form-group full-width">
-                        <label class="form-label" for="allowedFileTypes">Allowed File Types</label>
-                        <input type="text" class="form-input" id="allowedFileTypes"
-                            value="jpg,jpeg,png,gif,pdf,doc,docx,xls,xlsx">
-                    </div>
-                </div>
-            </div>
 
             <!-- Integration Settings -->
-            <div class="form-container animatedtoup show">
-                <div class="form-header">
-                    <h4 class="form-title"><i class="bi bi-puzzle"></i> Integration Settings</h4>
-                </div>
 
-                <div class="team-members-list">
-                    <div class="member-card">
-                        <div class="member-header">
-                            <div class="member-avatar" style="background-color: #4267B2;">FB</div>
-                            <div class="member-info">
-                                <div class="member-name">Facebook</div>
-                                <div class="member-email">Connect with Facebook for marketing</div>
-                            </div>
-                            <span class="role-badge role-admin">Connected</span>
-                        </div>
-                        <div class="member-details">
-                            <div class="member-detail">
-                                <span class="detail-label">Status</span>
-                                <span class="detail-value">Active</span>
-                            </div>
-                            <div class="member-detail">
-                                <span class="detail-label">Last Sync</span>
-                                <span class="detail-value">2 hours ago</span>
-                            </div>
-                            <div class="member-detail">
-                                <span class="detail-label">Permissions</span>
-                                <span class="detail-value">Pages, Ads</span>
-                            </div>
-                        </div>
-                        <div class="form-actions">
-                            <button class="btn btn-sm btn-outline">
-                                <i class="bi bi-pencil"></i> Configure
-                            </button>
-                            <button class="btn btn-sm btn-danger">
-                                <i class="bi bi-plug"></i> Disconnect
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="member-card">
-                        <div class="member-header">
-                            <div class="member-avatar" style="background-color: #1DA1F2;">TW</div>
-                            <div class="member-info">
-                                <div class="member-name">Twitter</div>
-                                <div class="member-email">Connect with Twitter for social media</div>
-                            </div>
-                            <span class="role-badge role-data">Not Connected</span>
-                        </div>
-                        <div class="member-details">
-                            <div class="member-detail">
-                                <span class="detail-label">Status</span>
-                                <span class="detail-value">Inactive</span>
-                            </div>
-                            <div class="member-detail">
-                                <span class="detail-label">Last Sync</span>
-                                <span class="detail-value">Never</span>
-                            </div>
-                            <div class="member-detail">
-                                <span class="detail-label">Permissions</span>
-                                <span class="detail-value">None</span>
-                            </div>
-                        </div>
-                        <div class="form-actions">
-                            <button class="btn btn-sm btn-primary">
-                                <i class="bi bi-plug"></i> Connect
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="member-card">
-                        <div class="member-header">
-                            <div class="member-avatar" style="background-color: #0F9D58;">GG</div>
-                            <div class="member-info">
-                                <div class="member-name">Google Analytics</div>
-                                <div class="member-email">Connect with Google for analytics</div>
-                            </div>
-                            <span class="role-badge role-admin">Connected</span>
-                        </div>
-                        <div class="member-details">
-                            <div class="member-detail">
-                                <span class="detail-label">Status</span>
-                                <span class="detail-value">Active</span>
-                            </div>
-                            <div class="member-detail">
-                                <span class="detail-label">Last Sync</span>
-                                <span class="detail-value">1 hour ago</span>
-                            </div>
-                            <div class="member-detail">
-                                <span class="detail-label">Tracking ID</span>
-                                <span class="detail-value">UA-123456789-1</span>
-                            </div>
-                        </div>
-                        <div class="form-actions">
-                            <button class="btn btn-sm btn-outline">
-                                <i class="bi bi-pencil"></i> Configure
-                            </button>
-                            <button class="btn btn-sm btn-danger">
-                                <i class="bi bi-plug"></i> Disconnect
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <!-- Backup & Restore -->
-            <div class="form-container animatedtoup show">
-                <div class="form-header">
-                    <h4 class="form-title"><i class="bi bi-cloud-arrow-down"></i> Backup & Restore</h4>
-                    <div class="form-actions">
-                        <button class="btn btn-outline">
-                            <i class="bi bi-download"></i> Export All Data
-                        </button>
-                        <button class="btn btn-primary">
-                            <i class="bi bi-cloud-arrow-up"></i> Create Backup
-                        </button>
-                    </div>
-                </div>
 
-                <div class="team-members-list">
-                    <div class="member-card">
-                        <div class="member-header">
-                            <div class="member-avatar" style="background-color: #6c757d;">BD</div>
-                            <div class="member-info">
-                                <div class="member-name">Daily Backup - September 29, 2023</div>
-                                <div class="member-email">Complete platform backup</div>
-                            </div>
-                            <span class="role-badge role-admin">2.4 GB</span>
-                        </div>
-                        <div class="member-details">
-                            <div class="member-detail">
-                                <span class="detail-label">Created</span>
-                                <span class="detail-value">Today, 2:30 AM</span>
-                            </div>
-                            <div class="member-detail">
-                                <span class="detail-label">Type</span>
-                                <span class="detail-value">Automatic</span>
-                            </div>
-                            <div class="member-detail">
-                                <span class="detail-label">Status</span>
-                                <span class="detail-value">Completed</span>
-                            </div>
-                        </div>
-                        <div class="form-actions">
-                            <button class="btn btn-sm btn-outline">
-                                <i class="bi bi-download"></i> Download
-                            </button>
-                            <button class="btn btn-sm btn-outline">
-                                <i class="bi bi-arrow-clockwise"></i> Restore
-                            </button>
-                            <button class="btn btn-sm btn-danger">
-                                <i class="bi bi-trash"></i> Delete
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="member-card">
-                        <div class="member-header">
-                            <div class="member-avatar" style="background-color: #6c757d;">BD</div>
-                            <div class="member-info">
-                                <div class="member-name">Weekly Backup - September 22, 2023</div>
-                                <div class="member-email">Complete platform backup</div>
-                            </div>
-                            <span class="role-badge role-data">2.3 GB</span>
-                        </div>
-                        <div class="member-details">
-                            <div class="member-detail">
-                                <span class="detail-label">Created</span>
-                                <span class="detail-value">7 days ago</span>
-                            </div>
-                            <div class="member-detail">
-                                <span class="detail-label">Type</span>
-                                <span class="detail-value">Automatic</span>
-                            </div>
-                            <div class="member-detail">
-                                <span class="detail-label">Status</span>
-                                <span class="detail-value">Completed</span>
-                            </div>
-                        </div>
-                        <div class="form-actions">
-                            <button class="btn btn-sm btn-outline">
-                                <i class="bi bi-download"></i> Download
-                            </button>
-                            <button class="btn btn-sm btn-outline">
-                                <i class="bi bi-arrow-clockwise"></i> Restore
-                            </button>
-                            <button class="btn btn-sm btn-danger">
-                                <i class="bi bi-trash"></i> Delete
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="profile-settings" style="margin-top: 1.5rem;">
-                    <div class="form-group full-width">
-                        <label class="form-label" for="backupFrequency">Backup Frequency</label>
-                        <select class="form-select" id="backupFrequency">
-                            <option>Daily</option>
-                            <option selected="">Weekly</option>
-                            <option>Monthly</option>
-                            <option>Manual Only</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group full-width">
-                        <label class="form-label" for="backupRetention">Backup Retention Period</label>
-                        <select class="form-select" id="backupRetention">
-                            <option>7 days</option>
-                            <option selected="">30 days</option>
-                            <option>90 days</option>
-                            <option>1 year</option>
-                            <option>Forever</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group full-width">
-                        <label class="form-label" for="backupLocation">Backup Storage Location</label>
-                        <select class="form-select" id="backupLocation">
-                            <option selected="">Platform Server</option>
-                            <option>Amazon S3</option>
-                            <option>Google Cloud Storage</option>
-                            <option>Microsoft Azure</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
         </div>
 
 
@@ -7822,12 +7913,13 @@
                 /* Tools Tabs */
                 .tools-tabs {
                     display: flex;
+                    gap: 5px;
                     background: var(--bg-light);
-                    border-radius: var(--border-radius) var(--border-radius) 0 0;
                     overflow: hidden;
                 }
 
                 .tool-tab {
+                    border-radius: var(--border-radius);
                     color: var(--text-color);
                     flex: 1;
                     padding: 0.75rem 1rem;
@@ -7915,10 +8007,11 @@
                 }
 
                 .canvas-area {
+                    width: 400px;
                     border: 1px solid var(--border-color);
                     border-radius: var(--radius);
                     background: white;
-                    min-height: 500px;
+                    height: 400px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -7943,10 +8036,9 @@
                 }
 
                 #designCanvas {
-                    max-width: 100%;
-                    max-height: 100%;
+                    width: -webkit-fill-available;
+                    height: -webkit-fill-available;
                     display: block;
-                    object-fit: contain;
                 }
 
                 /* Compact Tool Sections */
@@ -8250,11 +8342,7 @@
                         /* Tools move to bottom */
                     }
 
-                    /* Enhance canvas area for mobile */
-                    .canvas-area {
-                        min-height: 400px;
-                        border-width: 2px;
-                    }
+
 
                     .canvas-controls-compact {
                         flex-direction: column;
@@ -8300,7 +8388,8 @@
                     }
 
                     .canvas-area {
-                        min-height: 350px;
+                        height: 250px;
+                        width: 250px;
                     }
 
                     .dropzone-content {
@@ -8341,7 +8430,8 @@
                     }
 
                     .canvas-area {
-                        min-height: 300px;
+                        height: 250px;
+                        width: 250px;
                     }
 
                     .dropzone-content {
