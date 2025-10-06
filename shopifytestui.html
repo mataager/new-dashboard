@@ -136,237 +136,460 @@
         </div>
 
         <!-- Dashboard Content -->
-        <div id="dashboard" class="content-section active">
-            <!-- Welcome and Domain Section -->
-            <div class="welcome-section animatedtoup">
-                <div class="welcome-card animatedtoup show">
+        <div id="dashboard" class="content-section animatedtoup active">
+            <!-- Welcome Section -->
+            <div class="welcome-section animatedtoup show"
+                style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                <div class="welcome-card animatedtoup show"
+                    style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
                     <div>
-                        <h2>Welcome, John!</h2>
+                        <h2>Welcome, Omar !</h2>
                         <p>Manage your store, track performance, and update content from one central dashboard.</p>
+                    </div>
+                    <div class="quick-access-tabs">
+                        <div class="quick-tab" data-target="orders">
+                            <div class="tab-icon">
+                                <i class="bi bi-cart"></i>
+                            </div>
+                            <span class="tab-label">Orders</span>
+                        </div>
+
+                        <div class="quick-tab" data-target="products">
+                            <div class="tab-icon">
+                                <i class="bi bi-box"></i>
+                            </div>
+                            <span class="tab-label">Products</span>
+                        </div>
+
+                        <div class="quick-tab" data-target="customers">
+                            <div class="tab-icon">
+                                <i class="bi bi-people"></i>
+                            </div>
+                            <span class="tab-label">Customers</span>
+                        </div>
+
+                        <div class="quick-tab" data-target="marketing">
+                            <div class="tab-icon">
+                                <i class="bi bi-megaphone"></i>
+                            </div>
+                            <span class="tab-label">Marketing</span>
+                        </div>
                     </div>
                 </div>
 
-            </div>
 
-            <!-- Customer Statistics -->
-            <div class="stats-container animatedtoup">
-                <div class="card total show">
+                <div class="dashboard-card">
                     <div class="stat-card-header">
-                        <div class="stat-card-title">Your Store Domain</div>
-                        <div class="stat-card-icon total">
+                        <div class="stat-card-title">Go To Site</div>
+                        <div class="stat-card-icon">
                             <i class="bi bi-globe"></i>
                         </div>
                     </div>
-                    <div class="stat-card-value">peacockfashion.com</div>
-                    <div class="stat-card-txt">
-                        <a href="#" class="site-link">
-                            <i class="bi bi-box-arrow-up-right"></i>
-                            Visit Your Store
-                        </a>
+
+                    <p class="card-description">
+                        Manage your store, track performance, and update content from one central dashboard.
+                    </p>
+
+                    <button class="btn btn-outline">
+                        Visit Your Site <i class="bi bi-arrow-right"></i>
+                    </button>
+
+                    <div class="site-url">
+                        www.matager/shop/-3hf3hf483yffbaie3.com
                     </div>
                 </div>
-                <div class="card total  show">
+
+                <script>
+                    document.querySelector('.dashboard-card').addEventListener('click', function () {
+                        // In a real implementation, this would redirect to the actual site
+                        alert('Redirecting to: www.matager/shop/-3hf3hf483yffbaie3.com');
+                    });
+                </script>
+            </div>
+
+            <!-- Revenue Overview -->
+            <div class="stats-container animatedtoup show"
+                style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                <div class="card total show">
                     <div class="stat-card-header">
-                        <div class="stat-card-title">Total Customers</div>
+                        <div class="stat-card-title">Total Revenue</div>
                         <div class="stat-card-icon total">
-                            <i class="bi bi-people"></i>
+                            <i class="bi bi-currency-dollar"></i>
                         </div>
                     </div>
-                    <div class="stat-card-value">1,248</div>
+                    <div class="stat-card-value">$8,500</div>
                     <div class="stat-card-progress">
                         <div class="stat-card-progress-bar total" style="width: 100%"></div>
                     </div>
-                    <div class="progress-text">
-                        <span>All Time</span>
-                        <span>100%</span>
-                    </div>
+                    <div class="progress-text">92% of subscription period completed</div>
                 </div>
 
                 <div class="card active show">
                     <div class="stat-card-header">
-                        <div class="stat-card-title">Active Customers</div>
+                        <div class="stat-card-title">Current Revenue</div>
                         <div class="stat-card-icon active">
-                            <i class="bi bi-person-check"></i>
+                            <i class="bi bi-graph-up-arrow"></i>
                         </div>
                     </div>
-                    <div class="stat-card-value">892</div>
+                    <div class="stat-card-value">$4,000</div>
                     <div class="stat-card-progress">
-                        <div class="stat-card-progress-bar active" style="width: 71.5%"></div>
+                        <div class="stat-card-progress-bar active" style="width: 47%"></div>
                     </div>
                     <div class="progress-text">
-                        <span>Last 30 Days</span>
-                        <span>71.5%</span>
+                        <span>This Month</span>
+                        <span>47%</span>
                     </div>
                 </div>
 
                 <div class="card new show">
                     <div class="stat-card-header">
-                        <div class="stat-card-title">New Customers</div>
+                        <div class="stat-card-title">Daily Revenue</div>
                         <div class="stat-card-icon new">
-                            <i class="bi bi-person-plus"></i>
+                            <i class="bi bi-calendar-day"></i>
                         </div>
                     </div>
-                    <div class="stat-card-value">143</div>
+                    <div class="stat-card-value">$350</div>
                     <div class="stat-card-progress">
-                        <div class="stat-card-progress-bar new" style="width: 11.5%"></div>
+                        <div class="stat-card-progress-bar new" style="width: 4%"></div>
                     </div>
                     <div class="progress-text">
-                        <span>This Month</span>
-                        <span>11.5%</span>
+                        <span>Today</span>
+                        <span>4%</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Store Information Cards -->
-            <div class="cards-grid">
-                <div class="card animatedtoup show">
-                    <div class="card-shine"></div>
-                    <div class="card-header">
-                        <h3 class="card-title">Total Products</h3>
-                        <div class="card-icon icon-products">
-                            <i class="bi bi-box-seam"></i>
-                        </div>
+            <!-- Revenue Chart -->
+            <div class="form-container animatedtoup show"
+                style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                <div class="chart-header">
+                    <h4 class="chart-title">Revenue Overview</h4>
+                    <div class="chart-actions">
+                        <a href="#">
+                            Advanced Report <i class="bi bi-arrow-right"></i>
+                        </a>
                     </div>
-                    <div class="card-value">124</div>
                 </div>
-
-                <div class="card animatedtoup show">
-                    <div class="card-shine"></div>
-                    <div class="card-header">
-                        <h3 class="card-title">Total Orders</h3>
-                        <div class="card-icon icon-orders">
-                            <i class="bi bi-cart"></i>
+                <div class="revenue-chart">
+                    <div class="chart-grid">
+                        <div class="chart-grid-line"></div>
+                        <div class="chart-grid-line"></div>
+                        <div class="chart-grid-line"></div>
+                        <div class="chart-grid-line"></div>
+                    </div>
+                    <div class="chart-bars">
+                        <div class="chart-bar" style="height: 70%">
+                            <div class="chart-bar-value">$2,100</div>
+                        </div>
+                        <div class="chart-bar" style="height: 85%">
+                            <div class="chart-bar-value">$2,550</div>
+                        </div>
+                        <div class="chart-bar" style="height: 65%">
+                            <div class="chart-bar-value">$1,950</div>
+                        </div>
+                        <div class="chart-bar" style="height: 90%">
+                            <div class="chart-bar-value">$2,700</div>
+                        </div>
+                        <div class="chart-bar" style="height: 75%">
+                            <div class="chart-bar-value">$2,250</div>
+                        </div>
+                        <div class="chart-bar" style="height: 80%">
+                            <div class="chart-bar-value">$2,400</div>
+                        </div>
+                        <div class="chart-bar" style="height: 60%">
+                            <div class="chart-bar-value">$1,800</div>
+                        </div>
+                        <div class="chart-bar" style="height: 95%">
+                            <div class="chart-bar-value">$2,850</div>
+                        </div>
+                        <div class="chart-bar" style="height: 70%">
+                            <div class="chart-bar-value">$2,100</div>
+                        </div>
+                        <div class="chart-bar" style="height: 85%">
+                            <div class="chart-bar-value">$2,550</div>
+                        </div>
+                        <div class="chart-bar" style="height: 65%">
+                            <div class="chart-bar-value">$1,950</div>
+                        </div>
+                        <div class="chart-bar" style="height: 50%">
+                            <div class="chart-bar-value">$1,500</div>
                         </div>
                     </div>
-                    <div class="card-value">256</div>
                 </div>
-
-                <div class="card animatedtoup show">
-                    <div class="card-shine"></div>
-                    <div class="card-header">
-                        <h3 class="card-title">Shop Numbers</h3>
-                        <div class="card-icon icon-orders">
-                            <i class="bi bi-telephone"></i>
-                        </div>
-                    </div>
-                    <div class="card-value">+20 1010773587</div>
+                <div class="chart-labels">
+                    <span>20</span>
+                    <span>22</span>
+                    <span>24</span>
+                    <span>26</span>
+                    <span>28</span>
+                    <span>30</span>
+                    <span>02</span>
+                    <span>04</span>
+                    <span>06</span>
+                    <span>08</span>
+                    <span>10</span>
+                    <span>12</span>
                 </div>
+            </div>
 
-                <div class="card animatedtoup show">
-                    <div class="card-shine"></div>
-                    <div class="card-header">
-                        <h3 class="card-title">Shop Email</h3>
-                        <div class="card-icon icon-orders">
-                            <i class="bi bi-inbox"></i>
-                        </div>
-                    </div>
-                    <div class="card-value">peacockmenswear@gmail.com</div>
+            <!-- Advanced Stats -->
+            <div class="form-container advanced-stats animatedtoup show"
+                style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                <div class="advanced-stat">
+                    <div class="stat-percentage">38%</div>
+                    <div class="stat-label">Advanced Cart</div>
+                </div>
+                <div class="advanced-stat">
+                    <div class="stat-value">720</div>
+                    <div class="stat-label">Cart Items</div>
+                </div>
+                <div class="advanced-stat">
+                    <div class="stat-value">$5,900</div>
+                    <div class="stat-label">Advanced Revenue</div>
                 </div>
             </div>
 
-            <!-- Image Carousel -->
-            <div class="image-carousel animatedtoup show">
-                <div class="carousel-header">
-                    <h3>Store Images</h3>
-                    <div class="carousel-nav">
-                        <button id="prevBtn"><i class="bi bi-chevron-left"></i></button>
-                        <button id="nextBtn"><i class="bi bi-chevron-right"></i></button>
+            <!-- Two Column Layout: Traffic and Sales Forecast -->
+            <div class="two-column-layout">
+                <!-- Traffic Section -->
+                <div class="form-container animatedtoup show"
+                    style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                    <div class="traffic-header">
+                        <h3 class="chart-title">Traffic</h3>
                     </div>
+                    <div class="traffic-metrics">
+                        <div class="traffic-metric">
+                            <div class="metric-value">8,950</div>
+                            <div class="metric-label">
+                                <span>Store Visits</span>
+                                <span class="metric-trend trend-up">
+                                    <i class="bi bi-arrow-up"></i> 22%
+                                </span>
+                            </div>
+                        </div>
+                        <div class="traffic-metric">
+                            <div class="metric-value">1,520</div>
+                            <div class="metric-label">
+                                <span>Visitors</span>
+                                <span class="metric-trend trend-down">
+                                    <i class="bi bi-arrow-down"></i> 24%
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="traffic-chart">
+                        <div class="traffic-chart-line"></div>
+                    </div>
+                    <div class="traffic-labels">
+                        <span>16</span>
+                        <span>18</span>
+                        <span>20</span>
+                        <span>22</span>
+                        <span>24</span>
+                        <span>26</span>
+                        <span>28</span>
+                        <span>30</span>
+                    </div>
+                    <div class="chart-subtitle">Jan 16 - Jan 30 store visits chart</div>
                 </div>
-                <div class="carousel-container">
-                    <div class="carousel-slides">
-                        <div class="carousel-slide">
-                            <h4>Shop Banner</h4>
-                            <div class="image-placeholder">Banner Image</div>
-                            <div class="action-buttons">
-                                <button class="edit-btn" title="change image">
-                                    <i class="bi bi-cloud-plus-fill"></i> Change Image
-                                </button>
-                                <button class="delete-btn" title="save changes">
-                                    <i class="bi bi-cloud-check-fill"></i> Save
-                                </button>
-                            </div>
+
+                <!-- Sales Forecast -->
+                <div class="form-container animatedtoup show"
+                    style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                    <div class="forecast-header">
+                        <h3 class="chart-title">Sales Forecast</h3>
+                        <div class="chart-actions">
+                            <a href="#">More <i class="bi bi-arrow-right"></i></a>
                         </div>
-                        <div class="carousel-slide">
-                            <h4>New Arrival</h4>
-                            <div class="image-placeholder">New Arrival Image</div>
-                            <div class="action-buttons">
-                                <button class="edit-btn" title="change image">
-                                    <i class="bi bi-cloud-plus-fill"></i> Change Image
-                                </button>
-                                <button class="delete-btn" title="save changes">
-                                    <i class="bi bi-cloud-check-fill"></i> Save
-                                </button>
-                            </div>
+                    </div>
+                    <div class="forecast-items">
+                        <div class="forecast-item">
+                            <div class="forecast-label">Revenue</div>
+                            <div class="forecast-value trend-up">+24.2%</div>
                         </div>
-                        <div class="carousel-slide">
-                            <h4>Sale</h4>
-                            <div class="image-placeholder">Sale Image</div>
-                            <div class="action-buttons">
-                                <button class="edit-btn" title="change image">
-                                    <i class="bi bi-cloud-plus-fill"></i> Change Image
-                                </button>
-                                <button class="delete-btn" title="save changes">
-                                    <i class="bi bi-cloud-check-fill"></i> Save
-                                </button>
-                            </div>
+                        <div class="forecast-item">
+                            <div class="forecast-label">Orders</div>
+                            <div class="forecast-value trend-up">+32.8%</div>
+                        </div>
+                        <div class="forecast-item">
+                            <div class="forecast-label">Net Profit</div>
+                            <div class="forecast-value trend-down">-2.5%</div>
+                        </div>
+                        <div class="forecast-item">
+                            <div class="forecast-label">Visitors</div>
+                            <div class="forecast-value trend-up">+60%</div>
                         </div>
                     </div>
                 </div>
             </div>
-            <script>
-                // Animation for cards
-                document.addEventListener('DOMContentLoaded', function () {
-                    const cards = document.querySelectorAll('.animatedtoup');
 
-                    const observer = new IntersectionObserver((entries) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                entry.target.classList.add('show');
-                            }
-                        });
-                    }, { threshold: 0.1 });
+            <!-- Revenue by Device -->
 
-                    cards.forEach(card => {
-                        observer.observe(card);
-                    });
 
-                    // Carousel functionality
-                    const carouselSlides = document.querySelector('.carousel-slides');
-                    const slides = document.querySelectorAll('.carousel-slide');
-                    const prevBtn = document.getElementById('prevBtn');
-                    const nextBtn = document.getElementById('nextBtn');
-                    let currentSlide = 0;
+            <!-- Latest Orders Table -->
+            <div class="form-container animatedtoup show"
+                style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
+                <div class="chart-header">
+                    <h3 class="chart-title">Latest Orders</h3>
+                </div>
+                <div class="site-table-container animatedtoup show"
+                    style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
 
-                    function updateCarousel() {
-                        carouselSlides.style.transform = `translateX(-${currentSlide * 100}%)`;
-                    }
+                    <table class="site-table">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" id="selectAllOrders"></th>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Email</th>
+                                <th>Location</th>
+                                <th>Total</th>
+                                <th>Cut</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Pending Order -->
+                            <tr class="order-row" data-status="pending" data-id="OTIAjJYkpigIRshEPL">
+                                <td><input type="checkbox" class="order-checkbox"></td>
+                                <td>OTIAjJYkpigIRshEPL</td>
+                                <td>amer molemed</td>
+                                <td>obbookldzr@gmail.com</td>
+                                <td>6 october</td>
+                                <td>5,744 E£</td>
+                                <td>84 E£</td>
+                                <td><span class="status-badge pending">Pending</span></td>
 
-                    nextBtn.addEventListener('click', () => {
-                        currentSlide = (currentSlide + 1) % slides.length;
-                        updateCarousel();
-                    });
+                            </tr>
+                            <tr class="order-row" data-status="pending" data-id="OTIAjJYkpigIRshEPL">
+                                <td><input type="checkbox" class="order-checkbox"></td>
+                                <td>OTIAjJYkpigIRshEPL</td>
+                                <td>amer molemed</td>
+                                <td>obbookldzr@gmail.com</td>
+                                <td>6 october</td>
+                                <td>5,744 E£</td>
+                                <td>84 E£</td>
+                                <td><span class="status-badge pending">Pending</span></td>
 
-                    prevBtn.addEventListener('click', () => {
-                        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-                        updateCarousel();
-                    });
+                            </tr>
+                            <tr class="order-row" data-status="pending" data-id="OTIAjJYkpigIRshEPL">
+                                <td><input type="checkbox" class="order-checkbox"></td>
+                                <td>OTIAjJYkpigIRshEPL</td>
+                                <td>amer molemed</td>
+                                <td>obbookldzr@gmail.com</td>
+                                <td>6 october</td>
+                                <td>5,744 E£</td>
+                                <td>84 E£</td>
+                                <td><span class="status-badge pending">Pending</span></td>
 
-                    // Auto-advance carousel every 5 seconds
-                    setInterval(() => {
-                        currentSlide = (currentSlide + 1) % slides.length;
-                        updateCarousel();
-                    }, 5000);
-                });
-            </script>
+                            </tr>
+                            <tr class="order-row" data-status="pending" data-id="OTIAjJYkpigIRshEPL">
+                                <td><input type="checkbox" class="order-checkbox"></td>
+                                <td>OTIAjJYkpigIRshEPL</td>
+                                <td>amer molemed</td>
+                                <td>obbookldzr@gmail.com</td>
+                                <td>6 october</td>
+                                <td>5,744 E£</td>
+                                <td>84 E£</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+
+                            </tr>
+                            <tr class="order-details" id="details-OTIAjJYkpigIRshEPL">
+                                <td colspan="9">
+                                    <div class="order-details-content">
+                                        <div class="order-items">
+                                            <div class="order-item">
+                                                <img src="https://assets.adidas.com/images/w_1880,f_auto,q_auto/442cbdbfed544ea994b404c21abf9aeb_9366/JR3416_01_00_standard.jpg"
+                                                    alt="Product Image">
+                                                <div class="item-details">
+                                                    <div class="item-name">Adidas Shoes</div>
+                                                    <div class="item-info">Brand: Adidas | Color: brown | Size:
+                                                        40</div>
+                                                    <div class="item-info">Price: 5,684 EGP | Qty: 2</div>
+                                                </div>
+                                                <div class="item-actions">
+                                                    <div class="qty-control">
+                                                        <button class="qty-btn minus">-</button>
+                                                        <input type="text" class="qty-input" value="2">
+                                                        <button class="qty-btn plus">+</button>
+                                                    </div>
+                                                    <button class="delete-btn" title="Delete Item"><i
+                                                            class="bi bi-trash"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="order-total">
+                                            <strong>Total: 5,744 E£</strong> (including 84 E£ cut)
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Accepted Order -->
+
+
+
+                            <!-- Shipped Order -->
+
+                            <tr class="order-details" id="details-OTI0987654321ZYXWVU">
+                                <td colspan="9">
+                                    <div class="order-details-content">
+                                        Shipped on Oct 15, 2023 - Tracking #: TRK789456123
+                                    </div>
+                                </td>
+                            </tr>
+
+
+
+
+
+
+
+
+
+
+
+                            <tr class="order-details" id="details-OTI7777888899990000">
+                                <td colspan="9">
+                                    <div class="order-details-content">
+                                        Returned on Oct 18, 2023 - Reason: Wrong size
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
+
+        <script>
+            // Animation for cards
+            document.addEventListener('DOMContentLoaded', function () {
+                const cards = document.querySelectorAll('.animatedtoup');
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('show');
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                cards.forEach(card => {
+                    observer.observe(card);
+                });
+            });
+        </script>
 
         <!-- Orders Content -->
         <div id="orders" class="content-section">
             <div class="orders-header">
                 <div class="dashboard-right-header">
-                    <h2>Orders Management</h2>
-                    <p>Process, track, and manage customer orders efficiently</p>
+                    <div>
+                        <h2>Orders Management</h2>
+                        <p>Process, track, and manage customer orders efficiently</p>
+                    </div>
+
                 </div>
             </div>
             <div class="form-container animatedtoup">
@@ -405,8 +628,8 @@
                         <div class="card total show">
                             <div class="stat-card-header">
                                 <div class="stat-card-title">Total Orders</div>
-                                <div class="card-icon icon-orders">
-                                    <i class="bi bi-cart"></i>
+                                <div class="stat-card-icon icon-orders">
+                                    <i class="bi bi-collection"></i>
                                 </div>
                             </div>
                             <div class="stat-card-value">21</div>
@@ -414,7 +637,7 @@
                         <div class="card total show">
                             <div class="stat-card-header">
                                 <div class="stat-card-title">Pending Orders</div>
-                                <div class="card-icon icon-orders">
+                                <div class="stat-card-icon icon-orders">
                                     <i class="bi bi-clock"></i>
                                 </div>
                             </div>
@@ -423,7 +646,7 @@
                         <div class="card total show">
                             <div class="stat-card-header">
                                 <div class="stat-card-title">Accepted Orders</div>
-                                <div class="card-icon icon-orders">
+                                <div class="stat-card-icon icon-orders">
                                     <i class="bi bi-check"></i>
                                 </div>
                             </div>
@@ -432,7 +655,7 @@
                         <div class="card total show">
                             <div class="stat-card-header">
                                 <div class="stat-card-title">Shipped Orders</div>
-                                <div class="card-icon icon-orders">
+                                <div class="stat-card-icon icon-orders">
                                     <i class="bi bi-check-all"></i>
                                 </div>
                             </div>
@@ -441,7 +664,7 @@
                         <div class="card total show">
                             <div class="stat-card-header">
                                 <div class="stat-card-title">Completed orders</div>
-                                <div class="card-icon icon-orders">
+                                <div class="stat-card-icon icon-orders">
                                     <i class="bi bi-clipboard2-check"></i>
                                 </div>
                             </div>
@@ -450,7 +673,7 @@
                         <div class="card total show">
                             <div class="stat-card-header">
                                 <div class="stat-card-title">Cancelled orders</div>
-                                <div class="card-icon icon-orders">
+                                <div class="stat-card-icon icon-orders">
                                     <i class="bi bi-x"></i>
                                 </div>
                             </div>
@@ -459,7 +682,7 @@
                         <div class="card total show">
                             <div class="stat-card-header">
                                 <div class="stat-card-title">Returned orders</div>
-                                <div class="card-icon icon-orders">
+                                <div class="stat-card-icon icon-orders">
                                     <i class="bi bi-reply"></i>
                                 </div>
                             </div>
@@ -874,8 +1097,8 @@
                 </div>
 
                 <!-- Stats Cards -->
-                <div class="stats-container">
-                    <div class="card available animatedtoup">
+                <div class="stats-container Available Products">
+                    <div class="card available show">
                         <div class="stat-card-header">
                             <div class="stat-card-title">Available Products</div>
                             <div class="stat-card-icon available">
@@ -892,7 +1115,7 @@
                         </div>
                     </div>
 
-                    <div class="card uploaded animatedtoup">
+                    <div class="card uploaded show">
                         <div class="stat-card-header">
                             <div class="stat-card-title">Uploaded Products</div>
                             <div class="stat-card-icon uploaded">
@@ -8224,7 +8447,7 @@
 
                                 <div class="help-categories">
                                     <div class="category-card">
-                                        <div class="category-icon" style="background-color: #3498db;">
+                                        <div class="stat-card-icon">
                                             <i class="bi bi-house-door"></i>
                                         </div>
                                         <h3 class="category-title">Platform Overview</h3>
@@ -8234,7 +8457,7 @@
                                     </div>
 
                                     <div class="category-card">
-                                        <div class="category-icon" style="background-color: #2ecc71;">
+                                        <div class="stat-card-icon">
                                             <i class="bi bi-shop"></i>
                                         </div>
                                         <h3 class="category-title">Setting Up Your Store</h3>
@@ -8243,7 +8466,7 @@
                                     </div>
 
                                     <div class="category-card">
-                                        <div class="category-icon" style="background-color: #9b59b6;">
+                                        <div class="stat-card-icon">
                                             <i class="bi bi-box-seam"></i>
                                         </div>
                                         <h3 class="category-title">Adding Products</h3>
@@ -8252,7 +8475,7 @@
                                     </div>
 
                                     <div class="category-card">
-                                        <div class="category-icon" style="background-color: #e74c3c;">
+                                        <div class="stat-card-icon">
                                             <i class="bi bi-credit-card"></i>
                                         </div>
                                         <h3 class="category-title">Payment Setup</h3>
