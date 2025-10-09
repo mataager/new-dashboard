@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/hugeicons@latest/dist/hugeicons.min.js"></script>
+
+
+    <link rel="stylesheet" href="./assets/css/css0.css">
+    <link rel="stylesheet" href="./assets/css/cssMC.css">
+
+
+    <link rel="stylesheet" href="./assets/css/transition.css">
+    <script src="./assets/js/transition.js"></script>
+    <script src="./assets/js/select.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        // Immediately check for theme preference before page renders
+        (function () {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+            // Add class to prevent FOUC
+            document.documentElement.classList.add('theme-loaded');
+        })();
+    </script>
+    <script>
+        // Toggle dropdown menu
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdown');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function (event) {
+            const dropdown = document.getElementById('dropdown');
+            const profileIcon = document.querySelector('.profile-icon');
+
+            if (!profileIcon.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.style.display = 'none';
+            }
+        });
+
+        // Navigation functionality
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // Remove active class from all items
+                document.querySelectorAll('.nav-item').forEach(navItem => {
+                    navItem.classList.remove('active');
+                });
+
+                // Add active class to clicked item
+                this.classList.add('active');
+
+                // Hide all content sections
+                document.querySelectorAll('.content-section').forEach(section => {
+                    section.classList.remove('active');
+                });
+
+                // Show the targeted content section
+                const target = this.getAttribute('data-target');
+                document.getElementById(target).classList.add('active');
+
+                // Update header title
+                // document.querySelector('.header h1').textContent = this.querySelector('.nav-text').textContent;
+            });
+        });
+
+        // Image upload functionality
+        document.querySelectorAll('.edit-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                const fileInput = this.closest('.image-card-upload').querySelector('input[type="file"]');
+                fileInput.click();
+            });
+        });
+
+        // Handle file selection
+        document.querySelectorAll('input[type="file"]').forEach(input => {
+            input.addEventListener('change', function () {
+                if (this.files && this.files[0]) {
+                    const reader = new FileReader();
+                    const imgElement = this.closest('.image-card-upload').querySelector('.shop-panner-img');
+
+                    reader.onload = function (e) {
+                        imgElement.style.backgroundImage = `url(E£{e.target.result})`;
+                        imgElement.innerHTML = '';
+                    };
+
+                    reader.readAsDataURL(this.files[0]);
+                }
+            });
+        });
+
+        // Toggle order details
+        document.querySelectorAll('.order-row').forEach(row => {
+            row.addEventListener('click', function (e) {
+                if (!e.target.closest('.action-buttons') && !e.target.matches('input[type="checkbox"]')) {
+                    const detailsRow = this.nextElementSibling;
+                    detailsRow.classList.toggle('expanded');
+                }
+            });
+        });
+
+
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Check for saved theme preference
+            const savedTheme = localStorage.getItem('theme');
+            const themeToggle = document.getElementById('theme-toggle');
+
+            // Set toggle state based on saved preference
+            if (savedTheme === 'dark') {
+                themeToggle.checked = true;
+            } else {
+                themeToggle.checked = false;
+                // Ensure light theme is explicitly set if not dark
+                document.documentElement.removeAttribute('data-theme');
+            }
+
+            // Theme toggle functionality
+            themeToggle.addEventListener('change', function () {
+                if (this.checked) {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    document.documentElement.removeAttribute('data-theme');
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+
+            // Make body visible after theme is applied
+            document.body.style.opacity = "1";
+        });
+    </script>
+
+
+
+</head>
+
+<body>
+    <!-- Main Content Area -->
+    <div class="MC-main-content" style="opacity: 1 !important;">
+        <div class="header">
+            <h1>Matager Main Center</h1>
+            <div class="profile-section">
+                <div class="profile-info">
+                    <p id="email-side-txt">omohmed7122002@gmail.com</p>
+                    <p id="store-name-side-txt">Peacock Dashboard</p>
+                </div>
+                <div class="profile-icon" onclick="toggleDropdown()">
+                    <i class="bi bi-person-circle"></i>
+                </div>
+                <div id="dropdown" class="dropdown-menu">
+                    <a href="./main.html" class="center align-items"><i class="bi bi-house-door"></i> Home</a>
+                    <a href="./profile.html" class="center align-items"><i class="bi bi-person-circle"></i> Profile</a>
+                    <a href="#settings" class="center align-items"><i class="bi bi-gear-fill"></i> Settings</a>
+                    <a href="#logout" id="logoutLink" class="center align-items"><i class="bi bi-box-arrow-left"></i>
+                        Logout</a>
+                </div>
+                <div>
+                    <label class="day-night">
+                        <input type="checkbox" id="theme-toggle">
+                        <div></div>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard Content -->
+        <div id="dashboard" class="content-section animatedtoup active">
+            <!-- Welcome Section -->
+            <div class="welcome-section animatedtoup show">
+                <div class="welcome-card animatedtoup show">
+                    <div>
+                        <h2>Welcome, Omar !</h2>
+                        <p>Manage your store, track performance, and update content from one central dashboard.</p>
+                    </div>
+                    <div class="quick-access-tabs">
+                        <div class="quick-tab" data-target="orders">
+                            <div class="tab-icon">
+                                <i class="bi bi-cart"></i>
+                            </div>
+                            <span class="tab-label">Orders</span>
+                        </div>
+
+                        <div class="quick-tab" data-target="products">
+                            <div class="tab-icon">
+                                <i class="bi bi-box"></i>
+                            </div>
+                            <span class="tab-label">Products</span>
+                        </div>
+
+                        <div class="quick-tab" data-target="customers">
+                            <div class="tab-icon">
+                                <i class="bi bi-people"></i>
+                            </div>
+                            <span class="tab-label">Customers</span>
+                        </div>
+
+                        <div class="quick-tab" data-target="marketing">
+                            <div class="tab-icon">
+                                <i class="bi bi-megaphone"></i>
+                            </div>
+                            <span class="tab-label">Marketing</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="dashboard-card">
+                    <div class="stat-card-header">
+                        <div class="stat-card-title">Go To Site</div>
+                        <div class="stat-card-icon">
+                            <i class="bi bi-globe"></i>
+                        </div>
+                    </div>
+
+                    <p class="card-description">
+                        Manage your store, track performance, and update content from one central dashboard.
+                    </p>
+
+                    <button class="btn btn-outline">
+                        Visit Your Site <i class="bi bi-arrow-right"></i>
+                    </button>
+
+                    <div class="site-url">
+                        <span class="pulse"></span>
+                        www.matager/shop/-3hf3hf483yffbaie3.com
+                    </div>
+                </div>
+
+                <script>
+                    document.querySelector('.dashboard-card').addEventListener('click', function () {
+                        // In a real implementation, this would redirect to the actual site
+                        alert('Redirecting to: www.matager/shop/-3hf3hf483yffbaie3.com');
+                    });
+                </script>
+            </div>
+
+            <!-- Revenue Overview -->
+            <div class="stats-container animatedtoup show">
+                <div class="card total show">
+                    <div class="stat-card-header">
+                        <div class="stat-card-title">Total Revenue</div>
+                        <div class="stat-card-icon total">
+                            <i class="bi bi-currency-dollar"></i>
+                        </div>
+                    </div>
+                    <div class="stat-card-value">$8,500</div>
+                    <div class="stat-card-progress">
+                        <div class="stat-card-progress-bar total" style="width: 100%"></div>
+                    </div>
+                    <div class="progress-text">92% of subscription period completed</div>
+                </div>
+
+                <div class="card active show">
+                    <div class="stat-card-header">
+                        <div class="stat-card-title">Current Revenue</div>
+                        <div class="stat-card-icon active">
+                            <i class="bi bi-graph-up-arrow"></i>
+                        </div>
+                    </div>
+                    <div class="stat-card-value">$4,000</div>
+                    <div class="stat-card-progress">
+                        <div class="stat-card-progress-bar active" style="width: 47%"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span>This Month</span>
+                        <span>47%</span>
+                    </div>
+                </div>
+
+                <div class="card new show">
+                    <div class="stat-card-header">
+                        <div class="stat-card-title">Daily Revenue</div>
+                        <div class="stat-card-icon new">
+                            <i class="bi bi-calendar-day"></i>
+                        </div>
+                    </div>
+                    <div class="stat-card-value">$350</div>
+                    <div class="stat-card-progress">
+                        <div class="stat-card-progress-bar new" style="width: 4%"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span>Today</span>
+                        <span>4%</span>
+                    </div>
+                </div>
+                <div class="card  show">
+                    <div class="stat-card-header">
+                        <div class="stat-card-title">Total Stores</div>
+                        <div class="stat-card-icon total">
+                            <i class="bi bi-shop"></i>
+                        </div>
+                    </div>
+                    <div class="stat-card-value">24</div>
+                    <div class="stat-card-progress">
+                        <div class="stat-card-progress-bar total" style="width: 80%"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span>Active: 18</span>
+                        <span>80%</span>
+                    </div>
+                </div>
+
+                <div class="card  show">
+                    <div class="stat-card-header">
+                        <div class="stat-card-title">Pending Requests</div>
+                        <div class="stat-card-icon active">
+                            <i class="bi bi-person-plus"></i>
+                        </div>
+                    </div>
+                    <div class="stat-card-value">12</div>
+                    <div class="stat-card-progress">
+                        <div class="stat-card-progress-bar active" style="width: 60%"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span>This Week</span>
+                        <span>60%</span>
+                    </div>
+                </div>
+
+                <div class="card show">
+                    <div class="stat-card-header">
+                        <div class="stat-card-title">Open Reports</div>
+                        <div class="stat-card-icon new">
+                            <i class="bi bi-flag"></i>
+                        </div>
+                    </div>
+                    <div class="stat-card-value">7</div>
+                    <div class="stat-card-progress">
+                        <div class="stat-card-progress-bar new" style="width: 35%"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span>Resolved: 13</span>
+                        <span>35%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Revenue Chart -->
+            <div class="form-container animatedtoup show">
+                <div class="chart-header">
+                    <h4 class="chart-title">Revenue Overview</h4>
+                    <div class="chart-actions">
+                        <a href="#">
+                            Advanced Report <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="revenue-chart">
+                    <div class="chart-grid">
+                        <div class="chart-grid-line"></div>
+                        <div class="chart-grid-line"></div>
+                        <div class="chart-grid-line"></div>
+                        <div class="chart-grid-line"></div>
+                    </div>
+                    <div class="chart-bars">
+                        <div class="chart-bar" style="height: 70%">
+                            <div class="chart-bar-value">$2,100</div>
+                        </div>
+                        <div class="chart-bar" style="height: 85%">
+                            <div class="chart-bar-value">$2,550</div>
+                        </div>
+                        <div class="chart-bar" style="height: 65%">
+                            <div class="chart-bar-value">$1,950</div>
+                        </div>
+                        <div class="chart-bar" style="height: 90%">
+                            <div class="chart-bar-value">$2,700</div>
+                        </div>
+                        <div class="chart-bar" style="height: 75%">
+                            <div class="chart-bar-value">$2,250</div>
+                        </div>
+                        <div class="chart-bar" style="height: 80%">
+                            <div class="chart-bar-value">$2,400</div>
+                        </div>
+                        <div class="chart-bar" style="height: 60%">
+                            <div class="chart-bar-value">$1,800</div>
+                        </div>
+                        <div class="chart-bar" style="height: 95%">
+                            <div class="chart-bar-value">$2,850</div>
+                        </div>
+                        <div class="chart-bar" style="height: 70%">
+                            <div class="chart-bar-value">$2,100</div>
+                        </div>
+                        <div class="chart-bar" style="height: 85%">
+                            <div class="chart-bar-value">$2,550</div>
+                        </div>
+                        <div class="chart-bar" style="height: 65%">
+                            <div class="chart-bar-value">$1,950</div>
+                        </div>
+                        <div class="chart-bar" style="height: 50%">
+                            <div class="chart-bar-value">$1,500</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-labels">
+                    <span>20</span>
+                    <span>22</span>
+                    <span>24</span>
+                    <span>26</span>
+                    <span>28</span>
+                    <span>30</span>
+                    <span>02</span>
+                    <span>04</span>
+                    <span>06</span>
+                    <span>08</span>
+                    <span>10</span>
+                    <span>12</span>
+                </div>
+            </div>
+
+            <!-- Advanced Stats -->
+            <div class="form-container advanced-stats animatedtoup show">
+                <div class="advanced-stat">
+                    <div class="stat-percentage">38%</div>
+                    <div class="stat-label">Advanced Cart</div>
+                </div>
+                <div class="advanced-stat">
+                    <div class="stat-value">720</div>
+                    <div class="stat-label">Cart Items</div>
+                </div>
+                <div class="advanced-stat">
+                    <div class="stat-value">$5,900</div>
+                    <div class="stat-label">Advanced Revenue</div>
+                </div>
+            </div>
+
+            <!-- Two Column Layout: Traffic and Sales Forecast -->
+            <div class="two-column-layout">
+                <!-- Traffic Section -->
+                <div class="form-container animatedtoup show">
+                    <div class="traffic-header">
+                        <h3 class="chart-title">Traffic</h3>
+                    </div>
+                    <div class="traffic-metrics">
+                        <div class="traffic-metric">
+                            <div class="metric-value">8,950</div>
+                            <div class="metric-label">
+                                <span>Store Visits</span>
+                                <span class="metric-trend trend-up">
+                                    <i class="bi bi-arrow-up"></i> 22%
+                                </span>
+                            </div>
+                        </div>
+                        <div class="traffic-metric">
+                            <div class="metric-value">1,520</div>
+                            <div class="metric-label">
+                                <span>Visitors</span>
+                                <span class="metric-trend trend-down">
+                                    <i class="bi bi-arrow-down"></i> 24%
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="traffic-chart">
+                        <div class="traffic-chart-line"></div>
+                    </div>
+                    <div class="traffic-labels">
+                        <span>16</span>
+                        <span>18</span>
+                        <span>20</span>
+                        <span>22</span>
+                        <span>24</span>
+                        <span>26</span>
+                        <span>28</span>
+                        <span>30</span>
+                    </div>
+                    <div class="chart-subtitle">Jan 16 - Jan 30 store visits chart</div>
+                </div>
+
+                <!-- Sales Forecast -->
+                <div class="form-container animatedtoup show">
+                    <div class="forecast-header">
+                        <h3 class="chart-title">Sales Forecast</h3>
+                        <div class="chart-actions">
+                            <a href="#">More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="forecast-items">
+                        <div class="forecast-item">
+                            <div class="forecast-label">Revenue</div>
+                            <div class="forecast-value trend-up">+24.2%</div>
+                        </div>
+                        <div class="forecast-item">
+                            <div class="forecast-label">Orders</div>
+                            <div class="forecast-value trend-up">+32.8%</div>
+                        </div>
+                        <div class="forecast-item">
+                            <div class="forecast-label">Net Profit</div>
+                            <div class="forecast-value trend-down">-2.5%</div>
+                        </div>
+                        <div class="forecast-item">
+                            <div class="forecast-label">Visitors</div>
+                            <div class="forecast-value trend-up">+60%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Revenue by Device -->
+
+
+            <!-- Latest Orders Table -->
+            <div class="form-container">
+                <div class="chart-header">
+                    <h3 class="chart-title">Recent Stores</h3>
+                    <div class="chart-actions">
+                        <a href="#" data-target="stores">View All <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="site-table-container animatedtoup show">
+                    <table class="site-table">
+                        <thead>
+                            <tr>
+                                <th>Store Name</th>
+                                <th>Store ID</th>
+                                <th>Plan</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>King Store</td>
+                                <td>yqkjcfd4e8fSCUjE6aA0XWc3nBu1</td>
+                                <td>Standard</td>
+                                <td><span class="status-badge active">Active</span></td>
+
+                                <td>
+                                    <button class="btn btn-sm btn-outline" onclick="openSidePanel('store', {
+                                                                                                    id: 'yqkjcfd4e8fSCUjE6aA0XWc3nBu1',
+                                                                                                    name: 'King Store',
+                                                                                                    plan: 'Standard',
+                                                                                                    phone: '+20178403035',
+                                                                                                    startDate: '07/08/2025, 12:00:00 pm',
+                                                                                                    endDate: '07/09/2025, 5:34:47 pm',
+                                                                                                    status: 'expired',
+                                                                                                    amount: '18',
+                                                                                                    email: 'mostofiomohomes60183338870@gmail.com'
+                                                                                                })">
+                                        <i class="bi bi-eye"></i> View
+                                    </button>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>Swift</td>
+                                <td>xtpghp9bafTbsSYRfYF2wCu8mQ2</td>
+                                <td>Standard</td>
+                                <td><span class="status-badge expired">Expired</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline">
+                                        <i class="bi bi-eye"></i> View
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Hunters</td>
+                                <td>HRC4K11P7KvmsH9WZG2CtBcaB9</td>
+                                <td>Basic</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline">
+                                        <i class="bi bi-eye"></i> View
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                // Animate elements on page load
+                setTimeout(() => {
+                    const animatedElements = document.querySelectorAll('.animatedtoup');
+                    animatedElements.forEach(el => {
+                        el.classList.add('show');
+                    });
+                }, 100);
+
+                // Add event listeners for buttons
+                const renewButtons = document.querySelectorAll('.btn-renew');
+                renewButtons.forEach(button => {
+                    button.addEventListener('click', function () {
+                        const planName = this.closest('tr').querySelector('td:first-child').textContent;
+                        alert(`Renewing plan: ${planName}`);
+                    });
+                });
+
+                const upgradeButtons = document.querySelectorAll('.btn-upgrade');
+                upgradeButtons.forEach(button => {
+                    button.addEventListener('click', function () {
+                        const planName = this.closest('tr').querySelector('td:first-child').textContent;
+                        alert(`Upgrading plan: ${planName}`);
+                    });
+                });
+            });
+        </script>
+
+        <!-- html & script for the side page -->
+        <!-- Side Panel Overlay -->
+        <div id="side-panel-overlay" class="side-panel-overlay"></div>
+
+        <!-- Side Panel -->
+        <div id="side-panel" class="side-panel">
+            <div class="side-panel-header">
+                <h2 id="side-panel-title" class="side-panel-title">Details</h2>
+                <button class="side-panel-close" onclick="closeSidePanel()">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+            <div id="side-panel-content" class="side-panel-content">
+                <!-- Content will be dynamically inserted here -->
+            </div>
+        </div>
+        <script>
+            // Enhanced Side Panel Functions with Slide Out Animation
+            let currentSidePanelType = null;
+            let currentSidePanelData = null;
+            let closeTimeout = null;
+
+            // Open side panel with data
+            function openSidePanel(type, data) {
+                currentSidePanelType = type;
+                currentSidePanelData = data;
+
+                const sidePanel = document.getElementById('side-panel');
+                const overlay = document.getElementById('side-panel-overlay');
+
+                // Remove closing classes if they exist
+                sidePanel.classList.remove('closing');
+                overlay.classList.remove('closing');
+
+                // Set panel content based on type
+                setSidePanelContent(type, data);
+
+                // Show panel and overlay
+                sidePanel.classList.add('active');
+                overlay.classList.add('active');
+
+                // Prevent body scrolling
+                document.body.style.overflow = 'hidden';
+
+                // Clear any existing close timeout
+                if (closeTimeout) {
+                    clearTimeout(closeTimeout);
+                    closeTimeout = null;
+                }
+            }
+
+            // Close side panel with animation
+            function closeSidePanel() {
+                const sidePanel = document.getElementById('side-panel');
+                const overlay = document.getElementById('side-panel-overlay');
+
+                // Add closing classes for animation
+                sidePanel.classList.add('closing');
+                overlay.classList.add('closing');
+
+                // Wait for animation to complete before hiding
+                closeTimeout = setTimeout(() => {
+                    sidePanel.classList.remove('active', 'closing');
+                    overlay.classList.remove('active', 'closing');
+
+                    // Restore body scrolling
+                    document.body.style.overflow = '';
+
+                    // Reset current data
+                    currentSidePanelType = null;
+                    currentSidePanelData = null;
+
+                    closeTimeout = null;
+                }, 200); // Match this with CSS transition duration
+            }
+
+            // Enhanced set content function with better animations
+            function setSidePanelContent(type, data) {
+                const title = document.getElementById('side-panel-title');
+                const content = document.getElementById('side-panel-content');
+
+                // Reset content with loading state
+                content.innerHTML = `
+        <div style="display: flex; justify-content: center; align-items: center; height: 200px;">
+            <div class="loading-spinner"></div>
+        </div>
+    `;
+
+                // Small delay to show loading and ensure smooth transition
+                setTimeout(() => {
+                    switch (type) {
+                        case 'store':
+                            title.textContent = 'Store Details';
+                            content.innerHTML = generateStoreContent(data);
+                            break;
+                        case 'request':
+                            title.textContent = 'Request Details';
+                            content.innerHTML = generateRequestContent(data);
+                            break;
+                        case 'report':
+                            title.textContent = 'Report Details';
+                            content.innerHTML = generateReportContent(data);
+                            break;
+                        default:
+                            title.textContent = 'Details';
+                            content.innerHTML = '<p>No information available.</p>';
+                    }
+
+                    // Scroll to top when content loads
+                    content.scrollTop = 0;
+                }, 100);
+            }
+
+            // Enhanced content generators with better styling
+            function generateStoreContent(data) {
+                return `
+        <div class="store-header">
+            <div class="store-logo">${data.name.charAt(0)}</div>
+            <div class="store-basic-info">
+                <h2>${data.name}</h2>
+                <p>Store ID: ${data.id}</p>
+                <span class="store-status ${data.status === 'active' ? 'active' : 'expired'}">
+                    ${data.status.charAt(0).toUpperCase() + data.status.slice(1)}
+                </span>
+            </div>
+        </div>
+        
+        <div class="store-details-grid">
+            <div class="detail-card">
+                <div class="detail-label">Plan Type</div>
+                <div class="detail-value">${data.plan}</div>
+            </div>
+            <div class="detail-card">
+                <div class="detail-label">Contact Phone</div>
+                <div class="detail-value">${data.phone}</div>
+            </div>
+            <div class="detail-card">
+                <div class="detail-label">Start Date</div>
+                <div class="detail-value">${data.startDate}</div>
+            </div>
+            <div class="detail-card">
+                <div class="detail-label">End Date</div>
+                <div class="detail-value">${data.endDate}</div>
+            </div>
+            <div class="detail-card">
+                <div class="detail-label">Total Revenue</div>
+                <div class="detail-value">$${data.amount}</div>
+            </div>
+            <div class="detail-card">
+                <div class="detail-label">Owner Email</div>
+                <div class="detail-value">${data.email}</div>
+            </div>
+        </div>
+        
+        <div class="store-actions">
+            <button class="btn btn-primary" onclick="renewStore('${data.id}')">
+                <i class="bi bi-arrow-clockwise"></i> Renew Subscription
+            </button>
+            <button class="btn btn-outline" onclick="editStore('${data.id}')">
+                <i class="bi bi-pencil"></i> Edit Store
+            </button>
+            <button class="btn btn-outline" onclick="viewStoreSite('${data.id}')">
+                <i class="bi bi-eye"></i> Visit Store
+            </button>
+            <button class="btn btn-outline" onclick="contactStoreOwner('${data.id}')">
+                <i class="bi bi-envelope"></i> Contact Owner
+            </button>
+             <button class="btn btn-outline" onclick="contactStoreOwner('${data.id}')">
+                <i class="bi bi-whatsapp"></i> Send Message
+            </button>
+        </div>
+    `;
+            }
+
+            // Close side panel when clicking overlay
+            document.getElementById('side-panel-overlay').addEventListener('click', closeSidePanel);
+
+            // Close side panel with Escape key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    closeSidePanel();
+                }
+            });
+
+            // Prevent side panel content clicks from closing the panel
+            document.getElementById('side-panel').addEventListener('click', function (e) {
+                e.stopPropagation();
+            });
+
+            // Add loading spinner CSS
+            const style = document.createElement('style');
+            style.textContent = `
+    .loading-spinner {
+        width: 40px;
+        height: 40px;
+        border: 4px solid var(--light-gray);
+        border-top: 4px solid var(--primary-color);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+`;
+            document.head.appendChild(style);
+        </script>
+    </div>
+
+
+</body>
+
+</html>

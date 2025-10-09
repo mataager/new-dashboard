@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/hugeicons@latest/dist/hugeicons.min.js"></script>
 
-    <link rel="stylesheet" href="./assets/css/dashboard.css">
+    
     <link rel="stylesheet" href="./assets/css/css0.css">
 
 
@@ -1026,46 +1026,6 @@
                         <p>Manage your product inventory and listings</p>
                     </div>
                 </div>
-
-                <!-- Stats Cards -->
-                <div class="stats-container Available Products">
-                    <div class="card available show">
-                        <div class="stat-card-header">
-                            <div class="stat-card-title">Available Products</div>
-                            <div class="stat-card-icon available">
-                                <i class="bi bi-box-seam"></i>
-                            </div>
-                        </div>
-                        <div class="stat-card-value">391</div>
-                        <div class="stat-card-progress">
-                            <div class="stat-card-progress-bar available" style="width: 100%"></div>
-                        </div>
-                        <div class="progress-text">
-                            <span>Total Inventory</span>
-                            <span>100%</span>
-                        </div>
-                    </div>
-
-                    <div class="card uploaded show">
-                        <div class="stat-card-header">
-                            <div class="stat-card-title">Uploaded Products</div>
-                            <div class="stat-card-icon uploaded">
-                                <i class="bi bi-cloud-arrow-up"></i>
-                            </div>
-                        </div>
-                        <div class="stat-card-value">9</div>
-                        <div class="stat-card-progress">
-                            <div class="stat-card-progress-bar uploaded" style="width: 2.3%"></div>
-                        </div>
-                        <div class="progress-text">
-                            <span>Progress</span>
-                            <span>2.3%</span>
-                        </div>
-                    </div>
-                </div>
-
-
-
             </div>
             <div class="form-header">
                 <div class="form-actions">
@@ -1076,1056 +1036,1102 @@
             </div>
             <div class="form-container animatedtoup">
                 <div class="tabs-btn-area">
-                    <button class="tab-button active" data-tab="addProduct">Add Product <i
+                    <button class="tab-button active" data-tab="productOverview">Product Overview</button>
+                    <button class="tab-button" data-tab="addProduct">Add Product <i
                             class="bi bi-plus-circle"></i></button>
                     <button class="tab-button" data-tab="editProduct">Edit Product <i
                             class="bi bi-pencil-square"></i></button>
                     <button class="tab-button" data-tab="deleteProduct">Delete Product <i
                             class="bi bi-x-circle"></i></button>
                 </div>
-                <!-- Product Form -->
-                <div class="form-container animatedtoup">
-                    <div class="form-header">
-                        <h4 class="form-title"><i class="bi bi-tag"></i> Product Information</h4>
-                        <div class="form-actions">
-                            <button class="btn btn-outline">
-                                <i class="bi bi-eye"></i> Preview
-                            </button>
-                            <button class="btn btn-outline">
-                                <i class="bi bi-gear"></i> Set as Default
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label class="form-label">Product Title</label>
-                            <input type="text" class="form-input form-control " placeholder="Enter your product title">
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Brand Name</label>
-                            <input type="text" class="form-input form-control " placeholder="Enter your brand">
-                        </div>
-
-
-
-                        <div class="form-group">
-                            <label class="form-label">Gender</label>
-                            <div class="elegant-select">
-                                <div class="select-selected" id="standardSelect">
-                                    <span>Choose a gender</span>
+                <div class="tab-content animatedtoup active" id="productOverview-content">
+                    <!-- Stats Cards -->
+                    <div class="stats-container Available Products">
+                        <div class="card available show">
+                            <div class="stat-card-header">
+                                <div class="stat-card-title">Available Products</div>
+                                <div class="stat-card-icon available">
+                                    <i class="bi bi-box-seam"></i>
                                 </div>
-                                <div class="select-items" id="standardSelectItems">
-                                    <div class="select-item" data-value="option1">
-                                        <div class="icon">
-                                            <i class="bi bi-gender-male"></i>
-                                        </div>
-                                        <span>Men</span>
-                                    </div>
-                                    <div class="select-item" data-value="option1">
-                                        <div class="icon">
-                                            <i class="bi bi-gender-female"></i>
-                                        </div>
-                                        <span>Women</span>
-                                    </div>
-                                    <div class="select-item" data-value="option2">
-                                        <div class="icon">
-                                            <i class="bi bi-gender-ambiguous"></i>
-                                        </div>
-                                        <span>Unisex</span>
-                                    </div>
-
-                                    <div class="select-item" data-value="option2">
-                                        <div class="icon">
-                                            <i class="bi bi-gender-male"></i>
-                                        </div>
-                                        <span>Kids (Boy)</span>
-                                    </div>
-                                    <div class="select-item" data-value="option2">
-                                        <div class="icon">
-                                            <i class="bi bi-gender-female"></i>
-                                        </div>
-                                        <span>Kids (Girl)</span>
-                                    </div>
-
-                                </div>
+                            </div>
+                            <div class="stat-card-value">391</div>
+                            <div class="stat-card-progress">
+                                <div class="stat-card-progress-bar available" style="width: 100%"></div>
+                            </div>
+                            <div class="progress-text">
+                                <span>Total Inventory</span>
+                                <span>100%</span>
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label class="form-label">Product Category</label>
-                            <div class="elegant-select">
-                                <div class="select-selected" id="standardSelect">
-                                    <span>Choose a Category</span>
-                                </div>
-                                <div class="select-items" id="standardSelectItems">
-                                    <div class="select-item" data-value="option1">
-                                        <span>T-Shirt</span>
-                                    </div>
-                                    <div class="select-item" data-value="option1">
-
-                                        <span>Polo-Shirt</span>
-                                    </div>
-
-
+                        <div class="card uploaded show">
+                            <div class="stat-card-header">
+                                <div class="stat-card-title">Uploaded Products</div>
+                                <div class="stat-card-icon uploaded">
+                                    <i class="bi bi-cloud-arrow-up"></i>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Wear Type</label>
-                            <div class="elegant-select">
-                                <div class="select-selected" id="standardSelect">
-                                    <span>Choose a type</span>
-                                </div>
-                                <div class="select-items" id="standardSelectItems">
-                                    <div class="select-item" data-value="option1">
-                                        <div class="icon"><img
-                                                src="https://peacockstorebunny.b-cdn.net/icons/tshirt.svg">
-                                        </div>
-                                        <span>Top</span>
-                                    </div>
-                                    <div class="select-item" data-value="option1">
-                                        <div class="icon"><img
-                                                src="https://peacockstorebunny.b-cdn.net/icons/pants.svg">
-                                        </div>
-                                        <span>Bottom</span>
-                                    </div>
-                                    <div class="select-item" data-value="option2">
-                                        <div class="icon"><img
-                                                src="https://peacockstorebunny.b-cdn.net/icons/shose.svg">
-                                        </div>
-                                        <span>footwear</span>
-                                    </div>
-                                    <div class="select-item" data-value="option2">
-                                        <div class="icon"><img src="https://peacockstorebunny.b-cdn.net/icons/cap.svg">
-                                        </div>
-                                        <span>Head wear</span>
-                                    </div>
-                                    <div class="select-item" data-value="option2">
-                                        <div class="icon"><img
-                                                src="https://peacockstorebunny.b-cdn.net/icons/glove.svg">
-                                        </div>
-                                        <span>Hand wear</span>
-                                    </div>
-                                    <div class="select-item" data-value="option2">
-                                        <div class="icon"><img
-                                                src="https://peacockstorebunny.b-cdn.net/icons/glasses.svg">
-                                        </div>
-                                        <span>Eye wear</span>
-                                    </div>
-                                </div>
+                            <div class="stat-card-value">9</div>
+                            <div class="stat-card-progress">
+                                <div class="stat-card-progress-bar uploaded" style="width: 2.3%"></div>
+                            </div>
+                            <div class="progress-text">
+                                <span>Progress</span>
+                                <span>2.3%</span>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="form-label">Styles Category</label>
-                            <div class="elegant-select">
-                                <div class="select-selected" id="standardSelect">
-                                    <span>Choose a Style</span>
-                                </div>
-                                <div class="select-items" id="standardSelectItems">
-                                    <div class="select-item" data-value="option1">
-                                        <span>Drip Style</span>
-                                    </div>
-                                    <div class="select-item" data-value="option1">
-                                        <span>Sporty Style</span>
-                                    </div>
-                                    <div class="select-item" data-value="option1">
-
-                                        <span>Casual Style</span>
-                                    </div>
-                                    <div class="select-item" data-value="option1">
-                                        <span>Semi Classic Style</span>
-                                    </div>
-                                    <div class="select-item" data-value="option1">
-
-                                        <span>Classic Style</span>
-                                    </div>
-
-
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">Product Description</label>
-                        <textarea class="form-textarea" placeholder="Type product description here..."></textarea>
                     </div>
                 </div>
-
-                <!-- Pricing Form -->
-                <div class="form-container animatedtoup">
-                    <div class="form-header">
-                        <h4 class="form-title"><i class="bi bi-currency-exchange"></i> Pricing</h4>
-                        <div class="form-actions">
-                            <button class="btn btn-outline">
-                                <i class="bi bi-gear"></i> Set as Default
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="pricing-grid">
-                        <div class="form-group">
-                            <label class="form-label">Base Price</label>
-                            <input type="text" class="form-input form-control " placeholder="EGP">
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Discount</label>
-                            <input type="text" class="form-input form-control " placeholder="%">
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Store Price</label>
-                            <input type="text" class="form-input form-control " placeholder="EGP" readonly>
-                        </div>
-
-                    </div>
-                    <div class="form-group enhancePriceArea">
-                        <button class="btn btn-outline btn-outline-selected">
-                            <i class="bi bi-magic"></i> Enhance Price on
-                        </button>
-                    </div>
-                    <div class="pricing-summary">
-                        <div class="summary-item">
-                            <span class="summary-label">Customer Pays:</span>
-                            <span class="summary-value">$0</span>
-                        </div>
-                        <div class="summary-item">
-                            <span class="summary-label">System Fee:</span>
-                            <span class="summary-value system-cut">$0</span>
-                        </div>
-                        <div class="summary-item">
-                            <span class="summary-label">Your Earnings:</span>
-                            <span class="summary-value profit">$0</span>
-                        </div>
-                    </div>
-
-
-                </div>
-
-
-                <div class="form-container animatedtoup" id="sizeFormContainer">
-                    <div class="form-header">
-                        <h4 class="form-title"><i class="bi bi-rulers"></i> Size &amp; Quantity</h4>
-                        <div class="form-actions">
-                            <button class="btn btn-outline">
-                                <i class="bi bi-gear"></i> Set as Default
-                            </button>
-                        </div>
-                    </div>
-                    <div class="form-actions center mb-25">
-                        <button class="btn btn-outline" id="btnAddPackage">Add Size Package</button>
-                        <button class="btn btn-outline" id="btnSavedPackages">Saved Size Packages</button>
-                    </div>
-                    <!-- PAGE 1: Add Size Package -->
-                    <div id="addPackagePage">
-
-                        <div class="form-group">
-                            <label class="form-label">Package Name</label>
-                            <input type="text" class="form-input form-control " id="packageName"
-                                placeholder="Enter package name">
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Size Type</label>
-                            <div class="size-toggle">
-                                <div class="toggle-option active" id="numericToggle">
-                                    <i class="bi bi-123"></i> <span class="toggle-text">Numeric</span>
-                                </div>
-                                <div class="toggle-option" id="alphaToggle">
-                                    <i class="bi bi-fonts"></i> <span class="toggle-text">Alphabetical</span>
-                                </div>
+                <div class="tab-content animatedtoup " id="addProduct-content"><!-- Product Form -->
+                    <div class="form-container">
+                        <div class="form-header">
+                            <h4 class="form-title"><i class="bi bi-tag"></i> Product Information</h4>
+                            <div class="form-actions">
+                                <button class="btn btn-outline">
+                                    <i class="bi bi-eye"></i> Preview
+                                </button>
+                                <button class="btn btn-outline">
+                                    <i class="bi bi-gear"></i> Set as Default
+                                </button>
                             </div>
                         </div>
 
-                        <div class="range-selector">
+                        <div class="form-grid">
                             <div class="form-group">
-                                <label class="form-label">From</label>
-                                <input type="number" class="form-input form-control " id="fromSize" value="35">
+                                <label class="form-label">Product Title</label>
+                                <input type="text" class="form-input form-control "
+                                    placeholder="Enter your product title">
                             </div>
 
                             <div class="form-group">
-                                <label class="form-label">To</label>
-                                <input type="number" class="form-input form-control " id="toSize" value="45">
+                                <label class="form-label">Brand Name</label>
+                                <input type="text" class="form-input form-control " placeholder="Enter your brand">
                             </div>
 
 
-                        </div>
 
-                        <div class="form-group">
-                            <label class="form-label">Exceptions (Select sizes to exclude)</label>
-                            <div class="exceptions-grid" id="exceptionsGrid">
-                                <div class="exception-chip">36</div>
-                                <div class="exception-chip">38</div>
-                                <div class="exception-chip">40</div>
-                                <div class="exception-chip">42</div>
-                                <div class="exception-chip">44</div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Size Chart</label>
-                            <div class="elegant-select">
-                                <div class="select-selected" id="standardSelect">
-                                    <span>Choose a Chart</span>
+                            <div class="form-group">
+                                <label class="form-label">Gender</label>
+                                <div class="elegant-select">
+                                    <div class="select-selected" id="standardSelect">
+                                        <span>Choose a gender</span>
+                                    </div>
+                                    <div class="select-items" id="standardSelectItems">
+                                        <div class="select-item" data-value="option1">
+                                            <div class="icon">
+                                                <i class="bi bi-gender-male"></i>
+                                            </div>
+                                            <span>Men</span>
+                                        </div>
+                                        <div class="select-item" data-value="option1">
+                                            <div class="icon">
+                                                <i class="bi bi-gender-female"></i>
+                                            </div>
+                                            <span>Women</span>
+                                        </div>
+                                        <div class="select-item" data-value="option2">
+                                            <div class="icon">
+                                                <i class="bi bi-gender-ambiguous"></i>
+                                            </div>
+                                            <span>Unisex</span>
+                                        </div>
+
+                                        <div class="select-item" data-value="option2">
+                                            <div class="icon">
+                                                <i class="bi bi-gender-male"></i>
+                                            </div>
+                                            <span>Kids (Boy)</span>
+                                        </div>
+                                        <div class="select-item" data-value="option2">
+                                            <div class="icon">
+                                                <i class="bi bi-gender-female"></i>
+                                            </div>
+                                            <span>Kids (Girl)</span>
+                                        </div>
+
+                                    </div>
                                 </div>
-                                <div class="select-items" id="standardSelectItems">
-                                    <div class="select-item" data-value="mentopchart">
-                                        <span>men top chart</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Product Category</label>
+                                <div class="elegant-select">
+                                    <div class="select-selected" id="standardSelect">
+                                        <span>Choose a Category</span>
                                     </div>
-                                    <div class="select-item" data-value="menbottomchart">
-                                        <span>men bottom chart</span>
-                                    </div>
-                                    <div class="select-item" data-value="womentopchart">
-                                        <span>men top chart</span>
-                                    </div>
-                                    <div class="select-item" data-value="womenbottomchart">
-                                        <span>women bottom chart</span>
-                                    </div>
+                                    <div class="select-items" id="standardSelectItems">
+                                        <div class="select-item" data-value="option1">
+                                            <span>T-Shirt</span>
+                                        </div>
+                                        <div class="select-item" data-value="option1">
+
+                                            <span>Polo-Shirt</span>
+                                        </div>
 
 
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Wear Type</label>
+                                <div class="elegant-select">
+                                    <div class="select-selected" id="standardSelect">
+                                        <span>Choose a type</span>
+                                    </div>
+                                    <div class="select-items" id="standardSelectItems">
+                                        <div class="select-item" data-value="option1">
+                                            <div class="icon"><img
+                                                    src="https://peacockstorebunny.b-cdn.net/icons/tshirt.svg">
+                                            </div>
+                                            <span>Top</span>
+                                        </div>
+                                        <div class="select-item" data-value="option1">
+                                            <div class="icon"><img
+                                                    src="https://peacockstorebunny.b-cdn.net/icons/pants.svg">
+                                            </div>
+                                            <span>Bottom</span>
+                                        </div>
+                                        <div class="select-item" data-value="option2">
+                                            <div class="icon"><img
+                                                    src="https://peacockstorebunny.b-cdn.net/icons/shose.svg">
+                                            </div>
+                                            <span>footwear</span>
+                                        </div>
+                                        <div class="select-item" data-value="option2">
+                                            <div class="icon"><img
+                                                    src="https://peacockstorebunny.b-cdn.net/icons/cap.svg">
+                                            </div>
+                                            <span>Head wear</span>
+                                        </div>
+                                        <div class="select-item" data-value="option2">
+                                            <div class="icon"><img
+                                                    src="https://peacockstorebunny.b-cdn.net/icons/glove.svg">
+                                            </div>
+                                            <span>Hand wear</span>
+                                        </div>
+                                        <div class="select-item" data-value="option2">
+                                            <div class="icon"><img
+                                                    src="https://peacockstorebunny.b-cdn.net/icons/glasses.svg">
+                                            </div>
+                                            <span>Eye wear</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Styles Category</label>
+                                <div class="elegant-select">
+                                    <div class="select-selected" id="standardSelect">
+                                        <span>Choose a Style</span>
+                                    </div>
+                                    <div class="select-items" id="standardSelectItems">
+                                        <div class="select-item" data-value="option1">
+                                            <span>Drip Style</span>
+                                        </div>
+                                        <div class="select-item" data-value="option1">
+                                            <span>Sporty Style</span>
+                                        </div>
+                                        <div class="select-item" data-value="option1">
+
+                                            <span>Casual Style</span>
+                                        </div>
+                                        <div class="select-item" data-value="option1">
+                                            <span>Semi Classic Style</span>
+                                        </div>
+                                        <div class="select-item" data-value="option1">
+
+                                            <span>Classic Style</span>
+                                        </div>
+
+
+                                    </div>
                                 </div>
                             </div>
 
                         </div>
-                        <div class="form-group">
-                            <label class="form-label">Default Quantity</label>
-                            <input type="number" class="form-input form-control " id="defaultQuantity" value="10">
-                        </div>
 
-                        <div class="form-actions">
-                            <button class="btn btn-outline" id="savePackage">Save Package</button>
+                        <div class="form-group">
+                            <label class="form-label">Product Description</label>
+                            <textarea class="form-textarea" placeholder="Type product description here..."></textarea>
                         </div>
                     </div>
+                    <!-- Pricing Form -->
+                    <div class="form-container animatedtoup">
+                        <div class="form-header">
+                            <h4 class="form-title"><i class="bi bi-currency-exchange"></i> Pricing</h4>
+                            <div class="form-actions">
+                                <button class="btn btn-outline">
+                                    <i class="bi bi-gear"></i> Set as Default
+                                </button>
+                            </div>
+                        </div>
 
-                    <!-- PAGE 2: Saved Size Packages -->
-                    <div id="savedPackagesPage" style="display:none;">
-                        <h5>Saved Size Packages</h5>
-                        <ul id="packagesList"></ul>
-                    </div>
+                        <div class="pricing-grid">
+                            <div class="form-group">
+                                <label class="form-label">Base Price</label>
+                                <input type="text" class="form-input form-control " placeholder="EGP">
+                            </div>
 
+                            <div class="form-group">
+                                <label class="form-label">Discount</label>
+                                <input type="text" class="form-input form-control " placeholder="%">
+                            </div>
 
-                </div>
-                <script>
-                    document.addEventListener("DOMContentLoaded", () => {
-                        const btnAdd = document.getElementById("btnAddPackage");
-                        const btnSaved = document.getElementById("btnSavedPackages");
-                        const addPage = document.getElementById("addPackagePage");
-                        const savedPage = document.getElementById("savedPackagesPage");
-                        const saveBtn = document.getElementById("savePackage");
-                        const packagesList = document.getElementById("packagesList");
-                        const exceptionsGrid = document.getElementById("exceptionsGrid");
-                        const fromSize = document.getElementById("fromSize");
-                        const toSize = document.getElementById("toSize");
-                        const numericToggle = document.getElementById("numericToggle");
-                        const alphaToggle = document.getElementById("alphaToggle");
+                            <div class="form-group">
+                                <label class="form-label">Store Price</label>
+                                <input type="text" class="form-input form-control " placeholder="EGP" readonly>
+                            </div>
 
-                        let selectedExceptions = [];
-                        let sizeType = "numeric"; // default
-
-                        const alphaSizes = ["XXS", "XS", "S", "M", "L", "XL", "XXL", "3XL", "4XL", "5XL"];
-
-                        // Switch between pages
-                        btnAdd.addEventListener("click", () => {
-                            addPage.style.display = "block";
-                            savedPage.style.display = "none";
-                        });
-
-                        btnSaved.addEventListener("click", () => {
-                            addPage.style.display = "none";
-                            savedPage.style.display = "block";
-                            loadPackages();
-                        });
-
-                        // Toggle size type
-                        numericToggle.addEventListener("click", () => {
-                            sizeType = "numeric";
-                            numericToggle.classList.add("active");
-                            alphaToggle.classList.remove("active");
-
-                            fromSize.type = "number";
-                            toSize.type = "number";
-                            fromSize.value = 35;
-                            toSize.value = 45;
-                            generateExceptions();
-                        });
-
-                        alphaToggle.addEventListener("click", () => {
-                            sizeType = "alpha";
-                            alphaToggle.classList.add("active");
-                            numericToggle.classList.remove("active");
-
-                            // Replace inputs with dropdowns
-                            fromSize.type = "text";
-                            toSize.type = "text";
-
-                            fromSize.value = "XXS";
-                            toSize.value = "5XL";
-                            generateExceptions();
-                        });
-
-                        // Generate exceptions dynamically
-                        function generateExceptions() {
-                            exceptionsGrid.innerHTML = "";
-                            selectedExceptions = [];
-
-                            let from = fromSize.value;
-                            let to = toSize.value;
-
-                            if (sizeType === "numeric") {
-                                from = parseInt(from);
-                                to = parseInt(to);
-                                if (isNaN(from) || isNaN(to)) return;
-                                for (let i = from; i <= to; i++) {
-                                    createChip(i.toString());
-                                }
-                            } else {
-                                const start = alphaSizes.indexOf(from.toUpperCase());
-                                const end = alphaSizes.indexOf(to.toUpperCase());
-                                if (start !== -1 && end !== -1 && start <= end) {
-                                    for (let i = start; i <= end; i++) {
-                                        createChip(alphaSizes[i]);
-                                    }
-                                }
-                            }
-                        }
-
-                        // Create clickable exception chip
-                        function createChip(size) {
-                            const chip = document.createElement("div");
-                            chip.classList.add("exception-chip");
-                            chip.textContent = size;
-                            chip.addEventListener("click", () => {
-                                chip.classList.toggle("selected");
-                                if (chip.classList.contains("selected")) {
-                                    selectedExceptions.push(size);
-                                } else {
-                                    selectedExceptions = selectedExceptions.filter(s => s !== size);
-                                }
-                            });
-                            exceptionsGrid.appendChild(chip);
-                        }
-
-                        fromSize.addEventListener("input", generateExceptions);
-                        toSize.addEventListener("input", generateExceptions);
-                        generateExceptions();
-
-                        // Save package to localStorage
-                        saveBtn.addEventListener("click", () => {
-                            const name = document.getElementById("packageName").value.trim();
-                            const from = fromSize.value;
-                            const to = toSize.value;
-                            const quantity = document.getElementById("defaultQuantity").value;
-
-                            if (!name) {
-                                alert("Please enter a package name!");
-                                return;
-                            }
-
-                            const packageData = {
-                                name,
-                                from,
-                                to,
-                                quantity,
-                                exceptions: selectedExceptions,
-                                date: new Date().toLocaleString()
-                            };
-
-                            let packages = JSON.parse(localStorage.getItem("sizePackages")) || [];
-                            packages.push(packageData);
-                            localStorage.setItem("sizePackages", JSON.stringify(packages));
-
-                            alert("Package saved!");
-                            document.getElementById("packageName").value = "";
-                        });
-
-                        // Load saved packages
-                        function loadPackages() {
-                            packagesList.innerHTML = "";
-                            let packages = JSON.parse(localStorage.getItem("sizePackages")) || [];
-                            if (packages.length === 0) {
-                                packagesList.innerHTML = "<li>No saved packages yet</li>";
-                                return;
-                            }
-                            packages.forEach(pkg => {
-                                const li = document.createElement("li");
-                                const excluded = pkg.exceptions && pkg.exceptions.length > 0 ? pkg.exceptions.join(", ") : "None";
-                                li.textContent = `${pkg.name} → Sizes ${pkg.from}-${pkg.to} | Qty: ${pkg.quantity} | Excluded: ${excluded}`;
-                                packagesList.appendChild(li);
-                            });
-                        }
-                    });
-                </script>
-                <!-- Images Form -->
-                <div class="form-container animatedtoup">
-                    <div class="form-header">
-                        <h4 class="form-title"><i class="bi bi-images"></i> Images</h4>
-                        <div class="form-actions">
-                            <button class="btn btn-outline">
-                                <i class="bi bi-gear"></i> Set as Default
+                        </div>
+                        <div class="form-group enhancePriceArea">
+                            <button class="btn btn-outline btn-outline-selected">
+                                <i class="bi bi-magic"></i> Enhance Price on
                             </button>
                         </div>
-                    </div>
-
-                    <div id="dropzonesContainer">
-                        <!-- Drop zones will be added dynamically -->
-                    </div>
-
-                    <button id="addDropzoneBtn" class="btn btn-outline">+ Add Collection Zone</button>
-                    <!-- Modal for color selection from image -->
-                    <div id="colorPickerModal" class="modal">
-                        <div class="modal-content">
-                            <h3>Select Color from Image</h3>
-                            <p>Drag the circle to choose a color from the image</p>
-
-                            <div class="circle-size-control">
-                                <label>Circle Size:</label>
-                                <input type="range" id="circleSize" min="20" max="100" value="50">
-                                <span id="circleSizeValue">50px</span>
+                        <div class="pricing-summary">
+                            <div class="summary-item">
+                                <span class="summary-label">Customer Pays:</span>
+                                <span class="summary-value">$0</span>
                             </div>
-
-                            <div class="crop-container">
-                                <img id="colorSourceImage" src="" alt="Source for color selection">
-                                <div class="crop-circle" id="colorPicker"></div>
+                            <div class="summary-item">
+                                <span class="summary-label">System Fee:</span>
+                                <span class="summary-value system-cut">$0</span>
                             </div>
-
-                            <div id="selectedColorInfo"
-                                style="margin: 15px 0; padding: 10px; background: #f8f9fa; border-radius: 6px; display: none;">
-                                <p>Selected Color: <span id="selectedColorHex"></span></p>
-                                <div id="selectedColorPreview"
-                                    style="width: 30px; height: 30px; border: 1px solid #ddd; border-radius: 4px; display: inline-block; vertical-align: middle; margin-left: 10px;">
-                                </div>
-                            </div>
-
-                            <div style="display: flex; justify-content: space-between; margin-top: 20px;">
-                                <button id="cancelColorPick" class="btn btn-outline">Cancel</button>
-                                <button id="confirmColorPick" class="btn btn-primary">Select Color</button>
+                            <div class="summary-item">
+                                <span class="summary-label">Your Earnings:</span>
+                                <span class="summary-value profit">$0</span>
                             </div>
                         </div>
+
+
                     </div>
-                </div>
-                <script>
-                    document.addEventListener("DOMContentLoaded", () => {
-                        // Initialize sample data if not exists
-                        if (!localStorage.getItem("sizePackages")) {
-                            const sampleData = [
-                                {
-                                    "name": "men shoes",
-                                    "from": "40",
-                                    "to": "45",
-                                    "quantity": "10",
-                                    "exceptions": ["39", "46"],
-                                    "date": "07/09/2025, 14:02:10"
-                                },
-                                {
-                                    "name": "me shose 1",
-                                    "from": "35",
-                                    "to": "45",
-                                    "quantity": "10",
-                                    "exceptions": ["34", "47"],
-                                    "date": "07/09/2025, 15:31:46"
-                                },
-                                {
-                                    "name": "men shose 2",
-                                    "from": "40",
-                                    "to": "45",
-                                    "quantity": "20",
-                                    "exceptions": ["38"],
-                                    "date": "07/09/2025, 15:32:00"
-                                }
-                            ];
-                            localStorage.setItem("sizePackages", JSON.stringify(sampleData));
-                        }
 
-                        const dropzonesContainer = document.getElementById("dropzonesContainer");
-                        const addDropzoneBtn = document.getElementById("addDropzoneBtn");
-                        const colorPickerModal = document.getElementById("colorPickerModal");
-                        const colorSourceImage = document.getElementById("colorSourceImage");
-                        const colorPicker = document.getElementById("colorPicker");
-                        const cancelColorPick = document.getElementById("cancelColorPick");
-                        const confirmColorPick = document.getElementById("confirmColorPick");
-                        const circleSize = document.getElementById("circleSize");
-                        const circleSizeValue = document.getElementById("circleSizeValue");
-                        const selectedColorInfo = document.getElementById("selectedColorInfo");
-                        const selectedColorHex = document.getElementById("selectedColorHex");
-                        const selectedColorPreview = document.getElementById("selectedColorPreview");
-                        const sizeSection = document.querySelector('.size-section');
-                        const toggleButtons = document.querySelectorAll('.size-toggle-btn');
-                        const packageSelector = document.querySelector('.package-selector');
-                        const sizeCreator = document.querySelector('.size-creator');
 
-                        let dropzoneCount = 0;
-                        let currentColorPickerContext = null;
-                        let isDragging = false;
-                        let selectedColor = null;
-                        let currentExceptions = [];
+                    <div class="form-container animatedtoup" id="sizeFormContainer">
+                        <div class="form-header">
+                            <h4 class="form-title"><i class="bi bi-rulers"></i> Size &amp; Quantity</h4>
+                            <div class="form-actions">
+                                <button class="btn btn-outline">
+                                    <i class="bi bi-gear"></i> Set as Default
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-actions center mb-25">
+                            <button class="btn btn-outline" id="btnAddPackage">Add Size Package</button>
+                            <button class="btn btn-outline" id="btnSavedPackages">Saved Size Packages</button>
+                        </div>
+                        <!-- PAGE 1: Add Size Package -->
+                        <div id="addPackagePage">
 
-                        // Get size packages from local DB
-                        function getSizePackages() {
-                            return JSON.parse(localStorage.getItem("sizePackages")) || [];
-                        }
+                            <div class="form-group">
+                                <label class="form-label">Package Name</label>
+                                <input type="text" class="form-input form-control " id="packageName"
+                                    placeholder="Enter package name">
+                            </div>
 
-                        function createDropzone() {
-                            dropzoneCount++;
-                            const dz = document.createElement("div");
-                            dz.classList.add("dropzone");
-                            dz.dataset.index = dropzoneCount;
-
-                            const packages = getSizePackages();
-                            const packageOptions = packages.map(p =>
-                                `<option value="${p.name}">${p.name} (${p.from}-${p.to})</option>`
-                            ).join("");
-
-                            dz.innerHTML = `
-                                <h5>Collection Zone ${dropzoneCount}</h5>
-                                <p>Drag & drop images or paste URLs here (max 10)</p>
-                                <div><i class="bi bi-cloud-arrow-up"></i></div>
-                                <div class="image-list"></div>
-                                
-                                <div class="color-size-controls">
-                                    <div class="color-section">
-                                        <label>Color Selection</label>
-                                        <div class="toggle-buttons">
-                                            <button type="button" class="btn btn-sm btn-outline toggle-color-mode active" data-mode="picker">
-                                                <i class="bi bi-eyedropper"></i> Color Picker
-                                            </button>
-                                            <button type="button" class="btn btn-sm btn-outline toggle-color-mode" data-mode="image">
-                                                <i class="bi bi-image"></i> From Image
-                                            </button>
-                                        </div>
-                                        
-                                        <div class="color-picker-container">
-                                            <div class="elegant-color-input">
-                                                <div class="color-display" style="background-color: #4e73df"></div>
-                                                <input type="text" class="form-input form-control  color-name" placeholder="Color Name" value="Blue">
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="color-image-container" style="display:none;">
-                                            <p>Select an image to use as color source:</p>
-                                            <div class="image-swatches"></div>
-                                        </div>
+                            <div class="form-group">
+                                <label class="form-label">Size Type</label>
+                                <div class="size-toggle">
+                                    <div class="toggle-option active" id="numericToggle">
+                                        <i class="bi bi-123"></i> <span class="toggle-text">Numeric</span>
                                     </div>
-                                    
-                                    <div class="size-section">
-                                        <label>Size Selection</label>
-                                        <div class="toggle-buttons">
-                                            <button type="button" class="btn btn-sm btn-outline size-toggle-btn create-size-btn" data-target="size-creator">
-                                                <i class="bi bi-plus"></i> create new package
-                                            </button>
-                                            <button type="button" class="btn btn-sm btn-outline size-toggle-btn choose-package-btn" data-target="package-selector">
-                                                <i class="bi bi-grip-horizontal"></i> choose a package
-                                            </button>
-                                        </div>
-                                        <div class="package-selector none">
-                                            <select class="form-select package-select">
-                                                <option value="">Select Package</option>
-                                                ${packageOptions}
-                                            </select>
-                                            <div class="size-preview"></div>
-                                        </div>
-                                        
-                                        
-                                        
-                                        <div class="size-creator none">
-                                            <label class="form-label">Create New Size Range</label>
-                                            <div class="size-inputs">
-                                                <input type="text" class="form-input form-control  from-size" placeholder="From">
-                                                <input type="text" class="form-input form-control  to-size" placeholder="To">
-                                            </div>
-                                            
-                                            <div class="exceptions-creator">
-                                                <label class="form-label">Add Exceptions:</label>
-                                                <div class="exceptions-input">
-                                                    <input type="text" class="form-input form-control  exception-value" placeholder="Size value">
-                                                    <button class="btn btn-sm btn-primary add-exception">Add</button>
-                                                </div>
-                                                <div class="exceptions-list-creator"></div>
-                                            </div>
-                                            
-                                            <button class="btn btn-primary save-size" style="margin-top: 15px;">Save Size Range</button>
-                                        </div>
+                                    <div class="toggle-option" id="alphaToggle">
+                                        <i class="bi bi-fonts"></i> <span class="toggle-text">Alphabetical</span>
                                     </div>
                                 </div>
-                            `;
+                            </div>
 
-                            const imageList = dz.querySelector(".image-list");
-                            const swatchContainer = dz.querySelector(".image-swatches");
-                            const pickContainer = dz.querySelector(".color-picker-container");
-                            const imageContainer = dz.querySelector(".color-image-container");
-                            const colorDisplay = dz.querySelector(".color-display");
-                            const colorName = dz.querySelector(".color-name");
-                            const packageSelect = dz.querySelector(".package-select");
-                            const sizePreview = dz.querySelector(".size-preview");
-                            const sizeCreator = dz.querySelector(".size-creator");
-                            const createSizeBtn = dz.querySelector(".create-size-btn");
-                            const saveSizeBtn = dz.querySelector(".save-size");
-                            const fromSize = dz.querySelector(".from-size");
-                            const toSize = dz.querySelector(".to-size");
-                            const exceptionValue = dz.querySelector(".exception-value");
-                            const addExceptionBtn = dz.querySelector(".add-exception");
-                            const exceptionsListCreator = dz.querySelector(".exceptions-list-creator");
+                            <div class="range-selector">
+                                <div class="form-group">
+                                    <label class="form-label">From</label>
+                                    <input type="number" class="form-input form-control " id="fromSize" value="35">
+                                </div>
 
-                            // Reset exceptions for this dropzone
-                            currentExceptions = [];
+                                <div class="form-group">
+                                    <label class="form-label">To</label>
+                                    <input type="number" class="form-input form-control " id="toSize" value="45">
+                                </div>
 
-                            // Color display click handler - opens the color picker modal
-                            colorDisplay.addEventListener("click", function () {
-                                // In a real implementation, this would open a color picker
-                                alert("Color picker would open here. In a real implementation, this would allow color selection.");
-                            });
 
-                            // Package selector change handler
-                            packageSelect.addEventListener("change", function () {
-                                const selectedPackage = packages.find(p => p.name === this.value);
-                                if (selectedPackage) {
-                                    let exceptionsHtml = "";
-                                    if (selectedPackage.exceptions && selectedPackage.exceptions.length > 0) {
-                                        exceptionsHtml = `<div class="exceptions-list">
-                                            <strong>Exceptions:</strong> 
-                                            ${selectedPackage.exceptions.map(e => `<span class="exception-chip selected">${e}</span>`).join("")}
-                                        </div>`;
-                                    }
+                            </div>
 
-                                    sizePreview.innerHTML = `
-                                        <div class="size-range">Sizes: ${selectedPackage.from} to ${selectedPackage.to}</div>
-                                        <div>Quantity: ${selectedPackage.quantity}</div>
-                                        ${exceptionsHtml}
-                                    `;
-                                } else {
-                                    sizePreview.innerHTML = "";
-                                }
-                            });
-
-                            toggleButtons.forEach(button => {
-
-                                button.addEventListener('click', () => {
-
-                                    const targetDivClass = button.getAttribute('data-target');
-
-                                    const targetDiv = document.querySelector(`.${targetDivClass}`);
-
-                                    const otherDiv = targetDiv === packageSelector ? sizeCreator : packageSelector;
-
-                                    targetDiv.classList.remove('none');
-                                    otherDiv.classList.add('none');
-                                    setTimeout(() => {
-
-                                        // Remove the 'visible' class from all other divs
-
-                                        [packageSelector, sizeCreator].forEach(div => {
-
-                                            if (div !== targetDiv) {
-
-                                                div.classList.remove('visible');
-
-                                            }
-
-                                        });
-                                        // Add the 'visible' class to the target div to trigger opacity and transform transition
-
-                                        targetDiv.classList.add('visible');
-
-                                    }, 10);
-
-                                });
-
-                            });
-
-                            // Add exception
-                            addExceptionBtn.addEventListener("click", function () {
-                                const value = exceptionValue.value.trim();
-                                if (value && !currentExceptions.includes(value)) {
-                                    currentExceptions.push(value);
-                                    updateExceptionsList();
-                                    exceptionValue.value = "";
-                                }
-                            });
-
-                            function updateExceptionsList() {
-                                exceptionsListCreator.innerHTML = currentExceptions.map(exp => `
-                                    <div class="exception-tag">
-                                        ${exp}
-                                        <span class="remove" data-value="${exp}">&times;</span>
+                            <div class="form-group">
+                                <label class="form-label">Exceptions (Select sizes to exclude)</label>
+                                <div class="exceptions-grid" id="exceptionsGrid">
+                                    <div class="exception-chip">36</div>
+                                    <div class="exception-chip">38</div>
+                                    <div class="exception-chip">40</div>
+                                    <div class="exception-chip">42</div>
+                                    <div class="exception-chip">44</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Size Chart</label>
+                                <div class="elegant-select">
+                                    <div class="select-selected" id="standardSelect">
+                                        <span>Choose a Chart</span>
                                     </div>
-                                `).join("");
+                                    <div class="select-items" id="standardSelectItems">
+                                        <div class="select-item" data-value="mentopchart">
+                                            <span>men top chart</span>
+                                        </div>
+                                        <div class="select-item" data-value="menbottomchart">
+                                            <span>men bottom chart</span>
+                                        </div>
+                                        <div class="select-item" data-value="womentopchart">
+                                            <span>men top chart</span>
+                                        </div>
+                                        <div class="select-item" data-value="womenbottomchart">
+                                            <span>women bottom chart</span>
+                                        </div>
 
-                                // Add event listeners to remove buttons
-                                exceptionsListCreator.querySelectorAll(".remove").forEach(btn => {
-                                    btn.addEventListener("click", function () {
-                                        const value = this.getAttribute("data-value");
-                                        currentExceptions = currentExceptions.filter(e => e !== value);
-                                        updateExceptionsList();
-                                    });
-                                });
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Default Quantity</label>
+                                <input type="number" class="form-input form-control " id="defaultQuantity" value="10">
+                            </div>
+
+                            <div class="form-actions">
+                                <button class="btn btn-outline" id="savePackage">Save Package</button>
+                            </div>
+                        </div>
+
+                        <!-- PAGE 2: Saved Size Packages -->
+                        <div id="savedPackagesPage" style="display:none;">
+                            <h5>Saved Size Packages</h5>
+                            <ul id="packagesList"></ul>
+                        </div>
+
+
+                    </div>
+                    <script>
+                        document.addEventListener("DOMContentLoaded", () => {
+                            const btnAdd = document.getElementById("btnAddPackage");
+                            const btnSaved = document.getElementById("btnSavedPackages");
+                            const addPage = document.getElementById("addPackagePage");
+                            const savedPage = document.getElementById("savedPackagesPage");
+                            const saveBtn = document.getElementById("savePackage");
+                            const packagesList = document.getElementById("packagesList");
+                            const exceptionsGrid = document.getElementById("exceptionsGrid");
+                            const fromSize = document.getElementById("fromSize");
+                            const toSize = document.getElementById("toSize");
+                            const numericToggle = document.getElementById("numericToggle");
+                            const alphaToggle = document.getElementById("alphaToggle");
+
+                            let selectedExceptions = [];
+                            let sizeType = "numeric"; // default
+
+                            const alphaSizes = ["XXS", "XS", "S", "M", "L", "XL", "XXL", "3XL", "4XL", "5XL"];
+
+                            // Switch between pages
+                            btnAdd.addEventListener("click", () => {
+                                addPage.style.display = "block";
+                                savedPage.style.display = "none";
+                            });
+
+                            btnSaved.addEventListener("click", () => {
+                                addPage.style.display = "none";
+                                savedPage.style.display = "block";
+                                loadPackages();
+                            });
+
+                            // Toggle size type
+                            numericToggle.addEventListener("click", () => {
+                                sizeType = "numeric";
+                                numericToggle.classList.add("active");
+                                alphaToggle.classList.remove("active");
+
+                                fromSize.type = "number";
+                                toSize.type = "number";
+                                fromSize.value = 35;
+                                toSize.value = 45;
+                                generateExceptions();
+                            });
+
+                            alphaToggle.addEventListener("click", () => {
+                                sizeType = "alpha";
+                                alphaToggle.classList.add("active");
+                                numericToggle.classList.remove("active");
+
+                                // Replace inputs with dropdowns
+                                fromSize.type = "text";
+                                toSize.type = "text";
+
+                                fromSize.value = "XXS";
+                                toSize.value = "5XL";
+                                generateExceptions();
+                            });
+
+                            // Generate exceptions dynamically
+                            function generateExceptions() {
+                                exceptionsGrid.innerHTML = "";
+                                selectedExceptions = [];
+
+                                let from = fromSize.value;
+                                let to = toSize.value;
+
+                                if (sizeType === "numeric") {
+                                    from = parseInt(from);
+                                    to = parseInt(to);
+                                    if (isNaN(from) || isNaN(to)) return;
+                                    for (let i = from; i <= to; i++) {
+                                        createChip(i.toString());
+                                    }
+                                } else {
+                                    const start = alphaSizes.indexOf(from.toUpperCase());
+                                    const end = alphaSizes.indexOf(to.toUpperCase());
+                                    if (start !== -1 && end !== -1 && start <= end) {
+                                        for (let i = start; i <= end; i++) {
+                                            createChip(alphaSizes[i]);
+                                        }
+                                    }
+                                }
                             }
 
-                            // Save size range
-                            saveSizeBtn.addEventListener("click", function () {
-                                const fromVal = fromSize.value.trim();
-                                const toVal = toSize.value.trim();
+                            // Create clickable exception chip
+                            function createChip(size) {
+                                const chip = document.createElement("div");
+                                chip.classList.add("exception-chip");
+                                chip.textContent = size;
+                                chip.addEventListener("click", () => {
+                                    chip.classList.toggle("selected");
+                                    if (chip.classList.contains("selected")) {
+                                        selectedExceptions.push(size);
+                                    } else {
+                                        selectedExceptions = selectedExceptions.filter(s => s !== size);
+                                    }
+                                });
+                                exceptionsGrid.appendChild(chip);
+                            }
 
-                                if (!fromVal || !toVal) {
-                                    alert("Please enter both 'From' and 'To' values");
+                            fromSize.addEventListener("input", generateExceptions);
+                            toSize.addEventListener("input", generateExceptions);
+                            generateExceptions();
+
+                            // Save package to localStorage
+                            saveBtn.addEventListener("click", () => {
+                                const name = document.getElementById("packageName").value.trim();
+                                const from = fromSize.value;
+                                const to = toSize.value;
+                                const quantity = document.getElementById("defaultQuantity").value;
+
+                                if (!name) {
+                                    alert("Please enter a package name!");
                                     return;
                                 }
 
-                                const packageName = prompt("Enter a name for this size package:");
-                                if (!packageName) return;
-
-                                const newPackage = {
-                                    name: packageName,
-                                    from: fromVal,
-                                    to: toVal,
-                                    quantity: "10", // Default value
-                                    exceptions: currentExceptions,
+                                const packageData = {
+                                    name,
+                                    from,
+                                    to,
+                                    quantity,
+                                    exceptions: selectedExceptions,
                                     date: new Date().toLocaleString()
                                 };
 
-                                // Save to local storage
-                                const packages = getSizePackages();
-                                packages.push(newPackage);
+                                let packages = JSON.parse(localStorage.getItem("sizePackages")) || [];
+                                packages.push(packageData);
                                 localStorage.setItem("sizePackages", JSON.stringify(packages));
 
-                                // Update select options
-                                const newOption = document.createElement("option");
-                                newOption.value = newPackage.name;
-                                newOption.textContent = `${newPackage.name} (${newPackage.from}-${newPackage.to})`;
-                                packageSelect.appendChild(newOption);
-
-                                // Select the new option
-                                packageSelect.value = newPackage.name;
-                                packageSelect.dispatchEvent(new Event("change"));
-
-                                // Reset form
-                                fromSize.value = "";
-                                toSize.value = "";
-                                currentExceptions = [];
-                                updateExceptionsList();
-                                sizeCreator.style.display = "none";
-
-                                alert("Size package saved successfully!");
+                                alert("Package saved!");
+                                document.getElementById("packageName").value = "";
                             });
 
-                            // Color mode toggle
-                            dz.querySelectorAll(".toggle-color-mode").forEach(btn => {
-                                btn.addEventListener("click", () => {
-                                    dz.querySelectorAll(".toggle-color-mode").forEach(b => b.classList.remove("active"));
-                                    btn.classList.add("active");
+                            // Load saved packages
+                            function loadPackages() {
+                                packagesList.innerHTML = "";
+                                let packages = JSON.parse(localStorage.getItem("sizePackages")) || [];
+                                if (packages.length === 0) {
+                                    packagesList.innerHTML = "<li>No saved packages yet</li>";
+                                    return;
+                                }
+                                packages.forEach(pkg => {
+                                    const li = document.createElement("li");
+                                    const excluded = pkg.exceptions && pkg.exceptions.length > 0 ? pkg.exceptions.join(", ") : "None";
+                                    li.textContent = `${pkg.name} → Sizes ${pkg.from}-${pkg.to} | Qty: ${pkg.quantity} | Excluded: ${excluded}`;
+                                    packagesList.appendChild(li);
+                                });
+                            }
+                        });
+                    </script>
+                    <!-- Images Form -->
+                    <div class="form-container animatedtoup">
+                        <div class="form-header">
+                            <h4 class="form-title"><i class="bi bi-images"></i> Images</h4>
+                            <div class="form-actions">
+                                <button class="btn btn-outline">
+                                    <i class="bi bi-gear"></i> Set as Default
+                                </button>
+                            </div>
+                        </div>
 
-                                    if (btn.dataset.mode === "picker") {
-                                        pickContainer.style.display = "block";
-                                        imageContainer.style.display = "none";
+                        <div id="dropzonesContainer">
+                            <!-- Drop zones will be added dynamically -->
+                        </div>
+
+                        <button id="addDropzoneBtn" class="btn btn-outline">+ Add Collection Zone</button>
+                        <!-- Modal for color selection from image -->
+                        <div id="colorPickerModal" class="modal">
+                            <div class="modal-content">
+                                <h3>Select Color from Image</h3>
+                                <p>Drag the circle to choose a color from the image</p>
+
+                                <div class="circle-size-control">
+                                    <label>Circle Size:</label>
+                                    <input type="range" id="circleSize" min="20" max="100" value="50">
+                                    <span id="circleSizeValue">50px</span>
+                                </div>
+
+                                <div class="crop-container">
+                                    <img id="colorSourceImage" src="" alt="Source for color selection">
+                                    <div class="crop-circle" id="colorPicker"></div>
+                                </div>
+
+                                <div id="selectedColorInfo"
+                                    style="margin: 15px 0; padding: 10px; background: #f8f9fa; border-radius: 6px; display: none;">
+                                    <p>Selected Color: <span id="selectedColorHex"></span></p>
+                                    <div id="selectedColorPreview"
+                                        style="width: 30px; height: 30px; border: 1px solid #ddd; border-radius: 4px; display: inline-block; vertical-align: middle; margin-left: 10px;">
+                                    </div>
+                                </div>
+
+                                <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+                                    <button id="cancelColorPick" class="btn btn-outline">Cancel</button>
+                                    <button id="confirmColorPick" class="btn btn-primary">Select Color</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        document.addEventListener("DOMContentLoaded", () => {
+                            // Initialize sample data if not exists
+                            if (!localStorage.getItem("sizePackages")) {
+                                const sampleData = [
+                                    {
+                                        "name": "men shoes",
+                                        "from": "40",
+                                        "to": "45",
+                                        "quantity": "10",
+                                        "exceptions": ["39", "46"],
+                                        "date": "07/09/2025, 14:02:10"
+                                    },
+                                    {
+                                        "name": "me shose 1",
+                                        "from": "35",
+                                        "to": "45",
+                                        "quantity": "10",
+                                        "exceptions": ["34", "47"],
+                                        "date": "07/09/2025, 15:31:46"
+                                    },
+                                    {
+                                        "name": "men shose 2",
+                                        "from": "40",
+                                        "to": "45",
+                                        "quantity": "20",
+                                        "exceptions": ["38"],
+                                        "date": "07/09/2025, 15:32:00"
+                                    }
+                                ];
+                                localStorage.setItem("sizePackages", JSON.stringify(sampleData));
+                            }
+
+                            const dropzonesContainer = document.getElementById("dropzonesContainer");
+                            const addDropzoneBtn = document.getElementById("addDropzoneBtn");
+                            const colorPickerModal = document.getElementById("colorPickerModal");
+                            const colorSourceImage = document.getElementById("colorSourceImage");
+                            const colorPicker = document.getElementById("colorPicker");
+                            const cancelColorPick = document.getElementById("cancelColorPick");
+                            const confirmColorPick = document.getElementById("confirmColorPick");
+                            const circleSize = document.getElementById("circleSize");
+                            const circleSizeValue = document.getElementById("circleSizeValue");
+                            const selectedColorInfo = document.getElementById("selectedColorInfo");
+                            const selectedColorHex = document.getElementById("selectedColorHex");
+                            const selectedColorPreview = document.getElementById("selectedColorPreview");
+                            const sizeSection = document.querySelector('.size-section');
+                            const toggleButtons = document.querySelectorAll('.size-toggle-btn');
+                            const packageSelector = document.querySelector('.package-selector');
+                            const sizeCreator = document.querySelector('.size-creator');
+
+                            let dropzoneCount = 0;
+                            let currentColorPickerContext = null;
+                            let isDragging = false;
+                            let selectedColor = null;
+                            let currentExceptions = [];
+
+                            // Get size packages from local DB
+                            function getSizePackages() {
+                                return JSON.parse(localStorage.getItem("sizePackages")) || [];
+                            }
+
+                            function createDropzone() {
+                                dropzoneCount++;
+                                const dz = document.createElement("div");
+                                dz.classList.add("dropzone");
+                                dz.dataset.index = dropzoneCount;
+
+                                const packages = getSizePackages();
+                                const packageOptions = packages.map(p =>
+                                    `<option value="${p.name}">${p.name} (${p.from}-${p.to})</option>`
+                                ).join("");
+
+                                dz.innerHTML = `
+                                                    <h5>Collection Zone ${dropzoneCount}</h5>
+                                                    <p>Drag & drop images or paste URLs here (max 10)</p>
+                                                    <div><i class="bi bi-cloud-arrow-up"></i></div>
+                                                    <div class="image-list"></div>
+                                                    
+                                                    <div class="color-size-controls">
+                                                        <div class="color-section">
+                                                            <label>Color Selection</label>
+                                                            <div class="toggle-buttons">
+                                                                <button type="button" class="btn btn-sm btn-outline toggle-color-mode active" data-mode="picker">
+                                                                    <i class="bi bi-eyedropper"></i> Color Picker
+                                                                </button>
+                                                                <button type="button" class="btn btn-sm btn-outline toggle-color-mode" data-mode="image">
+                                                                    <i class="bi bi-image"></i> From Image
+                                                                </button>
+                                                            </div>
+                                                            
+                                                            <div class="color-picker-container">
+                                                                <div class="elegant-color-input">
+                                                                    <div class="color-display" style="background-color: #4e73df"></div>
+                                                                    <input type="text" class="form-input form-control  color-name" placeholder="Color Name" value="Blue">
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <div class="color-image-container" style="display:none;">
+                                                                <p>Select an image to use as color source:</p>
+                                                                <div class="image-swatches"></div>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="size-section">
+                                                            <label>Size Selection</label>
+                                                            <div class="toggle-buttons">
+                                                                <button type="button" class="btn btn-sm btn-outline size-toggle-btn create-size-btn" data-target="size-creator">
+                                                                    <i class="bi bi-plus"></i> create new package
+                                                                </button>
+                                                                <button type="button" class="btn btn-sm btn-outline size-toggle-btn choose-package-btn" data-target="package-selector">
+                                                                    <i class="bi bi-grip-horizontal"></i> choose a package
+                                                                </button>
+                                                            </div>
+                                                            <div class="package-selector none">
+                                                                <select class="form-select package-select">
+                                                                    <option value="">Select Package</option>
+                                                                    ${packageOptions}
+                                                                </select>
+                                                                <div class="size-preview"></div>
+                                                            </div>
+                                                            
+                                                            
+                                                            
+                                                            <div class="size-creator none">
+                                                                <label class="form-label">Create New Size Range</label>
+                                                                <div class="size-inputs">
+                                                                    <input type="text" class="form-input form-control  from-size" placeholder="From">
+                                                                    <input type="text" class="form-input form-control  to-size" placeholder="To">
+                                                                </div>
+                                                                
+                                                                <div class="exceptions-creator">
+                                                                    <label class="form-label">Add Exceptions:</label>
+                                                                    <div class="exceptions-input">
+                                                                        <input type="text" class="form-input form-control  exception-value" placeholder="Size value">
+                                                                        <button class="btn btn-sm btn-primary add-exception">Add</button>
+                                                                    </div>
+                                                                    <div class="exceptions-list-creator"></div>
+                                                                </div>
+                                                                
+                                                                <button class="btn btn-primary save-size" style="margin-top: 15px;">Save Size Range</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                `;
+
+                                const imageList = dz.querySelector(".image-list");
+                                const swatchContainer = dz.querySelector(".image-swatches");
+                                const pickContainer = dz.querySelector(".color-picker-container");
+                                const imageContainer = dz.querySelector(".color-image-container");
+                                const colorDisplay = dz.querySelector(".color-display");
+                                const colorName = dz.querySelector(".color-name");
+                                const packageSelect = dz.querySelector(".package-select");
+                                const sizePreview = dz.querySelector(".size-preview");
+                                const sizeCreator = dz.querySelector(".size-creator");
+                                const createSizeBtn = dz.querySelector(".create-size-btn");
+                                const saveSizeBtn = dz.querySelector(".save-size");
+                                const fromSize = dz.querySelector(".from-size");
+                                const toSize = dz.querySelector(".to-size");
+                                const exceptionValue = dz.querySelector(".exception-value");
+                                const addExceptionBtn = dz.querySelector(".add-exception");
+                                const exceptionsListCreator = dz.querySelector(".exceptions-list-creator");
+
+                                // Reset exceptions for this dropzone
+                                currentExceptions = [];
+
+                                // Color display click handler - opens the color picker modal
+                                colorDisplay.addEventListener("click", function () {
+                                    // In a real implementation, this would open a color picker
+                                    alert("Color picker would open here. In a real implementation, this would allow color selection.");
+                                });
+
+                                // Package selector change handler
+                                packageSelect.addEventListener("change", function () {
+                                    const selectedPackage = packages.find(p => p.name === this.value);
+                                    if (selectedPackage) {
+                                        let exceptionsHtml = "";
+                                        if (selectedPackage.exceptions && selectedPackage.exceptions.length > 0) {
+                                            exceptionsHtml = `<div class="exceptions-list">
+                                                                <strong>Exceptions:</strong> 
+                                                                ${selectedPackage.exceptions.map(e => `<span class="exception-chip selected">${e}</span>`).join("")}
+                                                            </div>`;
+                                        }
+
+                                        sizePreview.innerHTML = `
+                                                            <div class="size-range">Sizes: ${selectedPackage.from} to ${selectedPackage.to}</div>
+                                                            <div>Quantity: ${selectedPackage.quantity}</div>
+                                                            ${exceptionsHtml}
+                                                        `;
                                     } else {
-                                        pickContainer.style.display = "none";
-                                        imageContainer.style.display = "block";
+                                        sizePreview.innerHTML = "";
                                     }
                                 });
-                            });
 
-                            // Drag and Drop for images
-                            dz.addEventListener("dragover", (e) => {
-                                e.preventDefault();
-                                dz.classList.add("dragover");
-                            });
+                                toggleButtons.forEach(button => {
 
-                            dz.addEventListener("dragleave", () => {
-                                dz.classList.remove("dragover");
-                            });
+                                    button.addEventListener('click', () => {
 
-                            dz.addEventListener("drop", (e) => {
-                                e.preventDefault();
-                                dz.classList.remove("dragover");
+                                        const targetDivClass = button.getAttribute('data-target');
 
-                                const files = e.dataTransfer.files;
-                                if (files.length > 0) {
-                                    [...files].forEach(file => {
-                                        if (file.type.startsWith("image/")) {
-                                            const url = URL.createObjectURL(file);
-                                            renderImage(url, imageList, swatchContainer, dz);
-                                        }
+                                        const targetDiv = document.querySelector(`.${targetDivClass}`);
+
+                                        const otherDiv = targetDiv === packageSelector ? sizeCreator : packageSelector;
+
+                                        targetDiv.classList.remove('none');
+                                        otherDiv.classList.add('none');
+                                        setTimeout(() => {
+
+                                            // Remove the 'visible' class from all other divs
+
+                                            [packageSelector, sizeCreator].forEach(div => {
+
+                                                if (div !== targetDiv) {
+
+                                                    div.classList.remove('visible');
+
+                                                }
+
+                                            });
+                                            // Add the 'visible' class to the target div to trigger opacity and transform transition
+
+                                            targetDiv.classList.add('visible');
+
+                                        }, 10);
+
+                                    });
+
+                                });
+
+                                // Add exception
+                                addExceptionBtn.addEventListener("click", function () {
+                                    const value = exceptionValue.value.trim();
+                                    if (value && !currentExceptions.includes(value)) {
+                                        currentExceptions.push(value);
+                                        updateExceptionsList();
+                                        exceptionValue.value = "";
+                                    }
+                                });
+
+                                function updateExceptionsList() {
+                                    exceptionsListCreator.innerHTML = currentExceptions.map(exp => `
+                                                        <div class="exception-tag">
+                                                            ${exp}
+                                                            <span class="remove" data-value="${exp}">&times;</span>
+                                                        </div>
+                                                    `).join("");
+
+                                    // Add event listeners to remove buttons
+                                    exceptionsListCreator.querySelectorAll(".remove").forEach(btn => {
+                                        btn.addEventListener("click", function () {
+                                            const value = this.getAttribute("data-value");
+                                            currentExceptions = currentExceptions.filter(e => e !== value);
+                                            updateExceptionsList();
+                                        });
                                     });
                                 }
 
-                                const url = e.dataTransfer.getData("text/plain");
-                                if (url && (url.startsWith("http://") || url.startsWith("https://"))) {
-                                    renderImage(url, imageList, swatchContainer, dz);
-                                }
-                            });
+                                // Save size range
+                                saveSizeBtn.addEventListener("click", function () {
+                                    const fromVal = fromSize.value.trim();
+                                    const toVal = toSize.value.trim();
 
-                            // Allow pasting image URLs
-                            dz.addEventListener("paste", (e) => {
-                                const text = e.clipboardData.getData("text");
-                                if (text && (text.startsWith("http://") || text.startsWith("https://"))) {
-                                    renderImage(text, imageList, swatchContainer, dz);
-                                }
-                            });
+                                    if (!fromVal || !toVal) {
+                                        alert("Please enter both 'From' and 'To' values");
+                                        return;
+                                    }
 
-                            dropzonesContainer.appendChild(dz);
-                        }
+                                    const packageName = prompt("Enter a name for this size package:");
+                                    if (!packageName) return;
 
-                        function renderImage(src, container, swatchContainer, dropzone) {
-                            if (container.querySelectorAll(".image-card-upload").length >= 10) {
-                                alert("Maximum 10 images per Collection Zone");
-                                return;
+                                    const newPackage = {
+                                        name: packageName,
+                                        from: fromVal,
+                                        to: toVal,
+                                        quantity: "10", // Default value
+                                        exceptions: currentExceptions,
+                                        date: new Date().toLocaleString()
+                                    };
+
+                                    // Save to local storage
+                                    const packages = getSizePackages();
+                                    packages.push(newPackage);
+                                    localStorage.setItem("sizePackages", JSON.stringify(packages));
+
+                                    // Update select options
+                                    const newOption = document.createElement("option");
+                                    newOption.value = newPackage.name;
+                                    newOption.textContent = `${newPackage.name} (${newPackage.from}-${newPackage.to})`;
+                                    packageSelect.appendChild(newOption);
+
+                                    // Select the new option
+                                    packageSelect.value = newPackage.name;
+                                    packageSelect.dispatchEvent(new Event("change"));
+
+                                    // Reset form
+                                    fromSize.value = "";
+                                    toSize.value = "";
+                                    currentExceptions = [];
+                                    updateExceptionsList();
+                                    sizeCreator.style.display = "none";
+
+                                    alert("Size package saved successfully!");
+                                });
+
+                                // Color mode toggle
+                                dz.querySelectorAll(".toggle-color-mode").forEach(btn => {
+                                    btn.addEventListener("click", () => {
+                                        dz.querySelectorAll(".toggle-color-mode").forEach(b => b.classList.remove("active"));
+                                        btn.classList.add("active");
+
+                                        if (btn.dataset.mode === "picker") {
+                                            pickContainer.style.display = "block";
+                                            imageContainer.style.display = "none";
+                                        } else {
+                                            pickContainer.style.display = "none";
+                                            imageContainer.style.display = "block";
+                                        }
+                                    });
+                                });
+
+                                // Drag and Drop for images
+                                dz.addEventListener("dragover", (e) => {
+                                    e.preventDefault();
+                                    dz.classList.add("dragover");
+                                });
+
+                                dz.addEventListener("dragleave", () => {
+                                    dz.classList.remove("dragover");
+                                });
+
+                                dz.addEventListener("drop", (e) => {
+                                    e.preventDefault();
+                                    dz.classList.remove("dragover");
+
+                                    const files = e.dataTransfer.files;
+                                    if (files.length > 0) {
+                                        [...files].forEach(file => {
+                                            if (file.type.startsWith("image/")) {
+                                                const url = URL.createObjectURL(file);
+                                                renderImage(url, imageList, swatchContainer, dz);
+                                            }
+                                        });
+                                    }
+
+                                    const url = e.dataTransfer.getData("text/plain");
+                                    if (url && (url.startsWith("http://") || url.startsWith("https://"))) {
+                                        renderImage(url, imageList, swatchContainer, dz);
+                                    }
+                                });
+
+                                // Allow pasting image URLs
+                                dz.addEventListener("paste", (e) => {
+                                    const text = e.clipboardData.getData("text");
+                                    if (text && (text.startsWith("http://") || text.startsWith("https://"))) {
+                                        renderImage(text, imageList, swatchContainer, dz);
+                                    }
+                                });
+
+                                dropzonesContainer.appendChild(dz);
                             }
 
-                            const card = document.createElement("div");
-                            card.classList.add("image-card-upload");
-                            card.innerHTML = `
-                                <img src="${src}" onerror="this.src='https://via.placeholder.com/120?text=Invalid+Image'">
-                                <div class="main-label">Set Main</div>
-                            `;
-
-                            // Allow selecting image as swatch
-                            const swatch = document.createElement("div");
-                            swatch.classList.add("swatch-circle");
-                            swatch.style.backgroundImage = `url(${src})`;
-                            swatch.title = "Click to select color from this image";
-
-                            swatch.addEventListener("click", () => {
-                                // Set up modal for color selection
-                                colorSourceImage.src = src;
-                                currentColorPickerContext = {
-                                    dropzone: dropzone,
-                                    swatch: swatch
-                                };
-
-                                // Reset picker position and size
-                                colorPicker.style.left = "50%";
-                                colorPicker.style.top = "50%";
-                                colorPicker.style.transform = "translate(-50%, -50%)";
-                                colorPicker.style.width = "100px";
-                                colorPicker.style.height = "100px";
-                                circleSize.value = 100;
-                                circleSizeValue.textContent = "100px";
-
-                                // Reset color info
-                                selectedColorInfo.style.display = "none";
-                                selectedColor = null;
-
-                                // Show modal
-                                colorPickerModal.style.display = "flex";
-
-                                // Select this swatch visually
-                                swatchContainer.querySelectorAll(".swatch-circle").forEach(s => s.classList.remove("selected"));
-                                swatch.classList.add("selected");
-                            });
-
-                            swatchContainer.appendChild(swatch);
-
-                            // Main image selector
-                            const label = card.querySelector(".main-label");
-                            label.addEventListener("click", () => {
-                                const existing = container.querySelectorAll(".main-label.selected");
-                                if (existing.length < 2 || label.classList.contains("selected")) {
-                                    label.classList.toggle("selected");
-                                    label.textContent = label.classList.contains("selected")
-                                        ? `Main ${existing.length + 1}`
-                                        : "Set Main";
-                                } else {
-                                    alert("You can only select up to 2 main images!");
+                            function renderImage(src, container, swatchContainer, dropzone) {
+                                if (container.querySelectorAll(".image-card-upload").length >= 10) {
+                                    alert("Maximum 10 images per Collection Zone");
+                                    return;
                                 }
+
+                                const card = document.createElement("div");
+                                card.classList.add("image-card-upload");
+                                card.innerHTML = `
+                                                    <img src="${src}" onerror="this.src='https://via.placeholder.com/120?text=Invalid+Image'">
+                                                    <div class="main-label">Set Main</div>
+                                                `;
+
+                                // Allow selecting image as swatch
+                                const swatch = document.createElement("div");
+                                swatch.classList.add("swatch-circle");
+                                swatch.style.backgroundImage = `url(${src})`;
+                                swatch.title = "Click to select color from this image";
+
+                                swatch.addEventListener("click", () => {
+                                    // Set up modal for color selection
+                                    colorSourceImage.src = src;
+                                    currentColorPickerContext = {
+                                        dropzone: dropzone,
+                                        swatch: swatch
+                                    };
+
+                                    // Reset picker position and size
+                                    colorPicker.style.left = "50%";
+                                    colorPicker.style.top = "50%";
+                                    colorPicker.style.transform = "translate(-50%, -50%)";
+                                    colorPicker.style.width = "100px";
+                                    colorPicker.style.height = "100px";
+                                    circleSize.value = 100;
+                                    circleSizeValue.textContent = "100px";
+
+                                    // Reset color info
+                                    selectedColorInfo.style.display = "none";
+                                    selectedColor = null;
+
+                                    // Show modal
+                                    colorPickerModal.style.display = "flex";
+
+                                    // Select this swatch visually
+                                    swatchContainer.querySelectorAll(".swatch-circle").forEach(s => s.classList.remove("selected"));
+                                    swatch.classList.add("selected");
+                                });
+
+                                swatchContainer.appendChild(swatch);
+
+                                // Main image selector
+                                const label = card.querySelector(".main-label");
+                                label.addEventListener("click", () => {
+                                    const existing = container.querySelectorAll(".main-label.selected");
+                                    if (existing.length < 2 || label.classList.contains("selected")) {
+                                        label.classList.toggle("selected");
+                                        label.textContent = label.classList.contains("selected")
+                                            ? `Main ${existing.length + 1}`
+                                            : "Set Main";
+                                    } else {
+                                        alert("You can only select up to 2 main images!");
+                                    }
+                                });
+
+                                container.appendChild(card);
+                            }
+
+                            // Circle size control
+                            circleSize.addEventListener("input", function () {
+                                const size = this.value + "px";
+                                colorPicker.style.width = size;
+                                colorPicker.style.height = size;
+                                circleSizeValue.textContent = size;
                             });
 
-                            container.appendChild(card);
-                        }
-
-                        // Circle size control
-                        circleSize.addEventListener("input", function () {
-                            const size = this.value + "px";
-                            colorPicker.style.width = size;
-                            colorPicker.style.height = size;
-                            circleSizeValue.textContent = size;
-                        });
-
-                        // Color picker modal functionality
-                        colorSourceImage.addEventListener("mousedown", function (e) {
-                            isDragging = true;
-                            updatePickerPosition(e);
-                            sampleColor(e);
-                        });
-
-                        document.addEventListener("mousemove", function (e) {
-                            if (isDragging) {
+                            // Color picker modal functionality
+                            colorSourceImage.addEventListener("mousedown", function (e) {
+                                isDragging = true;
                                 updatePickerPosition(e);
                                 sampleColor(e);
+                            });
+
+                            document.addEventListener("mousemove", function (e) {
+                                if (isDragging) {
+                                    updatePickerPosition(e);
+                                    sampleColor(e);
+                                }
+                            });
+
+                            document.addEventListener("mouseup", function () {
+                                isDragging = false;
+                            });
+
+                            function updatePickerPosition(e) {
+                                if (!isDragging) return;
+
+                                const container = colorPicker.parentElement;
+                                const rect = container.getBoundingClientRect();
+
+                                let x = e.clientX - rect.left;
+                                let y = e.clientY - rect.top;
+
+                                // Keep within bounds
+                                const circleSizeVal = parseInt(getComputedStyle(colorPicker).width) / 2;
+                                x = Math.max(circleSizeVal, Math.min(rect.width - circleSizeVal, x));
+                                y = Math.max(circleSizeVal, Math.min(rect.height - circleSizeVal, y));
+
+                                colorPicker.style.left = x + "px";
+                                colorPicker.style.top = y + "px";
+                                colorPicker.style.transform = "translate(-50%, -50%)";
                             }
-                        });
 
-                        document.addEventListener("mouseup", function () {
-                            isDragging = false;
-                        });
+                            function sampleColor(e) {
+                                // In a real implementation, this would sample the color from the image
+                                // at the current cursor position. For this example, we'll generate a random color.
+                                const r = Math.floor(Math.random() * 255);
+                                const g = Math.floor(Math.random() * 255);
+                                const b = Math.floor(Math.random() * 255);
+                                selectedColor = `rgb(${r}, ${g}, ${b})`;
 
-                        function updatePickerPosition(e) {
-                            if (!isDragging) return;
+                                // Update the display
+                                selectedColorInfo.style.display = "block";
+                                selectedColorHex.textContent = selectedColor;
+                                selectedColorPreview.style.backgroundColor = selectedColor;
+                            }
 
-                            const container = colorPicker.parentElement;
-                            const rect = container.getBoundingClientRect();
+                            confirmColorPick.addEventListener("click", function () {
+                                if (currentColorPickerContext && selectedColor) {
+                                    const colorDisplay = currentColorPickerContext.dropzone.querySelector(".color-display");
+                                    const colorNameInput = currentColorPickerContext.dropzone.querySelector(".color-name");
 
-                            let x = e.clientX - rect.left;
-                            let y = e.clientY - rect.top;
+                                    colorDisplay.style.backgroundColor = selectedColor;
+                                    colorNameInput.value = "Selected Color";
 
-                            // Keep within bounds
-                            const circleSizeVal = parseInt(getComputedStyle(colorPicker).width) / 2;
-                            x = Math.max(circleSizeVal, Math.min(rect.width - circleSizeVal, x));
-                            y = Math.max(circleSizeVal, Math.min(rect.height - circleSizeVal, y));
+                                    // Close modal
+                                    colorPickerModal.style.display = "none";
+                                }
+                            });
 
-                            colorPicker.style.left = x + "px";
-                            colorPicker.style.top = y + "px";
-                            colorPicker.style.transform = "translate(-50%, -50%)";
-                        }
-
-                        function sampleColor(e) {
-                            // In a real implementation, this would sample the color from the image
-                            // at the current cursor position. For this example, we'll generate a random color.
-                            const r = Math.floor(Math.random() * 255);
-                            const g = Math.floor(Math.random() * 255);
-                            const b = Math.floor(Math.random() * 255);
-                            selectedColor = `rgb(${r}, ${g}, ${b})`;
-
-                            // Update the display
-                            selectedColorInfo.style.display = "block";
-                            selectedColorHex.textContent = selectedColor;
-                            selectedColorPreview.style.backgroundColor = selectedColor;
-                        }
-
-                        confirmColorPick.addEventListener("click", function () {
-                            if (currentColorPickerContext && selectedColor) {
-                                const colorDisplay = currentColorPickerContext.dropzone.querySelector(".color-display");
-                                const colorNameInput = currentColorPickerContext.dropzone.querySelector(".color-name");
-
-                                colorDisplay.style.backgroundColor = selectedColor;
-                                colorNameInput.value = "Selected Color";
-
-                                // Close modal
+                            cancelColorPick.addEventListener("click", function () {
                                 colorPickerModal.style.display = "none";
-                            }
+                            });
+
+                            // Add initial dropzone
+                            createDropzone();
+
+                            // Add more dropzones
+                            addDropzoneBtn.addEventListener("click", () => createDropzone());
                         });
-
-                        cancelColorPick.addEventListener("click", function () {
-                            colorPickerModal.style.display = "none";
-                        });
-
-                        // Add initial dropzone
-                        createDropzone();
-
-                        // Add more dropzones
-                        addDropzoneBtn.addEventListener("click", () => createDropzone());
-                    });
-                </script>
-                <!-- Action Buttons -->
-                <div class="action-buttons">
-                    <button class="btn btn-outline">
-                        <i class="bi bi-arrow-clockwise"></i> Reset
-                    </button>
-                    <button class="btn btn-primary">
-                        <i class="bi bi-check-circle"></i> Submit Product
-                    </button>
+                    </script>
+                    <!-- Action Buttons -->
+                    <div class="action-buttons">
+                        <button class="btn btn-outline">
+                            <i class="bi bi-arrow-clockwise"></i> Reset
+                        </button>
+                        <button class="btn btn-primary">
+                            <i class="bi bi-check-circle"></i> Submit Product
+                        </button>
+                    </div>
                 </div>
+                <div class="tab-content animatedtoup " id="editProduct-content">edit</div>
+                <div class="tab-content animatedtoup " id="deleteProduct-content">del</div>
+
+
+
             </div>
 
         </div>
