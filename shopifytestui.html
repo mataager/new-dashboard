@@ -109,7 +109,7 @@
 
     <!-- Main Content Area -->
     <div class="main-content">
-        <div class="header">
+        <div class="header stuckToRight">
             <h1>Dashboard</h1>
             <div class="profile-section">
                 <div class="profile-info">
@@ -8529,7 +8529,7 @@
                             <p class="contact-desc">Our support team is here to assist you with any questions or issues.
                             </p>
                             <div class="form-actions">
-                                <button class="btn btn-outline" id="open-chat-btn">
+                                <button class="btn btn-outline white" id="open-chat-btn">
                                     <i class="bi bi-chat-left-text"></i> Start Live Chat
                                 </button>
                                 <button class="btn btn-primary">
@@ -10167,7 +10167,7 @@
 
 
         <!-- notfiy test -->
-        <div class="notifications-section">
+        <!-- <div class="notifications-section">
             <div class="section-header">
                 <h2>Site Notifications</h2>
                 <div class="notification-controls">
@@ -10221,153 +10221,172 @@
                     </div>
                 </div>
             </div>
+        </div> -->
+        <div class="notifications-section">
+            <div class="notifications-container" id="notificationsContainer">
+                <div class="notification-header">
+                    <h3 class="notification-title">Notifications</h3>
+                    <button class="notification-close" id="closeNotifications">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="notification-content-area" id="notificationContentArea">
+                    <!-- Notifications will be dynamically added here -->
+                </div>
+                <button class="mark-all-read" id="markAllRead">Mark All as Read</button>
+                <div class="notification-controls">
+                    <button class="control-btn" id="testNotification">Test Notification</button>
+                    <button class="control-btn" id="clearNotifications">Clear All</button>
+                </div>
+            </div>
+
+
         </div>
+
+        <button class="notification-bell-btn hidden" id="notificationBell">
+            <i class="bi bi-bell"></i>
+        </button>
+
 
 
         <script>
-            // Notification functionality
-            const notificationBell = document.getElementById('notificationBell');
-            const notificationCount = document.getElementById('notificationCount');
-            const notificationsContainer = document.getElementById('notificationsContainer');
-            const testNotificationBtn = document.getElementById('testNotification');
-            const clearNotificationsBtn = document.getElementById('clearNotifications');
+            document.addEventListener('DOMContentLoaded', function () {
+                // Get DOM elements
+                const notificationBell = document.getElementById('notificationBell');
+                const notificationsContainer = document.getElementById('notificationsContainer');
+                const notificationContentArea = document.getElementById('notificationContentArea');
+                const closeNotifications = document.getElementById('closeNotifications');
+                const markAllRead = document.getElementById('markAllRead');
+                const testNotificationBtn = document.getElementById('testNotification');
+                const clearNotificationsBtn = document.getElementById('clearNotifications');
 
-            // Create audio context for notification sounds
-            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                // Create audio context for notification sounds
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
-            // Function to play notification sound
-            function playNotificationSound() {
-                try {
-                    const oscillator = audioContext.createOscillator();
-                    const gainNode = audioContext.createGain();
+                // Initial state - show notifications container, hide bell
+                notificationBell.classList.add('hidden');
+                notificationsContainer.classList.remove('hidden');
 
-                    oscillator.connect(gainNode);
-                    gainNode.connect(audioContext.destination);
-
-                    oscillator.frequency.value = 800;
-                    oscillator.type = 'sine';
-
-                    gainNode.gain.setValueAtTime(0, audioContext.currentTime);
-                    gainNode.gain.linearRampToValueAtTime(0.3, audioContext.currentTime + 0.1);
-                    gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 0.3);
-
-                    oscillator.start(audioContext.currentTime);
-                    oscillator.stop(audioContext.currentTime + 0.3);
-                } catch (e) {
-                    console.log("Audio context not supported:", e);
+                // Check if there are any notifications and show "no notifications" message if empty
+                function checkEmptyNotifications() {
+                    if (notificationContentArea.children.length === 0) {
+                        notificationContentArea.innerHTML = `
+                                <div class="no-notifications">
+                                    <i class="bi bi-bell-slash"></i>
+                                    <p>No notifications right now</p>
+                                </div>
+                            `;
+                    }
                 }
-            }
 
+                // Function to play notification sound
+                function playNotificationSound() {
+                    try {
+                        const oscillator = audioContext.createOscillator();
+                        const gainNode = audioContext.createGain();
 
-            function vibrateDevice() {
-                if (navigator.vibrate) {
-                    navigator.vibrate([100, 50, 100]);
+                        oscillator.connect(gainNode);
+                        gainNode.connect(audioContext.destination);
+
+                        oscillator.frequency.value = 800;
+                        oscillator.type = 'sine';
+
+                        gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+                        gainNode.gain.linearRampToValueAtTime(0.3, audioContext.currentTime + 0.1);
+                        gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 0.3);
+
+                        oscillator.start(audioContext.currentTime);
+                        oscillator.stop(audioContext.currentTime + 0.3);
+                    } catch (e) {
+                        console.log("Audio context not supported:", e);
+                    }
                 }
-            }
 
-            // Function to add a new notification
-            function addNotification(title, message, isUnread = true) {
-                const notificationItem = document.createElement('div');
-                notificationItem.className = `notification-item ${isUnread ? 'unread' : ''}`;
+                // Function to add a new notification
+                function addNotification(title, message, isUnread = true) {
+                    // Remove "no notifications" message if it exists
+                    const noNotifications = document.querySelector('.no-notifications');
+                    if (noNotifications) {
+                        noNotifications.remove();
+                    }
 
-                const icons = ['shopping-cart', 'user', 'chart-line', 'truck', 'box', 'cog'];
-                const randomIcon = icons[Math.floor(Math.random() * icons.length)];
+                    const notificationItem = document.createElement('div');
+                    notificationItem.className = `notification-item ${isUnread ? 'unread' : ''}`;
 
-                const now = new Date();
-                const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                    const icons = ['box-seam', 'person-plus', 'graph-up', 'truck', 'database-up'];
+                    const randomIcon = icons[Math.floor(Math.random() * icons.length)];
 
-                notificationItem.innerHTML = `
-                <div class="notification-icon">
-                    <i class="fas fa-${randomIcon}"></i>
-                </div>
-                <div class="notification-content">
-                    <div class="notification-title">${title}</div>
-                    <p>${message}</p>
-                    <div class="notification-time">${timeString}</div>
-                </div>
-            `;
+                    const now = new Date();
+                    const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
-                notificationsContainer.prepend(notificationItem);
+                    notificationItem.innerHTML = `
+                            <div class="notification-icon">
+                                <i class="bi bi-${randomIcon}"></i>
+                            </div>
+                            <div class="notification-content">
+                                <div class="notification-item-title">${title}</div>
+                                <p>${message}</p>
+                                <div class="notification-time">${timeString}</div>
+                            </div>
+                        `;
 
-                // Update notification count
-                // if (isUnread) {
-                //     const currentCount = parseInt(notificationCount.textContent);
-                //     notificationCount.textContent = currentCount + 1;
-                //     notificationCount.style.display = 'flex';
-                // }
+                    notificationContentArea.prepend(notificationItem);
 
-                // Play sound and vibrate
-                playNotificationSound();
-                vibrateDevice();
-            }
+                    // Add click event to mark as read
+                    notificationItem.addEventListener('click', function () {
+                        this.classList.remove('unread');
+                    });
 
-            // Event listeners
-            testNotificationBtn.addEventListener('click', () => {
-                const orderId = 'ORD-' + Math.floor(1000 + Math.random() * 9000);
-                const amount = (Math.random() * 200 + 50).toFixed(2);
-                addNotification('New Order Received', `You have a new order #${orderId} for $${amount}`);
-            });
+                    // Play sound
+                    playNotificationSound();
+                }
 
-            clearNotificationsBtn.addEventListener('click', () => {
-                notificationsContainer.innerHTML = '';
-                notificationCount.textContent = '0';
-                notificationCount.style.display = 'none';
-            });
+                // Close notifications with swipe animation
+                closeNotifications.addEventListener('click', function () {
+                    notificationsContainer.classList.add('hidden');
 
-            notificationBell.addEventListener('click', () => {
+                    // After animation completes, show the bell button
+                    setTimeout(() => {
+                        notificationBell.classList.remove('hidden');
+                    }, 300);
+                });
+
+                // Open notifications with swipe animation
+                notificationBell.addEventListener('click', function () {
+                    notificationBell.classList.add('hidden');
+                    notificationsContainer.classList.remove('hidden');
+                });
+
                 // Mark all notifications as read
-                const unreadNotifications = document.querySelectorAll('.notification-item.unread');
-                unreadNotifications.forEach(notification => {
-                    notification.classList.remove('unread');
+                markAllRead.addEventListener('click', function () {
+                    const unreadNotifications = document.querySelectorAll('.notification-item.unread');
+                    unreadNotifications.forEach(notification => {
+                        notification.classList.remove('unread');
+                    });
                 });
 
-                // Reset notification count
-                notificationCount.textContent = '0';
-                notificationCount.style.display = 'none';
-            });
-
-            // Add click functionality to quick tabs
-            const quickTabs = document.querySelectorAll('.quick-tab');
-            quickTabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    // Remove active class from all tabs
-                    quickTabs.forEach(t => t.classList.remove('active'));
-                    // Add active class to clicked tab
-                    tab.classList.add('active');
-
-                    // Simulate navigation (in a real app, this would navigate to the corresponding page)
-                    const tabLabel = tab.querySelector('.tab-label').textContent;
-                    alert(`Navigating to ${tabLabel} section`);
+                // Test notification button
+                testNotificationBtn.addEventListener('click', function () {
+                    const orderId = 'ORD-' + Math.floor(1000 + Math.random() * 9000);
+                    const amount = (Math.random() * 200 + 50).toFixed(2);
+                    addNotification('New Order Received', `You have a new order #${orderId} for $${amount}`);
                 });
+
+                // Clear all notifications
+                clearNotificationsBtn.addEventListener('click', function () {
+                    notificationContentArea.innerHTML = '';
+                    checkEmptyNotifications();
+                });
+
+                // Add some initial notifications
+                addNotification('New Order Received', 'You have a new order #ORD-7842 for $125.99');
+                addNotification('New Customer Registration', 'Sarah Johnson has created a new account');
+                addNotification('Weekly Report Ready', 'Your store performance report for this week is available', false);
+                addNotification('Order Shipped', 'Order #ORD-7819 has been shipped to the customer', false);
+
+                // Check if notifications are empty on load
+                checkEmptyNotifications();
             });
-
-            // Simulate receiving notifications periodically
-            setInterval(() => {
-                // 20% chance of receiving a notification every 30 seconds
-                if (Math.random() < 0.2) {
-                    const notifications = [
-                        {
-                            title: 'New Order Received',
-                            message: `You have a new order #ORD-${Math.floor(1000 + Math.random() * 9000)} for $${(Math.random() * 200 + 50).toFixed(2)}`
-                        },
-                        {
-                            title: 'Low Stock Alert',
-                            message: 'Product "Wireless Earbuds" is running low on stock'
-                        },
-                        {
-                            title: 'New Customer Review',
-                            message: 'You have received a new 5-star review for your store'
-                        },
-                        {
-                            title: 'Payment Received',
-                            message: `Payment of $${(Math.random() * 300 + 100).toFixed(2)} has been processed successfully`
-                        }
-                    ];
-
-                    const randomNotification = notifications[Math.floor(Math.random() * notifications.length)];
-                    addNotification(randomNotification.title, randomNotification.message);
-                }
-            }, 10000);
         </script>
         <!--  -->
 

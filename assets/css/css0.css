@@ -68,6 +68,14 @@ html.theme-loaded body {
     font-family: var(--font-main)
 }
 
+.white {
+    color: white !important;
+}
+
+.black {
+    color: black;
+}
+
 body {
     background-color: var(--card-bg);
     color: var(--text-color);
@@ -155,6 +163,10 @@ h3 {
     font-size: 22px;
     font-weight: 400;
     color: var(--text-color)
+}
+
+.stuckToRight {
+    flex-direction: row-reverse;
 }
 
 .profile-section {
@@ -6128,9 +6140,6 @@ html {
 /* help area end */
 
 /* notification */
-.notifications-section {
-    margin-top: 30px;
-}
 
 .section-header {
     display: flex;
@@ -6164,18 +6173,77 @@ html {
     color: white;
 }
 
-.notifications-container {
-    margin: 10px;
-    right: 0;
-    scrollbar-width: none;
+.notifications-section {
+    margin-left: 10px;
+    right: 10px;
+    top: 10px;
+    max-width: 450px;
     position: absolute;
-    top: 0;
+}
+
+.notifications-container {
     background: var(--card-bg);
     border-radius: var(--border-radius);
     border: 1px solid var(--border-color);
     box-shadow: var(--box-shadow);
-    max-height: 220px;
-    overflow-y: scroll;
+    max-height: 470px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    transition: transform 0.3s ease;
+}
+
+.notifications-container.hidden {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.notifications-container::-webkit-scrollbar {
+    display: none;
+}
+
+.notification-header {
+    position: sticky;
+    top: 0;
+    background: var(--card-bg);
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.notification-title {
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.notification-close {
+    background: none;
+    border: none;
+    color: var(--text-color2);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.notification-close:hover {
+    background: var(--hover-color);
+    color: var(--text-color);
+}
+
+.notification-content-area {
+    scrollbar-width: none;
+    max-width: 500px;
+    max-height: 300px;
+    overflow-y: auto;
 }
 
 .notification-item {
@@ -6184,10 +6252,12 @@ html {
     display: flex;
     align-items: flex-start;
     gap: 15px;
+    transition: background-color 0.2s;
 }
 
 .notification-item:hover {
-    background: var(--hover-color)
+    background: var(--hover-color);
+    cursor: pointer;
 }
 
 .notification-item:last-child {
@@ -6211,7 +6281,7 @@ html {
     flex: 1;
 }
 
-.notification-title {
+.notification-item-title {
     font-weight: 600;
     margin-bottom: 5px;
 }
@@ -6221,14 +6291,89 @@ html {
     color: var(--text-color2);
 }
 
-.notification-item:hover {
-    cursor: pointer;
-    background: var(--hover-color);
-}
-
 .notification-item.unread {
     background: rgba(74, 108, 247, 0.05);
     border-left: 3px solid var(--primary-color);
+}
+
+.mark-all-read {
+    padding: 10px 15px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin: 10px 15px;
+    display: block;
+    width: calc(100% - 30px);
+}
+
+.mark-all-read:hover {
+    opacity: 0.9;
+}
+
+.notification-controls {
+    display: flex;
+    gap: 10px;
+    margin: 10px 15px;
+}
+
+.control-btn {
+    flex: 1;
+    padding: 8px 12px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.control-btn:hover {
+    background: var(--hover-color);
+}
+
+.notification-bell-btn {
+    width: 50px;
+    padding-right: 0px;
+    height: 50px;
+    border-radius: 50% 0% 0% 50%;
+    background-color: var(--info);
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    right: -3px;
+    top: 90px;
+    transition: transform 0.3s ease;
+    z-index: 5;
+}
+
+.notification-bell-btn:hover {
+    transform: scale(1.1);
+}
+
+.notification-bell-btn.hidden {
+    display: none;
+}
+
+.no-notifications {
+    max-width: 440px;
+    padding: 30px 15px;
+    text-align: center;
+    color: var(--text-color2);
+}
+
+.no-notifications i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    display: block;
 }
 
 /* Responsive Design */
