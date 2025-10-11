@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/hugeicons@latest/dist/hugeicons.min.js"></script>
 
-    
+
     <link rel="stylesheet" href="./assets/css/css0.css">
 
 
@@ -109,103 +109,10 @@
 
     <!-- Main Content Area -->
     <div class="main-content">
-        <div class="header stuckToRight">
-            <h1>Dashboard</h1>
-            <div class="profile-section">
-                <div class="profile-info">
-                    <p id="email-side-txt">omohmed7122002@gmail.com</p>
-                    <p id="store-name-side-txt">Peacock Dashboard</p>
-                </div>
-                <div class="profile-icon" onclick="toggleDropdown()">
-                    <i class="bi bi-person-circle"></i>
-                </div>
-                <div id="dropdown" class="dropdown-menu">
-                    <a href="./main.html" class="center align-items"><i class="bi bi-house-door"></i> Home</a>
-                    <a href="./profile.html" class="center align-items"><i class="bi bi-person-circle"></i> Profile</a>
-                    <a href="#settings" class="center align-items"><i class="bi bi-gear-fill"></i> Settings</a>
-                    <a href="#logout" id="logoutLink" class="center align-items"><i class="bi bi-box-arrow-left"></i>
-                        Logout</a>
-                </div>
-                <div>
-                    <label class="day-night">
-                        <input type="checkbox" id="theme-toggle">
-                        <div></div>
-                    </label>
-                </div>
-            </div>
-        </div>
+
 
         <!-- Dashboard Content -->
         <div id="dashboard" class="content-section animatedtoup active">
-            <!-- Welcome Section -->
-            <div class="welcome-section animatedtoup show">
-                <div class="welcome-card animatedtoup show">
-                    <div>
-                        <h2>Welcome, Omar !</h2>
-                        <p>Manage your store, track performance, and update content from one central dashboard.</p>
-                    </div>
-                    <div class="quick-access-tabs">
-                        <div class="quick-tab" data-target="orders">
-                            <div class="tab-icon">
-                                <i class="bi bi-cart"></i>
-                            </div>
-                            <span class="tab-label">Orders</span>
-                        </div>
-
-                        <div class="quick-tab" data-target="products">
-                            <div class="tab-icon">
-                                <i class="bi bi-box"></i>
-                            </div>
-                            <span class="tab-label">Products</span>
-                        </div>
-
-                        <div class="quick-tab" data-target="customers">
-                            <div class="tab-icon">
-                                <i class="bi bi-people"></i>
-                            </div>
-                            <span class="tab-label">Customers</span>
-                        </div>
-
-                        <div class="quick-tab" data-target="marketing">
-                            <div class="tab-icon">
-                                <i class="bi bi-megaphone"></i>
-                            </div>
-                            <span class="tab-label">Marketing</span>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="dashboard-card">
-                    <div class="stat-card-header">
-                        <div class="stat-card-title">Go To Site</div>
-                        <div class="stat-card-icon">
-                            <i class="bi bi-globe"></i>
-                        </div>
-                    </div>
-
-                    <p class="card-description">
-                        Manage your store, track performance, and update content from one central dashboard.
-                    </p>
-
-                    <button class="btn btn-outline">
-                        Visit Your Site <i class="bi bi-arrow-right"></i>
-                    </button>
-
-                    <div class="site-url">
-                        <span class="pulse"></span>
-                        www.matager/shop/-3hf3hf483yffbaie3.com
-                    </div>
-                </div>
-
-                <script>
-                    document.querySelector('.dashboard-card').addEventListener('click', function () {
-                        // In a real implementation, this would redirect to the actual site
-                        alert('Redirecting to: www.matager/shop/-3hf3hf483yffbaie3.com');
-                    });
-                </script>
-            </div>
-
             <!-- Revenue Overview -->
             <div class="stats-container animatedtoup show">
                 <div class="card total show">
@@ -256,6 +163,109 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Welcome Section -->
+            <div class="welcome-section animatedtoup show">
+                <div class="dashboard-card profile-card-modern show">
+                    <!-- Header Section -->
+                    <div class="profile-header-modern">
+                        <div class="profile-avatar-section">
+                            <div class="avatar-container">
+                                <img src="https://www.pngmart.com/files/23/User-PNG-Isolated-Image.png"
+                                    alt="Mohamed Ahmed" class="profile-avatar">
+                                <div class="online-dot pulse bluedot"></div>
+                            </div>
+                            <div class="verification-badge">
+                                <i class="bi bi-patch-check-fill"></i>
+                                Verified
+                            </div>
+                        </div>
+
+                        <div class="profile-info-modern">
+                            <h1 class="profile-name-modern">Mohamed Ahmed</h1>
+                            <p class="profile-role-modern">Store Manager</p>
+                            <div class="profile-rating-modern">
+                                <div class="stars-modern">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                </div>
+                                <span class="rating-text-modern">4.6 (92% Rating)</span>
+                            </div>
+                        </div>
+                        <div style="
+                    right: 20px;
+                    position: absolute;
+                ">
+                            <label class="day-night">
+                                <input type="checkbox" id="theme-toggle">
+                                <div></div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="contact-info-modern">
+                        <div class="contact-item-modern">
+                            <div class="contact-icon">
+                                <i class="bi bi-envelope-fill"></i>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">Email</span>
+                                <span class="contact-value">mohamedahmed4434@martager.com</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-item-modern">
+                            <div class="contact-icon">
+                                <i class="bi bi-telephone-fill"></i>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">Phone</span>
+                                <span class="contact-value">+20 123 456 7890</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stats Grid -->
+
+
+                    <!-- Action Button -->
+                    <button class="btn btn-outline">
+                        <i class="bi bi-person-gear"></i>
+                        Manage Profile
+                    </button>
+                </div>
+
+
+                <div class="dashboard-card">
+                    <div class="stat-card-header">
+                        <div class="stat-card-title">Go To Site</div>
+                        <div class="stat-card-icon">
+                            <i class="bi bi-globe"></i>
+                        </div>
+                    </div>
+
+                    <p class="card-description">
+                        Manage your store, track performance, and update content from one central dashboard.
+                    </p>
+
+                    <button class="btn btn-outline">
+                        Visit Your Site <i class="bi bi-arrow-right"></i>
+                    </button>
+
+                    <div class="site-url">
+                        <span class="pulse greendot"></span>
+                        www.matager/shop/-3hf3hf483yffbaie3.com
+                    </div>
+                </div>
+
+
+            </div>
+
+
 
             <!-- Revenue Chart -->
             <div class="form-container animatedtoup show">
@@ -854,8 +864,9 @@
                             </div>
                             <div class="form-actions">
                                 <span class="cart-status-badge status-new">New</span>
-                                <button class="btn btn-sm btn-outline">
-                                    <i class="bi bi-eye"></i> View
+                                <button class="view-order-btn" data-order-id="ORD-001" data-order-date="2 hours ago"
+                                    data-order-total="14,750 EGP">
+                                    View Order
                                 </button>
                                 <button class="btn btn-sm btn-primary">
                                     <i class="bi bi-send"></i> Remind
@@ -888,133 +899,6 @@
 
 
         </div>
-        <!-- Right Sidebar -->
-        <aside class="right-folding-area hidden" id="rightFoldingArea">
-            <div class="right-folding-header">
-                <h3>Order Details</h3>
-                <button class="close-right-folding" id="closeFoldingArea">
-                    <i class="bi bi-x-lg"></i>
-                </button>
-            </div>
-            <div class="right-folding-content">
-                data render here
-
-            </div>
-            <!-- Toggle Folding Area Button -->
-            <div class="toggle-folding-area" id="toggleFoldingArea">
-                <i class="bi bi-chevron-left"></i>
-            </div>
-        </aside>
-
-        <script>
-            // Folding area functionality
-            const rightFoldingArea = document.getElementById('rightFoldingArea');
-            const toggleFoldingArea = document.getElementById('toggleFoldingArea');
-            const closeFoldingArea = document.getElementById('closeFoldingArea');
-            const orderRows = document.querySelectorAll('.order-row');
-
-            // Toggle folding area
-            toggleFoldingArea.addEventListener('click', () => {
-                rightFoldingArea.classList.toggle('active');
-                rightFoldingArea.classList.remove('hidden');
-                updateToggleIcon();
-            });
-
-            // Close folding area
-            closeFoldingArea.addEventListener('click', () => {
-                rightFoldingArea.classList.remove('active');
-                rightFoldingArea.classList.add('hidden');
-                updateToggleIcon();
-            });
-
-            // Update toggle icon based on folding area state
-            function updateToggleIcon() {
-                const icon = toggleFoldingArea.querySelector('i');
-                if (rightFoldingArea.classList.contains('active')) {
-                    icon.className = 'bi bi-chevron-right';
-                } else {
-                    icon.className = 'bi bi-chevron-left';
-                }
-            }
-
-            // Order row click handler
-            orderRows.forEach(row => {
-                row.addEventListener('click', () => {
-                    const orderId = row.getAttribute('data-order');
-                    loadOrderDetails(orderId);
-                    rightFoldingArea.classList.add('active');
-                    updateToggleIcon();
-                });
-            });
-
-            // Mock function to load order details
-            function loadOrderDetails(orderId) {
-                // In a real app, you would fetch this data from an API
-                const orderData = {
-                    'OTIAjJYkpiqIRshEPL': {
-                        customerName: 'Ahmed Mohamed',
-                        email: 'ahmed.m@example.com',
-                        location: '6 October',
-                        status: 'Pending',
-                        orderDate: '2025-09-28',
-                        amount: 'EGP 1,250.00'
-                    },
-                    'OT11234567890ABCDEF': {
-                        customerName: 'John Smith',
-                        email: 'john.smith@example.com',
-                        location: 'Cairo',
-                        status: 'Completed',
-                        orderDate: '2025-09-25',
-                        amount: 'EGP 890.00'
-                    },
-                    'OT109876543212YXWVU': {
-                        customerName: 'Sarah Johnson',
-                        email: 'sarahj@example.com',
-                        location: 'Alexandria',
-                        status: 'Pending',
-                        orderDate: '2025-09-29',
-                        amount: 'EGP 2,150.00'
-                    },
-                    'OT15555555555ABCDEF': {
-                        customerName: 'Michael Brown',
-                        email: 'mbrown@example.com',
-                        location: 'Giza',
-                        status: 'Cancelled',
-                        orderDate: '2025-09-20',
-                        amount: 'EGP 540.00'
-                    },
-                    'OT17777888899990000': {
-                        customerName: 'Emily Wilson',
-                        email: 'ewilson@example.com',
-                        location: 'Luxor',
-                        status: 'Pending',
-                        orderDate: '2025-09-30',
-                        amount: 'EGP 1,780.00'
-                    }
-                };
-
-                const order = orderData[orderId] || {};
-
-                document.getElementById('detailOrderId').textContent = orderId;
-                document.getElementById('detailCustomerName').textContent = order.customerName || '-';
-                document.getElementById('detailEmail').textContent = order.email || '-';
-                document.getElementById('detailLocation').textContent = order.location || '-';
-                document.getElementById('detailStatus').textContent = order.status || '-';
-                document.getElementById('detailOrderDate').textContent = order.orderDate || '-';
-                document.getElementById('detailAmount').textContent = order.amount || '-';
-            }
-
-            // Close folding area when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!rightFoldingArea.contains(e.target) &&
-                    !toggleFoldingArea.contains(e.target) &&
-                    !e.target.closest('.order-row')) {
-                    rightFoldingArea.classList.remove('active');
-                    updateToggleIcon();
-                }
-            });
-        </script>
-
 
 
         <!-- Products Content -->
@@ -2600,7 +2484,7 @@
                                                                 <div class="domain-item ${isDefault ? 'default-domain' : ''}">
                                                                     <div class="domain-status">
                                                                        
-                                                                        <span class="pulse status-${status}"></span>
+                                                                        <span class="pulse greendot status-${status}"></span>
                                                                         <span>${domain}</span>
                                                                     </div>
                                                                     <div class="domain-actions">
@@ -6101,6 +5985,7 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
                 <div class="tab-content  animatedtoup" id="2-content">
                     <!-- Order Notifications -->
@@ -6701,6 +6586,9 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="tab-content  animatedtoup" id="10-content">
+
                 </div>
             </div>
 
@@ -10399,11 +10287,7 @@
 
 
         <script>
-            // Toggle dropdown menu
-            function toggleDropdown() {
-                const dropdown = document.getElementById('dropdown');
-                dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-            }
+
 
             // Close dropdown when clicking outside
             document.addEventListener('click', function (event) {
@@ -10704,11 +10588,7 @@
                 setTimeout(() => animateSectionElements(sectionId), 50);
             }
 
-            // Toggle profile dropdown
-            function toggleDropdown() {
-                const dropdown = document.getElementById('dropdown');
-                dropdown.classList.toggle('show');
-            }
+
 
             // Close dropdown when clicking outside
             document.addEventListener('click', function (event) {
@@ -11348,8 +11228,368 @@
         </script>
         <!--  // handle the datatabs  -->
 
-        <!-- js to handle if the tab content has more than 2  -->
 
+    </div>
+    <!--  sliding side panel  -->
+    <div id="side-panel-overlay" class="side-panel-overlay"></div>
+    <div id="side-panel" class="side-panel">
+        <div class="side-panel-header">
+            <h2 id="side-panel-title" class="side-panel-title">Details</h2>
+            <button class="side-panel-close" onclick="closeSidePanel()">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <div id="side-panel-content" class="side-panel-content">
+            <!-- Content will be dynamically inserted her -->
+        </div>
+    </div>
+    <script>
+        // Enhanced Side Panel Functions with Order Items Support
+        let currentSidePanelType = null;
+        let currentSidePanelData = null;
+        let closeTimeout = null;
+
+        // Open side panel with data
+        function openSidePanel(type, data) {
+            currentSidePanelType = type;
+            currentSidePanelData = data;
+
+            const sidePanel = document.getElementById('side-panel');
+            const overlay = document.getElementById('side-panel-overlay');
+
+            // Remove closing classes if they exist
+            sidePanel.classList.remove('closing');
+            overlay.classList.remove('closing');
+
+            // Set panel content based on type
+            setSidePanelContent(type, data);
+
+            // Show panel and overlay
+            sidePanel.classList.add('active');
+            overlay.classList.add('active');
+
+            // Prevent body scrolling
+            document.body.style.overflow = 'hidden';
+
+            // Clear any existing close timeout
+            if (closeTimeout) {
+                clearTimeout(closeTimeout);
+                closeTimeout = null;
+            }
+        }
+
+        // Close side panel with animation
+        function closeSidePanel() {
+            const sidePanel = document.getElementById('side-panel');
+            const overlay = document.getElementById('side-panel-overlay');
+
+            // Add closing classes for animation
+            sidePanel.classList.add('closing');
+            overlay.classList.add('closing');
+
+            // Wait for animation to complete before hiding
+            closeTimeout = setTimeout(() => {
+                sidePanel.classList.remove('active', 'closing');
+                overlay.classList.remove('active', 'closing');
+
+                // Restore body scrolling
+                document.body.style.overflow = '';
+
+                // Reset current data
+                currentSidePanelType = null;
+                currentSidePanelData = null;
+
+                closeTimeout = null;
+            }, 200);
+        }
+
+        // Enhanced set content function with order items support
+        function setSidePanelContent(type, data) {
+            const title = document.getElementById('side-panel-title');
+            const content = document.getElementById('side-panel-content');
+
+            // Reset content with loading state
+            content.innerHTML = `
+            <div style="display: flex; justify-content: center; align-items: center; height: 200px;">
+                <div class="loading-spinner"></div>
+            </div>
+        `;
+
+            // Small delay to show loading and ensure smooth transition
+            setTimeout(() => {
+                switch (type) {
+                    case 'store':
+                        title.textContent = 'Store Details';
+                        content.innerHTML = generateStoreContent(data);
+                        break;
+                    case 'request':
+                        title.textContent = 'Request Details';
+                        content.innerHTML = generateRequestContent(data);
+                        break;
+                    case 'report':
+                        title.textContent = 'Report Details';
+                        content.innerHTML = generateReportContent(data);
+                        break;
+                    case 'order':
+                        title.textContent = 'Order Details';
+                        content.innerHTML = generateOrderContent(data);
+                        break;
+                    default:
+                        title.textContent = 'Details';
+                        content.innerHTML = '<p>No information available.</p>';
+                }
+
+                // Scroll to top when content loads
+                content.scrollTop = 0;
+
+                // Initialize interactive elements
+                initializeInteractiveElements();
+            }, 100);
+        }
+
+        // New function to generate order content
+        function generateOrderContent(data) {
+            return `
+            <div class="order-details-container">
+                <!-- Order Header -->
+                <div class="order-header">
+                    <div class="order-meta">
+                        <div class="order-id">Order #${data.id || 'N/A'}</div>
+                        <div class="order-date">${data.date || '2 hours ago'}</div>
+                    </div>
+                    <div class="order-total">
+                        <span class="total-label">Total Amount:</span>
+                        <span class="total-amount">${data.total || '14,750 EGP'}</span>
+                    </div>
+                </div>
+    
+                <!-- Customer Information -->
+                <div class="customer-section">
+                    <h3 class="section-title">Customer Information</h3>
+                    <div class="customer-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Name:</span>
+                            <span class="detail-value">${data.customer?.name || 'Mohamed Ahmed'}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Phone:</span>
+                            <span class="detail-value">${data.customer?.phone || '+20 123 456 7890'}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Email:</span>
+                            <span class="detail-value">${data.customer?.email || 'mohamed.ahmed@example.com'}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Address:</span>
+                            <span class="detail-value">${data.customer?.address || '123 Main St, Cairo, Egypt'}</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Order Items -->
+                <div class="items-section">
+                    <h3 class="section-title">Order Items (${data.items?.length || 0})</h3>
+                    <div class="order-items">
+                        ${generateOrderItems(data.items || data.defaultItems)}
+                    </div>
+                </div>
+    
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <h3 class="section-title">Order Summary</h3>
+                    <div class="summary-details">
+                        <div class="summary-row">
+                            <span class="summary-label">Subtotal:</span>
+                            <span class="summary-value">${data.subtotal || '14,750 EGP'}</span>
+                        </div>
+                        <div class="summary-row">
+                            <span class="summary-label">Shipping:</span>
+                            <span class="summary-value">${data.shipping || '50 EGP'}</span>
+                        </div>
+                        <div class="summary-row">
+                            <span class="summary-label">Tax:</span>
+                            <span class="summary-value">${data.tax || '200 EGP'}</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span class="summary-label">Total:</span>
+                            <span class="summary-value">${data.total || '15,000 EGP'}</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Order Actions -->
+                <div class="order-actions">
+                    <button class="btn btn-primary" onclick="processOrder('${data.id}')">
+                        <i class="bi bi-check-circle"></i> Process Order
+                    </button>
+                    <button class="btn btn-secondary" onclick="closeSidePanel()">
+                        <i class="bi bi-x-circle"></i> Close
+                    </button>
+                </div>
+            </div>
+        `;
+        }
+
+        // Generate order items HTML
+        function generateOrderItems(items) {
+            if (!items || items.length === 0) {
+                return '<div class="no-items">No items in this order</div>';
+            }
+
+            return items.map(item => `
+            <div class="order-item">
+                <img src="${item.image || 'https://assets.adidas.com/images/w_1880,f_auto,q_auto/442cbdbfed544ea994b404c21abf9aeb_9366/JR3416_01_00_standard.jpg'}" 
+                     alt="${item.name || 'Product Image'}" 
+                     class="item-image"
+                     onerror="this.src='https://via.placeholder.com/80x80?text=No+Image'">
+                <div class="item-details">
+                    <div class="item-name">${item.name || 'Adidas Shoes'}</div>
+                    <div class="item-info">Brand: ${item.brand || 'Adidas'} | Color: ${item.color || 'brown'} | Size: ${item.size || '40'}</div>
+                    <div class="item-info">Price: ${item.price || '5,684 EGP'} | Qty: ${item.quantity || '2'}</div>
+                    <div class="item-subtotal">Subtotal: ${calculateItemSubtotal(item)} EGP</div>
+                </div>
+                <div class="item-actions">
+                    <div class="qty-control">
+                        <button class="qty-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                        <input type="text" class="qty-input" value="${item.quantity || '2'}" readonly>
+                        <button class="qty-btn plus" onclick="updateQuantity(this, 1)">+</button>
+                         <button class="delete-btn" onclick="removeItem(this)" title="Delete Item">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                    </div>
+                   
+                </div>
+            </div>
+        `).join('');
+        }
+
+        // Calculate item subtotal
+        function calculateItemSubtotal(item) {
+            const price = parseFloat(item.price?.replace(/[^0-9.]/g, '') || 5684);
+            const quantity = parseInt(item.quantity || 2);
+            return (price * quantity).toLocaleString();
+        }
+
+        // Initialize interactive elements
+        function initializeInteractiveElements() {
+            // Quantity controls
+            const quantityInputs = document.querySelectorAll('.qty-input');
+            quantityInputs.forEach(input => {
+                input.addEventListener('change', function () {
+                    validateQuantity(this);
+                });
+            });
+        }
+
+        // Update quantity
+        function updateQuantity(button, change) {
+            const qtyControl = button.closest('.qty-control');
+            const input = qtyControl.querySelector('.qty-input');
+            let currentValue = parseInt(input.value) || 0;
+
+            currentValue += change;
+
+            // Ensure quantity doesn't go below 1
+            if (currentValue < 1) {
+                currentValue = 1;
+            }
+
+            input.value = currentValue;
+            updateOrderTotal();
+        }
+
+        // Remove item
+        function removeItem(button) {
+            const orderItem = button.closest('.order-item');
+            if (confirm('Are you sure you want to remove this item from the order?')) {
+                orderItem.style.opacity = '0';
+                orderItem.style.transform = 'translateX(-100%)';
+
+                setTimeout(() => {
+                    orderItem.remove();
+                    updateOrderTotal();
+                }, 300);
+            }
+        }
+
+        // Validate quantity input
+        function validateQuantity(input) {
+            let value = parseInt(input.value);
+            if (isNaN(value) || value < 1) {
+                input.value = 1;
+            }
+            updateOrderTotal();
+        }
+
+        // Update order total (placeholder function)
+        function updateOrderTotal() {
+            console.log('Order total updated - implement calculation logic here');
+        }
+
+        // Process order (placeholder function)
+        function processOrder(orderId) {
+            alert(`Processing order ${orderId}...`);
+            // Implement your order processing logic here
+        }
+
+        // Close side panel when clicking overlay
+        document.getElementById('side-panel-overlay').addEventListener('click', closeSidePanel);
+
+        // Close side panel with Escape key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                closeSidePanel();
+            }
+        });
+
+        // Prevent side panel content clicks from closing the panel
+        document.getElementById('side-panel').addEventListener('click', function (e) {
+            e.stopPropagation();
+        });
+
+        // Example usage - attach this to your "View" buttons
+        function setupViewButtons() {
+            document.querySelectorAll('.view-order-btn').forEach(button => {
+                button.addEventListener('click', function () {
+                    const orderData = {
+                        id: this.dataset.orderId || 'ORD-001',
+                        date: this.dataset.orderDate || '2 hours ago',
+                        total: this.dataset.orderTotal || '14,750 EGP',
+                        customer: {
+                            name: 'Mohamed Ahmed',
+                            phone: '+20 123 456 7890',
+                            email: 'mohamed.ahmed@example.com',
+                            address: '123 Main St, Cairo, Egypt'
+                        },
+                        items: [
+                            {
+                                name: 'Adidas Shoes',
+                                brand: 'Adidas',
+                                color: 'brown',
+                                size: '40',
+                                price: '5,684 EGP',
+                                quantity: 2,
+                                image: 'https://assets.adidas.com/images/w_1880,f_auto,q_auto/442cbdbfed544ea994b404c21abf9aeb_9366/JR3416_01_00_standard.jpg'
+                            }
+                            // Add more items as needed
+                        ],
+                        subtotal: '14,750 EGP',
+                        shipping: '50 EGP',
+                        tax: '200 EGP',
+                        total: '15,000 EGP'
+                    };
+
+                    openSidePanel('order', orderData);
+                });
+            });
+        }
+
+        // Initialize view buttons when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function () {
+            setupViewButtons();
+        });
+    </script>
+    <!--  sliding side panel  -->
 
 
 </body>

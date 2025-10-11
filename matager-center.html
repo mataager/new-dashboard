@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="theme-loaded">
 
 <head>
     <meta charset="UTF-8">
@@ -18,8 +17,9 @@
     <script src="./assets/js/select.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet">
 
     <script>
         // Immediately check for theme preference before page renders
@@ -146,98 +146,242 @@
 
 
 
+    <style>
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid var(--light-gray);
+            border-top: 4px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    <style>
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid var(--light-gray);
+            border-top: 4px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
 </head>
 
-<body>
+<body style="opacity: 1;">
     <!-- Main Content Area -->
     <div class="MC-main-content" style="opacity: 1 !important;">
         <div class="header">
             <h1>Matager Main Center</h1>
-            <div class="profile-section">
-                <div class="profile-info">
-                    <p id="email-side-txt">omohmed7122002@gmail.com</p>
-                    <p id="store-name-side-txt">Peacock Dashboard</p>
-                </div>
-                <div class="profile-icon" onclick="toggleDropdown()">
-                    <i class="bi bi-person-circle"></i>
-                </div>
-                <div id="dropdown" class="dropdown-menu">
-                    <a href="./main.html" class="center align-items"><i class="bi bi-house-door"></i> Home</a>
-                    <a href="./profile.html" class="center align-items"><i class="bi bi-person-circle"></i> Profile</a>
-                    <a href="#settings" class="center align-items"><i class="bi bi-gear-fill"></i> Settings</a>
-                    <a href="#logout" id="logoutLink" class="center align-items"><i class="bi bi-box-arrow-left"></i>
-                        Logout</a>
-                </div>
-                <div>
-                    <label class="day-night">
-                        <input type="checkbox" id="theme-toggle">
-                        <div></div>
-                    </label>
-                </div>
-            </div>
+
         </div>
 
         <!-- Dashboard Content -->
-        <div id="dashboard" class="content-section animatedtoup active">
+        <div id="dashboard" class="content-section animatedtoup active show">
             <!-- Welcome Section -->
             <div class="welcome-section animatedtoup show">
                 <div class="welcome-card animatedtoup show">
-                    <div>
-                        <h2>Welcome, Omar !</h2>
-                        <p>Manage your store, track performance, and update content from one central dashboard.</p>
+                    <div class="MC-stats-container animatedtoup show">
+                        <div class="card total show">
+                            <div class="stat-card-header">
+                                <div class="MC-stat-card-title">Total Revenue</div>
+                                <div class="stat-card-icon total">
+                                    <i class="bi bi-currency-dollar"></i>
+                                </div>
+                            </div>
+                            <div class="stat-card-value">$8,500</div>
+                            <div class="stat-card-progress">
+                                <div class="stat-card-progress-bar total" style="width: 100%"></div>
+                            </div>
+                            <div class="progress-text">92% of subscription period completed</div>
+                        </div>
+
+                        <div class="card active show">
+                            <div class="stat-card-header">
+                                <div class="MC-stat-card-title">Current Revenue</div>
+                                <div class="stat-card-icon active">
+                                    <i class="bi bi-graph-up-arrow"></i>
+                                </div>
+                            </div>
+                            <div class="stat-card-value">$4,000</div>
+                            <div class="stat-card-progress">
+                                <div class="stat-card-progress-bar active" style="width: 47%"></div>
+                            </div>
+                            <div class="progress-text">
+                                <span>This Month</span>
+                                <span>47%</span>
+                            </div>
+                        </div>
+
+                        <div class="card new show">
+                            <div class="stat-card-header">
+                                <div class="MC-stat-card-title">Daily Revenue</div>
+                                <div class="stat-card-icon new">
+                                    <i class="bi bi-calendar-day"></i>
+                                </div>
+                            </div>
+                            <div class="stat-card-value">$350</div>
+                            <div class="stat-card-progress">
+                                <div class="stat-card-progress-bar new" style="width: 4%"></div>
+                            </div>
+                            <div class="progress-text">
+                                <span>Today</span>
+                                <span>4%</span>
+                            </div>
+                        </div>
+                        <div class="card  show">
+                            <div class="stat-card-header">
+                                <div class="MC-stat-card-title">Net Profit</div>
+                                <div class="stat-card-icon active">
+                                    <i class="bi bi-graph-up-arrow"></i>
+                                </div>
+                            </div>
+                            <div class="stat-card-value">12</div>
+                            <div class="stat-card-progress">
+                                <div class="stat-card-progress-bar active" style="width: 60%"></div>
+                            </div>
+                            <div class="progress-text">
+                                <span>This Week</span>
+                                <span>60%</span>
+                            </div>
+                        </div>
+                        <div class="card  show">
+                            <div class="stat-card-header">
+                                <div class="MC-stat-card-title">Total Stores</div>
+                                <div class="stat-card-icon total">
+                                    <i class="bi bi-shop"></i>
+                                </div>
+                            </div>
+                            <div class="stat-card-value">24</div>
+                            <div class="stat-card-progress">
+                                <div class="stat-card-progress-bar total" style="width: 80%"></div>
+                            </div>
+                            <div class="progress-text">
+                                <span>Active: 18</span>
+                                <span>80%</span>
+                            </div>
+                        </div>
+
+                        <div class="card  show">
+                            <div class="stat-card-header">
+                                <div class="MC-stat-card-title">Pending Requests</div>
+                                <div class="stat-card-icon active">
+                                    <i class="bi bi-person-plus"></i>
+                                </div>
+                            </div>
+                            <div class="stat-card-value">12</div>
+                            <div class="stat-card-progress">
+                                <div class="stat-card-progress-bar active" style="width: 60%"></div>
+                            </div>
+                            <div class="progress-text">
+                                <span>This Week</span>
+                                <span>60%</span>
+                            </div>
+                        </div>
+
+                        <div class="card show">
+                            <div class="stat-card-header">
+                                <div class="MC-stat-card-title">Open Reports</div>
+                                <div class="stat-card-icon new">
+                                    <i class="bi bi-flag"></i>
+                                </div>
+                            </div>
+                            <div class="stat-card-value">7</div>
+                            <div class="stat-card-progress">
+                                <div class="stat-card-progress-bar new" style="width: 35%"></div>
+                            </div>
+                            <div class="progress-text">
+                                <span>Resolved: 13</span>
+                                <span>35%</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="quick-access-tabs">
-                        <div class="quick-tab" data-target="orders">
-                            <div class="tab-icon">
-                                <i class="bi bi-cart"></i>
-                            </div>
-                            <span class="tab-label">Orders</span>
-                        </div>
 
-                        <div class="quick-tab" data-target="products">
-                            <div class="tab-icon">
-                                <i class="bi bi-box"></i>
-                            </div>
-                            <span class="tab-label">Products</span>
-                        </div>
-
-                        <div class="quick-tab" data-target="customers">
-                            <div class="tab-icon">
-                                <i class="bi bi-people"></i>
-                            </div>
-                            <span class="tab-label">Customers</span>
-                        </div>
-
-                        <div class="quick-tab" data-target="marketing">
-                            <div class="tab-icon">
-                                <i class="bi bi-megaphone"></i>
-                            </div>
-                            <span class="tab-label">Marketing</span>
-                        </div>
-                    </div>
                 </div>
 
 
-                <div class="dashboard-card">
-                    <div class="stat-card-header">
-                        <div class="stat-card-title">Go To Site</div>
-                        <div class="stat-card-icon">
-                            <i class="bi bi-globe"></i>
+                <div class="dashboard-card profile-card-modern">
+                    <!-- Header Section -->
+                    <div class="profile-header-modern">
+                        <div class="profile-avatar-section">
+                            <div class="avatar-container">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&amp;h=150&amp;fit=crop&amp;crop=face"
+                                    alt="Mohamed Ahmed" class="profile-avatar">
+                                <div class="online-dot"></div>
+                            </div>
+                            <div class="verification-badge">
+                                <i class="bi bi-patch-check-fill"></i>
+                                Verified
+                            </div>
+                        </div>
+
+                        <div class="profile-info-modern">
+                            <h1 class="profile-name-modern">Mohamed Ahmed</h1>
+                            <p class="profile-role-modern">Store Manager</p>
+                            <div class="profile-rating-modern">
+                                <div class="stars-modern">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                </div>
+                                <span class="rating-text-modern">4.6 (92% Rating)</span>
+                            </div>
                         </div>
                     </div>
 
-                    <p class="card-description">
-                        Manage your store, track performance, and update content from one central dashboard.
-                    </p>
+                    <!-- Contact Info -->
+                    <div class="contact-info-modern">
+                        <div class="contact-item-modern">
+                            <div class="contact-icon">
+                                <i class="bi bi-envelope-fill"></i>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">Email</span>
+                                <span class="contact-value">mohamedahmed4434@martager.com</span>
+                            </div>
+                        </div>
 
-                    <button class="btn btn-outline">
-                        Visit Your Site <i class="bi bi-arrow-right"></i>
-                    </button>
-
-                    <div class="site-url">
-                        <span class="pulse"></span>
-                        www.matager/shop/-3hf3hf483yffbaie3.com
+                        <div class="contact-item-modern">
+                            <div class="contact-icon">
+                                <i class="bi bi-telephone-fill"></i>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">Phone</span>
+                                <span class="contact-value">+20 123 456 7890</span>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- Stats Grid -->
+
+
+                    <!-- Action Button -->
+                    <button class="btn btn-outline">
+                        <i class="bi bi-person-gear"></i>
+                        Manage Profile
+                    </button>
                 </div>
 
                 <script>
@@ -249,105 +393,7 @@
             </div>
 
             <!-- Revenue Overview -->
-            <div class="stats-container animatedtoup show">
-                <div class="card total show">
-                    <div class="stat-card-header">
-                        <div class="stat-card-title">Total Revenue</div>
-                        <div class="stat-card-icon total">
-                            <i class="bi bi-currency-dollar"></i>
-                        </div>
-                    </div>
-                    <div class="stat-card-value">$8,500</div>
-                    <div class="stat-card-progress">
-                        <div class="stat-card-progress-bar total" style="width: 100%"></div>
-                    </div>
-                    <div class="progress-text">92% of subscription period completed</div>
-                </div>
 
-                <div class="card active show">
-                    <div class="stat-card-header">
-                        <div class="stat-card-title">Current Revenue</div>
-                        <div class="stat-card-icon active">
-                            <i class="bi bi-graph-up-arrow"></i>
-                        </div>
-                    </div>
-                    <div class="stat-card-value">$4,000</div>
-                    <div class="stat-card-progress">
-                        <div class="stat-card-progress-bar active" style="width: 47%"></div>
-                    </div>
-                    <div class="progress-text">
-                        <span>This Month</span>
-                        <span>47%</span>
-                    </div>
-                </div>
-
-                <div class="card new show">
-                    <div class="stat-card-header">
-                        <div class="stat-card-title">Daily Revenue</div>
-                        <div class="stat-card-icon new">
-                            <i class="bi bi-calendar-day"></i>
-                        </div>
-                    </div>
-                    <div class="stat-card-value">$350</div>
-                    <div class="stat-card-progress">
-                        <div class="stat-card-progress-bar new" style="width: 4%"></div>
-                    </div>
-                    <div class="progress-text">
-                        <span>Today</span>
-                        <span>4%</span>
-                    </div>
-                </div>
-                <div class="card  show">
-                    <div class="stat-card-header">
-                        <div class="stat-card-title">Total Stores</div>
-                        <div class="stat-card-icon total">
-                            <i class="bi bi-shop"></i>
-                        </div>
-                    </div>
-                    <div class="stat-card-value">24</div>
-                    <div class="stat-card-progress">
-                        <div class="stat-card-progress-bar total" style="width: 80%"></div>
-                    </div>
-                    <div class="progress-text">
-                        <span>Active: 18</span>
-                        <span>80%</span>
-                    </div>
-                </div>
-
-                <div class="card  show">
-                    <div class="stat-card-header">
-                        <div class="stat-card-title">Pending Requests</div>
-                        <div class="stat-card-icon active">
-                            <i class="bi bi-person-plus"></i>
-                        </div>
-                    </div>
-                    <div class="stat-card-value">12</div>
-                    <div class="stat-card-progress">
-                        <div class="stat-card-progress-bar active" style="width: 60%"></div>
-                    </div>
-                    <div class="progress-text">
-                        <span>This Week</span>
-                        <span>60%</span>
-                    </div>
-                </div>
-
-                <div class="card show">
-                    <div class="stat-card-header">
-                        <div class="stat-card-title">Open Reports</div>
-                        <div class="stat-card-icon new">
-                            <i class="bi bi-flag"></i>
-                        </div>
-                    </div>
-                    <div class="stat-card-value">7</div>
-                    <div class="stat-card-progress">
-                        <div class="stat-card-progress-bar new" style="width: 35%"></div>
-                    </div>
-                    <div class="progress-text">
-                        <span>Resolved: 13</span>
-                        <span>35%</span>
-                    </div>
-                </div>
-            </div>
 
             <!-- Revenue Chart -->
             <div class="form-container animatedtoup show">
@@ -582,6 +628,102 @@
                 </div>
 
             </div>
+
+            <div class="form-container">
+                <div class="dashboard-card profile-card-modern">
+                    <!-- Header Section -->
+                    <div class="profile-header-modern">
+                        <div class="profile-avatar-section">
+                            <div class="avatar-container">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&amp;h=150&amp;fit=crop&amp;crop=face"
+                                    alt="Mohamed Ahmed" class="profile-avatar">
+                                <div class="online-dot"></div>
+                            </div>
+                            <div class="verification-badge">
+                                <i class="bi bi-patch-check-fill"></i>
+                                Verified
+                            </div>
+                        </div>
+
+                        <div class="profile-info-modern">
+                            <h1 class="profile-name-modern">Mohamed Ahmed</h1>
+                            <p class="profile-role-modern">Store Manager</p>
+                            <div class="profile-rating-modern">
+                                <div class="stars-modern">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                </div>
+                                <span class="rating-text-modern">4.6 (92% Rating)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="contact-info-modern">
+                        <div class="contact-item-modern">
+                            <div class="contact-icon">
+                                <i class="bi bi-envelope-fill"></i>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">Email</span>
+                                <span class="contact-value">mohamed@martager.com</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-item-modern">
+                            <div class="contact-icon">
+                                <i class="bi bi-telephone-fill"></i>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">Phone</span>
+                                <span class="contact-value">+20 123 456 7890</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stats Grid -->
+                    <div class="stats-grid-modern">
+                        <div class="stat-card-modern">
+                            <div class="stat-card-icon stores">
+                                <i class="bi bi-shop"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-number">24</div>
+                                <div class="stat-label">Total Stores</div>
+                            </div>
+                        </div>
+
+                        <div class="stat-card-modern">
+                            <div class="stat-card-icon active">
+                                <i class="bi bi-check-circle"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-number">18</div>
+                                <div class="stat-label">Active</div>
+                            </div>
+                        </div>
+
+                        <div class="stat-card-modern">
+                            <div class="stat-card-icon performance">
+                                <i class="bi bi-graph-up-arrow"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-number">92%</div>
+                                <div class="stat-label">Performance</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Button -->
+                    <button class="btn btn-outline">
+                        <i class="bi bi-person-gear"></i>
+                        Manage Profile
+                    </button>
+                </div>
+            </div>
         </div>
         <script>
             document.addEventListener('DOMContentLoaded', function () {
@@ -619,13 +761,67 @@
         <!-- Side Panel -->
         <div id="side-panel" class="side-panel">
             <div class="side-panel-header">
-                <h2 id="side-panel-title" class="side-panel-title">Details</h2>
+                <h2 id="side-panel-title" class="side-panel-title">Store Details</h2>
                 <button class="side-panel-close" onclick="closeSidePanel()">
                     <i class="bi bi-x-lg"></i>
                 </button>
             </div>
             <div id="side-panel-content" class="side-panel-content">
-                <!-- Content will be dynamically inserted here -->
+                <div class="store-header">
+                    <div class="store-logo">K</div>
+                    <div class="store-basic-info">
+                        <h2>King Store</h2>
+                        <p>Store ID: yqkjcfd4e8fSCUjE6aA0XWc3nBu1</p>
+                        <span class="store-status expired">
+                            Expired
+                        </span>
+                    </div>
+                </div>
+
+                <div class="store-details-grid">
+                    <div class="detail-card">
+                        <div class="detail-label">Plan Type</div>
+                        <div class="detail-value">Standard</div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-label">Contact Phone</div>
+                        <div class="detail-value">+20178403035</div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-label">Start Date</div>
+                        <div class="detail-value">07/08/2025, 12:00:00 pm</div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-label">End Date</div>
+                        <div class="detail-value">07/09/2025, 5:34:47 pm</div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-label">Total Revenue</div>
+                        <div class="detail-value">$18</div>
+                    </div>
+                    <div class="detail-card">
+                        <div class="detail-label">Owner Email</div>
+                        <div class="detail-value">mostofiomohomes60183338870@gmail.com</div>
+                    </div>
+                </div>
+
+                <div class="store-actions">
+                    <button class="btn btn-primary" onclick="renewStore('yqkjcfd4e8fSCUjE6aA0XWc3nBu1')">
+                        <i class="bi bi-arrow-clockwise"></i> Renew Subscription
+                    </button>
+                    <button class="btn btn-outline" onclick="editStore('yqkjcfd4e8fSCUjE6aA0XWc3nBu1')">
+                        <i class="bi bi-pencil"></i> Edit Store
+                    </button>
+                    <button class="btn btn-outline" onclick="viewStoreSite('yqkjcfd4e8fSCUjE6aA0XWc3nBu1')">
+                        <i class="bi bi-eye"></i> Visit Store
+                    </button>
+                    <button class="btn btn-outline" onclick="contactStoreOwner('yqkjcfd4e8fSCUjE6aA0XWc3nBu1')">
+                        <i class="bi bi-envelope"></i> Contact Owner
+                    </button>
+                    <button class="btn btn-outline" onclick="contactStoreOwner('yqkjcfd4e8fSCUjE6aA0XWc3nBu1')">
+                        <i class="bi bi-whatsapp"></i> Send Message
+                    </button>
+                </div>
             </div>
         </div>
         <script>
@@ -821,6 +1017,10 @@
             document.head.appendChild(style);
         </script>
     </div>
+
+
+
+
 
 
 </body>
