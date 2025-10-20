@@ -127,18 +127,22 @@
       display: flex;
       gap: 10px;
       margin-bottom: 15px;
+      flex-wrap: wrap;
   }
 
   .exceptions-input {
       display: flex;
       gap: 10px;
       margin-bottom: 10px;
+      flex-wrap: wrap;
+      flex-direction: row-reverse;
   }
 
   .exception-tag {
+      color: var(--text-color);
       display: inline-flex;
       align-items: center;
-      background-color: #e9ecef;
+      background-color: var(--hover-color);
       padding: 4px 8px;
       border-radius: 4px;
       margin-right: 5px;
@@ -159,7 +163,6 @@
 
   .exception-tag .remove:hover {
       color: #dc3545;
-      transform: scale(1.2);
   }
 
   .size-preview {

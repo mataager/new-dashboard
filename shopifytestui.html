@@ -79,6 +79,14 @@
                 <i class="bi bi-hourglass-split"></i>
                 <span class="nav-text">Subscription</span>
             </a>
+            <a href="#" class="nav-item" data-target="Balance">
+                <i class="bi bi-piggy-bank"></i>
+                <span class="nav-text">Balance</span>
+            </a>
+            <a href="#" class="nav-item" data-target="Pos">
+                <i class="bi bi-pc-display"></i>
+                <span class="nav-text">POS</span>
+            </a>
             <a href="#" class="nav-item" data-target="Notifications">
                 <i class="bi bi-bell"></i>
                 <span class="nav-text">Notifications</span>
@@ -173,7 +181,7 @@
                             <div class="avatar-container">
                                 <img src="https://www.pngmart.com/files/23/User-PNG-Isolated-Image.png"
                                     alt="Mohamed Ahmed" class="profile-avatar">
-                                <div class="online-dot pulse bluedot"></div>
+                                <div class="online-dot pulse small bluedot"></div>
                             </div>
                             <div class="verification-badge">
                                 <i class="bi bi-patch-check-fill"></i>
@@ -201,7 +209,12 @@
                 ">
                             <label class="day-night">
                                 <input type="checkbox" id="theme-toggle">
-                                <div></div>
+                                <div>
+                                    <span class="switch-handle">
+                                        <i class="bi bi-sun-fill sun-icon"></i>
+                                        <i class="bi bi-moon-stars-fill moon-icon"></i>
+                                    </span>
+                                </div>
                             </label>
                         </div>
                     </div>
@@ -257,7 +270,7 @@
                     </button>
 
                     <div class="site-url">
-                        <span class="pulse greendot"></span>
+                        <span class="pulse small greendot"></span>
                         www.matager/shop/-3hf3hf483yffbaie3.com
                     </div>
                 </div>
@@ -558,8 +571,9 @@
 
                 <!-- Tabs -->
                 <div class="tabs-btn-area">
-                    <button class="tab-button active" data-tab="ordersOverview">Orders Overview</button>
-                    <button class="tab-button" data-tab="ordersInformation">Orders Information </button>
+                    <button class="tab-button active" data-tab="ordersOverview">Overview</button>
+                    <button class="tab-button" data-tab="ordersInformation">Orders Information <i
+                            class="bi bi-tag"></i></button>
 
 
                 </div>
@@ -638,7 +652,7 @@
                 <div class="tab-content animatedtoup  " id="ordersInformation-content">
 
                     <div class="form-header animatedtoup">
-                        <h4 class="form-title"><i class="bi bi-tag"></i> Orders Information</h4>
+
                         <div class="form-actions">
                             <button class="btn btn-outline">
                                 <i class="bi bi-trash"></i> delete all
@@ -920,7 +934,7 @@
             </div>
             <div class="form-container animatedtoup">
                 <div class="tabs-btn-area">
-                    <button class="tab-button active" data-tab="productOverview">Product Overview</button>
+                    <button class="tab-button active" data-tab="productOverview">Overview</button>
                     <button class="tab-button" data-tab="addProduct">Add Product <i
                             class="bi bi-plus-circle"></i></button>
                     <button class="tab-button" data-tab="editProduct">Edit Product <i
@@ -2484,7 +2498,7 @@
                                                                 <div class="domain-item ${isDefault ? 'default-domain' : ''}">
                                                                     <div class="domain-status">
                                                                        
-                                                                        <span class="pulse greendot status-${status}"></span>
+                                                                        <span class="pulse small greendot status-${status}"></span>
                                                                         <span>${domain}</span>
                                                                     </div>
                                                                     <div class="domain-actions">
@@ -2879,51 +2893,53 @@
                     </div>
                 </div>
 
-                <!-- Stats Cards -->
-                <div class="stats-container animatedtoup">
-                    <div class="card total show">
-                        <div class="stat-card-header">
-                            <div class="stat-card-title">Total Customers</div>
-                            <div class="stat-card-icon total">
-                                <i class="bi bi-people"></i>
-                            </div>
-                        </div>
-                        <div class="stat-card-value">1,248</div>
-                    </div>
 
-                    <div class="card active show">
-                        <div class="stat-card-header">
-                            <div class="stat-card-title">Active Customers</div>
-                            <div class="stat-card-icon active">
-                                <i class="bi bi-person-check"></i>
-                            </div>
-                        </div>
-                        <div class="stat-card-value">892</div>
-
-                    </div>
-
-                    <div class="card new show">
-                        <div class="stat-card-header">
-                            <div class="stat-card-title">New Customers</div>
-                            <div class="stat-card-icon new">
-                                <i class="bi bi-person-plus"></i>
-                            </div>
-                        </div>
-                        <div class="stat-card-value">143</div>
-
-                    </div>
-                </div>
                 <div class="form-container animatedtoup">
                     <div class="tabs-btn-area">
-                        <button class="tab-button active" data-tab="stuckCarts">Stuck Carts <i
+                        <button class="tab-button active" data-tab="custmersOverview">Overview</button>
+                        <button class="tab-button" data-tab="stuckCarts">Stuck Carts <i
                                 class="bi bi-cart-x"></i></button>
                         <button class="tab-button" data-tab="reviews">Customers Reviews <i
                                 class="bi bi-star"></i></button>
                         <button class="tab-button" data-tab="customersInfo">Customers Info <i
                                 class="bi bi-table"></i></button>
                     </div>
+                    <div class="tab-content active animatedtoup" id="custmersOverview-content"><!-- Stats Cards -->
+                        <div class="stats-container animatedtoup">
+                            <div class="card total show">
+                                <div class="stat-card-header">
+                                    <div class="stat-card-title">Total Customers</div>
+                                    <div class="stat-card-icon total">
+                                        <i class="bi bi-people"></i>
+                                    </div>
+                                </div>
+                                <div class="stat-card-value">1,248</div>
+                            </div>
 
-                    <div class="tab-content active animatedtoup" id="stuckCarts-content">
+                            <div class="card active show">
+                                <div class="stat-card-header">
+                                    <div class="stat-card-title">Active Customers</div>
+                                    <div class="stat-card-icon active">
+                                        <i class="bi bi-person-check"></i>
+                                    </div>
+                                </div>
+                                <div class="stat-card-value">892</div>
+
+                            </div>
+
+                            <div class="card new show">
+                                <div class="stat-card-header">
+                                    <div class="stat-card-title">New Customers</div>
+                                    <div class="stat-card-icon new">
+                                        <i class="bi bi-person-plus"></i>
+                                    </div>
+                                </div>
+                                <div class="stat-card-value">143</div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-content  animatedtoup" id="stuckCarts-content">
                         <!-- Stuck Carts Section -->
                         <div class="form-header">
 
@@ -3997,57 +4013,65 @@
 
 
 
-
-                <div class="site-table-container tab-content animatedtoup" id="campaigns-content">
-                    <table class="site-table">
-                        <thead>
-                            <tr>
-                                <th><input type="checkbox" id="selectAllCampaigns"></th>
-                                <th>Campaign Name</th>
-                                <th>Platform</th>
-                                <th>Start Date</th>
-                                <th>Status</th>
-                                <th>Total Spend</th>
-                                <th>Conversions</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="campaign-row" data-status="active">
-                                <td><input type="checkbox" class="campaign-checkbox"></td>
-                                <td>Summer Sale 2025</td>
-                                <td>Facebook / Instagram</td>
-                                <td>Aug 1, 2025</td>
-                                <td><span class="status-badge active">Active</span></td>
-                                <td>1,200 E£</td>
-                                <td>850</td>
-                                <td>
-                                    <div class="action-buttons">
-                                        <button class="btn-view" title="View Details"><i class="bi bi-eye"></i></button>
-                                        <button class="btn-pause" title="Pause Campaign"><i
-                                                class="bi bi-pause-circle"></i></button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr class="campaign-row" data-status="completed">
-                                <td><input type="checkbox" class="campaign-checkbox"></td>
-                                <td>New Arrivals - Q2</td>
-                                <td>TikTok</td>
-                                <td>Mar 15, 2025</td>
-                                <td><span class="status-badge completed">Completed</span></td>
-                                <td>2,250 E£</td>
-                                <td>690</td>
-                                <td>
-                                    <div class="action-buttons">
-                                        <button class="btn-view" title="View Details"><i class="bi bi-eye"></i></button>
-                                        <button class="btn-clone" title="Clone Campaign"><i
-                                                class="bi bi-clipboard"></i></button>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="tab-content animatedtoup" id="campaigns-content">
+                    <div class="search-box animatedtoup show" style="opacity: 1; transform: translateY(0px);">
+                        <i class="bi bi-search"></i>
+                        <input type="text" placeholder="Search campaigns..." id="campaignSearch">
+                    </div>
+                    <div class="site-table-container">
+                        <table class="site-table">
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox" id="selectAllCampaigns"></th>
+                                    <th>Campaign Name</th>
+                                    <th>Platform</th>
+                                    <th>Start Date</th>
+                                    <th>Status</th>
+                                    <th>Total Spend</th>
+                                    <th>Conversions</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="campaign-row" data-status="active">
+                                    <td><input type="checkbox" class="campaign-checkbox"></td>
+                                    <td>Summer Sale 2025</td>
+                                    <td>Facebook / Instagram</td>
+                                    <td>Aug 1, 2025</td>
+                                    <td><span class="status-badge active">Active</span></td>
+                                    <td>1,200 E£</td>
+                                    <td>850</td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn-view" title="View Details"><i
+                                                    class="bi bi-eye"></i></button>
+                                            <button class="btn-pause" title="Pause Campaign"><i
+                                                    class="bi bi-pause-circle"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="campaign-row" data-status="completed">
+                                    <td><input type="checkbox" class="campaign-checkbox"></td>
+                                    <td>New Arrivals - Q2</td>
+                                    <td>TikTok</td>
+                                    <td>Mar 15, 2025</td>
+                                    <td><span class="status-badge completed">Completed</span></td>
+                                    <td>2,250 E£</td>
+                                    <td>690</td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn-view" title="View Details"><i
+                                                    class="bi bi-eye"></i></button>
+                                            <button class="btn-clone" title="Clone Campaign"><i
+                                                    class="bi bi-clipboard"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
+
 
                 <div class="dashboard-right-header tab-content" id="pixels-content">
                     <h2 class="animatedtoup">Connected Pixels</h2>
@@ -5138,15 +5162,8 @@
                 flex-direction: column;
             }
 
-            .detail-label {
-                font-size: 12px;
-                color: #888;
-                margin-bottom: 5px;
-            }
 
-            .detail-value {
-                font-weight: 500;
-            }
+
 
             .billing-table {
                 width: 100%;
@@ -7316,11 +7333,6 @@
                     flex-direction: column;
                 }
 
-                .detail-label {
-                    font-size: 0.75rem;
-                    color: var(--text-light);
-                    margin-bottom: 0.25rem;
-                }
 
 
                 /* Add Member Form Styles */
@@ -7400,15 +7412,19 @@
 
                 /* Responsive Adjustments */
                 @media (max-width: 768px) {
-                    .form-grid {
-                        grid-template-columns: 1fr;
-                    }
+
 
                     .member-details {
                         grid-template-columns: 1fr;
                     }
 
                     .roles-grid {
+                        grid-template-columns: 1fr;
+                    }
+                }
+
+                @media (max-width: 1000px) {
+                    .form-grid {
                         grid-template-columns: 1fr;
                     }
                 }
@@ -8276,7 +8292,7 @@
                                         <div class="stat-card-icon">
                                             <i class="bi bi-house-door"></i>
                                         </div>
-                                        <h3 class="category-title">Platform Overview</h3>
+                                        <h3 class="category-title">Overview</h3>
                                         <p class="category-desc">Learn about the main features and navigation of
                                             MATAGER.</p>
                                         <span class="category-count">5 articles</span>
@@ -9900,7 +9916,7 @@
 
                 <!-- Tabs -->
                 <div class="tabs-btn-area">
-                    <button class="tab-button active" data-tab="revenue">Revenue Overview</button>
+                    <button class="tab-button active" data-tab="revenue">Overview</button>
                     <button class="tab-button" data-tab="categorysales">Category Sales </button>
                     <button class="tab-button" data-tab="performance">Top Performing</button>
                     <button class="tab-button" data-tab="Traffic">Traffic</button>
@@ -10058,6 +10074,921 @@
             </div>
 
         </div>
+        <div id="Pos" class="content-section">
+            <div class="dashboard-right-header">
+                <h2>Point of Sale (POS)</h2>
+                <p>Process sales and manage transactions in your store</p>
+            </div>
+
+            <div class="pos-container">
+                <!-- Left Side: Products & Categories -->
+                <div class="pos-left-panel">
+                    <!-- Categories Filter -->
+                    <div class="pos-categories">
+                        <div class="form-header">
+                            <h4 class="form-title"><i class="bi bi-tags"></i> Categories</h4>
+                        </div>
+                        <div class="categories-scroll">
+                            <button class="category-btn active" data-category="all">All Products</button>
+                            <button class="category-btn" data-category="clothing">Clothing</button>
+                            <button class="category-btn" data-category="shoes">Shoes</button>
+                            <button class="category-btn" data-category="accessories">Accessories</button>
+                            <button class="category-btn" data-category="electronics">Electronics</button>
+                            <button class="category-btn" data-category="home">Home & Living</button>
+                        </div>
+                    </div>
+
+                    <!-- Products Grid -->
+                    <div class="pos-products">
+                        <div class="form-header">
+                            <div class="search-box">
+                                <i class="bi bi-search"></i>
+                                <input type="text" placeholder="Search products..." id="posSearch">
+                            </div>
+                        </div>
+
+                        <div class="products-grid">
+                            <!-- Product Card 1 -->
+                            <div class="product-card" data-category="clothing" data-id="1">
+                                <div class="product-image">
+                                    <img src="https://assets.adidas.com/images/w_1880,f_auto,q_auto/442cbdbfed544ea994b404c21abf9aeb_9366/JR3416_01_00_standard.jpg"
+                                        alt="Classic T-Shirt">
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-name">Classic T-Shirt</div>
+                                    <div class="product-price">$29.99</div>
+                                    <div class="product-stock">In Stock: 45</div>
+                                </div>
+                                <button class="btn btn-primary add-to-cart" data-id="1">
+                                    <i class="bi bi-plus-circle"></i> Add
+                                </button>
+                            </div>
+
+                            <!-- Product Card 2 -->
+                            <div class="product-card" data-category="shoes" data-id="2">
+                                <div class="product-image">
+                                    <img src="https://cdn.media.amplience.net/i/mrpricegroup/01_100810683_SI_00"
+                                        alt="Running Shoes">
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-name">Running Shoes</div>
+                                    <div class="product-price">$89.99</div>
+                                    <div class="product-stock">In Stock: 23</div>
+                                </div>
+                                <button class="btn btn-primary add-to-cart" data-id="2">
+                                    <i class="bi bi-plus-circle"></i> Add
+                                </button>
+                            </div>
+
+                            <!-- Product Card 3 -->
+                            <div class="product-card" data-category="accessories" data-id="3">
+                                <div class="product-image">
+                                    <img src="https://tse1.mm.bing.net/th/id/OIP.0_PYABBVvQXX-fKjl8Jp-gHaE6?rs=1&pid=ImgDetMain&o=7&rm=3"
+                                        alt="Baseball Cap">
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-name">Baseball Cap</div>
+                                    <div class="product-price">$24.99</div>
+                                    <div class="product-stock">In Stock: 67</div>
+                                </div>
+                                <button class="btn btn-primary add-to-cart" data-id="3">
+                                    <i class="bi bi-plus-circle"></i> Add
+                                </button>
+                            </div>
+
+                            <!-- Product Card 4 -->
+                            <div class="product-card" data-category="clothing" data-id="4">
+                                <div class="product-image">
+                                    <img src="https://tse4.mm.bing.net/th/id/OIP.eC2q43oMf0alx9qIUyCowgHaJf?rs=1&pid=ImgDetMain&o=7&rm=3"
+                                        alt="Slim Jeans">
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-name">Slim Jeans</div>
+                                    <div class="product-price">$59.99</div>
+                                    <div class="product-stock">In Stock: 34</div>
+                                </div>
+                                <button class="btn btn-primary add-to-cart" data-id="4">
+                                    <i class="bi bi-plus-circle"></i> Add
+                                </button>
+                            </div>
+
+                            <!-- Product Card 5 -->
+                            <div class="product-card" data-category="electronics" data-id="5">
+                                <div class="product-image">
+                                    <img src="https://via.placeholder.com/150x150?text=Headphones"
+                                        alt="Wireless Headphones">
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-name">Wireless Headphones</div>
+                                    <div class="product-price">$129.99</div>
+                                    <div class="product-stock">In Stock: 12</div>
+                                </div>
+                                <button class="btn btn-primary add-to-cart" data-id="5">
+                                    <i class="bi bi-plus-circle"></i> Add
+                                </button>
+                            </div>
+
+                            <!-- Product Card 6 -->
+                            <div class="product-card" data-category="home" data-id="6">
+                                <div class="product-image">
+                                    <img src="https://via.placeholder.com/150x150?text=Mug" alt="Ceramic Mug">
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-name">Ceramic Mug</div>
+                                    <div class="product-price">$14.99</div>
+                                    <div class="product-stock">In Stock: 89</div>
+                                </div>
+                                <button class="btn btn-primary add-to-cart" data-id="6">
+                                    <i class="bi bi-plus-circle"></i> Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: Cart & Checkout -->
+                <div class="pos-right-panel">
+                    <!-- Current Transaction -->
+                    <div class="pos-cart">
+                        <div class="form-header">
+                            <h4 class="form-title"><i class="bi bi-cart"></i> Current Sale</h4>
+                            <button class="btn btn-outline btn-sm" id="clearCart">
+                                <i class="bi bi-trash"></i> Clear
+                            </button>
+                        </div>
+
+                        <div class="cart-items" id="cartItems">
+                            <!-- Cart items will be dynamically added here -->
+                            <div class="empty-cart">
+                                <i class="bi bi-cart-x"></i>
+                                <p>No items in cart</p>
+                            </div>
+                        </div>
+
+                        <div class="cart-summary">
+                            <div class="summary-row">
+                                <span>Subtotal:</span>
+                                <span id="subtotal">$0.00</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Tax (10%):</span>
+                                <span id="tax">$0.00</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span>Total:</span>
+                                <span id="total">$0.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Customer Information -->
+                    <div class="pos-customer">
+                        <div class="form-header">
+                            <h4 class="form-title"><i class="bi bi-person"></i> Customer</h4>
+                        </div>
+                        <div class="customer-options">
+                            <button class="btn btn-outline btn-sm customer-option active" data-customer="walkin">
+                                Walk-in Customer
+                            </button>
+                            <button class="btn btn-outline btn-sm customer-option" data-customer="existing">
+                                Existing Customer
+                            </button>
+                            <button class="btn btn-outline btn-sm customer-option" data-customer="new">
+                                New Customer
+                            </button>
+                        </div>
+
+                        <div class="customer-details" id="customerDetails">
+                            <div class="form-group">
+                                <input type="text" class="form-input" placeholder="Customer Name (Optional)"
+                                    id="customerName">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-input" placeholder="Email (Optional)"
+                                    id="customerEmail">
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" class="form-input" placeholder="Phone (Optional)" id="customerPhone">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Methods -->
+                    <div class="pos-payment">
+                        <div class="form-header">
+                            <h4 class="form-title"><i class="bi bi-credit-card"></i> Payment</h4>
+                        </div>
+
+                        <div class="payment-methods">
+                            <button class="payment-method active" data-method="cash">
+                                <i class="bi bi-cash"></i>
+                                <span>Cash</span>
+                            </button>
+                            <button class="payment-method" data-method="card">
+                                <i class="bi bi-credit-card"></i>
+                                <span>Card</span>
+                            </button>
+                            <button class="payment-method" data-method="digital">
+                                <i class="bi bi-phone"></i>
+                                <span>Digital</span>
+                            </button>
+                        </div>
+
+                        <div class="payment-details" id="paymentDetails">
+                            <!-- Cash Payment -->
+                            <div class="payment-section active" id="cashSection">
+                                <div class="form-group">
+                                    <label class="form-label">Amount Tendered</label>
+                                    <input type="number" class="form-input" id="cashAmount" placeholder="0.00"
+                                        step="0.01">
+                                </div>
+                                <div class="change-display">
+                                    Change: <span id="changeAmount">$0.00</span>
+                                </div>
+                            </div>
+
+                            <!-- Card Payment -->
+                            <div class="payment-section" id="cardSection">
+                                <div class="form-group">
+                                    <label class="form-label">Card Number</label>
+                                    <input type="text" class="form-input" placeholder="1234 5678 9012 3456">
+                                </div>
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label class="form-label">Expiry</label>
+                                        <input type="text" class="form-input" placeholder="MM/YY">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">CVV</label>
+                                        <input type="text" class="form-input" placeholder="123">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Digital Payment -->
+                            <div class="payment-section" id="digitalSection">
+                                <div class="form-group">
+                                    <label class="form-label">Select Provider</label>
+                                    <select class="form-select">
+                                        <option>PayPal</option>
+                                        <option>Apple Pay</option>
+                                        <option>Google Pay</option>
+                                        <option>Venmo</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="pos-actions">
+                        <button class="btn btn-outline" id="holdTransaction">
+                            <i class="bi bi-pause"></i> Hold
+                        </button>
+                        <button class="btn btn-outline" id="discountBtn">
+                            <i class="bi bi-percent"></i> Discount
+                        </button>
+                        <button class="btn btn-primary" id="completeSale">
+                            <i class="bi bi-check-circle"></i> Complete Sale
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            /* POS Layout */
+            .pos-container {
+                display: grid;
+                grid-template-columns: 1fr 400px;
+                gap: 1.5rem;
+                height: calc(100vh - 200px);
+                background: var(--bg-color);
+            }
+
+            .pos-left-panel {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                overflow: hidden;
+            }
+
+            .pos-right-panel {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                background: var(--card-bg);
+                border-radius: var(--border-radius);
+                padding: 1.5rem;
+                box-shadow: var(--shadow);
+            }
+
+            /* Categories */
+            .pos-categories {
+                background: var(--card-bg);
+                border-radius: var(--border-radius);
+                padding: 1rem;
+                box-shadow: var(--shadow);
+            }
+
+            .categories-scroll {
+                display: flex;
+                gap: 0.5rem;
+                overflow-x: auto;
+                padding: 0.5rem 0;
+            }
+
+            .category-btn {
+                padding: 0.5rem 1rem;
+                border: 1px solid var(--border-color);
+                border-radius: 20px;
+                background: var(--hover-color);
+                color: var(--text-color);
+                cursor: pointer;
+                white-space: nowrap;
+                transition: all 0.2s ease;
+            }
+
+            .category-btn.active {
+                background: var(--primary-color);
+                color: white;
+                border-color: var(--primary-color);
+            }
+
+            .category-btn:hover:not(.active) {
+                background: var(--border-color);
+            }
+
+            /* Products Grid */
+            .pos-products {
+                flex: 1;
+                background: var(--card-bg);
+                border-radius: var(--border-radius);
+                padding: 1rem;
+                box-shadow: var(--shadow);
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .products-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 1rem;
+                overflow-y: auto;
+                padding: 1rem 0;
+                flex: 1;
+            }
+
+            .product-card {
+                background: var(--hover-color);
+                border: 1px solid var(--border-color);
+                border-radius: var(--border-radius);
+                padding: 1rem;
+                text-align: center;
+                transition: all 0.2s ease;
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .product-card:hover {
+                transform: translateY(-2px);
+                box-shadow: var(--shadow);
+            }
+
+            .product-image {
+                width: 100%;
+                height: 120px;
+                border-radius: var(--border-radius);
+                overflow: hidden;
+                background: var(--bg-color);
+            }
+
+            .product-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .product-name {
+                font-weight: 600;
+                color: var(--text-color);
+                font-size: 0.9rem;
+            }
+
+            .product-price {
+                font-weight: 700;
+                color: var(--primary-color);
+                font-size: 1.1rem;
+            }
+
+            .product-stock {
+                font-size: 0.8rem;
+                color: var(--text-color2);
+            }
+
+            /* Cart Styles */
+            .pos-cart {
+                background: var(--hover-color);
+                border-radius: var(--border-radius);
+                padding: 1rem;
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .cart-items {
+                flex: 1;
+                overflow-y: auto;
+                margin: 1rem 0;
+            }
+
+            .empty-cart {
+                text-align: center;
+                color: var(--text-color2);
+                padding: 2rem;
+            }
+
+            .empty-cart i {
+                font-size: 3rem;
+                margin-bottom: 1rem;
+                opacity: 0.5;
+            }
+
+            .cart-item {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                padding: 0.75rem;
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            .cart-item:last-child {
+                border-bottom: none;
+            }
+
+            .cart-item-image {
+                width: 50px;
+                height: 50px;
+                border-radius: 6px;
+                overflow: hidden;
+            }
+
+            .cart-item-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .cart-item-details {
+                flex: 1;
+            }
+
+            .cart-item-name {
+                font-weight: 600;
+                font-size: 0.9rem;
+            }
+
+            .cart-item-price {
+                color: var(--primary-color);
+                font-weight: 600;
+            }
+
+            .cart-item-controls {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            .quantity-btn {
+                width: 30px;
+                height: 30px;
+                border: 1px solid var(--border-color);
+                background: var(--card-bg);
+                border-radius: 4px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+            }
+
+            .quantity-input {
+                width: 40px;
+                text-align: center;
+                border: 1px solid var(--border-color);
+                border-radius: 4px;
+                padding: 0.25rem;
+            }
+
+            .remove-item {
+                color: #dc3545;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 0.25rem;
+            }
+
+            .cart-summary {
+                border-top: 2px solid var(--border-color);
+                padding-top: 1rem;
+            }
+
+            .summary-row {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 0.5rem;
+            }
+
+            .summary-row.total {
+                font-weight: 700;
+                font-size: 1.2rem;
+                border-top: 1px solid var(--border-color);
+                padding-top: 0.5rem;
+                margin-top: 0.5rem;
+            }
+
+            /* Customer & Payment */
+            .pos-customer,
+            .pos-payment {
+                background: var(--hover-color);
+                border-radius: var(--border-radius);
+                padding: 1rem;
+            }
+
+            .customer-options {
+                display: flex;
+                gap: 0.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .customer-option {
+                flex: 1;
+                padding: 0.5rem;
+                font-size: 0.8rem;
+            }
+
+            .customer-option.active {
+                background: var(--primary-color);
+                color: white;
+                border-color: var(--primary-color);
+            }
+
+            .payment-methods {
+                display: flex;
+                gap: 0.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .payment-method {
+                flex: 1;
+                padding: 1rem 0.5rem;
+                border: 1px solid var(--border-color);
+                border-radius: var(--border-radius);
+                background: var(--card-bg);
+                cursor: pointer;
+                text-align: center;
+                transition: all 0.2s ease;
+            }
+
+            .payment-method.active {
+                background: var(--primary-color);
+                color: white;
+                border-color: var(--primary-color);
+            }
+
+            .payment-method:hover:not(.active) {
+                background: var(--hover-color);
+            }
+
+            .payment-section {
+                display: none;
+            }
+
+            .payment-section.active {
+                display: block;
+            }
+
+            .change-display {
+                background: var(--card-bg);
+                padding: 0.75rem;
+                border-radius: var(--border-radius);
+                text-align: center;
+                font-weight: 600;
+                margin-top: 1rem;
+            }
+
+            /* Actions */
+            .pos-actions {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 0.5rem;
+                margin-top: auto;
+            }
+
+            .pos-actions .btn {
+                padding: 0.75rem;
+            }
+
+            #completeSale {
+                grid-column: 1 / -1;
+            }
+
+            /* Responsive Design */
+            @media (max-width: 1024px) {
+                .pos-container {
+                    grid-template-columns: 1fr;
+                    height: auto;
+                }
+
+                .products-grid {
+                    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                }
+            }
+
+            @media (max-width: 768px) {
+                .products-grid {
+                    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+                }
+
+                .customer-options,
+                .payment-methods {
+                    flex-direction: column;
+                }
+            }
+        </style>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                // POS State
+                let cart = [];
+                let currentPaymentMethod = 'cash';
+                let currentCustomerType = 'walkin';
+
+                // DOM Elements
+                const cartItems = document.getElementById('cartItems');
+                const subtotalEl = document.getElementById('subtotal');
+                const taxEl = document.getElementById('tax');
+                const totalEl = document.getElementById('total');
+                const changeAmountEl = document.getElementById('changeAmount');
+                const cashAmountInput = document.getElementById('cashAmount');
+
+                // Initialize POS
+                initPOS();
+
+                function initPOS() {
+                    setupEventListeners();
+                    updateCartDisplay();
+                }
+
+                function setupEventListeners() {
+                    // Category filtering
+                    document.querySelectorAll('.category-btn').forEach(btn => {
+                        btn.addEventListener('click', function () {
+                            document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+                            this.classList.add('active');
+                            filterProducts(this.dataset.category);
+                        });
+                    });
+
+                    // Add to cart
+                    document.querySelectorAll('.add-to-cart').forEach(btn => {
+                        btn.addEventListener('click', function () {
+                            const productId = this.dataset.id;
+                            addToCart(productId);
+                        });
+                    });
+
+                    // Customer type selection
+                    document.querySelectorAll('.customer-option').forEach(btn => {
+                        btn.addEventListener('click', function () {
+                            document.querySelectorAll('.customer-option').forEach(b => b.classList.remove('active'));
+                            this.classList.add('active');
+                            currentCustomerType = this.dataset.customer;
+                        });
+                    });
+
+                    // Payment method selection
+                    document.querySelectorAll('.payment-method').forEach(btn => {
+                        btn.addEventListener('click', function () {
+                            document.querySelectorAll('.payment-method').forEach(b => b.classList.remove('active'));
+                            this.classList.add('active');
+                            currentPaymentMethod = this.dataset.method;
+                            showPaymentSection(currentPaymentMethod);
+                        });
+                    });
+
+                    // Cash amount calculation
+                    cashAmountInput.addEventListener('input', calculateChange);
+
+                    // Clear cart
+                    document.getElementById('clearCart').addEventListener('click', clearCart);
+
+                    // Complete sale
+                    document.getElementById('completeSale').addEventListener('click', completeSale);
+
+                    // Search products
+                    document.getElementById('posSearch').addEventListener('input', searchProducts);
+                }
+
+                function addToCart(productId) {
+                    const productCard = document.querySelector(`.product-card[data-id="${productId}"]`);
+                    const productName = productCard.querySelector('.product-name').textContent;
+                    const productPrice = parseFloat(productCard.querySelector('.product-price').textContent.replace('$', ''));
+                    const productImage = productCard.querySelector('.product-image img').src;
+
+                    const existingItem = cart.find(item => item.id === productId);
+
+                    if (existingItem) {
+                        existingItem.quantity += 1;
+                    } else {
+                        cart.push({
+                            id: productId,
+                            name: productName,
+                            price: productPrice,
+                            image: productImage,
+                            quantity: 1
+                        });
+                    }
+
+                    updateCartDisplay();
+                }
+
+                function updateCartDisplay() {
+                    const emptyCart = document.querySelector('.empty-cart');
+
+                    if (cart.length === 0) {
+                        cartItems.innerHTML = '<div class="empty-cart"><i class="bi bi-cart-x"></i><p>No items in cart</p></div>';
+                        updateTotals();
+                        return;
+                    }
+
+                    cartItems.innerHTML = '';
+                    cart.forEach(item => {
+                        const cartItem = document.createElement('div');
+                        cartItem.className = 'cart-item';
+                        cartItem.innerHTML = `
+                            <div class="cart-item-image">
+                                <img src="${item.image}" alt="${item.name}">
+                            </div>
+                            <div class="cart-item-details">
+                                <div class="cart-item-name">${item.name}</div>
+                                <div class="cart-item-price">$${item.price.toFixed(2)}</div>
+                            </div>
+                            <div class="cart-item-controls">
+                                <button class="quantity-btn minus" data-id="${item.id}">-</button>
+                                <input type="text" class="quantity-input" value="${item.quantity}" readonly>
+                                <button class="quantity-btn plus" data-id="${item.id}">+</button>
+                                <button class="remove-item" data-id="${item.id}">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </div>
+                        `;
+                        cartItems.appendChild(cartItem);
+                    });
+
+                    // Add event listeners to quantity controls
+                    document.querySelectorAll('.quantity-btn.minus').forEach(btn => {
+                        btn.addEventListener('click', function () {
+                            updateQuantity(this.dataset.id, -1);
+                        });
+                    });
+
+                    document.querySelectorAll('.quantity-btn.plus').forEach(btn => {
+                        btn.addEventListener('click', function () {
+                            updateQuantity(this.dataset.id, 1);
+                        });
+                    });
+
+                    document.querySelectorAll('.remove-item').forEach(btn => {
+                        btn.addEventListener('click', function () {
+                            removeFromCart(this.dataset.id);
+                        });
+                    });
+
+                    updateTotals();
+                }
+
+                function updateQuantity(productId, change) {
+                    const item = cart.find(item => item.id === productId);
+                    if (item) {
+                        item.quantity += change;
+                        if (item.quantity <= 0) {
+                            removeFromCart(productId);
+                        } else {
+                            updateCartDisplay();
+                        }
+                    }
+                }
+
+                function removeFromCart(productId) {
+                    cart = cart.filter(item => item.id !== productId);
+                    updateCartDisplay();
+                }
+
+                function clearCart() {
+                    if (cart.length > 0 && confirm('Are you sure you want to clear the cart?')) {
+                        cart = [];
+                        updateCartDisplay();
+                    }
+                }
+
+                function updateTotals() {
+                    const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                    const tax = subtotal * 0.10; // 10% tax
+                    const total = subtotal + tax;
+
+                    subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
+                    taxEl.textContent = `$${tax.toFixed(2)}`;
+                    totalEl.textContent = `$${total.toFixed(2)}`;
+
+                    calculateChange();
+                }
+
+                function calculateChange() {
+                    if (currentPaymentMethod === 'cash') {
+                        const total = parseFloat(totalEl.textContent.replace('$', ''));
+                        const cashAmount = parseFloat(cashAmountInput.value) || 0;
+                        const change = cashAmount - total;
+                        changeAmountEl.textContent = `$${Math.max(0, change).toFixed(2)}`;
+                    }
+                }
+
+                function showPaymentSection(method) {
+                    document.querySelectorAll('.payment-section').forEach(section => {
+                        section.classList.remove('active');
+                    });
+                    document.getElementById(`${method}Section`).classList.add('active');
+                }
+
+                function filterProducts(category) {
+                    document.querySelectorAll('.product-card').forEach(card => {
+                        if (category === 'all' || card.dataset.category === category) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                }
+
+                function searchProducts() {
+                    const searchTerm = this.value.toLowerCase();
+                    document.querySelectorAll('.product-card').forEach(card => {
+                        const productName = card.querySelector('.product-name').textContent.toLowerCase();
+                        if (productName.includes(searchTerm)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                }
+
+                function completeSale() {
+                    if (cart.length === 0) {
+                        alert('Please add items to the cart before completing the sale.');
+                        return;
+                    }
+
+                    if (currentPaymentMethod === 'cash') {
+                        const total = parseFloat(totalEl.textContent.replace('$', ''));
+                        const cashAmount = parseFloat(cashAmountInput.value) || 0;
+
+                        if (cashAmount < total) {
+                            alert('Insufficient cash amount. Please enter a higher amount.');
+                            return;
+                        }
+                    }
+
+                    // Process sale (in real implementation, this would send data to server)
+                    const saleData = {
+                        items: cart,
+                        customer: {
+                            type: currentCustomerType,
+                            name: document.getElementById('customerName').value,
+                            email: document.getElementById('customerEmail').value,
+                            phone: document.getElementById('customerPhone').value
+                        },
+                        payment: {
+                            method: currentPaymentMethod,
+                            amount: parseFloat(totalEl.textContent.replace('$', ''))
+                        },
+                        timestamp: new Date().toISOString()
+                    };
+
+                    console.log('Sale completed:', saleData);
+
+                    // Show success message
+                    alert(`Sale completed successfully!\nTotal: ${totalEl.textContent}\nThank you for your purchase!`);
+
+                    // Reset for next sale
+                    clearCart();
+                    document.getElementById('customerName').value = '';
+                    document.getElementById('customerEmail').value = '';
+                    document.getElementById('customerPhone').value = '';
+                    cashAmountInput.value = '';
+                }
+            });
+        </script>
 
 
         <!-- notfiy test -->
@@ -11352,14 +12283,11 @@
             return `
             <div class="order-details-container">
                 <!-- Order Header -->
+                <h3 class="section-title">Order ID & Date</h3>
                 <div class="order-header">
                     <div class="order-meta">
                         <div class="order-id">Order #${data.id || 'N/A'}</div>
                         <div class="order-date">${data.date || '2 hours ago'}</div>
-                    </div>
-                    <div class="order-total">
-                        <span class="total-label">Total Amount:</span>
-                        <span class="total-amount">${data.total || '14,750 EGP'}</span>
                     </div>
                 </div>
     
@@ -11377,7 +12305,7 @@
                         </div>
                         <div class="detail-row">
                             <span class="detail-label">Email:</span>
-                            <span class="detail-value">${data.customer?.email || 'mohamed.ahmed@example.com'}</span>
+                            <span class="detail-value">${data.customer?.email || 'mohamed. ahmed@example.com'}</span>
                         </div>
                         <div class="detail-row">
                             <span class="detail-label">Address:</span>
@@ -11416,6 +12344,78 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Shipping Method -->
+<div class="shipping-section">
+    <h3 class="section-title">Shipping Methods</h3>
+    <div class="shipping-methods">
+        <div class="shipping-method selected">
+            <input type="radio" id="by-my-own" name="shipping-method" value="by-my-own" checked="">
+            <label for="by-my-own">
+                
+                
+            <div class="shipping-info">
+                    <span class="shipping-name">Default</span>
+                    <span class="shipping-price">75 EGP</span>
+    <span class="shipping-est-time">4 working days</span>
+                </div></label>
+        </div>
+        
+        
+        
+        <div class="shipping-method">
+            <input type="radio" id="aramex" name="shipping-method" value="aramex">
+            <label for="aramex">
+                <div class="shipping-icon" style=" background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/4e/EGYPT_POST.svg');">
+                    
+                </div>
+                <div class="shipping-info">
+                    <span class="shipping-name">Egypt Post</span>
+                    <span class="shipping-price">75 EGP</span>
+                <span class="shipping-est-time">2 working days</span></div>
+            </label>
+        </div>
+        
+        <div class="shipping-method">
+            <input type="radio" id="aramex" name="shipping-method" value="aramex">
+            <label for="aramex">
+                <div class="shipping-icon" style=" background-image: url('https://tracking.bosta.co/images/bosta_en.png');">
+                    
+                </div>
+                <div class="shipping-info">
+                    <span class="shipping-name">Bosta</span>
+                    <span class="shipping-price">75 EGP</span>
+    <span class="shipping-est-time">3 working days</span>
+                </div>
+            </label>
+        </div><div class="shipping-method">
+            <input type="radio" id="aramex" name="shipping-method" value="aramex">
+            <label for="aramex">
+                <div class="shipping-icon" style=" background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/ee/Aramex_logo.svg');">
+                    
+                </div>
+                <div class="shipping-info">
+                    <span class="shipping-name">Aramex</span>
+                    <span class="shipping-price">75 EGP</span>
+    <span class="shipping-est-time">4 working days</span>
+                </div>
+            </label>
+        </div><div class="shipping-method">
+            <input type="radio" id="j-t" name="shipping-method" value="j-t">
+            <label for="j-t">
+                <div class="shipping-icon" style=" background-image: url('https://1000logos.net/wp-content/uploads/2022/08/JT-Express-Logo.png');">
+                    
+                </div>
+                <div class="shipping-info">
+                    <span class="shipping-name">J&amp;T</span>
+                    <span class="shipping-price">45 EGP</span>
+    <span class="shipping-est-time">4 working days</span>
+                </div>
+            </label>
+        </div>
+    </div>
+</div>
+</div>
     
                 <!-- Order Actions -->
                 <div class="order-actions">
