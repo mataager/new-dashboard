@@ -76,6 +76,10 @@ html.theme-loaded body {
     color: black;
 }
 
+.absolute {
+    position: absolute !important;
+}
+
 body {
     background-color: var(--card-bg);
     color: var(--text-color);
@@ -93,14 +97,59 @@ body {
     overflow-x: auto;
     position: sticky;
     top: 0;
-    z-index: 100
+    z-index: 100;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
 }
 
 .sidebar-header {
     padding: 0 15px;
     display: flex;
     align-items: center;
-    white-space: nowrap
+    white-space: nowrap;
+    justify-content: space-between;
+}
+
+.sidebar.collapsed {
+    width: 60px;
+}
+
+.sidebar.collapsed .nav-text {
+    display: none;
+}
+
+.sidebar.collapsed .logo-container {
+    display: none;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-container h2 {
+    font-weight: 800 !important;
+}
+
+.toggle-btn {
+    background: inherit;
+    display: flex;
+    height: 30px;
+    width: 30px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: var(--text-color);
+    padding: 5px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    justify-content: center;
+    align-items: center;
+}
+
+.toggle-btn:hover {
+    color: var(--primary-color);
+    background-color: var(--hover-color);
 }
 
 .sidebar-header h2 {
@@ -113,17 +162,17 @@ body {
     display: flex;
     flex-direction: row;
     overflow-x: auto;
-    scrollbar-width: none
+    scrollbar-width: none;
 }
 
 .nav-item {
     display: flex;
     align-items: center;
-    padding: 10px 15px;
+    padding: 15px 15px;
     color: var(--text-color);
     text-decoration: none;
     border-bottom: 3px solid #fff0;
-    white-space: nowrap
+    white-space: nowrap;
 }
 
 .nav-item:hover,
@@ -378,7 +427,7 @@ h3 {
 
 .day-night input:checked+div .moon-icon {
     opacity: 1;
-    color: #2f3542;
+    color: #5a84bf;
 }
 
 @media(min-width:769px) {
@@ -387,13 +436,13 @@ h3 {
     }
 
     .sidebar {
-        width: 240px;
+        width: 200px;
         height: 100vh;
         flex-direction: column;
         border-right: 1px solid var(--border-color);
         border-bottom: none;
         padding: 20px 0;
-        position: fixed;
+        /* position: fixed; */
         overflow-y: auto;
         scrollbar-width: none
     }
@@ -404,7 +453,7 @@ h3 {
     }
 
     .nav-item {
-        padding: 12px 20px;
+        /* padding: 12px 20px; */
         border-left: 3px solid #fff0;
         border-bottom: none
     }
@@ -416,13 +465,13 @@ h3 {
     }
 
     .sidebar-header {
-        padding: 0 20px 20px;
+        padding-bottom: 20px;
         border-bottom: 1px solid var(--border-color);
         margin-bottom: 15px
     }
 
     .main-content {
-        margin-left: 240px;
+        /* margin-left: 240px; */
         padding: 20px
     }
 
@@ -644,7 +693,10 @@ h3 {
     padding: 5px 10px;
     border-radius: 20px;
     font-size: 12px;
-    font-weight: 500
+    font-weight: 500;
+    z-index: 1;
+    right: -1px;
+    top: -15px;
 }
 
 .status-badge.pending {
@@ -662,9 +714,9 @@ h3 {
     color: #859bdd;
 }
 
-.status-badge.completed {
+.status-badge.delivered {
     background-color: #76c176;
-    color: #ccffcc;
+    color: #caffca;
 }
 
 .status-badge.cancelled {
@@ -786,7 +838,6 @@ h3 {
 
 .section-title {
     font-weight: 100;
-    color: whitesmoke;
     font-size: 1.1rem;
     margin-top: 0;
     margin-bottom: 20px;
@@ -1071,36 +1122,7 @@ h3 {
     justify-content: flex-end;
 }
 
-/* Status-based left border styling */
-.order-row[data-status="pending"] {
-    border-left: 4px solid #ffc107;
-    /* Yellow for pending */
-}
 
-.order-row[data-status="accepted"] {
-    border-left: 4px solid #17a2b8;
-    /* Teal for accepted */
-}
-
-.order-row[data-status="shipped"] {
-    border-left: 4px solid #007bff;
-    /* Blue for shipped */
-}
-
-.order-row[data-status="completed"] {
-    border-left: 4px solid #28a745;
-    /* Green for completed */
-}
-
-.order-row[data-status="cancelled"] {
-    border-left: 4px solid #dc3545;
-    /* Red for cancelled */
-}
-
-.order-row[data-status="returned"] {
-    border-left: 4px solid #db6571;
-    /* Red for cancelled */
-}
 
 /* Status badges styling */
 .status-badge {
@@ -1422,7 +1444,7 @@ body {
 }
 
 .progress-bar {
-    height: 8px;
+    height: 3px;
     background: var(--light-gray);
     border-radius: 4px;
     overflow: hidden;
@@ -1631,7 +1653,7 @@ body {
 
 .stat-card-progress-bar {
     height: 100%;
-    border-radius: 4px;
+    border-radius: var(--border-radius);
     transition: width 0.5s ease;
 }
 
@@ -2634,6 +2656,11 @@ html {
 }
 
 .image-list {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: height 0.5s ease;
+    border: 1px solid var(--border-color);
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
@@ -3032,7 +3059,7 @@ html {
 
 .select-items {
     color: var(--text-color);
-    position: absolute;
+    /* position: absolute; */
     background-color: var(--card-bg);
     top: 100%;
     left: 0;
@@ -3620,6 +3647,10 @@ html {
     padding: 20px;
 }
 
+.customer-order-card {
+    padding-top: 20px !important;
+}
+
 .stuck-cart-item,
 .customer-order-card {
     position: relative;
@@ -3655,12 +3686,28 @@ html {
 
 .cart-info,
 .customer-info {
+    display: flex;
     flex: 1;
+    flex-direction: column;
 }
 
 .cart-customer {
-    font-weight: 600;
+    font-weight: 400;
     margin-bottom: 5px;
+}
+
+.customer-order-id {
+    z-index: 0;
+    border: 1px solid var(--border-color);
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px 4px 4px 0px;
+    font-size: 0.75rem;
+    font-weight: 400;
+    background: var(--hover-color);
+    left: -1px;
+    top: -15px;
+    position: absolute;
 }
 
 .cart-details {
@@ -3888,6 +3935,9 @@ html {
         flex-direction: column;
     }
 
+    .toggle-btn {
+        display: none;
+    }
 
     .sidebar-header {
         margin-block: 5px;
@@ -4685,11 +4735,11 @@ html {
 }
 
 .status-badge {
-    display: inline-block;
+
     padding: 4px 8px;
-    border-radius: 4px;
+    border-radius: 4px 4px 0px 4px;
     font-size: 0.75rem;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 
@@ -7305,4 +7355,10 @@ html {
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-start;
+}
+
+.customer-orders-list {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
 }
