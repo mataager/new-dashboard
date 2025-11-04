@@ -5589,6 +5589,7 @@ html {
     }
 
     .stat-card-header {
+        margin-bottom: 8px;
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
