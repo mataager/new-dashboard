@@ -1,0 +1,2411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/hugeicons@latest/dist/hugeicons.min.js"></script>
+
+
+    <link rel="stylesheet" href="./assets/css/css0.css">
+    <link rel="stylesheet" href="./assets/css/Pos.css">
+
+
+    <link rel="stylesheet" href="./assets/css/transition.css">
+    <!-- <script src="./assets/js/transition.js"></script> -->
+    <!-- <script src="./assets/js/select.js"></script> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        // Immediately check for theme preference before page renders
+        (function () {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+            // Add class to prevent FOUC
+            document.documentElement.classList.add('theme-loaded');
+        })();
+    </script>
+
+
+</head>
+
+<body>
+
+    <div class="main-content" style="opacity: 1 !important;">
+        <div id="Pos" class="content-section animatedtoup active show" style="display: block;">
+
+
+
+            <div class="navigation-container">
+
+                <div class="navigation-tabs">
+                    <div class="navigation-tab active" data-tab="home"><i class="bi bi-columns-gap"></i> Home</div>
+                    <div class="navigation-tab" data-tab="history"><i class="bi bi-clock-history"></i> History</div>
+                    <div class="navigation-tab" data-tab="billing"><i class="bi bi-wallet"></i> Billing &amp; Balance
+                    </div>
+                    <div class="navigation-tab"><i class="bi bi-person-gear"></i> account</div>
+
+                    <div class="tab-indicator"></div>
+                </div>
+                <div class="navigation-tabs">
+                    <div class="navigation-tab active" data-tab="pos"><i class="bi bi-pc-display"></i> Pos</div>
+                    <div class="navigation-tab" data-tab="history"><i class="bi bi-globe"></i> Site</div>
+
+
+
+                    <div class="tab-indicator"></div>
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+
+        <!-- POS Container -->
+        <div class="form-container">
+            <div class="posSreachBox">
+                <input type="text" placeholder="Search orders..." id="orderSearch">
+                <i class="bi bi-upc-scan"></i>
+            </div>
+
+
+            <div class="pos-container">
+                <!-- Products Section -->
+                <div class="products-section">
+
+                    <h3 class="section-title">Products</h3>
+                    <div class="badgebtn absoluteTopRight">Add New <i class="bi bi-plus-circle"></i></div>
+
+
+
+
+                    <div class="category-tabs">
+                        <div class="category-tab active">All Products</div>
+                        <div class="category-tab">Electronics</div>
+                        <div class="category-tab">Clothing</div>
+                        <div class="category-tab">Home & Kitchen</div>
+                        <div class="category-tab">Beauty</div>
+                        <div class="category-tab">Sports</div>
+                    </div>
+
+                    <div class="products-grid">
+                        <!-- Product 1 -->
+                        <div class="product-card" data-id="1" data-name="Wireless Headphones" data-price="89.99">
+                            <div class="product-image">
+                                <img style="border-radius: 5px;"
+                                    src="https://assets.adidas.com/images/w_940,f_auto,q_auto/442cbdbfed544ea994b404c21abf9aeb_9366/JR3416_01_00_standard.jpg"
+                                    width="150px">
+                            </div>
+                            <div class="product-card-details">
+                                <div class="product-name">Wireless Headphones</div>
+                                <div class="product-price">$89.99</div>
+                                <div class="product-stock">In Stock: 15</div>
+                                <div class="product-options">
+                                    <div class="option-row">
+                                        <div class="option-label"><i class="bi bi-paint-bucket"></i></div>
+                                        <div class="option-values">
+
+                                            <div class="option-value">White</div>
+
+                                        </div>
+                                        <div class="option-label"><i class="bi bi-arrow-down-short"></i>
+                                        </div>
+                                    </div>
+                                    <div class="option-row">
+                                        <div class="option-label"><i class="bi bi-rulers"></i></div>
+                                        <div class="option-values">
+
+
+                                            <div class="option-value">US 40</div>
+                                        </div>
+                                        <div class="option-label"><i class="bi bi-arrow-down-short"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="option-label"><i class="bi bi-three-dots-vertical"></i></div>
+                        </div>
+
+
+                        <!-- <div class="product-card" data-id="2" data-name="Smart Watch" data-price="199.99">
+                            <div class="product-image">
+                                <i class="bi bi-smartwatch"></i>
+                            </div>
+                            <div class="product-card-details">
+                                <div class="product-name">Smart Watch</div>
+                                <div class="product-price">$199.99</div>
+                                <div class="product-stock">In Stock: 8</div>
+                                <div class="product-options">
+                                    <div class="option-row">
+                                        <div class="option-label">Size:</div>
+                                        <div class="option-values">
+                                            <div class="option-value selected">42mm</div>
+                                            <div class="option-value">46mm</div>
+                                        </div>
+                                    </div>
+                                    <div class="option-row">
+                                        <div class="option-label">Color:</div>
+                                        <div class="option-values">
+                                            <div class="option-value selected">Black</div>
+                                            <div class="option-value">Silver</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                       
+                        <div class="product-card" data-id="3" data-name="Laptop Backpack" data-price="49.99">
+                            <div class="product-image">
+                                <i class="bi bi-bag"></i>
+                            </div>
+                            <div class="product-card-details">
+                                <div class="product-name">Laptop Backpack</div>
+                                <div class="product-price">$49.99</div>
+                                <div class="product-stock">In Stock: 22</div>
+                                <div class="product-options">
+                                    <div class="option-row">
+                                        <div class="option-label">Color:</div>
+                                        <div class="option-values">
+                                            <div class="option-value selected">Gray</div>
+                                            <div class="option-value">Black</div>
+                                            <div class="option-value">Navy</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="product-card" data-id="4" data-name="Bluetooth Speaker" data-price="59.99">
+                            <div class="product-image">
+                                <i class="bi bi-speaker"></i>
+                            </div>
+                            <div class="product-card-details">
+                                <div class="product-name">Bluetooth Speaker</div>
+                                <div class="product-price">$59.99</div>
+                                <div class="product-stock">In Stock: 12</div>
+                                <div class="product-options">
+                                    <div class="option-row">
+                                        <div class="option-label">Color:</div>
+                                        <div class="option-values">
+                                            <div class="option-value selected">Black</div>
+                                            <div class="option-value">Red</div>
+                                            <div class="option-value">Blue</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="product-card" data-id="5" data-name="Phone Case" data-price="19.99">
+                            <div class="product-image">
+                                <i class="bi bi-phone"></i>
+                            </div>
+                            <div class="product-card-details">
+                                <div class="product-name">Phone Case</div>
+                                <div class="product-price">$19.99</div>
+                                <div class="product-stock">In Stock: 35</div>
+                                <div class="product-options">
+                                    <div class="option-row">
+                                        <div class="option-label">Model:</div>
+                                        <div class="option-values">
+                                            <div class="option-value selected">iPhone 14</div>
+                                            <div class="option-value">Samsung S23</div>
+                                        </div>
+                                    </div>
+                                    <div class="option-row">
+                                        <div class="option-label">Color:</div>
+                                        <div class="option-values">
+                                            <div class="option-value selected">Clear</div>
+                                            <div class="option-value">Black</div>
+                                            <div class="option-value">Pink</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                      
+                        <div class="product-card" data-id="6" data-name="Desk Lamp" data-price="34.99">
+                            <div class="product-image">
+                                <i class="bi bi-lamp"></i>
+                            </div>
+                            <div class="product-card-details">
+                                <div class="product-name">Desk Lamp</div>
+                                <div class="product-price">$34.99</div>
+                                <div class="product-stock">In Stock: 18</div>
+                                <div class="product-options">
+                                    <div class="option-row">
+                                        <div class="option-label">Color:</div>
+                                        <div class="option-values">
+                                            <div class="option-value selected">White</div>
+                                            <div class="option-value">Black</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                      
+                        <div class="product-card" data-id="7" data-name="Water Bottle" data-price="24.99">
+                            <div class="product-image">
+                                <i class="bi bi-cup-straw"></i>
+                            </div>
+                            <div class="product-card-details">
+                                <div class="product-name">Water Bottle</div>
+                                <div class="product-price">$24.99</div>
+                                <div class="product-stock">In Stock: 30</div>
+                                <div class="product-options">
+                                    <div class="option-row">
+                                        <div class="option-label">Size:</div>
+                                        <div class="option-values">
+                                            <div class="option-value selected">500ml</div>
+                                            <div class="option-value">750ml</div>
+                                            <div class="option-value">1L</div>
+                                        </div>
+                                    </div>
+                                    <div class="option-row">
+                                        <div class="option-label">Color:</div>
+                                        <div class="option-values">
+                                            <div class="option-value selected">Blue</div>
+                                            <div class="option-value">Green</div>
+                                            <div class="option-value">Pink</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                      
+                        <div class="product-card" data-id="8" data-name="Wireless Mouse" data-price="29.99">
+                            <div class="product-image">
+                                <i class="bi bi-mouse"></i>
+                            </div>
+                            <div class="product-card-details">
+                                <div class="product-name">Wireless Mouse</div>
+                                <div class="product-price">$29.99</div>
+                                <div class="product-stock">In Stock: 25</div>
+                                <div class="product-options">
+                                    <div class="option-row">
+                                        <div class="option-label">Color:</div>
+                                        <div class="option-values">
+                                            <div class="option-value selected">Black</div>
+                                            <div class="option-value">White</div>
+                                            <div class="option-value">Gray</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+
+                <!-- Cart Section -->
+                <div class="cart-section">
+                    <h3 class="section-title">Current Order</h3>
+
+                    <div class="cart-items" id="cart-items">
+                        <div class="cart-item">
+                            <div class="item-image">
+                                <img
+                                    src="https://assets.adidas.com/images/w_940,f_auto,q_auto/442cbdbfed544ea994b404c21abf9aeb_9366/JR3416_01_00_standard.jpg">
+                            </div>
+                            <div class="item-info">
+                                <div class="item-name">Wireless Headphones</div>
+                                <div class="item-price">$89.99</div>
+                            </div>
+                            <div class="item-quantity">
+                                <button class="quantity-btn decrease" data-id="1">-</button>
+                                <span class="quantity">6</span>
+                                <button class="quantity-btn increase" data-id="1">+</button>
+                            </div>
+                            <div class="item-total">$539.94</div>
+                            <button class="remove-item" data-id="1">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </div>
+                        <div class="cart-item">
+                            <div class="item-image">
+                                <img
+                                    src="https://assets.adidas.com/images/w_940,f_auto,q_auto/442cbdbfed544ea994b404c21abf9aeb_9366/JR3416_01_00_standard.jpg">
+                            </div>
+                            <div class="item-info">
+                                <div class="item-name">Smart Watch</div>
+                                <div class="item-price">$199.99</div>
+                            </div>
+                            <div class="item-quantity">
+                                <button class="quantity-btn decrease" data-id="2">-</button>
+                                <span class="quantity">4</span>
+                                <button class="quantity-btn increase" data-id="2">+</button>
+                            </div>
+                            <div class="item-total">$799.96</div>
+                            <button class="remove-item" data-id="2">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="cart-summary">
+                        <div class="pos-summary-row">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">$1339.90</span>
+                        </div>
+                        <div class="pos-summary-row">
+                            <span>Tax (10%):</span>
+                            <span id="tax">$133.99</span>
+                        </div>
+                        <div class="pos-summary-row summary-total">
+                            <span>Total:</span>
+                            <span id="total">$1473.89</span>
+                        </div>
+                    </div>
+
+
+                    <!-- Promo Section -->
+                    <div class="promo-section">
+                        <div class="promo-method-row promo-header" id="promo-header">
+                            <div class="flex align-center gap5">
+                                <span>newuser11x (10% off)</span>
+                            </div>
+                            <span class="change-link">Change Promo <i class="bi bi-arrow-right-short"></i></span>
+                        </div>
+
+                        <div class="promo-options" id="promo-options" style="display: none;">
+                            <div class="promo-input-group">
+                                <input type="text" placeholder="Enter promo code" class="promo-input" id="promo-input">
+                                <button class="btn btn-primary btn-sm" id="apply-promo">Apply</button>
+                            </div>
+                            <div class="available-promos">
+                                <div class="promo-option active" data-code="newuser11x" data-discount="10">
+                                    <div class="promo-info">
+                                        <strong>newuser11x</strong>
+                                        <span>10% off</span>
+                                    </div>
+                                    <i class="bi bi-check-circle-fill"></i>
+                                </div>
+                                <div class="promo-option" data-code="welcome15" data-discount="15">
+                                    <div class="promo-info">
+                                        <strong>welcome15</strong>
+                                        <span>15% off</span>
+                                    </div>
+                                    <i class="bi bi-check-circle"></i>
+                                </div>
+                                <div class="promo-option" data-code="save20" data-discount="20">
+                                    <div class="promo-info">
+                                        <strong>save20</strong>
+                                        <span>20% off</span>
+                                    </div>
+                                    <i class="bi bi-check-circle"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Method Section -->
+                    <div class="payment-section">
+                        <div class="promo-method-row payment-header" id="payment-header">
+                            <div class="flex align-center gap5">
+                                <img src="https://www.mastercard.com/content/dam/brandcenter/assets/images/logos/mclogo-for-footer.svg"
+                                    width="30px">
+                                <span>Credit Card</span>
+                            </div>
+                            <span class="change-link">Change method <i class="bi bi-arrow-right-short"></i></span>
+                        </div>
+
+                        <div class="payment-options" id="payment-options" style="display: none;">
+                            <div class="payment-option active" data-method="credit-card">
+                                <div class="payment-info">
+                                    <img src="https://www.mastercard.com/content/dam/brandcenter/assets/images/logos/mclogo-for-footer.svg"
+                                        width="30px">
+                                    <span>Credit Card</span>
+                                </div>
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+                            <div class="payment-option" data-method="paypal">
+                                <div class="payment-info">
+                                    <img src="https://www.paypalobjects.com/webstatic/icon/pp258.png" width="30px">
+                                    <span>PayPal</span>
+                                </div>
+                                <i class="bi bi-check-circle"></i>
+                            </div>
+                            <div class="payment-option" data-method="apple-pay">
+                                <div class="payment-info">
+                                    <img src="https://ali-printing.com/wp-content/uploads/2023/03/Vodafone-Cash-Logo.png"
+                                        width="30px">
+                                    <span>Mobile Wallet</span>
+                                </div>
+                                <i class="bi bi-check-circle"></i>
+                            </div>
+                            <div class="payment-option" data-method="cash">
+                                <div class="payment-info">
+                                    <img src="https://cdn3d.iconscout.com/3d/premium/thumb/holding-money-3d-icon-png-download-5498859.png?f=webp"
+                                        width="30px">
+                                    <span>Cash</span>
+                                </div>
+                                <i class="bi bi-check-circle"></i>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- promo sec -->
+                    <div class="payment-buttons">
+                        <button class="btn btn-outline" id="clear-cart">
+                            <i class="bi bi-trash"></i> Clear
+                        </button>
+                        <button class="btn btn-primary" id="checkout">
+                            <i class="bi bi-credit-card"></i> Checkout
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <script>
+                // Toggle promo options
+                document.getElementById('promo-header').addEventListener('click', function () {
+                    const promoOptions = document.getElementById('promo-options');
+                    const paymentOptions = document.getElementById('payment-options');
+
+                    promoOptions.style.display = promoOptions.style.display === 'none' ? 'flex' : 'none';
+                    paymentOptions.style.display = 'none';
+                });
+
+                // Toggle payment options
+                document.getElementById('payment-header').addEventListener('click', function () {
+                    const paymentOptions = document.getElementById('payment-options');
+                    const promoOptions = document.getElementById('promo-options');
+
+                    paymentOptions.style.display = paymentOptions.style.display === 'none' ? 'flex' : 'none';
+                    promoOptions.style.display = 'none';
+                });
+
+                // Select promo option
+                document.querySelectorAll('.promo-option').forEach(option => {
+                    option.addEventListener('click', function () {
+                        // Remove active class from all options
+                        document.querySelectorAll('.promo-option').forEach(opt => {
+                            opt.classList.remove('active');
+                            opt.querySelector('i').className = 'bi bi-check-circle';
+                        });
+
+                        // Add active class to selected option
+                        this.classList.add('active');
+                        this.querySelector('i').className = 'bi bi-check-circle-fill';
+
+                        // Update promo header
+                        const promoCode = this.dataset.code;
+                        const discount = this.dataset.discount;
+                        document.querySelector('#promo-header .flex span').textContent = `${promoCode} (${discount}% off)`;
+
+                        // Close promo options
+                        document.getElementById('promo-options').style.display = 'none';
+
+                        // Recalculate totals with discount
+                        calculateTotals();
+                    });
+                });
+
+                // Select payment method
+                document.querySelectorAll('.payment-option').forEach(option => {
+                    option.addEventListener('click', function () {
+                        // Remove active class from all options
+                        document.querySelectorAll('.payment-option').forEach(opt => {
+                            opt.classList.remove('active');
+                            opt.querySelector('i').className = 'bi bi-check-circle';
+                        });
+
+                        // Add active class to selected option
+                        this.classList.add('active');
+                        this.querySelector('i').className = 'bi bi-check-circle-fill';
+
+                        // Update payment header
+                        const method = this.dataset.method;
+                        const methodName = this.querySelector('.payment-info span').textContent;
+                        document.querySelector('#payment-header .flex span').textContent = methodName;
+
+                        // Close payment options
+                        document.getElementById('payment-options').style.display = 'none';
+                    });
+                });
+
+                // Apply promo code from input
+                document.getElementById('apply-promo').addEventListener('click', function () {
+                    const promoInput = document.getElementById('promo-input');
+                    const promoCode = promoInput.value.trim();
+
+                    if (promoCode) {
+                        // Find matching promo option
+                        const promoOption = Array.from(document.querySelectorAll('.promo-option')).find(option =>
+                            option.dataset.code === promoCode
+                        );
+
+                        if (promoOption) {
+                            promoOption.click();
+                            promoInput.value = '';
+                        } else {
+                            alert('Invalid promo code');
+                        }
+                    }
+                });
+
+                function calculateTotals() {
+                    // Your existing total calculation logic
+                    // Add discount calculation here
+                }
+            </script>
+
+
+            <!-- Receipt receipt-modal -->
+            <div class="receipt-modal" id="receipt-receipt-modal">
+                <div class="receipt-modal-content">
+
+                    <div class="receipt-modal-body">
+                        <div class="receipt" id="printable-receipt">
+                            <div class="receipt-header">
+                                <h2>STORE NAME</h2>
+                                <p>123 Business Street, City, State 12345</p>
+                                <p>Phone: (123) 456-7890</p>
+                                <p>Order #: 00123</p>
+                                <p>Date: <span id="receipt-date"></span></p>
+                            </div>
+                            <div class="receipt-items">
+                                <div class="receipt-item">
+                                    <span>Item</span>
+                                    <span>Qty x Price</span>
+                                    <span>Total</span>
+                                </div>
+                                <div class="receipt-item">
+                                    <span>Wireless Headphones</span>
+                                    <span>6 x $89.99</span>
+                                    <span>$539.94</span>
+                                </div>
+                                <div class="receipt-item">
+                                    <span>Smart Watch</span>
+                                    <span>4 x $199.99</span>
+                                    <span>$799.96</span>
+                                </div>
+                            </div>
+                            <div class="receipt-totals">
+                                <div class="receipt-item">
+                                    <span>Subtotal:</span>
+                                    <span></span>
+                                    <span>$1339.90</span>
+                                </div>
+                                <div class="receipt-item">
+                                    <span>Tax (10%):</span>
+                                    <span></span>
+                                    <span>$133.99</span>
+                                </div>
+                                <div class="receipt-item">
+                                    <span><strong>Total:</strong></span>
+                                    <span></span>
+                                    <span><strong>$1473.89</strong></span>
+                                </div>
+                            </div>
+                            <div class="receipt-footer">
+                                <p>Thank you for your purchase!</p>
+                                <p>Please keep this receipt for your records</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="receipt-modal-footer">
+                        <button class="btn btn-secondary" id="view-receipt">
+                            <i class="bi bi-eye"></i> View Receipt
+                        </button>
+                        <button class="btn btn-primary" id="print-receipt">
+                            <i class="bi bi-printer"></i> Print Receipt
+                        </button>
+                        <button class="btn btn-primary close-receipt-modal">
+                            <i class="bi bi-x"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    // Set current date on receipt
+                    const now = new Date();
+                    document.getElementById('receipt-date').textContent = now.toLocaleDateString() + ' ' + now.toLocaleTimeString();
+
+                    // Product option selection
+                    document.querySelectorAll('.option-value').forEach(option => {
+                        option.addEventListener('click', function () {
+                            const parent = this.parentElement;
+                            parent.querySelectorAll('.option-value').forEach(child => {
+                                child.classList.remove('selected');
+                            });
+                            this.classList.add('selected');
+                        });
+                    });
+
+                    // Checkout button
+                    document.getElementById('checkout').addEventListener('click', function () {
+                        document.getElementById('receipt-receipt-modal').style.display = 'flex';
+                    });
+
+                    // Close receipt-modal
+                    document.querySelector('.close-receipt-modal').addEventListener('click', function () {
+                        document.getElementById('receipt-receipt-modal').style.display = 'none';
+                    });
+
+                    // Print receipt
+                    document.getElementById('print-receipt').addEventListener('click', function () {
+                        const receiptContent = document.getElementById('printable-receipt').innerHTML;
+                        const originalContent = document.body.innerHTML;
+
+                        document.body.innerHTML = receiptContent;
+                        window.print();
+                        document.body.innerHTML = originalContent;
+                        location.reload(); // Reload to restore functionality
+                    });
+
+                    // View receipt in new window
+                    document.getElementById('view-receipt').addEventListener('click', function () {
+                        const receiptContent = document.getElementById('printable-receipt').innerHTML;
+                        const newWindow = window.open('', '_blank');
+                        newWindow.document.write(`
+                                <html>
+                                    <head>
+                                        <title>Receipt</title>
+                                        <style>
+                                            body { font-family: 'Courier New', monospace; padding: 20px; }
+                                            .receipt-header { text-align: center; margin-bottom: 15px; border-bottom: 1px dashed #000; padding-bottom: 10px; }
+                                            .receipt-items { margin: 15px 0; }
+                                            .receipt-item { display: flex; justify-content: space-between; margin-bottom: 5px; }
+                                            .receipt-totals { border-top: 1px dashed #000; padding-top: 10px; margin-top: 15px; }
+                                            .receipt-footer { text-align: center; margin-top: 20px; font-size: 12px; color: #7f8c8d; }
+                                        </sty>
+                                    </head>
+                                    <body>
+                                        ${receiptContent}
+                                    </body>
+                                </html>
+                            `);
+                        newWindow.document.close();
+                    });
+
+                    // Clear cart
+                    document.getElementById('clear-cart').addEventListener('click', function () {
+                        if (confirm('Are you sure you want to clear the cart?')) {
+                            document.getElementById('cart-items').innerHTML = '';
+                            document.getElementById('subtotal').textContent = '$0.00';
+                            document.getElementById('tax').textContent = '$0.00';
+                            document.getElementById('total').textContent = '$0.00';
+                        }
+                    });
+
+                    // Quantity buttons
+                    document.querySelectorAll('.quantity-btn').forEach(button => {
+                        button.addEventListener('click', function () {
+                            const id = this.getAttribute('data-id');
+                            const isIncrease = this.classList.contains('increase');
+                            const quantityElement = this.parentElement.querySelector('.quantity');
+                            let quantity = parseInt(quantityElement.textContent);
+
+                            if (isIncrease) {
+                                quantity++;
+                            } else if (quantity > 1) {
+                                quantity--;
+                            }
+
+                            quantityElement.textContent = quantity;
+                            updateCartItemTotal(id, quantity);
+                            updateCartTotals();
+                        });
+                    });
+
+                    // Remove item
+                    document.querySelectorAll('.remove-item').forEach(button => {
+                        button.addEventListener('click', function () {
+                            const id = this.getAttribute('data-id');
+                            const cartItem = this.closest('.cart-item');
+                            cartItem.remove();
+                            updateCartTotals();
+                        });
+                    });
+
+                    // // Add to cart from products
+                    // document.querySelectorAll('.product-card').forEach(card => {
+                    //     card.addEventListener('click', function (e) {
+                    //         // Don't trigger if clicking on option values
+                    //         if (e.target.classList.contains('option-value')) return;
+
+                    //         const id = this.getAttribute('data-id');
+                    //         const name = this.getAttribute('data-name');
+                    //         const price = parseFloat(this.getAttribute('data-price'));
+
+                    //         addToCart(id, name, price);
+                    //     });
+                    // });
+
+                    // function addToCart(id, name, price) {
+                    //     const cartItems = document.getElementById('cart-items');
+                    //     const existingItem = cartItems.querySelector(`[data-id="${id}"]`);
+
+                    //     if (existingItem) {
+                    //         const quantityElement = existingItem.querySelector('.quantity');
+                    //         let quantity = parseInt(quantityElement.textContent);
+                    //         quantity++;
+                    //         quantityElement.textContent = quantity;
+                    //         updateCartItemTotal(id, quantity);
+                    //     }
+                    //     else {
+                    //         const newItem = document.createElement('div');
+                    //         newItem.className = 'cart-item';
+                    //         newItem.setAttribute('data-id', id);
+                    //         newItem.innerHTML = `
+                    //         <div class="item-image">
+                    //      <img src="https://assets.adidas.com/images/w_940,f_auto,q_auto/442cbdbfed544ea994b404c21abf9aeb_9366/JR3416_01_00_standard.jpg">
+                    //         </div>
+                    //                 <div class="item-info">
+                    //                     <div class="item-name">${name}11</div>
+                    //                     <div class="item-price">$${price.toFixed(2)}</div>
+                    //                 </div>
+                    //                 <div class="item-quantity">
+                    //                     <button class="quantity-btn decrease" data-id="${id}">-</button>
+                    //                     <span class="quantity">1</span>
+                    //                     <button class="quantity-btn increase" data-id="${id}">+</button>
+                    //                 </div>
+                    //                 <div class="item-total">$${price.toFixed(2)}</div>
+                    //                 <button class="remove-item" data-id="${id}">
+                    //                     <i class="bi bi-trash"></i>
+                    //                 </button>
+                    //             `;
+                    //         cartItems.appendChild(newItem);
+
+                    //         // Add event listeners to new buttons
+                    //         newItem.querySelector('.decrease').addEventListener('click', function () {
+                    //             const id = this.getAttribute('data-id');
+                    //             const quantityElement = this.parentElement.querySelector('.quantity');
+                    //             let quantity = parseInt(quantityElement.textContent);
+
+                    //             if (quantity > 1) {
+                    //                 quantity--;
+                    //                 quantityElement.textContent = quantity;
+                    //                 updateCartItemTotal(id, quantity);
+                    //                 updateCartTotals();
+                    //             }
+                    //         });
+
+                    //         newItem.querySelector('.increase').addEventListener('click', function () {
+                    //             const id = this.getAttribute('data-id');
+                    //             const quantityElement = this.parentElement.querySelector('.quantity');
+                    //             let quantity = parseInt(quantityElement.textContent);
+
+                    //             quantity++;
+                    //             quantityElement.textContent = quantity;
+                    //             updateCartItemTotal(id, quantity);
+                    //             updateCartTotals();
+                    //         });
+
+                    //         newItem.querySelector('.remove-item').addEventListener('click', function () {
+                    //             const id = this.getAttribute('data-id');
+                    //             const cartItem = this.closest('.cart-item');
+                    //             cartItem.remove();
+                    //             updateCartTotals();
+                    //         });
+                    //     }
+
+                    //     updateCartTotals();
+                    // }
+
+                    function updateCartItemTotal(id, quantity) {
+                        const cartItem = document.querySelector(`.cart-item[data-id="${id}"]`);
+                        if (cartItem) {
+                            const price = parseFloat(cartItem.querySelector('.item-price').textContent.replace('$', ''));
+                            const total = price * quantity;
+                            cartItem.querySelector('.item-total').textContent = '$' + total.toFixed(2);
+                        }
+                    }
+
+                    function updateCartTotals() {
+                        let subtotal = 0;
+                        document.querySelectorAll('.item-total').forEach(item => {
+                            subtotal += parseFloat(item.textContent.replace('$', ''));
+                        });
+
+                        const tax = subtotal * 0.1;
+                        const total = subtotal + tax;
+
+                        document.getElementById('subtotal').textContent = '$' + subtotal.toFixed(2);
+                        document.getElementById('tax').textContent = '$' + tax.toFixed(2);
+                        document.getElementById('total').textContent = '$' + total.toFixed(2);
+                    }
+                });
+            </script>
+        </div>
+
+        <!-- order history Container -->
+        <div class="form-container">
+
+
+
+            <div class="posSreachBox">
+                <input type="text" placeholder="Search orders..." id="orderSearch">
+
+            </div>
+            <div class="recent-transactions">
+
+
+                <div class="transactions-list">
+                    <!-- Transaction 1 -->
+                    <div class="transaction-item">
+                        <div class="transaction-info">
+                            <h4>Order #00125</h4>
+                            <p>Today, 10:30 AM • 3 items</p>
+                        </div>
+                        <div class="transaction-amount">$159.97</div>
+                        <div class="transaction-status status-completed">Completed</div>
+                    </div>
+
+                    <!-- Transaction 2 -->
+                    <div class="transaction-item">
+                        <div class="transaction-info">
+                            <h4>Order #00124</h4>
+                            <p>Today, 9:15 AM • 2 items</p>
+                        </div>
+                        <div class="transaction-amount">$89.98</div>
+                        <div class="transaction-status status-completed">Completed</div>
+                    </div>
+
+                    <!-- Transaction 3 -->
+                    <div class="transaction-item">
+                        <div class="transaction-info">
+                            <h4>Order #00123</h4>
+                            <p>Yesterday, 4:45 PM • 5 items</p>
+                        </div>
+                        <div class="transaction-amount">$224.95</div>
+                        <div class="transaction-status status-completed">Completed</div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Cart data
+            let cart = [];
+            const cartItemsContainer = document.getElementById('cart-items');
+            const subtotalElement = document.getElementById('subtotal');
+            const taxElement = document.getElementById('tax');
+            const totalElement = document.getElementById('total');
+            const clearCartButton = document.getElementById('clear-cart');
+            const checkoutButton = document.getElementById('checkout');
+
+            // Add product to cart
+            document.querySelectorAll('.product-card').forEach(product => {
+                product.addEventListener('click', function () {
+                    const id = this.getAttribute('data-id');
+                    const name = this.getAttribute('data-name');
+                    const price = parseFloat(this.getAttribute('data-price'));
+
+                    // Check if product already in cart
+                    const existingItem = cart.find(item => item.id === id);
+
+                    if (existingItem) {
+                        existingItem.quantity += 1;
+                    } else {
+                        cart.push({
+                            id,
+                            name,
+                            price,
+                            quantity: 1
+                        });
+                    }
+
+                    updateCartDisplay();
+                });
+            });
+
+            // Update cart display
+            function updateCartDisplay() {
+                // Clear current display
+                cartItemsContainer.innerHTML = '';
+
+                if (cart.length === 0) {
+                    cartItemsContainer.innerHTML = `
+                                    <div class="empty-cart-message">
+                                        <i class="bi bi-cart-x" style="font-size: 48px; margin-bottom: 15px;"></i>
+                                        <p>Cart is empty</p>
+                                        <p style="font-size: 14px;">Add products to get started</p>
+                                    </div>
+                                `;
+                } else {
+                    // Add each cart item
+                    cart.forEach(item => {
+                        const itemElement = document.createElement('div');
+                        itemElement.className = 'cart-item';
+                        itemElement.innerHTML = `
+                         <div class="item-image">
+                                <img
+                                    src="https://assets.adidas.com/images/w_940,f_auto,q_auto/442cbdbfed544ea994b404c21abf9aeb_9366/JR3416_01_00_standard.jpg">
+                            </div>
+                                        <div class="item-info">
+                                            <div class="item-name">${item.name}</div>
+                                            <div class="item-data">White - 40</div>
+                                            <div class="item-price">$${item.price.toFixed(2)}</div>
+                                        </div>
+                                        <div class="item-quantity">
+                                            <button class="quantity-btn decrease" data-id="${item.id}">-</button>
+                                            <span class="quantity">${item.quantity}</span>
+                                            <button class="quantity-btn increase" data-id="${item.id}">+</button>
+                                        </div>
+                                        <div class="item-total">$${(item.price * item.quantity).toFixed(2)}</div>
+                                        <button class="remove-item" data-id="${item.id}">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    `;
+                        cartItemsContainer.appendChild(itemElement);
+                    });
+
+                    // Add event listeners to quantity buttons
+                    document.querySelectorAll('.decrease').forEach(button => {
+                        button.addEventListener('click', function () {
+                            const id = this.getAttribute('data-id');
+                            const item = cart.find(item => item.id === id);
+
+                            if (item.quantity > 1) {
+                                item.quantity -= 1;
+                            } else {
+                                cart = cart.filter(item => item.id !== id);
+                            }
+
+                            updateCartDisplay();
+                        });
+                    });
+
+                    document.querySelectorAll('.increase').forEach(button => {
+                        button.addEventListener('click', function () {
+                            const id = this.getAttribute('data-id');
+                            const item = cart.find(item => item.id === id);
+                            item.quantity += 1;
+                            updateCartDisplay();
+                        });
+                    });
+
+                    document.querySelectorAll('.remove-item').forEach(button => {
+                        button.addEventListener('click', function () {
+                            const id = this.getAttribute('data-id');
+                            cart = cart.filter(item => item.id !== id);
+                            updateCartDisplay();
+                        });
+                    });
+                }
+
+                // Update totals
+                updateTotals();
+            }
+
+            // Update cart totals
+            function updateTotals() {
+                const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                const tax = subtotal * 0.1; // 10% tax
+                const total = subtotal + tax;
+
+                subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+                taxElement.textContent = `$${tax.toFixed(2)}`;
+                totalElement.textContent = `$${total.toFixed(2)}`;
+            }
+
+            // Clear cart
+            clearCartButton.addEventListener('click', function () {
+                cart = [];
+                updateCartDisplay();
+            });
+
+            // Checkout
+            checkoutButton.addEventListener('click', function () {
+                if (cart.length === 0) {
+                    alert('Your cart is empty. Add some products before checkout.');
+                    return;
+                }
+
+                const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0) * 1.1;
+
+                // In a real application, this would process the payment
+                alert(`Checkout completed! Total: $${total.toFixed(2)}`);
+
+                // Clear cart after successful checkout
+                cart = [];
+                updateCartDisplay();
+            });
+
+            // Category tabs
+            document.querySelectorAll('.category-tab').forEach(tab => {
+                tab.addEventListener('click', function () {
+                    // Remove active class from all tabs
+                    document.querySelectorAll('.category-tab').forEach(t => {
+                        t.classList.remove('active');
+                    });
+
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+
+                    // In a real application, this would filter products by category
+                });
+            });
+        });
+    </script>
+    </div>
+
+    <script>
+        // Simple animation for download buttons
+        document.querySelectorAll('.downloadApp-btn').forEach(button => {
+            button.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // Create a temporary feedback effect
+                const originalText = this.innerHTML;
+                this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Preparing Download...';
+
+                setTimeout(() => {
+                    this.innerHTML = originalText;
+                    alert('Thank you for downloading Matager POS! Your download should begin shortly.');
+                }, 1500);
+            });
+        });
+
+        // Add some interactive elements
+        document.querySelectorAll('.download-card').forEach(card => {
+            card.addEventListener('mouseenter', function () {
+                this.style.transform = 'translateY(-10px)';
+            });
+
+            card.addEventListener('mouseleave', function () {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+    </div>
+
+    <style>
+        .tagline {
+            font-size: 18px;
+            color: #bdc3c7;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .download-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .download-card {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+
+
+
+        .os-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+            color: #3498db;
+        }
+
+        .windows-icon {
+            color: #0078d7;
+        }
+
+        .mac-icon {
+            color: #999;
+        }
+
+
+
+        .version {
+            color: var(--text-color2);
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .features {
+            text-align: left;
+            margin: 25px 0;
+        }
+
+        .features li {
+            color: var(--text-color);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .features i {
+            color: #2ecc71;
+            margin-right: 10px;
+        }
+
+        .downloadApp-btn {
+            display: inline-block;
+            padding: 14px 30px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+            margin-top: 10px;
+        }
+
+        .downloadApp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(52, 152, 219, 0.4);
+        }
+
+        .btn-windows {
+            background: linear-gradient(135deg, #0078d7, #106ebe);
+            box-shadow: 0 4px 15px rgba(0, 120, 215, 0.3);
+        }
+
+        .btn-mac {
+            background: linear-gradient(135deg, #555, #333);
+            box-shadow: 0 4px 15px rgba(85, 85, 85, 0.3);
+        }
+
+        .btn-windows:hover {
+            box-shadow: 0 7px 20px rgba(0, 120, 215, 0.4);
+        }
+
+        .btn-mac:hover {
+            box-shadow: 0 7px 20px rgba(85, 85, 85, 0.4);
+        }
+
+        .info-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 40px;
+            margin-top: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .info-section h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--text-color);
+            text-align: center;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .info-card {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .info-card i {
+            font-size: 40px;
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+
+        .info-card h4 {
+            margin-top: 10px;
+            font-weight: 400;
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+
+        .info-card p {
+            font-weight: 100;
+            color: var(--text-color2);
+            line-height: 1.6;
+        }
+
+
+
+        .system-requirements {
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .system-requirements h4 {
+            margin-bottom: 15px;
+            color: #ecf0f1;
+        }
+
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .requirement-item {
+            color: var(--text-color);
+            margin-bottom: 10px;
+        }
+
+        .requirement-item strong {
+            color: #3498db;
+        }
+
+        @media (max-width: 768px) {
+            .download-section {
+                grid-template-columns: 1fr;
+            }
+
+            .requirements-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+        }
+    </style>
+
+
+
+
+
+
+
+
+
+    <script>
+        // Function to format numbers with commas
+        function formatNumberWithCommas(number) {
+            return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        // Format all currency values on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            // Format values in the orders table
+            const allCells = document.querySelectorAll('td');
+            allCells.forEach(cell => {
+                const text = cell.textContent;
+                if (text.includes('E£') && !text.includes(',')) {
+                    const amount = text.replace(' E£', '').trim();
+                    if (!isNaN(amount.replace(/[^0-9]/g, ''))) {
+                        const numericValue = parseFloat(amount.replace(/[^0-9]/g, ''));
+                        cell.textContent = formatNumberWithCommas(numericValue) + ' E£';
+                    }
+                }
+            });
+
+            // Format values in summary cards
+            const summaryValues = document.querySelectorAll('.summary-info p');
+            summaryValues.forEach(element => {
+                const value = element.textContent;
+                if (!isNaN(value) && value !== '' && !value.includes(',')) {
+                    element.textContent = formatNumberWithCommas(value);
+                }
+            });
+
+            // Format values in dashboard cards
+            const dashboardValues = document.querySelectorAll('.card p');
+            dashboardValues.forEach(element => {
+                const text = element.textContent;
+                // Check if it's a number (not containing letters and not already formatted)
+                if (!isNaN(text) && text !== '' && !text.match(/[a-zA-Z]/) && !text.includes(',')) {
+                    element.textContent = formatNumberWithCommas(text);
+                }
+            });
+        });
+    </script>
+
+    <script>
+        // Set initial state for animation for specific section
+        function initializeSectionElements(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (!section) return;
+
+            const elementsToAnimate = section.querySelectorAll('.dashboard-right-header, .stats-container, .charts-container, .data-grid, .search-box, .orders-controls, .site-table-container, .form-container  ,.animatedtoup');
+
+            // Also get header and main-content if they exist (they're outside sections)
+            const header = document.querySelector('.header');
+            const mainContent = document.querySelector('.main-content');
+
+            elementsToAnimate.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            // Animate header and main-content separately if they exist
+            if (header) {
+                header.style.opacity = '0';
+                header.style.transform = 'translateY(20px)';
+                header.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            }
+
+            if (mainContent) {
+                mainContent.style.opacity = '0';
+                mainContent.style.transform = 'translateY(20px)';
+                mainContent.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            }
+        }
+
+        // Animate elements function for specific section
+        function animateSectionElements(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (!section) return;
+
+            const elementsToAnimate = section.querySelectorAll(' .dashboard-right-header, .stats-container, .charts-container, .data-grid, .search-box, .orders-controls, .site-table-container, .form-container  ,.animatedtoup');
+
+            // Also get header and main-content if they exist
+            const header = document.querySelector('.header');
+            const mainContent = document.querySelector('.main-content');
+
+            elementsToAnimate.forEach((element, index) => {
+                setTimeout(() => {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }, 50 * index); // Reduced delay for faster animation
+            });
+
+            // Animate header and main-content with minimal delay
+            setTimeout(() => {
+                if (header) {
+                    header.style.opacity = '1';
+                    header.style.transform = 'translateY(0)';
+                }
+                if (mainContent) {
+                    mainContent.style.opacity = '1';
+                    mainContent.style.transform = 'translateY(0)';
+                }
+            }, 50);
+        }
+
+        // Reset animation for all elements in a section
+        function resetSectionAnimation(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (!section) return;
+
+            const elementsToAnimate = section.querySelectorAll(' .dashboard-right-header, .stats-container, .charts-container, .data-grid, .search-box, .orders-controls, .site-table-container, .form-container , .animatedtoup');
+            elementsToAnimate.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+            });
+
+            // Re-animate after reset
+            setTimeout(() => animateSectionElements(sectionId), 50);
+        }
+
+
+
+        // // Close dropdown when clicking outside
+        // document.addEventListener('click', function (event) {
+        //     const dropdown = document.getElementById('dropdown');
+        //     const profileIcon = document.querySelector('.profile-icon');
+
+        //     if (!profileIcon.contains(event.target) && !dropdown.contains(event.target)) {
+        //         dropdown.classList.remove('show');
+        //     }
+        // });
+
+        // Update URL with target section
+        function updateURL(target) {
+            const newURL = window.location.origin + window.location.pathname + '#' + target;
+            window.history.replaceState({}, '', newURL);
+        }
+
+        // Get target from URL hash
+        function getTargetFromURL() {
+            const hash = window.location.hash.substring(1);
+            // Validate the target exists
+            const validTargets = ['dashboard', 'orders', 'products', 'customers', 'analytics', 'marketing', 'discounts', 'settings'];
+            return validTargets.includes(hash) ? hash : 'dashboard';
+        }
+
+        // Navigation functionality
+        function setupNavigation() {
+            const navItems = document.querySelectorAll('.nav-item');
+            const contentSections = document.querySelectorAll('.content-section');
+
+            // Get initial target from URL
+            const initialTarget = getTargetFromURL();
+
+            // Set initial active section based on URL
+            navItems.forEach(item => {
+                if (item.getAttribute('data-target') === initialTarget) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+
+            // Hide all sections first
+            contentSections.forEach(section => {
+                // section.style.display = 'none';
+            });
+
+            // Show only the target section
+            const targetSection = document.getElementById(initialTarget);
+            if (targetSection) {
+                targetSection.style.display = 'block';
+                // Initialize animation for this section only
+                initializeSectionElements(initialTarget);
+            }
+
+            // Set up click handlers
+            navItems.forEach(item => {
+                item.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const target = this.getAttribute('data-target');
+                    const targetSection = document.getElementById(target);
+
+                    if (!targetSection) return;
+
+                    // Remove active class from all items
+                    navItems.forEach(navItem => {
+                        navItem.classList.remove('active');
+                    });
+
+                    // Add active class to clicked item
+                    this.classList.add('active');
+
+                    // Hide all content sections
+                    contentSections.forEach(section => {
+                        section.style.display = 'none';
+                    });
+
+                    // Show the target section
+                    targetSection.style.display = 'block';
+                    updateURL(target);
+
+                    // Reset and animate only the current section
+                    resetSectionAnimation(target);
+
+                    // Initialize charts if navigating to analytics
+                    if (target === 'analytics') {
+                        setTimeout(initializeCharts, 100);
+                    }
+                });
+            });
+        }
+
+        // Handle browser back/forward navigation
+        window.addEventListener('hashchange', function () {
+            const target = getTargetFromURL();
+            const navItems = document.querySelectorAll('.nav-item');
+            const contentSections = document.querySelectorAll('.content-section');
+            const targetSection = document.getElementById(target);
+
+            if (!targetSection) return;
+
+            // Update active nav item
+            navItems.forEach(item => {
+                if (item.getAttribute('data-target') === target) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+
+            // Hide all sections
+            contentSections.forEach(section => {
+                section.style.display = 'none';
+            });
+
+            // Show the target section
+            targetSection.style.display = 'block';
+
+            // Reset and animate only the current section
+            resetSectionAnimation(target);
+
+            // Initialize charts if navigating to analytics
+            if (target === 'analytics') {
+                setTimeout(initializeCharts, 100);
+            }
+        });
+
+        // Theme toggle functionality
+        // function setupThemeToggle() {
+        //     const themeToggle = document.getElementById('theme-toggle');
+        //     const savedTheme = localStorage.getItem('theme');
+
+        //     // Set initial theme
+        //     if (savedTheme) {
+        //         document.documentElement.setAttribute('data-theme', savedTheme);
+        //         themeToggle.checked = savedTheme === 'dark';
+        //     }
+
+        //     // Toggle theme on change
+        //     themeToggle.addEventListener('change', function () {
+        //         if (this.checked) {
+        //             document.documentElement.setAttribute('data-theme', 'dark');
+        //             localStorage.setItem('theme', 'dark');
+        //         } else {
+        //             document.documentElement.setAttribute('data-theme', 'light');
+        //             localStorage.setItem('theme', 'light');
+        //         }
+        //     });
+        // }
+
+        // Initialize everything on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            setupNavigation();
+            // setupThemeToggle();
+
+            // Get initial target from URL
+            const initialTarget = getTargetFromURL();
+
+            // Start animation for the initial section after a short delay
+            setTimeout(() => animateSectionElements(initialTarget), 100);
+
+            // Setup logout functionality
+            const logoutLink = document.getElementById('logoutLink');
+            if (logoutLink) {
+                logoutLink.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    // Add your logout logic here
+                    alert('Logout functionality would be implemented here');
+                });
+            }
+
+            // Initialize charts if on analytics page
+            if (initialTarget === 'analytics') {
+                setTimeout(initializeCharts, 200);
+            }
+        });
+
+        // Initialize charts for analytics page
+        function initializeCharts() {
+            // Check if Chart.js is available
+            if (typeof Chart !== 'undefined') {
+                // Revenue Chart
+                const revenueCtx = document.getElementById('revenueChart');
+                if (revenueCtx) {
+                    new Chart(revenueCtx, {
+                        type: 'line',
+                        data: {
+                            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                            datasets: [{
+                                label: 'Revenue',
+                                data: [12000, 19000, 15000, 24000, 21000, 24582],
+                                borderColor: '#4361ee',
+                                tension: 0.3,
+                                fill: true,
+                                backgroundColor: 'rgba(67, 97, 238, 0.1)'
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                legend: {
+                                    display: false
+                                }
+                            }
+                        }
+                    });
+                }
+
+                // Category Chart
+                const categoryCtx = document.getElementById('categoryChart');
+                if (categoryCtx) {
+                    new Chart(categoryCtx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['T-Shirts', 'Jeans', 'Hoodies', 'Footwear', 'Accessories'],
+                            datasets: [{
+                                data: [30, 25, 20, 15, 10],
+                                backgroundColor: [
+                                    '#4361ee',
+                                    '#3a0ca3',
+                                    '#f72585',
+                                    '#4cc9f0',
+                                    '#f9c74f'
+                                ]
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                legend: {
+                                    position: 'bottom'
+                                }
+                            }
+                        }
+                    });
+                }
+            }
+        }
+    </script>
+
+
+    <!--  // handle the datatabs  -->
+    <script>
+        // handle the datatabs 
+        // Universal Tab System
+        class UniversalTabSystem {
+            constructor() {
+                this.init();
+            }
+
+            init() {
+                // Initialize all tab containers on page load
+                document.addEventListener('DOMContentLoaded', () => {
+                    this.initializeAllTabs();
+                    this.setupGlobalEventHandlers();
+                });
+            }
+
+            initializeAllTabs() {
+                // Find all tab containers in the document
+                const tabContainers = document.querySelectorAll('[data-tab-container]');
+
+                tabContainers.forEach(container => {
+                    this.initializeTabContainer(container);
+                });
+
+                // Also initialize any legacy containers without data attribute
+                const legacyContainers = document.querySelectorAll('.form-container');
+                legacyContainers.forEach(container => {
+                    if (container.querySelector('.tab-button') && !container.hasAttribute('data-tab-container')) {
+                        this.initializeTabContainer(container);
+                    }
+                });
+            }
+
+            initializeTabContainer(container) {
+                const tabButtons = container.querySelectorAll('.tab-button');
+                const tabContents = container.querySelectorAll('.tab-content');
+
+                if (tabButtons.length === 0) return;
+
+                tabButtons.forEach(button => {
+                    // Remove existing event listeners to prevent duplicates
+                    button.replaceWith(button.cloneNode(true));
+                });
+
+                // Re-select buttons after cloning
+                const freshTabButtons = container.querySelectorAll('.tab-button');
+
+                freshTabButtons.forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        this.handleTabClick(e, container);
+                    });
+                });
+
+                // Activate first tab by default if none active
+                const activeTabExists = Array.from(freshTabButtons).some(btn => btn.classList.contains('active'));
+                if (!activeTabExists && freshTabButtons.length > 0) {
+                    freshTabButtons[0].click();
+                }
+            }
+
+            handleTabClick(event, container) {
+                const button = event.currentTarget;
+                const tabId = button.getAttribute('data-tab');
+
+                if (!tabId) {
+                    console.warn('Tab button missing data-tab attribute:', button);
+                    return;
+                }
+
+                const tabButtons = container.querySelectorAll('.tab-button');
+                const tabContents = container.querySelectorAll('.tab-content');
+
+                // Update active tab button
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                // Show active tab content
+                tabContents.forEach(content => content.classList.remove('active'));
+
+                const targetContent = document.getElementById(`${tabId}-content`);
+                if (targetContent) {
+                    targetContent.classList.add('active');
+                } else {
+                    console.warn(`Tab content not found: ${tabId}-content`);
+                }
+
+                // Dispatch custom event for additional functionality
+                this.dispatchTabChangeEvent(container, tabId);
+            }
+
+            dispatchTabChangeEvent(container, tabId) {
+                const event = new CustomEvent('tabChanged', {
+                    detail: {
+                        container: container,
+                        tabId: tabId,
+                        timestamp: Date.now()
+                    }
+                });
+                container.dispatchEvent(event);
+            }
+
+            setupGlobalEventHandlers() {
+                // Global filter handler
+                document.addEventListener('input', this.debounce((e) => {
+                    if (e.target.matches('[data-filter]')) {
+                        this.handleFilter(e.target);
+                    }
+                }, 300));
+
+                // Global sort handler
+                document.addEventListener('change', (e) => {
+                    if (e.target.matches('[data-sort]')) {
+                        this.handleSort(e.target);
+                    }
+                });
+
+                // Global search handler
+                document.addEventListener('input', this.debounce((e) => {
+                    if (e.target.matches('[data-search]')) {
+                        this.handleSearch(e.target);
+                    }
+                }, 300));
+
+                // Global action buttons handler
+                document.addEventListener('click', (e) => {
+                    if (e.target.matches('[data-action]') || e.target.closest('[data-action]')) {
+                        this.handleAction(e);
+                    }
+                });
+            }
+
+            // Filter functionality
+            handleFilter(filterElement) {
+                const filterValue = filterElement.value;
+                const target = filterElement.getAttribute('data-filter-target') || '.item-card, .discount-card, .campaign-item';
+                const container = this.findParentContainer(filterElement);
+
+                const items = container.querySelectorAll(target);
+
+                items.forEach(item => {
+                    const statusElement = item.querySelector('.status-badge, [data-status]');
+                    let status = '';
+
+                    if (statusElement) {
+                        status = statusElement.getAttribute('data-status') ||
+                            Array.from(statusElement.classList)
+                                .find(cls => cls.startsWith('status-'))
+                                ?.replace('status-', '') || '';
+                    }
+
+                    if (filterValue === 'all' || filterValue === status) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            }
+
+            // Sort functionality
+            handleSort(sortElement) {
+                const sortValue = sortElement.value;
+                const container = this.findParentContainer(sortElement);
+                const target = sortElement.getAttribute('data-sort-target') || '.item-card, .discount-card, .campaign-item';
+
+                // In a real application, this would sort the data
+                console.log(`Sorting by: ${sortValue} in container:`, container);
+
+                // Dispatch custom event for specific sorting implementations
+                const event = new CustomEvent('contentSorted', {
+                    detail: {
+                        sortBy: sortValue,
+                        container: container,
+                        target: target
+                    }
+                });
+                container.dispatchEvent(event);
+            }
+
+            // Search functionality
+            handleSearch(searchElement) {
+                const searchTerm = searchElement.value.toLowerCase();
+                const container = this.findParentContainer(searchElement);
+                const target = searchElement.getAttribute('data-search-target') || '.item-card, .discount-card, .campaign-item';
+                const nameSelector = searchElement.getAttribute('data-name-selector') || '.discount-name, .campaign-name, .item-name';
+
+                const items = container.querySelectorAll(target);
+
+                items.forEach(item => {
+                    const nameElement = item.querySelector(nameSelector);
+                    if (nameElement) {
+                        const name = nameElement.textContent.toLowerCase();
+                        if (name.includes(searchTerm)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    }
+                });
+            }
+
+            // Action buttons handler
+            handleAction(event) {
+                const button = event.target.closest('[data-action]');
+                const action = button.getAttribute('data-action');
+                const item = this.findParentItem(button);
+
+                let itemName = 'item';
+                const nameElement = item?.querySelector('.discount-name, .campaign-name, .item-name');
+                if (nameElement) {
+                    itemName = nameElement.textContent;
+                }
+
+                switch (action) {
+                    case 'view':
+                        alert(`Viewing details for: ${itemName}`);
+                        break;
+
+                    case 'edit':
+                        alert(`Editing: ${itemName}`);
+                        break;
+
+                    case 'copy':
+                        const codeElement = item?.querySelector('[data-code]') || nameElement;
+                        if (codeElement) {
+                            const code = codeElement.getAttribute('data-code') || codeElement.textContent;
+                            navigator.clipboard.writeText(code).then(() => {
+                                this.showCopyFeedback(button);
+                            });
+                        }
+                        break;
+
+                    case 'delete':
+                        if (confirm(`Are you sure you want to delete ${itemName}?`)) {
+                            alert(`Deleting: ${itemName}`);
+                        }
+                        break;
+
+                    case 'schedule':
+                        alert(`Scheduling: ${itemName}`);
+                        break;
+
+                    case 'renew':
+                        alert(`Renewing: ${itemName}`);
+                        break;
+
+                    case 'export':
+                        alert('Exporting data...');
+                        break;
+
+                    case 'add':
+                        alert('Opening creation form...');
+                        break;
+
+                    default:
+                        console.log(`Action "${action}" triggered for: ${itemName}`);
+                }
+            }
+
+            // Utility functions
+            findParentContainer(element) {
+                return element.closest('[data-tab-container]') ||
+                    element.closest('.form-container') ||
+                    element.closest('.tab-content') ||
+                    document.body;
+            }
+
+            findParentItem(element) {
+                return element.closest('.item-card, .discount-card, .campaign-item, [data-item]');
+            }
+
+            showCopyFeedback(button) {
+                const originalHtml = button.innerHTML;
+                button.innerHTML = '<i class="bi bi-check"></i> Copied!';
+                button.disabled = true;
+
+                setTimeout(() => {
+                    button.innerHTML = originalHtml;
+                    button.disabled = false;
+                }, 2000);
+            }
+
+            debounce(func, wait) {
+                let timeout;
+                return function executedFunction(...args) {
+                    const later = () => {
+                        clearTimeout(timeout);
+                        func(...args);
+                    };
+                    clearTimeout(timeout);
+                    timeout = setTimeout(later, wait);
+                };
+            }
+
+            // Public method to refresh tabs (useful for dynamic content)
+            refreshTabs() {
+                this.initializeAllTabs();
+            }
+
+            // Public method to add new tab container dynamically
+            addTabContainer(container) {
+                this.initializeTabContainer(container);
+            }
+        }
+
+        // Initialize the universal tab system
+        const universalTabs = new UniversalTabSystem();
+
+        // Export for use in other modules
+        window.UniversalTabSystem = universalTabs;
+    </script>
+    <!--  // handle the datatabs  -->
+
+
+    </div>
+    <!--  sliding side panel  -->
+    <div id="side-panel-overlay" class="side-panel-overlay"></div>
+    <div id="side-panel" class="side-panel">
+        <div class="side-panel-header">
+            <h2 id="side-panel-title" class="side-panel-title">Details</h2>
+            <button class="side-panel-close" onclick="closeSidePanel()">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <div id="side-panel-content" class="side-panel-content">
+            <!-- Content will be dynamically inserted her -->
+        </div>
+    </div>
+    <script>
+        // Enhanced Side Panel Functions with Order Items Support
+        let currentSidePanelType = null;
+        let currentSidePanelData = null;
+        let closeTimeout = null;
+
+        // Open side panel with data
+        function openSidePanel(type, data) {
+            currentSidePanelType = type;
+            currentSidePanelData = data;
+
+            const sidePanel = document.getElementById('side-panel');
+            const overlay = document.getElementById('side-panel-overlay');
+
+            // Remove closing classes if they exist
+            sidePanel.classList.remove('closing');
+            overlay.classList.remove('closing');
+
+            // Set panel content based on type
+            setSidePanelContent(type, data);
+
+            // Show panel and overlay
+            sidePanel.classList.add('active');
+            overlay.classList.add('active');
+
+            // Prevent body scrolling
+            document.body.style.overflow = 'hidden';
+
+            // Clear any existing close timeout
+            if (closeTimeout) {
+                clearTimeout(closeTimeout);
+                closeTimeout = null;
+            }
+        }
+
+        // Close side panel with animation
+        function closeSidePanel() {
+            const sidePanel = document.getElementById('side-panel');
+            const overlay = document.getElementById('side-panel-overlay');
+
+            // Add closing classes for animation
+            sidePanel.classList.add('closing');
+            overlay.classList.add('closing');
+
+            // Wait for animation to complete before hiding
+            closeTimeout = setTimeout(() => {
+                sidePanel.classList.remove('active', 'closing');
+                overlay.classList.remove('active', 'closing');
+
+                // Restore body scrolling
+                document.body.style.overflow = '';
+
+                // Reset current data
+                currentSidePanelType = null;
+                currentSidePanelData = null;
+
+                closeTimeout = null;
+            }, 200);
+        }
+
+        // Enhanced set content function with order items support
+        function setSidePanelContent(type, data) {
+            const title = document.getElementById('side-panel-title');
+            const content = document.getElementById('side-panel-content');
+
+            // Reset content with loading state
+            content.innerHTML = `
+            <div style="display: flex; justify-content: center; align-items: center; height: 200px;">
+                <div class="loading-spinner"></div>
+            </div>
+        `;
+
+            // Small delay to show loading and ensure smooth transition
+            setTimeout(() => {
+                switch (type) {
+                    case 'store':
+                        title.textContent = 'Store Details';
+                        content.innerHTML = generateStoreContent(data);
+                        break;
+                    case 'request':
+                        title.textContent = 'Request Details';
+                        content.innerHTML = generateRequestContent(data);
+                        break;
+                    case 'report':
+                        title.textContent = 'Report Details';
+                        content.innerHTML = generateReportContent(data);
+                        break;
+                    case 'order':
+                        title.textContent = 'Order Details';
+                        content.innerHTML = generateOrderContent(data);
+                        break;
+                    default:
+                        title.textContent = 'Details';
+                        content.innerHTML = '<p>No information available.</p>';
+                }
+
+                // Scroll to top when content loads
+                content.scrollTop = 0;
+
+                // Initialize interactive elements
+                initializeInteractiveElements();
+            }, 100);
+        }
+
+        // New function to generate order content
+        function generateOrderContent(data) {
+            return `
+            <div class="order-details-container">
+                <!-- Order Header -->
+                <h3 class="section-title">Order ID & Date</h3>
+                <div class="order-header">
+                    <div class="order-meta">
+                        <div class="order-id">Order #${data.id || 'N/A'}</div>
+                        <div class="order-date">${data.date || '2 hours ago'}</div>
+                    </div>
+                </div>
+    
+                <!-- Customer Information -->
+                <div class="customer-section">
+                    <h3 class="section-title">Customer Information</h3>
+                    <div class="customer-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Name:</span>
+                            <span class="detail-value">${data.customer?.name || 'Mohamed Ahmed'}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Phone:</span>
+                            <span class="detail-value">${data.customer?.phone || '+20 123 456 7890'}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Email:</span>
+                            <span class="detail-value">${data.customer?.email || 'mohamed. ahmed@example.com'}</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Address:</span>
+                            <span class="detail-value">${data.customer?.address || '123 Main St, Cairo, Egypt'}</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Order Items -->
+                <div class="items-section">
+                    <h3 class="section-title">Order Items (${data.items?.length || 0})</h3>
+                    <div class="order-items">
+                        ${generateOrderItems(data.items || data.defaultItems)}
+                    </div>
+                </div>
+    
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <h3 class="section-title">Order Summary</h3>
+                    <div class="summary-details">
+                        <div class="pos-summary-row">
+                            <span class="summary-label">Subtotal:</span>
+                            <span class="summary-value">${data.subtotal || '14,750 EGP'}</span>
+                        </div>
+                        <div class="pos-summary-row">
+                            <span class="summary-label">Shipping:</span>
+                            <span class="summary-value">${data.shipping || '50 EGP'}</span>
+                        </div>
+                        <div class="pos-summary-row">
+                            <span class="summary-label">Tax:</span>
+                            <span class="summary-value">${data.tax || '200 EGP'}</span>
+                        </div>
+                        <div class="pos-summary-row total">
+                            <span class="summary-label">Total:</span>
+                            <span class="summary-value">${data.total || '15,000 EGP'}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shipping Method -->
+<div class="shipping-section">
+    <h3 class="section-title">Shipping Methods</h3>
+    <div class="shipping-methods">
+        <div class="shipping-method selected">
+            <input type="radio" id="by-my-own" name="shipping-method" value="by-my-own" checked="">
+            <label for="by-my-own">
+                
+                
+            <div class="shipping-info">
+                    <span class="shipping-name">Default</span>
+                    <span class="shipping-price">75 EGP</span>
+    <span class="shipping-est-time">4 working days</span>
+                </div></label>
+        </div>
+        
+        
+        
+        <div class="shipping-method">
+            <input type="radio" id="aramex" name="shipping-method" value="aramex">
+            <label for="aramex">
+                <div class="shipping-icon" style=" background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/4e/EGYPT_POST.svg');">
+                    
+                </div>
+                <div class="shipping-info">
+                    <span class="shipping-name">Egypt Post</span>
+                    <span class="shipping-price">75 EGP</span>
+                <span class="shipping-est-time">2 working days</span></div>
+            </label>
+        </div>
+        
+        <div class="shipping-method">
+            <input type="radio" id="aramex" name="shipping-method" value="aramex">
+            <label for="aramex">
+                <div class="shipping-icon" style=" background-image: url('https://tracking.bosta.co/images/bosta_en.png');">
+                    
+                </div>
+                <div class="shipping-info">
+                    <span class="shipping-name">Bosta</span>
+                    <span class="shipping-price">75 EGP</span>
+    <span class="shipping-est-time">3 working days</span>
+                </div>
+            </label>
+        </div><div class="shipping-method">
+            <input type="radio" id="aramex" name="shipping-method" value="aramex">
+            <label for="aramex">
+                <div class="shipping-icon" style=" background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/ee/Aramex_logo.svg');">
+                    
+                </div>
+                <div class="shipping-info">
+                    <span class="shipping-name">Aramex</span>
+                    <span class="shipping-price">75 EGP</span>
+    <span class="shipping-est-time">4 working days</span>
+                </div>
+            </label>
+        </div><div class="shipping-method">
+            <input type="radio" id="j-t" name="shipping-method" value="j-t">
+            <label for="j-t">
+                <div class="shipping-icon" style=" background-image: url('https://1000logos.net/wp-content/uploads/2022/08/JT-Express-Logo.png');">
+                    
+                </div>
+                <div class="shipping-info">
+                    <span class="shipping-name">J&amp;T</span>
+                    <span class="shipping-price">45 EGP</span>
+    <span class="shipping-est-time">4 working days</span>
+                </div>
+            </label>
+        </div>
+    </div>
+</div>
+</div>
+    
+                <!-- Order Actions -->
+                <div class="order-actions">
+                    <button class="btn btn-primary" onclick="processOrder('${data.id}')">
+                        <i class="bi bi-check-circle"></i> Process Order
+                    </button>
+                    <button class="btn btn-secondary" onclick="closeSidePanel()">
+                        <i class="bi bi-x-circle"></i> Close
+                    </button>
+                </div>
+            </div>
+        `;
+        }
+
+        // Generate order items HTML
+        function generateOrderItems(items) {
+            if (!items || items.length === 0) {
+                return '<div class="no-items">No items in this order</div>';
+            }
+
+            return items.map(item => `
+            <div class="order-item">
+                <img src="${item.image || 'https://assets.adidas.com/images/w_1880,f_auto,q_auto/442cbdbfed544ea994b404c21abf9aeb_9366/JR3416_01_00_standard.jpg'}" 
+                     alt="${item.name || 'Product Image'}" 
+                     class="item-image"
+                     onerror="this.src='https://via.placeholder.com/80x80?text=No+Image'">
+                <div class="item-details">
+                    <div class="item-name">${item.name || 'Adidas Shoes'}</div>
+                    <div class="item-info">Brand: ${item.brand || 'Adidas'} | Color: ${item.color || 'brown'} | Size: ${item.size || '40'}</div>
+                    <div class="item-info">Price: ${item.price || '5,684 EGP'} | Qty: ${item.quantity || '2'}</div>
+                    <div class="item-subtotal">Subtotal: ${calculateItemSubtotal(item)} EGP</div>
+                </div>
+                <div class="item-actions">
+                    <div class="qty-control">
+                        <button class="qty-btn minus" onclick="updateQuantity(this, -1)">-</button>
+                        <input type="text" class="qty-input" value="${item.quantity || '2'}" readonly>
+                        <button class="qty-btn plus" onclick="updateQuantity(this, 1)">+</button>
+                         <button class="delete-btn" onclick="removeItem(this)" title="Delete Item">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                    </div>
+                   
+                </div>
+            </div>
+        `).join('');
+        }
+
+        // Calculate item subtotal
+        function calculateItemSubtotal(item) {
+            const price = parseFloat(item.price?.replace(/[^0-9.]/g, '') || 5684);
+            const quantity = parseInt(item.quantity || 2);
+            return (price * quantity).toLocaleString();
+        }
+
+        // Initialize interactive elements
+        function initializeInteractiveElements() {
+            // Quantity controls
+            const quantityInputs = document.querySelectorAll('.qty-input');
+            quantityInputs.forEach(input => {
+                input.addEventListener('change', function () {
+                    validateQuantity(this);
+                });
+            });
+        }
+
+        // Update quantity
+        function updateQuantity(button, change) {
+            const qtyControl = button.closest('.qty-control');
+            const input = qtyControl.querySelector('.qty-input');
+            let currentValue = parseInt(input.value) || 0;
+
+            currentValue += change;
+
+            // Ensure quantity doesn't go below 1
+            if (currentValue < 1) {
+                currentValue = 1;
+            }
+
+            input.value = currentValue;
+            updateOrderTotal();
+        }
+
+        // Remove item
+        function removeItem(button) {
+            const orderItem = button.closest('.order-item');
+            if (confirm('Are you sure you want to remove this item from the order?')) {
+                orderItem.style.opacity = '0';
+                orderItem.style.transform = 'translateX(-100%)';
+
+                setTimeout(() => {
+                    orderItem.remove();
+                    updateOrderTotal();
+                }, 300);
+            }
+        }
+
+        // Validate quantity input
+        function validateQuantity(input) {
+            let value = parseInt(input.value);
+            if (isNaN(value) || value < 1) {
+                input.value = 1;
+            }
+            updateOrderTotal();
+        }
+
+        // Update order total (placeholder function)
+        function updateOrderTotal() {
+            console.log('Order total updated - implement calculation logic here');
+        }
+
+        // Process order (placeholder function)
+        function processOrder(orderId) {
+            alert(`Processing order ${orderId}...`);
+            // Implement your order processing logic here
+        }
+
+        // Close side panel when clicking overlay
+        document.getElementById('side-panel-overlay').addEventListener('click', closeSidePanel);
+
+        // Close side panel with Escape key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                closeSidePanel();
+            }
+        });
+
+        // Prevent side panel content clicks from closing the panel
+        document.getElementById('side-panel').addEventListener('click', function (e) {
+            e.stopPropagation();
+        });
+
+        // Example usage - attach this to your "View" buttons
+        function setupViewButtons() {
+            document.querySelectorAll('.view-order-btn').forEach(button => {
+                button.addEventListener('click', function () {
+                    const orderData = {
+                        id: this.dataset.orderId || 'ORD-001',
+                        date: this.dataset.orderDate || '2 hours ago',
+                        total: this.dataset.orderTotal || '14,750 EGP',
+                        customer: {
+                            name: 'Mohamed Ahmed',
+                            phone: '+20 123 456 7890',
+                            email: 'mohamed.ahmed@example.com',
+                            address: '123 Main St, Cairo, Egypt'
+                        },
+                        items: [
+                            {
+                                name: 'Adidas Shoes',
+                                brand: 'Adidas',
+                                color: 'brown',
+                                size: '40',
+                                price: '5,684 EGP',
+                                quantity: 2,
+                                image: 'https://assets.adidas.com/images/w_1880,f_auto,q_auto/442cbdbfed544ea994b404c21abf9aeb_9366/JR3416_01_00_standard.jpg'
+                            }
+                            // Add more items as needed
+                        ],
+                        subtotal: '14,750 EGP',
+                        shipping: '50 EGP',
+                        tax: '200 EGP',
+                        total: '15,000 EGP'
+                    };
+
+                    openSidePanel('order', orderData);
+                });
+            });
+        }
+
+        // Initialize view buttons when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function () {
+            setupViewButtons();
+        });
+    </script>
+    <!--  sliding side panel  -->
+
+
+</body>
+
+</html>
