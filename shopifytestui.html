@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop Dashboard</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/hugeicons@latest/dist/hugeicons.min.js"></script>
 
 
@@ -45,7 +45,7 @@
                 <h2 class="logo-text">MATAGER</h2>
             </div>
             <button class="toggle-btn" id="toggleSidebar">
-                <i class="bi bi-chevron-left"></i>
+                <i class="bi bi-arrows-collapse-vertical"></i>
             </button>
         </div>
         <div class="nav-items-container">
@@ -179,13 +179,14 @@
             </div>
 
             <!-- Welcome Section -->
-            <div class="welcome-section animatedtoup show">
+            <div class="welcome-section animatedtoup show"
+                style="opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s;">
                 <div class="dashboard-card profile-card-modern show">
                     <!-- Header Section -->
                     <div class="profile-header-modern">
                         <div class="profile-avatar-section">
                             <div class="avatar-container">
-                                <img src="https://www.pngmart.com/files/23/User-PNG-Isolated-Image.png"
+                                <img src="https://images.squarespace-cdn.com/content/v1/627a75da46a1dd305c93c01e/1652205717767-ENEWIFMGJ56JTPUDTQCR/RAF08668.jpg?format=1500w"
                                     alt="Mohamed Ahmed" class="profile-avatar">
 
                             </div>
@@ -207,9 +208,9 @@
                             </div>
                         </div>
                         <div style="
-                                    right: 20px;
-                                    position: absolute;
-                                ">
+                                                            right: 20px;
+                                                            position: absolute;
+                                                        ">
                             <label class="day-night">
                                 <input type="checkbox" id="theme-toggle">
                                 <div>
@@ -256,189 +257,616 @@
                 </div>
 
 
-                <div class="dashboard-card">
-                    <div class="stat-card-header">
-                        <div class="stat-card-title">Go To Site</div>
-                        <div class="stat-card-icon">
-                            <i class="bi bi-globe"></i>
+                <div class="card  show" style="
+                    height: 326px;
+                    padding: 0px;
+                ">
+                    <div class="stat-card-header" style="
+                    border-bottom: 1px solid var(--border-color);
+                    padding: 15px 20px;
+                ">
+                        <div class="stat-card-title">Notification</div>
+                        <div class="stat-card-icon uploaded">
+                            <i class="bi bi-bell"></i>
                         </div>
                     </div>
 
-                    <p class="card-description">
-                        Manage your store, track performance, and update content from one central dashboard.
-                    </p>
 
-                    <button class="btn btn-outline">
-                        Visit Your Site <i class="bi bi-arrow-right"></i>
-                    </button>
 
-                    <div class="site-url">
-                        <span class="pulse small greendot"></span>
-                        www.matager/shop/-3hf3hf483yffbaie3.com
+                    <div class="notification-content-area" id="notificationContentArea" style="
+                    max-width: -webkit-fill-available;
+                    padding-bottom: 45px;
+                ">
+                        <div class="notification-item ">
+                            <div class="notification-icon">
+                                <i class="bi bi-box-seam"></i>
+                            </div>
+                            <div class="notification-content">
+                                <div class="notification-item-title">Order Shipped</div>
+                                <p>Order #ORD-7819 has been shipped to the customer</p>
+                                <div class="notification-time">11:13</div>
+                            </div>
+                        </div>
+                        <div class="notification-item ">
+                            <div class="notification-icon">
+                                <i class="bi bi-database-up"></i>
+                            </div>
+                            <div class="notification-content">
+                                <div class="notification-item-title">Weekly Report Ready</div>
+                                <p>Your store performance report for this week is available</p>
+                                <div class="notification-time">11:13</div>
+                            </div>
+                        </div>
+                        <div class="notification-item unread">
+                            <div class="notification-icon">
+                                <i class="bi bi-graph-up"></i>
+                            </div>
+                            <div class="notification-content">
+                                <div class="notification-item-title">New Customer Registration</div>
+                                <p>Sarah Johnson has created a new account</p>
+                                <div class="notification-time">11:13</div>
+                            </div>
+                        </div>
+                        <div class="notification-item unread">
+                            <div class="notification-icon">
+                                <i class="bi bi-database-up"></i>
+                            </div>
+                            <div class="notification-content">
+                                <div class="notification-item-title">New Order Received</div>
+                                <p>You have a new order #ORD-7842 for $125.99</p>
+                                <div class="notification-time">11:13</div>
+                            </div>
+                        </div>
+                        <div class="notification-item ">
+                            <div class="notification-icon">
+                                <i class="bi bi-graph-up"></i>
+                            </div>
+                            <div class="notification-content">
+                                <div class="notification-item-title">Order Shipped</div>
+                                <p>Order #ORD-7819 has been shipped to the customer</p>
+                                <div class="notification-time">10:24</div>
+                            </div>
+                        </div>
+                        <div class="notification-item ">
+                            <div class="notification-icon">
+                                <i class="bi bi-truck"></i>
+                            </div>
+                            <div class="notification-content">
+                                <div class="notification-item-title">Weekly Report Ready</div>
+                                <p>Your store performance report for this week is available</p>
+                                <div class="notification-time">10:24</div>
+                            </div>
+                        </div>
+                        <div class="notification-item unread">
+                            <div class="notification-icon">
+                                <i class="bi bi-box-seam"></i>
+                            </div>
+                            <div class="notification-content">
+                                <div class="notification-item-title">New Customer Registration</div>
+                                <p>Sarah Johnson has created a new account</p>
+                                <div class="notification-time">10:24</div>
+                            </div>
+                        </div>
+                        <div class="notification-item unread">
+                            <div class="notification-icon">
+                                <i class="bi bi-box-seam"></i>
+                            </div>
+                            <div class="notification-content">
+                                <div class="notification-item-title">New Order Received</div>
+                                <p>You have a new order #ORD-7842 for $125.99</p>
+                                <div class="notification-time">10:24</div>
+                            </div>
+                        </div>
+                        <!-- Notifications will be dynamically added here -->
+                    </div>
+                </div>
+                <div class="card  show" style="
+                    padding: 0;
+                    height: 240px;
+                ">
+                    <div class="stat-card-header" style="
+                    border-bottom: 1px solid var(--border-color);
+                    padding: 15px 20px;
+                ">
+                        <div class="stat-card-title">Alerts</div>
+                        <div class="stat-card-icon uploaded">
+                            <i class="bi bi-exclamation-diamond"></i>
+                        </div>
+                    </div>
+
+
+                    <div class="notification-content-area" style="
+                                    max-height: 170px;
+                                    max-width: -webkit-fill-available;
+                                    /* padding-bottom: 45px; */
+                                ">
+
+
+
+                        <div class="notification-item unread">
+                            <div class="notification-icon"> <i class="bi bi-calendar-x"></i>
+                            </div>
+                            <div class="notification-content">
+                                <div class="notification-item-title">Subscription Ending Soon</div>
+                                <p>Your **Premium** plan will expire in **2 days**. Please renew to avoid interruption.
+                                </p>
+                                <div class="notification-time">11:00</div>
+                            </div>
+                        </div>
+
+                        <div class="notification-item unread">
+                            <div class="notification-icon"> <i class="bi bi-exclamation-triangle-fill"></i>
+                            </div>
+                            <div class="notification-content">
+                                <div class="notification-item-title">Low Stock Alert</div>
+                                <p>The stock for Product (SKU: -lxfkli883456) is critically low (only 5 left)!</p>
+                                <div class="notification-time">11:05</div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="notification-item unread">
+                            <div class="notification-icon"> <i class="bi bi-exclamation-triangle-fill"></i>
+                            </div>
+                            <div class="notification-content">
+                                <div class="notification-item-title">Low Stock Alert</div>
+                                <p>The stock for Product (SKU: -lxfkli883456) is critically low (only 5 left)!</p>
+                                <div class="notification-time">11:05</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div style="
+            gap: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        ">
+                    <div class="dashboard-card">
+                        <div class="stat-card-header">
+                            <div class="site-url">
+                                <span class="pulse small greendot"></span>
+                                www.matager/shop/-3hf3hf483yffbaie3.com
+                            </div>
+                            <div class="stat-card-icon">
+                                <i class="bi bi-globe"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-container advanced-stats animatedtoup show"
+                        style="margin-bottom: 0px; opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s; display: flex; align-items: center; justify-content: space-around; padding: 10px !important;">
+                        <div class="advanced-stat">
+                            <div class="stat-value">38%</div>
+                            <div class="stat-label">Cart</div>
+                        </div>
+                        <div class="advanced-stat">
+                            <div class="stat-value">720</div>
+                            <div class="stat-label">Cart Items</div>
+                        </div>
+                        <div class="advanced-stat">
+
+                            <div class="stat-value">$5,900</div>
+                            <div class="stat-label">Revenue</div>
+                        </div>
+                    </div>
+                    <div class="form-container advanced-stats animatedtoup show"
+                        style="margin-bottom: 0px; opacity: 1; transform: translateY(0px); transition: opacity 0.5s, transform 0.5s; display: flex; align-items: center; justify-content: space-around; padding: 10px !important;">
+                        <div class="advanced-stat">
+                            <div class="stat-value">8,950</div>
+                            <div class="stat-label">Store Visits</div>
+                        </div>
+                        <div class="advanced-stat">
+                            <div class="stat-value">1,520</div>
+                            <div class="stat-label">Visitors</div>
+                        </div>
+                        <div class="advanced-stat">
+
+                            <div class="stat-value">200</div>
+                            <div class="stat-label">Active Users</div>
+                        </div>
                     </div>
                 </div>
 
 
             </div>
-
 
 
             <!-- Revenue Chart -->
-            <div class="form-container animatedtoup show">
+            <style>
+
+            </style>
+
+            <div class="form-container">
                 <div class="chart-header">
-                    <h4 class="chart-title">Revenue Overview</h4>
-                    <div class="chart-actions">
-                        <a href="#">
-                            Advanced Report <i class="bi bi-arrow-right"></i>
+                    <h3 class="chart-title">Revenue Overview</h3>
+                    <div class="chart-controls">
+                        <button class="control-btn prev-btn">
+                            <i class="bi bi-chevron-left"></i>
+                        </button>
+                        <button class="control-btn next-btn">
+                            <i class="bi bi-chevron-right"></i>
+                        </button>
+                        <a href="#" class="report-link">
+                            Advanced Report <i class="bi bi-arrow-up-right"></i>
                         </a>
                     </div>
                 </div>
-                <div class="revenue-chart">
-                    <div class="chart-grid">
-                        <div class="chart-grid-line"></div>
-                        <div class="chart-grid-line"></div>
-                        <div class="chart-grid-line"></div>
-                        <div class="chart-grid-line"></div>
-                    </div>
-                    <div class="chart-bars">
-                        <div class="chart-bar" style="height: 70%">
-                            <div class="chart-bar-value">$2,100</div>
-                        </div>
-                        <div class="chart-bar" style="height: 85%">
-                            <div class="chart-bar-value">$2,550</div>
-                        </div>
-                        <div class="chart-bar" style="height: 65%">
-                            <div class="chart-bar-value">$1,950</div>
-                        </div>
-                        <div class="chart-bar" style="height: 90%">
-                            <div class="chart-bar-value">$2,700</div>
-                        </div>
-                        <div class="chart-bar" style="height: 75%">
-                            <div class="chart-bar-value">$2,250</div>
-                        </div>
-                        <div class="chart-bar" style="height: 80%">
-                            <div class="chart-bar-value">$2,400</div>
-                        </div>
-                        <div class="chart-bar" style="height: 60%">
-                            <div class="chart-bar-value">$1,800</div>
-                        </div>
-                        <div class="chart-bar" style="height: 95%">
-                            <div class="chart-bar-value">$2,850</div>
-                        </div>
-                        <div class="chart-bar" style="height: 70%">
-                            <div class="chart-bar-value">$2,100</div>
-                        </div>
-                        <div class="chart-bar" style="height: 85%">
-                            <div class="chart-bar-value">$2,550</div>
-                        </div>
-                        <div class="chart-bar" style="height: 65%">
-                            <div class="chart-bar-value">$1,950</div>
-                        </div>
-                        <div class="chart-bar" style="height: 50%">
-                            <div class="chart-bar-value">$1,500</div>
+
+                <div class="chart-wrapper">
+                    <div class="chart-scroll-container" id="chartScroll">
+                        <div class="revenue-chart">
+                            <div class="chart-y-axis">
+                                <span>$3,000</span>
+                                <span>$2,250</span>
+                                <span>$1,500</span>
+                                <span>$750</span>
+                                <span>$0</span>
+                            </div>
+
+                            <div class="chart-content">
+                                <div class="chart-grid">
+                                    <div class="grid-line"></div>
+                                    <div class="grid-line"></div>
+                                    <div class="grid-line"></div>
+                                    <div class="grid-line"></div>
+                                    <div class="grid-line"></div>
+                                </div>
+
+                                <div class="chart-bars">
+                                    <!-- All 12 bars with correct heights -->
+                                    <div class="bar-container">
+                                        <div class="chart-bar" style="height: 70%" data-value="2100">
+                                            <div class="bar-fill chartbar-gradient"></div>
+                                            <div class="chart-bar-value">$2,100</div>
+                                        </div>
+                                        <div class="bar-label">20</div>
+                                    </div>
+
+                                    <div class="bar-container">
+                                        <div class="chart-bar" style="height: 85%" data-value="2550">
+                                            <div class="bar-fill chartbar-gradient"></div>
+                                            <div class="chart-bar-value">$2,550</div>
+                                        </div>
+                                        <div class="bar-label">22</div>
+                                    </div>
+
+                                    <div class="bar-container">
+                                        <div class="chart-bar" style="height: 65%" data-value="1950">
+                                            <div class="bar-fill chartbar-gradient"></div>
+                                            <div class="chart-bar-value">$1,950</div>
+                                        </div>
+                                        <div class="bar-label">24</div>
+                                    </div>
+
+                                    <div class="bar-container">
+                                        <div class="chart-bar" style="height: 90%" data-value="2700">
+                                            <div class="bar-fill chartbar-gradient"></div>
+                                            <div class="chart-bar-value">$2,700</div>
+                                        </div>
+                                        <div class="bar-label">26</div>
+                                    </div>
+
+                                    <div class="bar-container">
+                                        <div class="chart-bar" style="height: 75%" data-value="2250">
+                                            <div class="bar-fill chartbar-gradient"></div>
+                                            <div class="chart-bar-value">$2,250</div>
+                                        </div>
+                                        <div class="bar-label">28</div>
+                                    </div>
+
+                                    <div class="bar-container">
+                                        <div class="chart-bar" style="height: 80%" data-value="2400">
+                                            <div class="bar-fill chartbar-gradient"></div>
+                                            <div class="chart-bar-value">$2,400</div>
+                                        </div>
+                                        <div class="bar-label">30</div>
+                                    </div>
+
+                                    <div class="bar-container">
+                                        <div class="chart-bar" style="height: 60%" data-value="1800">
+                                            <div class="bar-fill chartbar-gradient"></div>
+                                            <div class="chart-bar-value">$1,800</div>
+                                        </div>
+                                        <div class="bar-label">02</div>
+                                    </div>
+
+                                    <div class="bar-container">
+                                        <div class="chart-bar" style="height: 95%" data-value="2850">
+                                            <div class="bar-fill chartbar-gradient"></div>
+                                            <div class="chart-bar-value">$2,850</div>
+                                        </div>
+                                        <div class="bar-label">04</div>
+                                    </div>
+
+                                    <div class="bar-container">
+                                        <div class="chart-bar" style="height: 70%" data-value="2100">
+                                            <div class="bar-fill chartbar-gradient"></div>
+                                            <div class="chart-bar-value">$2,100</div>
+                                        </div>
+                                        <div class="bar-label">06</div>
+                                    </div>
+
+                                    <div class="bar-container">
+                                        <div class="chart-bar" style="height: 85%" data-value="2550">
+                                            <div class="bar-fill chartbar-gradient"></div>
+                                            <div class="chart-bar-value">$2,550</div>
+                                        </div>
+                                        <div class="bar-label">08</div>
+                                    </div>
+
+                                    <div class="bar-container">
+                                        <div class="chart-bar" style="height: 65%" data-value="1950">
+                                            <div class="bar-fill chartbar-gradient"></div>
+                                            <div class="chart-bar-value">$1,950</div>
+                                        </div>
+                                        <div class="bar-label">10</div>
+                                    </div>
+
+                                    <div class="bar-container">
+                                        <div class="chart-bar" style="height: 50%" data-value="1500">
+                                            <div class="bar-fill chartbar-gradient"></div>
+                                            <div class="chart-bar-value">$1,500</div>
+                                        </div>
+                                        <div class="bar-label">12</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="chart-labels">
-                    <span>20</span>
-                    <span>22</span>
-                    <span>24</span>
-                    <span>26</span>
-                    <span>28</span>
-                    <span>30</span>
-                    <span>02</span>
-                    <span>04</span>
-                    <span>06</span>
-                    <span>08</span>
-                    <span>10</span>
-                    <span>12</span>
+
+                <div class="chart-footer">
+                    <div class="period-indicator">
+                        <span class="period-dot active" data-period="1"></span>
+                        <span class="period-dot" data-period="2"></span>
+                        <span class="period-dot" data-period="3"></span>
+                    </div>
+                    <div class="summary-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">TOTAL</span>
+                            <span class="stat-value">$26,850</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">AVG/DAY</span>
+                            <span class="stat-value">$2,238</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Advanced Stats -->
-            <div class="form-container advanced-stats animatedtoup show">
-                <div class="advanced-stat">
-                    <div class="stat-percentage">38%</div>
-                    <div class="stat-label">Advanced Cart</div>
-                </div>
-                <div class="advanced-stat">
-                    <div class="stat-value">720</div>
-                    <div class="stat-label">Cart Items</div>
-                </div>
-                <div class="advanced-stat">
-                    <div class="stat-value">$5,900</div>
-                    <div class="stat-label">Advanced Revenue</div>
-                </div>
-            </div>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const scrollContainer = document.getElementById('chartScroll');
+                    const prevBtn = document.querySelector('.prev-btn');
+                    const nextBtn = document.querySelector('.next-btn');
+                    const periodDots = document.querySelectorAll('.period-dot');
+
+                    const scrollAmount = 200;
+
+                    // Navigation buttons functionality
+                    prevBtn.addEventListener('click', () => {
+                        scrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                    });
+
+                    nextBtn.addEventListener('click', () => {
+                        scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                    });
+
+                    // Period dots functionality
+                    periodDots.forEach(dot => {
+                        dot.addEventListener('click', function () {
+                            // Remove active class from all dots
+                            periodDots.forEach(d => d.classList.remove('active'));
+
+                            // Add active class to clicked dot
+                            this.classList.add('active');
+
+                            // Here you would typically load different data based on the period
+                            // For now, we'll just scroll to the appropriate section
+                            const period = this.getAttribute('data-period');
+                            if (period === '2') {
+                                scrollContainer.scrollTo({ left: 400, behavior: 'smooth' });
+                            } else if (period === '3') {
+                                scrollContainer.scrollTo({ left: 800, behavior: 'smooth' });
+                            } else {
+                                scrollContainer.scrollTo({ left: 0, behavior: 'smooth' });
+                            }
+                        });
+                    });
+
+                    // Auto-hide scrollbar after scrolling stops
+                    let scrollTimeout;
+                    scrollContainer.addEventListener('scroll', function () {
+                        scrollContainer.style.overflowX = 'auto';
+
+                        clearTimeout(scrollTimeout);
+                        scrollTimeout = setTimeout(() => {
+                            // Optional: Hide scrollbar after inactivity
+                            // scrollContainer.style.overflowX = 'hidden';
+                        }, 1000);
+                    });
+                });
+            </script>
+
+
 
             <!-- Two Column Layout: Traffic and Sales Forecast -->
             <div class="two-column-layout">
-                <!-- Traffic Section -->
-                <div class="form-container animatedtoup show">
+                <!-- Enhanced Traffic Section -->
+                <div class="form-container animatedtoup show "
+                    style="opacity: 1;transform: translateY(0px);height: fit-content;">
                     <div class="traffic-header">
-                        <h3 class="chart-title">Traffic</h3>
+                        <div class="header-content">
+                            <h3 class="chart-title">Traffic Analytics</h3>
+                            <div class="time-filter">
+                                <select class="filter-select">
+                                    <option>Last 30 days</option>
+                                    <option>Last 7 days</option>
+                                    <option>Last 24 hours</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="chart-actions">
+                            <button class="action-btn">
+                                <i class="bi bi-download"></i>
+                            </button>
+                            <button class="action-btn">
+                                <i class="bi bi-three-dots"></i>
+                            </button>
+                        </div>
                     </div>
-                    <div class="traffic-metrics">
-                        <div class="traffic-metric">
-                            <div class="metric-value">8,950</div>
-                            <div class="metric-label">
+
+                    <div class="traffic-metrics-enhanced">
+                        <div class="traffic-metric-card">
+                            <div class="metric-icon">
+                                <i class="bi bi-shop-window"></i>
+                            </div>
+                            <div class="metric-content">
+                                <div class="metric-value">8,950</div>
+                                <div class="metric-label">Store Visits</div>
+                                <div class="metric-trend trend-up">
+                                    <i class="bi bi-arrow-up-short"></i>
+                                    <span>22% from last month</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="traffic-metric-card">
+                            <div class="metric-icon">
+                                <i class="bi bi-people"></i>
+                            </div>
+                            <div class="metric-content">
+                                <div class="metric-value">1,520</div>
+                                <div class="metric-label">Unique Visitors</div>
+                                <div class="metric-trend trend-down">
+                                    <i class="bi bi-arrow-down-short"></i>
+                                    <span>24% from last month</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="traffic-chart-enhanced">
+                        <div class="chart-container">
+                            <div class="chart-grid">
+                                <div class="grid-line"></div>
+                                <div class="grid-line"></div>
+                                <div class="grid-line"></div>
+                            </div>
+                            <div class="chart-line">
+                                <div class="data-point" style="left: 0%; bottom: 30%"></div>
+                                <div class="data-point" style="left: 14%; bottom: 45%"></div>
+                                <div class="data-point" style="left: 28%; bottom: 60%"></div>
+                                <div class="data-point" style="left: 42%; bottom: 75%"></div>
+                                <div class="data-point" style="left: 56%; bottom: 65%"></div>
+                                <div class="data-point" style="left: 70%; bottom: 80%"></div>
+                                <div class="data-point" style="left: 84%; bottom: 70%"></div>
+                                <div class="data-point" style="left: 98%; bottom: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="chart-labels">
+                            <span>16</span>
+                            <span>18</span>
+                            <span>20</span>
+                            <span>22</span>
+                            <span>24</span>
+                            <span>26</span>
+                            <span>28</span>
+                            <span>30</span>
+                        </div>
+                    </div>
+                    <div class="chart-footer">
+                        <span class="chart-period">Jan 16 - Jan 30, 2025</span>
+                        <div class="chart-legend">
+                            <div class="legend-item">
+                                <div class="legend-color store-visits"></div>
                                 <span>Store Visits</span>
-                                <span class="metric-trend trend-up">
-                                    <i class="bi bi-arrow-up"></i> 22%
-                                </span>
-                            </div>
-                        </div>
-                        <div class="traffic-metric">
-                            <div class="metric-value">1,520</div>
-                            <div class="metric-label">
-                                <span>Visitors</span>
-                                <span class="metric-trend trend-down">
-                                    <i class="bi bi-arrow-down"></i> 24%
-                                </span>
                             </div>
                         </div>
                     </div>
-                    <div class="traffic-chart">
-                        <div class="traffic-chart-line"></div>
-                    </div>
-                    <div class="traffic-labels">
-                        <span>16</span>
-                        <span>18</span>
-                        <span>20</span>
-                        <span>22</span>
-                        <span>24</span>
-                        <span>26</span>
-                        <span>28</span>
-                        <span>30</span>
-                    </div>
-                    <div class="chart-subtitle">Jan 16 - Jan 30 store visits chart</div>
                 </div>
 
-                <!-- Sales Forecast -->
-                <div class="form-container animatedtoup show">
+                <!-- Enhanced Sales Forecast -->
+                <div class="form-container animatedtoup show"
+                    style="height: fit-content;opacity: 1;transform: translateY(0px);">
                     <div class="forecast-header">
-                        <h3 class="chart-title">Sales Forecast</h3>
+                        <div class="header-content">
+                            <h3 class="chart-title">Sales Forecast</h3>
+                            <div class="forecast-period">Next 30 Days</div>
+                        </div>
                         <div class="chart-actions">
-                            <a href="#">More <i class="bi bi-arrow-right"></i></a>
+                            <a href="#" class="more-link">
+                                View Details <i class="bi bi-arrow-up-right"></i>
+                            </a>
                         </div>
                     </div>
-                    <div class="forecast-items">
-                        <div class="forecast-item">
-                            <div class="forecast-label">Revenue</div>
-                            <div class="forecast-value trend-up">+24.2%</div>
+
+                    <div class="forecast-stats">
+                        <div class="stat-highlight">
+                            <div class="stat-value">+24.2%</div>
+                            <div class="stat-label">Expected Revenue Growth</div>
                         </div>
-                        <div class="forecast-item">
-                            <div class="forecast-label">Orders</div>
-                            <div class="forecast-value trend-up">+32.8%</div>
+                    </div>
+
+                    <div class="forecast-items-enhanced">
+                        <div class="forecast-item-card">
+                            <div class="forecast-icon revenue">
+                                <i class="bi bi-currency-dollar"></i>
+                            </div>
+                            <div class="forecast-content">
+                                <div class="forecast-label">Revenue</div>
+                                <div class="forecast-value trend-up">+24.2%</div>
+                                <div class="forecast-subtext">Projected increase</div>
+                            </div>
+                            <div class="progress-indicator">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 100%;"></div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="forecast-item">
-                            <div class="forecast-label">Net Profit</div>
-                            <div class="forecast-value trend-down">-2.5%</div>
+
+                        <div class="forecast-item-card">
+                            <div class="forecast-icon orders">
+                                <i class="bi bi-cart-check"></i>
+                            </div>
+                            <div class="forecast-content">
+                                <div class="forecast-label">Orders</div>
+                                <div class="forecast-value trend-up">+32.8%</div>
+                                <div class="forecast-subtext">Expected growth</div>
+                            </div>
+                            <div class="progress-indicator">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 85%"></div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="forecast-item">
-                            <div class="forecast-label">Visitors</div>
-                            <div class="forecast-value trend-up">+60%</div>
+
+                        <div class="forecast-item-card">
+                            <div class="forecast-icon profit">
+                                <i class="bi bi-graph-down"></i>
+                            </div>
+                            <div class="forecast-content">
+                                <div class="forecast-label">Net Profit</div>
+                                <div class="forecast-value trend-down">-2.5%</div>
+                                <div class="forecast-subtext">Monitoring required</div>
+                            </div>
+                            <div class="progress-indicator">
+                                <div class="progress-bar">
+                                    <div class="progress-fill negative" style="width: 25%"></div>
+                                </div>
+                            </div>
                         </div>
+
+
+                    </div>
+
+                    <div class="forecast-footer">
+                        <div class="confidence-level">
+                            <div class="confidence-label">Forecast Confidence</div>
+                            <div class="confidence-value high">High</div>
+                        </div>
+                        <div class="last-updated">Updated 2 hours ago</div>
                     </div>
                 </div>
             </div>
@@ -446,77 +874,7 @@
             <!-- Revenue by Device -->
 
 
-            <!-- Latest Orders Table -->
-            <div class="form-container animatedtoup show">
-                <div class="chart-header">
-                    <h3 class="chart-title">Latest Orders</h3>
-                </div>
 
-                <div class="customer-orders-list animatedtoup show">
-                    <div class="customer-order-card">
-                        <div class="customer-order-avatar">JD</div>
-                        <div class="cart-info">
-                            <div class="cart-customer">Jon Doe</div>
-                            <div class="cart-details">
-                                <span><i class="bi bi-clock"></i> 2 hours ago</span>
-                                <span><i class="bi bi-cart"></i> 3 items</span>
-                                <span> 147.50 EGP</span>
-                            </div>
-                        </div>
-                        <div class="form-actions">
-                            <span class="status-badge accepted" style="
-                z-index: 1;
-                right: -1px;
-                position: absolute;
-                top: -10px;
-            ">Accepted</span>
-                            <button class="btn btn-sm btn-outline">
-                                <i class="bi bi-eye"></i></button>
-                            <button class="btn btn-sm btn-primary">
-                                <i class="bi bi-whatsapp"></i>send message</button>
-                            <button class="btn btn-sm btn-primary">
-                                <i class="bi bi-telephone-forward"></i> Call
-                            </button>
-                        </div>
-                    </div>
-                    <div class="customer-order-card">
-                        <div class="customer-order-avatar">JD</div>
-                        <div class="cart-info">
-                            <div class="cart-customer">Smith will</div>
-                            <div class="cart-details">
-                                <span><i class="bi bi-clock"></i> 3 hours ago</span>
-                                <span><i class="bi bi-cart"></i> 5 items</span>
-                                <span> 400 EGP</span>
-                            </div>
-                        </div>
-                        <div class="form-actions">
-                            <span class="status-badge pending" style="
-                z-index: 1;
-                right: -1px;
-                position: absolute;
-                top: -10px;
-            ">Pending</span>
-                            <button class="btn btn-sm btn-outline">
-                                <i class="bi bi-eye"></i></button>
-                            <button class="btn btn-sm btn-primary" style="
-                opacity: 0.4;
-            ">
-                                <i class="bi bi-whatsapp"></i>send message</button>
-                            <button class="btn btn-sm btn-primary" style="
-                opacity: 0.4;
-            ">
-                                <i class="bi bi-telephone-forward"></i> Call
-                            </button>
-                        </div>
-                    </div>
-
-
-
-
-
-
-                </div>
-            </div>
         </div>
 
         <script>
@@ -669,11 +1027,6 @@
                         <div class="search-box ">
                             <i class="bi bi-search"></i>
                             <input type="text" placeholder="Search orders..." id="orderSearch">
-                        </div>
-                        <div class="filter-controls ">
-                            <button class="export-btn" id="exportBtn">
-                                <i class="bi bi-file-earmark-spreadsheet"></i> Export to Excel
-                            </button>
                         </div>
                         <div class="elegant-select " id="statusFilter">
                             <div class="select-selected">
@@ -1112,21 +1465,51 @@
                             </div>
                         </div>
 
-                        <div class="card uploaded show">
+                        <div class="card available show">
                             <div class="stat-card-header">
-                                <div class="stat-card-title">Uploaded Products</div>
-                                <div class="stat-card-icon uploaded">
-                                    <i class="bi bi-cloud-arrow-up"></i>
+                                <div class="stat-card-title">Available Products</div>
+                                <div class="stat-card-icon available">
+                                    <i class="bi bi-box-seam"></i>
                                 </div>
                             </div>
-                            <div class="stat-card-value">9</div>
+                            <div class="stat-card-value">391</div>
                             <div class="stat-card-progress">
-                                <div class="stat-card-progress-bar uploaded" style="width: 2.3%"></div>
+                                <div class="stat-card-progress-bar available" style="width: 100%"></div>
                             </div>
                             <div class="progress-text">
-                                <span>Progress</span>
-                                <span>2.3%</span>
+                                <span>Total Inventory</span>
+                                <span>100%</span>
                             </div>
+                        </div>
+
+                        <div class="card  show">
+                            <div class="stat-card-header">
+                                <div class="stat-card-title">Out Of Stock Products</div>
+                                <div class="stat-card-icon uploaded">
+                                    <i class="bi bi-sort-down"></i>
+                                </div>
+                            </div>
+                            <div class="stat-card-value">7</div>
+                            <div class="stat-card-btn-area"><button class="btn btn-outline stat-card-btn">Show all<i
+                                        class="bi bi-arrow-up-right-circle"></i>
+                                </button></div>
+
+
+                        </div>
+
+                        <div class="card  show">
+                            <div class="stat-card-header">
+                                <div class="stat-card-title">Low Stock Products</div>
+                                <div class="stat-card-icon uploaded">
+                                    <i class="bi bi-activity"></i>
+                                </div>
+                            </div>
+                            <div class="stat-card-value">7</div>
+                            <div class="stat-card-btn-area"><button class="btn btn-outline stat-card-btn">Show all<i
+                                        class="bi bi-arrow-up-right-circle"></i>
+                                </button></div>
+
+
                         </div>
                     </div>
                 </div>
@@ -1474,14 +1857,24 @@
 
                                 const packages = getSizePackages();
                                 const packageOptions = packages.map(p =>
-                                    `<option value="${p.name}">${p.name} (${p.from}-${p.to})</option>`
+                                    `
+                                    <div class="select-item" data-value="${p.name}">
+            <div class="icon">
+                <i class="bi bi-box"></i>
+            </div>
+            <div class="package-info">
+                <span class="package-name">${p.name}</span>
+                <span class="package-range">${p.from}-${p.to}</span>
+            </div>
+        </div>
+                                    `
                                 ).join("");
 
                                 dz.innerHTML = `
                                                     <h5>Collection Zone ${dropzoneCount}</h5>
                                                     <p>Drag & drop images or paste URLs here (max 10)</p>
                                                     <div><i class="bi bi-cloud-arrow-up"></i></div>
-                                                    <div class="image-list"></div>
+                                                    <div class="image-list">No Images Added Yet</div>
                                                     
                                                     <div class="color-size-controls">
                                                         <div class="color-section">
@@ -1518,13 +1911,18 @@
                                                                     <i class="bi bi-grip-horizontal"></i> choose a package
                                                                 </button>
                                                             </div>
-                                                            <div class="package-selector none">
-                                                                <select class="form-select package-select">
-                                                                    <option value="">Select Package</option>
-                                                                    ${packageOptions}
-                                                                </select>
-                                                                <div class="size-preview"></div>
-                                                            </div>
+                                                           
+
+                                                            <div class="elegant-select">
+    <div class="select-selected package-selector" id="packageSelect">
+        <span>Select Package</span>
+        <i class="bi bi-chevron-down"></i>
+    </div>
+    <div class="select-items package-select" id="packageSelectItems">
+     ${packageOptions}
+    </div>
+      <div class="size-preview"></div>
+</div>
                                                             
                                                             
                                                             
@@ -4572,16 +4970,16 @@
                                 document.getElementById('mobileCta').textContent = adCta;
                             }
 
-                            // Reset preview
-                            document.getElementById('resetPreview').addEventListener('click', function () {
-                                document.getElementById('brandName').value = 'P&B Pull&Bear';
-                                document.getElementById('adTitle').value = 'Fresh arrivals, fall-approved fits';
-                                document.getElementById('adDescription').value = 'Shop the new collection of fall-approved fits that combine comfort and style for the season.';
-                                document.getElementById('adCta').value = 'Shop now';
-                                document.getElementById('productImage').value = '';
+                            // // Reset preview
+                            // document.getElementById('resetPreview').addEventListener('click', function () {
+                            //     document.getElementById('brandName').value = 'P&B Pull&Bear';
+                            //     document.getElementById('adTitle').value = 'Fresh arrivals, fall-approved fits';
+                            //     document.getElementById('adDescription').value = 'Shop the new collection of fall-approved fits that combine comfort and style for the season.';
+                            //     document.getElementById('adCta').value = 'Shop now';
+                            //     document.getElementById('productImage').value = '';
 
-                                updatePreview();
-                            });
+                            //     updatePreview();
+                            // });
 
                             // Submit ad
                             document.getElementById('submitAd').addEventListener('click', function () {
@@ -5913,17 +6311,7 @@
 
             <!-- Tabbed Content -->
             <div class="form-container animatedtoup show">
-                <div class="marketing-controls animatedtoup show">
-                    <div class="search-box animatedtoup show">
-                        <i class="bi bi-search"></i>
-                        <input type="text" placeholder="Search subscriptions..." id="subscriptionSearch">
-                    </div>
-                    <div class="filter-controls animatedtoup show">
-                        <button class="btn btn-outline" id="addSubscriptionBtn">
-                            <i class="bi bi-plus-circle"></i> Add New Subscription
-                        </button>
-                    </div>
-                </div>
+
                 <div class="tabs-btn-area">
                     <button class="tab-button active" data-tab="Countdown">Countdown</button>
                     <button class="tab-button" data-tab="Plan">Subscription Plan</button>
@@ -6034,58 +6422,72 @@
                         </div>
                     </div>
                 </div>
-                <!-- Subscription History Tab -->
-                <div class="site-table-container tab-content animatedtoup" id="subscriptions-content">
-                    <table class="site-table">
-                        <thead>
-                            <tr>
-                                <th><input type="checkbox" id="selectAllSubscriptions"></th>
-                                <th>Plan Name</th>
-                                <th>Period</th>
-                                <th>Status</th>
-                                <th>Orders</th>
-                                <th>Revenue</th>
-                                <th>Days Left</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="subscription-row" data-status="active">
-                                <td><input type="checkbox" class="subscription-checkbox"></td>
-                                <td>Premium Plan</td>
-                                <td>Jun 1, 2023 - Jun 30, 2023</td>
-                                <td><span class="status-badge active">Active</span></td>
-                                <td>127</td>
-                                <td>$3,450.75</td>
-                                <td>
-                                    <div class="days-progress">
-                                        <div class="progress-bar">
-                                            <div class="progress-fill" style="width: 65%"></div>
+                <div class="tab-content animatedtoup" id="subscriptions-content">
+                    <div class="marketing-controls animatedtoup show">
+                        <div class="search-box animatedtoup show">
+                            <i class="bi bi-search"></i>
+                            <input type="text" placeholder="Search subscriptions..." id="subscriptionSearch">
+                        </div>
+                        <div class="filter-controls animatedtoup show" style="opacity: 1; transform: translateY(0px);">
+                            <button class="btn btn-outline" id="addSubscriptionBtn">
+                                <i class="bi bi-plus-circle"></i> Add New Subscription
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Subscription History Tab -->
+                    <div class="site-table-container">
+                        <table class="site-table">
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox" id="selectAllSubscriptions"></th>
+                                    <th>Plan Name</th>
+                                    <th>Period</th>
+                                    <th>Status</th>
+                                    <th>Orders</th>
+                                    <th>Revenue</th>
+                                    <th>Days Left</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="subscription-row" data-status="active">
+                                    <td><input type="checkbox" class="subscription-checkbox"></td>
+                                    <td>Premium Plan</td>
+                                    <td>Jun 1, 2023 - Jun 30, 2023</td>
+                                    <td><span class="status-badge active">Active</span></td>
+                                    <td>127</td>
+                                    <td>$3,450.75</td>
+                                    <td>
+                                        <div class="days-progress">
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 65%"></div>
+                                            </div>
+                                            <span class="days-text">23 days</span>
                                         </div>
-                                        <span class="days-text">23 days</span>
-                                    </div>
-                                </td>
+                                    </td>
 
-                            </tr>
-                            <tr class="subscription-row" data-status="expired">
-                                <td><input type="checkbox" class="subscription-checkbox"></td>
-                                <td>Standard Plan</td>
-                                <td>May 1, 2023 - May 31, 2023</td>
-                                <td><span class="status-badge completed">Expired</span></td>
-                                <td>98</td>
-                                <td>$2,150.50</td>
-                                <td>
-                                    <div class="days-progress">
-                                        <div class="progress-bar">
-                                            <div class="progress-fill expired" style="width: 100%"></div>
+                                </tr>
+                                <tr class="subscription-row" data-status="expired">
+                                    <td><input type="checkbox" class="subscription-checkbox"></td>
+                                    <td>Standard Plan</td>
+                                    <td>May 1, 2023 - May 31, 2023</td>
+                                    <td><span class="status-badge completed">Expired</span></td>
+                                    <td>98</td>
+                                    <td>$2,150.50</td>
+                                    <td>
+                                        <div class="days-progress">
+                                            <div class="progress-bar">
+                                                <div class="progress-fill expired" style="width: 100%"></div>
+                                            </div>
+                                            <span class="days-text">0 days</span>
                                         </div>
-                                        <span class="days-text">0 days</span>
-                                    </div>
-                                </td>
+                                    </td>
 
-                            </tr>
-                        </tbody>
-                    </table>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
+
 
 
                 <div class="tab-content animatedtoup show " id="billing-content"
@@ -6344,7 +6746,7 @@
                 }
             </style>
 
-            <script>
+            <!-- <script>
                 document.addEventListener('DOMContentLoaded', function () {
                     initSubscriptionSection();
                 });
@@ -6474,7 +6876,7 @@
 
                     console.log('Subscription section initialized successfully!');
                 }
-            </script>
+            </script> -->
         </div>
 
         <script>
@@ -10477,7 +10879,7 @@
         </div>
 
         <div id="analytics" class="content-section">
-            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
             <div class="form-container animatedtoup">
                 <div class="form-header">
                     <h4 class="form-title"><i class="bi bi-percent"></i> Analytics Management</h4>
@@ -10501,7 +10903,7 @@
                     </div>
                 </div>
 
-                <!-- Tabs -->
+              
                 <div class="tabs-btn-area">
                     <button class="tab-button active" data-tab="revenue">Overview</button>
                     <button class="tab-button" data-tab="categorysales">Category Sales </button>
@@ -10658,7 +11060,7 @@
                     </div>
                 </div>
 
-            </div>
+            </div> -->
 
         </div>
         <div id="Pos" class="content-section">
@@ -10980,277 +11382,7 @@
         }
     </style>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // POS State
-            let cart = [];
-            let currentPaymentMethod = 'cash';
-            let currentCustomerType = 'walkin';
 
-            // DOM Elements
-            const cartItems = document.getElementById('cartItems');
-            const subtotalEl = document.getElementById('subtotal');
-            const taxEl = document.getElementById('tax');
-            const totalEl = document.getElementById('total');
-            const changeAmountEl = document.getElementById('changeAmount');
-            const cashAmountInput = document.getElementById('cashAmount');
-
-            // Initialize POS
-            initPOS();
-
-            function initPOS() {
-                setupEventListeners();
-                updateCartDisplay();
-            }
-
-            function setupEventListeners() {
-                // Category filtering
-                document.querySelectorAll('.category-btn').forEach(btn => {
-                    btn.addEventListener('click', function () {
-                        document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
-                        this.classList.add('active');
-                        filterProducts(this.dataset.category);
-                    });
-                });
-
-                // Add to cart
-                document.querySelectorAll('.add-to-cart').forEach(btn => {
-                    btn.addEventListener('click', function () {
-                        const productId = this.dataset.id;
-                        addToCart(productId);
-                    });
-                });
-
-                // Customer type selection
-                document.querySelectorAll('.customer-option').forEach(btn => {
-                    btn.addEventListener('click', function () {
-                        document.querySelectorAll('.customer-option').forEach(b => b.classList.remove('active'));
-                        this.classList.add('active');
-                        currentCustomerType = this.dataset.customer;
-                    });
-                });
-
-                // Payment method selection
-                document.querySelectorAll('.payment-method').forEach(btn => {
-                    btn.addEventListener('click', function () {
-                        document.querySelectorAll('.payment-method').forEach(b => b.classList.remove('active'));
-                        this.classList.add('active');
-                        currentPaymentMethod = this.dataset.method;
-                        showPaymentSection(currentPaymentMethod);
-                    });
-                });
-
-                // Cash amount calculation
-                cashAmountInput.addEventListener('input', calculateChange);
-
-                // Clear cart
-                document.getElementById('clearCart').addEventListener('click', clearCart);
-
-                // Complete sale
-                document.getElementById('completeSale').addEventListener('click', completeSale);
-
-                // Search products
-                document.getElementById('posSearch').addEventListener('input', searchProducts);
-            }
-
-            function addToCart(productId) {
-                const productCard = document.querySelector(`.product-card[data-id="${productId}"]`);
-                const productName = productCard.querySelector('.product-name').textContent;
-                const productPrice = parseFloat(productCard.querySelector('.product-price').textContent.replace('$', ''));
-                const productImage = productCard.querySelector('.product-image img').src;
-
-                const existingItem = cart.find(item => item.id === productId);
-
-                if (existingItem) {
-                    existingItem.quantity += 1;
-                } else {
-                    cart.push({
-                        id: productId,
-                        name: productName,
-                        price: productPrice,
-                        image: productImage,
-                        quantity: 1
-                    });
-                }
-
-                updateCartDisplay();
-            }
-
-            function updateCartDisplay() {
-                const emptyCart = document.querySelector('.empty-cart');
-
-                if (cart.length === 0) {
-                    cartItems.innerHTML = '<div class="empty-cart"><i class="bi bi-cart-x"></i><p>No items in cart</p></div>';
-                    updateTotals();
-                    return;
-                }
-
-                cartItems.innerHTML = '';
-                cart.forEach(item => {
-                    const cartItem = document.createElement('div');
-                    cartItem.className = 'cart-item';
-                    cartItem.innerHTML = `
-                            <div class="cart-item-image">
-                                <img src="${item.image}" alt="${item.name}">
-                            </div>
-                            <div class="cart-item-details">
-                                <div class="cart-item-name">${item.name}</div>
-                                <div class="cart-item-price">$${item.price.toFixed(2)}</div>
-                            </div>
-                            <div class="cart-item-controls">
-                                <button class="quantity-btn minus" data-id="${item.id}">-</button>
-                                <input type="text" class="quantity-input" value="${item.quantity}" readonly>
-                                <button class="quantity-btn plus" data-id="${item.id}">+</button>
-                                <button class="remove-item" data-id="${item.id}">
-                                    <i class="bi bi-trash"></i>
-                                </button>
-                            </div>
-                        `;
-                    cartItems.appendChild(cartItem);
-                });
-
-                // Add event listeners to quantity controls
-                document.querySelectorAll('.quantity-btn.minus').forEach(btn => {
-                    btn.addEventListener('click', function () {
-                        updateQuantity(this.dataset.id, -1);
-                    });
-                });
-
-                document.querySelectorAll('.quantity-btn.plus').forEach(btn => {
-                    btn.addEventListener('click', function () {
-                        updateQuantity(this.dataset.id, 1);
-                    });
-                });
-
-                document.querySelectorAll('.remove-item').forEach(btn => {
-                    btn.addEventListener('click', function () {
-                        removeFromCart(this.dataset.id);
-                    });
-                });
-
-                updateTotals();
-            }
-
-            function updateQuantity(productId, change) {
-                const item = cart.find(item => item.id === productId);
-                if (item) {
-                    item.quantity += change;
-                    if (item.quantity <= 0) {
-                        removeFromCart(productId);
-                    } else {
-                        updateCartDisplay();
-                    }
-                }
-            }
-
-            function removeFromCart(productId) {
-                cart = cart.filter(item => item.id !== productId);
-                updateCartDisplay();
-            }
-
-            function clearCart() {
-                if (cart.length > 0 && confirm('Are you sure you want to clear the cart?')) {
-                    cart = [];
-                    updateCartDisplay();
-                }
-            }
-
-            function updateTotals() {
-                const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-                const tax = subtotal * 0.10; // 10% tax
-                const total = subtotal + tax;
-
-                subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
-                taxEl.textContent = `$${tax.toFixed(2)}`;
-                totalEl.textContent = `$${total.toFixed(2)}`;
-
-                calculateChange();
-            }
-
-            function calculateChange() {
-                if (currentPaymentMethod === 'cash') {
-                    const total = parseFloat(totalEl.textContent.replace('$', ''));
-                    const cashAmount = parseFloat(cashAmountInput.value) || 0;
-                    const change = cashAmount - total;
-                    changeAmountEl.textContent = `$${Math.max(0, change).toFixed(2)}`;
-                }
-            }
-
-            function showPaymentSection(method) {
-                document.querySelectorAll('.payment-section').forEach(section => {
-                    section.classList.remove('active');
-                });
-                document.getElementById(`${method}Section`).classList.add('active');
-            }
-
-            function filterProducts(category) {
-                document.querySelectorAll('.product-card').forEach(card => {
-                    if (category === 'all' || card.dataset.category === category) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            }
-
-            function searchProducts() {
-                const searchTerm = this.value.toLowerCase();
-                document.querySelectorAll('.product-card').forEach(card => {
-                    const productName = card.querySelector('.product-name').textContent.toLowerCase();
-                    if (productName.includes(searchTerm)) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            }
-
-            function completeSale() {
-                if (cart.length === 0) {
-                    alert('Please add items to the cart before completing the sale.');
-                    return;
-                }
-
-                if (currentPaymentMethod === 'cash') {
-                    const total = parseFloat(totalEl.textContent.replace('$', ''));
-                    const cashAmount = parseFloat(cashAmountInput.value) || 0;
-
-                    if (cashAmount < total) {
-                        alert('Insufficient cash amount. Please enter a higher amount.');
-                        return;
-                    }
-                }
-
-                // Process sale (in real implementation, this would send data to server)
-                const saleData = {
-                    items: cart,
-                    customer: {
-                        type: currentCustomerType,
-                        name: document.getElementById('customerName').value,
-                        email: document.getElementById('customerEmail').value,
-                        phone: document.getElementById('customerPhone').value
-                    },
-                    payment: {
-                        method: currentPaymentMethod,
-                        amount: parseFloat(totalEl.textContent.replace('$', ''))
-                    },
-                    timestamp: new Date().toISOString()
-                };
-
-                console.log('Sale completed:', saleData);
-
-                // Show success message
-                alert(`Sale completed successfully!\nTotal: ${totalEl.textContent}\nThank you for your purchase!`);
-
-                // Reset for next sale
-                clearCart();
-                document.getElementById('customerName').value = '';
-                document.getElementById('customerEmail').value = '';
-                document.getElementById('customerPhone').value = '';
-                cashAmountInput.value = '';
-            }
-        });
-    </script>
 
 
 
@@ -11431,14 +11563,17 @@
             toggleBtn.addEventListener('click', function () {
                 sidebar.classList.toggle('collapsed');
 
-                // Change the icon based on state
                 const icon = toggleBtn.querySelector('i');
+
+                // Check if the sidebar is NOW collapsed
                 if (sidebar.classList.contains('collapsed')) {
-                    icon.classList.remove('bi-chevron-left');
-                    icon.classList.add('bi-chevron-right');
+                    // If it's collapsed, show the EXPAND icon
+                    icon.classList.remove('bi-arrows-collapse-vertical');
+                    icon.classList.add('bi-arrows-expand-vertical');
                 } else {
-                    icon.classList.remove('bi-chevron-right');
-                    icon.classList.add('bi-chevron-left');
+                    // If it's NOT collapsed (it's expanded), show the COLLAPSE icon
+                    icon.classList.remove('bi-arrows-expand-vertical');
+                    icon.classList.add('bi-arrows-collapse-vertical');
                 }
             });
 
@@ -11462,15 +11597,15 @@
     <script>
 
 
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function (event) {
-            const dropdown = document.getElementById('dropdown');
-            const profileIcon = document.querySelector('.profile-icon');
+        // // Close dropdown when clicking outside
+        // document.addEventListener('click', function (event) {
+        //     const dropdown = document.getElementById('dropdown');
+        //     const profileIcon = document.querySelector('.profile-icon');
 
-            if (!profileIcon.contains(event.target) && !dropdown.contains(event.target)) {
-                dropdown.style.display = 'none';
-            }
-        });
+        //     if (!profileIcon.contains(event.target) && !dropdown.contains(event.target)) {
+        //         dropdown.style.display = 'none';
+        //     }
+        // });
 
         // Navigation functionality
         document.querySelectorAll('.nav-item').forEach(item => {
@@ -11751,15 +11886,15 @@
 
 
 
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function (event) {
-            const dropdown = document.getElementById('dropdown');
-            const profileIcon = document.querySelector('.profile-icon');
+        // // Close dropdown when clicking outside
+        // document.addEventListener('click', function (event) {
+        //     const dropdown = document.getElementById('dropdown');
+        //     const profileIcon = document.querySelector('.profile-icon');
 
-            if (!profileIcon.contains(event.target) && !dropdown.contains(event.target)) {
-                dropdown.classList.remove('show');
-            }
-        });
+        //     if (!profileIcon.contains(event.target) && !dropdown.contains(event.target)) {
+        //         dropdown.classList.remove('show');
+        //     }
+        // });
 
         // Update URL with target section
         function updateURL(target) {
@@ -11991,7 +12126,7 @@
         }
     </script>
 
-
+    <!-- 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             // Revenue Chart
@@ -12073,7 +12208,7 @@
 
 
 
-    </script>
+    </script> -->
 
 
     <!--  // handle the datatabs  -->
