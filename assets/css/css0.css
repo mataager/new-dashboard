@@ -9,7 +9,9 @@
     --border-radius: 12px;
     --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     --transition: all 0.3s ease;
-    --font-main: 'Lexend', sans-serif
+    --font-main: 'Lexend', sans-serif;
+
+    --w-200: 200px;
 }
 
 :root {
@@ -35,6 +37,10 @@ html:not(.theme-loaded)body {
 html.theme-loaded body {
     opacity: 1;
     transition: opacity 0.2s ease-in
+}
+
+.w-200 {
+    width: var(--w-200);
 }
 
 :root {
@@ -1315,11 +1321,6 @@ body {
     font-weight: 500;
 }
 
-.metric-value {
-    font-size: 24px;
-    font-weight: 700;
-    margin: 5px 0;
-}
 
 .metric-change {
     display: flex;
@@ -1564,6 +1565,15 @@ body {
     margin-bottom: 30px;
 }
 
+.notification-header,
+.alerts-header {
+    margin-bottom: 0px !important;
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 20px;
+    flex-direction: row !important;
+    align-items: center !important;
+}
+
 .stat-card {
     background: white;
     border-radius: var(--border-radius);
@@ -1761,7 +1771,7 @@ body {
     padding: 12px 16px;
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 14px;
     transition: var(--transition);
     background: var(--card-bg);
     color: var(--text-color);
@@ -3050,6 +3060,14 @@ html {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
+.select-selected.sm {
+    font-size: 12px;
+    height: 25px !important;
+    width: 140px;
+    font-size: 10px;
+    padding: 8px;
+}
+
 .select-selected:hover {
     border-color: var(--foucesed-inbut-border);
     box-shadow: 0 4px 12px rgba(78, 115, 223, 0.1);
@@ -3110,6 +3128,7 @@ html {
     display: flex;
     align-items: center;
 }
+
 
 .select-item:last-child {
     border-bottom: none;
@@ -3250,6 +3269,7 @@ html {
 }
 
 .review-item {
+    font-size: 14px;
     color: var(--text-color);
     padding: 16px;
     border-bottom: 1px solid var(--border-color);
@@ -3290,7 +3310,7 @@ html {
 
 .review-product {
     margin-bottom: 8px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .review-product a {
@@ -3552,11 +3572,12 @@ html {
 }
 
 .domain-item {
+    font-size: 14px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     margin-bottom: 10px;
 }
 
@@ -3666,7 +3687,7 @@ html {
 
 .stuck-carts-list,
 .customer-orders-list {
-    padding: 20px;
+    padding: 20px 0px;
 }
 
 .customer-order-card {
@@ -3769,7 +3790,7 @@ html {
     justify-content: center;
     align-items: center;
     padding: 20px;
-    border-top: 1px solid var(--light-gray);
+    border-top: 1px solid var(--border-color);
     gap: 15px;
 }
 
@@ -4857,6 +4878,7 @@ html {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     padding: 20px;
     height: fit-content;
+    margin-bottom: 20px;
     /* width: 100%; */
 }
 
@@ -4892,12 +4914,18 @@ html {
     gap: 8px;
 }
 
-
+.site-globe-icon,
+.alert-icon,
+.notifi-icon {
+    color: rgb(78 115 223 / 84%);
+    width: 20px;
+}
 
 .site-url {
     font-size: 12px;
     color: var(--text-color2);
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 8px;
 }
@@ -5156,7 +5184,6 @@ html {
 }
 
 .chart-container {
-    background: white;
     border-radius: 12px;
     padding: 20px;
     box-shadow: var(--card-shadow);
@@ -5246,9 +5273,7 @@ html {
 
 .advanced-stat {
     width: fit-content;
-    background: white;
     border-radius: 12px;
-    /* padding: 20px; */
     box-shadow: var(--card-shadow);
     text-align: center;
 }
@@ -5311,11 +5336,7 @@ html {
     background-color: var(--light-bg);
 }
 
-.metric-value {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 5px;
-}
+
 
 .metric-label {
     font-size: 0.875rem;
@@ -5623,7 +5644,7 @@ html {
 .welcome-section {
     margin-bottom: 20px;
     display: grid;
-    grid-template-columns: 2fr 2.5fr;
+    grid-template-columns: 1fr;
     gap: 20px;
 }
 
@@ -6507,7 +6528,6 @@ html {
     font-size: small;
     margin: 10px 15px;
     display: block;
-    width: calc(100% - 30px);
 }
 
 .mark-all-read:hover {
@@ -6515,9 +6535,11 @@ html {
 }
 
 .notification-controls {
+    padding: 10px;
+    background: var(--hover-color);
     display: flex;
     gap: 10px;
-    margin: 10px 15px;
+    align-items: center;
 }
 
 .control-btn {
@@ -6537,22 +6559,21 @@ html {
 }
 
 .notification-bell-btn {
-    width: 50px;
-    padding-right: 0px;
-    height: 50px;
-    border-radius: 50% 0% 0% 50%;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
     background-color: var(--info);
     color: white;
     border: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
     position: absolute;
-    right: 0;
-    top: 90px;
+    right: 10px;
+    top: 10px;
     transition: transform 0.3s ease;
     z-index: 5;
 }
@@ -7387,6 +7408,178 @@ html {
     }
 }
 
+/* shipping site options */
+.companies-section {
+    margin-top: 30px;
+}
+
+.companies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.company-card {
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 15px;
+    background-color: var(--card-bg);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.company-card:hover {
+    border-color: var(--border-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.company-card.active {
+    /* border-color: var(--primary); */
+    background-color: rgba(67, 97, 238, 0.05);
+}
+
+.company-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.company-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    font-weight: 600;
+    font-size: 12px;
+    color: var(--primary);
+    border: 1px solid var(--border);
+}
+
+.company-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.company-price {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--primary);
+    margin-top: 5px;
+}
+
+.company-status {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 8px;
+}
+
+.status-active {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-inactive {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.special-fees-list {
+    background-color: #f8f9fa;
+    border-radius: var(--radius);
+    padding: 15px;
+    margin-top: 10px;
+}
+
+.fee-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.fee-item:last-child {
+    border-bottom: none;
+}
+
+.fee-city {
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.fee-amount {
+    font-weight: 500;
+    color: var(--primary);
+}
+
+.fee-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.company-details {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: #f8f9fa;
+}
+
+.company-details.active {
+    display: block;
+}
+
+.company-details-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.company-details-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.company-default-fee {
+    margin-bottom: 20px;
+}
+
+.company-cities-section {
+    margin-top: 20px;
+}
+
+.company-cities-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.company-cities-list {
+    margin-top: 15px;
+}
+
+.no-fees-message {
+    font-size: 12px;
+    text-align: center;
+    padding: 20px;
+    color: var(--gray);
+}
+
+/*  */
 .order-actions {
     gap: 5px;
     display: flex;
@@ -7419,17 +7612,14 @@ html {
 }
 
 .control-btn {
-    background: #f3f4f6;
+    background: var(--card-bg);
     border: none;
-    width: 32px;
-    height: 32px;
     border-radius: 8px;
     display: flex;
-    align-items: center;
-    justify-content: center;
     cursor: pointer;
     transition: all 0.2s;
     color: #4b5563;
+    justify-content: center;
 }
 
 .control-btn:hover {
@@ -7591,14 +7781,7 @@ html {
     font-weight: 500;
 }
 
-.chart-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-    padding-top: 15px;
-    border-top: 1px solid var(--border-color);
-}
+
 
 .period-indicator {
     display: flex;
@@ -7636,7 +7819,7 @@ html {
     color: var(--text-color);
     display: block;
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 400;
     letter-spacing: 0.5px;
 }
 
@@ -7644,7 +7827,7 @@ html {
     color: var(--text-color2);
     display: block;
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 @media (max-width: 768px) {
@@ -7770,7 +7953,7 @@ html {
 .metric-value {
     font-size: 14px;
     font-weight: 500;
-    color: #1e293b;
+    color: var(--text-color);
     margin-bottom: 4px;
 }
 
@@ -7800,8 +7983,8 @@ html {
 .traffic-chart-enhanced {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     padding: 20px;
-    background: white;
-    border: 1px solid #f1f5f9;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
     border-radius: 12px;
     margin-bottom: 16px;
 }
@@ -7824,7 +8007,7 @@ html {
 }
 
 .grid-line {
-    border-top: 1px solid #f1f5f9;
+    border-top: 1px solid var(--border-color);
 }
 
 .chart-line {
@@ -7862,7 +8045,7 @@ html {
     display: flex;
     justify-content: space-between;
     font-size: 0.75rem;
-    color: #64748b;
+    color: var(--text-color);
 }
 
 .chart-footer {
@@ -7871,7 +8054,7 @@ html {
     align-items: center;
     margin-top: 16px;
     padding-top: 16px;
-    border-top: 1px solid #f1f5f9;
+    border-top: 1px solid var(--border-color);
 }
 
 .chart-period {
