@@ -1322,13 +1322,14 @@
 
 
 
-                    <!-- Images Form -->
-                    <div class="form-container animatedtoup">
+
+
+                    <div class="form-container animatedtoup show">
                         <div class="form-header">
-                            <h4 class="form-title"><i class="bi bi-images"></i> Images</h4>
+                            <h4 class="form-title"><i class="bi bi-images"></i> Collection Zones</h4>
                             <div class="form-actions">
-                                <button class="btn btn-outline">
-                                    <i class="bi bi-gear"></i> Set as Default
+                                <button class="btn btn-outline" id="toggleAllSettings">
+                                    <i class="bi bi-gear"></i> Toggle All Settings
                                 </button>
                             </div>
                         </div>
@@ -1337,564 +1338,1188 @@
                             <!-- Drop zones will be added dynamically -->
                         </div>
 
-                        <button id="addDropzoneBtn" class="btn btn-outline">+ Add Collection Zone</button>
-                        <!-- Modal for color selection from image -->
-                        <div id="colorPickerModal" class="modal">
-                            <div class="modal-content">
-                                <h3>Select Color from Image</h3>
-                                <p>Drag the circle to choose a color from the image</p>
-
-                                <div class="circle-size-control">
-                                    <label>Circle Size:</label>
-                                    <input type="range" id="circleSize" min="20" max="100" value="50">
-                                    <span id="circleSizeValue">50px</span>
-                                </div>
-
-                                <div class="crop-container">
-                                    <img id="colorSourceImage" src="" alt="Source for color selection">
-                                    <div class="crop-circle" id="colorPicker"></div>
-                                </div>
-
-                                <div id="selectedColorInfo"
-                                    style="margin: 15px 0; padding: 10px; background: #f8f9fa; border-radius: 6px; display: none;">
-                                    <p>Selected Color: <span id="selectedColorHex"></span></p>
-                                    <div id="selectedColorPreview"
-                                        style="width: 30px; height: 30px; border: 1px solid #ddd; border-radius: 4px; display: inline-block; vertical-align: middle; margin-left: 10px;">
-                                    </div>
-                                </div>
-
-                                <div style="display: flex; justify-content: space-between; margin-top: 20px;">
-                                    <button id="cancelColorPick" class="btn btn-outline">Cancel</button>
-                                    <button id="confirmColorPick" class="btn btn-primary">Select Color</button>
-                                </div>
-                            </div>
-                        </div>
+                        <button id="addDropzoneBtn" class="btn btn-outline">
+                            <i class="bi bi-plus-circle"></i> Add Collection Zone
+                        </button>
                     </div>
                     <script>
-                        document.addEventListener("DOMContentLoaded", () => {
-                            // Initialize sample data if not exists
-                            if (!localStorage.getItem("sizePackages")) {
-                                const sampleData = [
-                                    {
-                                        "name": "men shoes",
-                                        "from": "40",
-                                        "to": "45",
-                                        "quantity": "10",
-                                        "exceptions": ["39", "46"],
-                                        "date": "07/09/2025, 14:02:10"
-                                    },
-                                    {
-                                        "name": "me shose 1",
-                                        "from": "35",
-                                        "to": "45",
-                                        "quantity": "10",
-                                        "exceptions": ["34", "47"],
-                                        "date": "07/09/2025, 15:31:46"
-                                    },
-                                    {
-                                        "name": "men shose 2",
-                                        "from": "40",
-                                        "to": "45",
-                                        "quantity": "20",
-                                        "exceptions": ["38"],
-                                        "date": "07/09/2025, 15:32:00"
+
+                        class CollectionZoneManager {
+                            constructor() {
+                                this.zones = [];
+                                this.currentZoneIndex = 0;
+                                this.init();
+                            }
+
+                            init() {
+                                this.loadTemplate();
+                                this.addEventListeners();
+                                this.addDefaultZone();
+                            }
+
+                            loadTemplate() {
+                                // Template is already in the HTML
+                                console.log('Collection Zone Manager initialized');
+                            }
+
+                            addEventListeners() {
+                                // Add zone button
+                                document.getElementById('addDropzoneBtn').addEventListener('click', () => this.addZone());
+
+                                // Toggle all settings button
+                                document.getElementById('toggleAllSettings').addEventListener('click', () => this.toggleAllSettings());
+
+                                // Initialize color picker modal
+                                this.initColorPickerModal();
+                            }
+
+                            addDefaultZone() {
+                                this.addZone();
+                            }
+
+                            addZone() {
+                                const container = document.getElementById('dropzonesContainer');
+                                const template = document.getElementById('dropzoneTemplate');
+                                const clone = document.importNode(template.content, true);
+
+                                const zoneNumber = this.zones.length + 1;
+                                clone.querySelector('.zone-number').textContent = zoneNumber;
+
+                                // Set zone index
+                                const zoneElement = clone.querySelector('.dropzone');
+                                zoneElement.dataset.index = zoneNumber;
+
+                                container.appendChild(clone);
+                                this.zones.push(zoneNumber);
+
+                                // Initialize the new zone
+                                this.initZone(zoneElement);
+
+                                // Update zone numbers
+                                this.updateZoneNumbers();
+
+                                // Scroll to new zone
+                                zoneElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                                // Add highlight animation
+                                zoneElement.classList.add('new-zone');
+                                setTimeout(() => zoneElement.classList.remove('new-zone'), 1000);
+                            }
+
+                            initZone(zoneElement) {
+                                const zoneIndex = zoneElement.dataset.index;
+
+                                // Upload area functionality
+                                const uploadArea = zoneElement.querySelector('.upload-area');
+                                const fileInput = zoneElement.querySelector('.file-input');
+                                const browseBtn = zoneElement.querySelector('.browse-btn');
+                                const urlInput = zoneElement.querySelector('.url-input');
+                                const addUrlBtn = zoneElement.querySelector('.add-url-btn');
+                                const imageList = zoneElement.querySelector('.image-list');
+                                const imageCount = zoneElement.querySelector('.image-count');
+                                const clearAllBtn = zoneElement.querySelector('.clear-all-btn');
+
+                                // Drag and drop
+                                ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                                    uploadArea.addEventListener(eventName, (e) => {
+                                        e.preventDefault();
+                                        e.stopPropagation();
+                                    });
+                                });
+
+                                ['dragenter', 'dragover'].forEach(eventName => {
+                                    uploadArea.addEventListener(eventName, () => {
+                                        uploadArea.classList.add('drag-over');
+                                    });
+                                });
+
+                                ['dragleave', 'drop'].forEach(eventName => {
+                                    uploadArea.addEventListener(eventName, () => {
+                                        uploadArea.classList.remove('drag-over');
+                                    });
+                                });
+
+                                uploadArea.addEventListener('drop', (e) => {
+                                    const files = e.dataTransfer.files;
+                                    this.handleFiles(files, imageList, imageCount);
+                                });
+
+                                browseBtn.addEventListener('click', () => fileInput.click());
+
+                                fileInput.addEventListener('change', (e) => {
+                                    this.handleFiles(e.target.files, imageList, imageCount);
+                                });
+
+                                addUrlBtn.addEventListener('click', () => {
+                                    const url = urlInput.value.trim();
+                                    if (url) {
+                                        this.addImageFromUrl(url, imageList, imageCount);
+                                        urlInput.value = '';
                                     }
-                                ];
-                                localStorage.setItem("sizePackages", JSON.stringify(sampleData));
+                                });
+
+                                urlInput.addEventListener('keypress', (e) => {
+                                    if (e.key === 'Enter') {
+                                        addUrlBtn.click();
+                                    }
+                                });
+
+                                clearAllBtn.addEventListener('click', () => {
+                                    imageList.innerHTML = `
+                <div class="empty-state">
+                    <p>No images added yet</p>
+                </div>
+            `;
+                                    imageCount.textContent = '0 images';
+                                });
+
+                                // Color selection functionality
+                                this.initColorSelection(zoneElement);
+
+                                // Size selection functionality
+                                this.initSizeSelection(zoneElement);
+
+                                // Zone actions
+                                const toggleBtn = zoneElement.querySelector('.toggle-zone');
+                                const deleteBtn = zoneElement.querySelector('.delete-zone');
+                                const zoneContent = zoneElement.querySelector('.dropzone-content');
+
+                                toggleBtn.addEventListener('click', () => {
+                                    const isHidden = zoneContent.style.display === 'none';
+                                    zoneContent.style.display = isHidden ? 'block' : 'none';
+                                    toggleBtn.innerHTML = isHidden ?
+                                        '<i class="bi bi-chevron-up"></i>' :
+                                        '<i class="bi bi-chevron-down"></i>';
+                                });
+
+                                deleteBtn.addEventListener('click', () => {
+                                    if (this.zones.length > 1) {
+                                        zoneElement.remove();
+                                        this.zones = this.zones.filter(z => z != zoneIndex);
+                                        this.updateZoneNumbers();
+                                    } else {
+                                        alert('At least one collection zone is required');
+                                    }
+                                });
                             }
 
-                            const dropzonesContainer = document.getElementById("dropzonesContainer");
-                            const addDropzoneBtn = document.getElementById("addDropzoneBtn");
-                            const colorPickerModal = document.getElementById("colorPickerModal");
-                            const colorSourceImage = document.getElementById("colorSourceImage");
-                            const colorPicker = document.getElementById("colorPicker");
-                            const cancelColorPick = document.getElementById("cancelColorPick");
-                            const confirmColorPick = document.getElementById("confirmColorPick");
-                            const circleSize = document.getElementById("circleSize");
-                            const circleSizeValue = document.getElementById("circleSizeValue");
-                            const selectedColorInfo = document.getElementById("selectedColorInfo");
-                            const selectedColorHex = document.getElementById("selectedColorHex");
-                            const selectedColorPreview = document.getElementById("selectedColorPreview");
-                            const sizeSection = document.querySelector('.size-section');
-                            const toggleButtons = document.querySelectorAll('.size-toggle-btn');
-                            const packageSelector = document.querySelector('.package-selector');
-                            const sizeCreator = document.querySelector('.size-creator');
+                            initColorSelection(zoneElement) {
+                                const colorModes = zoneElement.querySelectorAll('.toggle-color-mode');
+                                const colorContent = zoneElement.querySelector('.color-control-content');
+                                const colorPickerBtn = zoneElement.querySelector('.color-preview-btn');
+                                const colorInput = zoneElement.querySelector('.color-input');
+                                const colorName = zoneElement.querySelector('.color-name');
+                                const randomColorBtn = zoneElement.querySelector('.random-color');
+                                const colorSwatches = zoneElement.querySelectorAll('.color-swatch');
+                                const imageSwatches = zoneElement.querySelector('.image-swatches');
 
-                            let dropzoneCount = 0;
-                            let currentColorPickerContext = null;
-                            let isDragging = false;
-                            let selectedColor = null;
-                            let currentExceptions = [];
+                                // Color mode switching
+                                colorModes.forEach(mode => {
+                                    mode.addEventListener('click', () => {
+                                        const modeType = mode.dataset.mode;
 
-                            // Get size packages from local DB
-                            function getSizePackages() {
-                                return JSON.parse(localStorage.getItem("sizePackages")) || [];
+                                        // Update active button
+                                        colorModes.forEach(m => m.classList.remove('active'));
+                                        mode.classList.add('active');
+
+                                        // Show corresponding content
+                                        const containers = colorContent.querySelectorAll('> div');
+                                        containers.forEach(container => {
+                                            container.classList.remove('active');
+                                            if (container.classList.contains(`${modeType}-container`) ||
+                                                container.classList.contains(`color-${modeType}-container`)) {
+                                                container.classList.add('active');
+                                            }
+                                        });
+
+                                        // Handle image mode
+                                        if (modeType === 'image') {
+                                            this.initImageColorPicker(imageSwatches, zoneElement);
+                                        }
+                                    });
+                                });
+
+                                // Color picker
+                                colorPickerBtn.addEventListener('click', () => {
+                                    this.openColorPickerModal(colorPickerBtn, colorName);
+                                });
+
+                                colorInput.addEventListener('input', (e) => {
+                                    const color = e.target.value;
+                                    colorPickerBtn.style.backgroundColor = color;
+                                    colorPickerBtn.dataset.color = color;
+                                    this.updateRecentColors(color, colorName.value || 'Custom');
+                                });
+
+                                // Random color
+                                randomColorBtn.addEventListener('click', () => {
+                                    const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+                                    colorInput.value = randomColor;
+                                    colorPickerBtn.style.backgroundColor = randomColor;
+                                    colorPickerBtn.dataset.color = randomColor;
+                                    colorName.value = 'Random';
+                                    this.updateRecentColors(randomColor, 'Random');
+                                });
+
+                                // Color swatches
+                                colorSwatches.forEach(swatch => {
+                                    swatch.addEventListener('click', () => {
+                                        const color = swatch.dataset.color;
+                                        const name = swatch.dataset.name;
+                                        colorInput.value = color;
+                                        colorPickerBtn.style.backgroundColor = color;
+                                        colorPickerBtn.dataset.color = color;
+                                        colorName.value = name;
+                                        this.updateRecentColors(color, name);
+                                    });
+                                });
                             }
 
-                            function createDropzone() {
-                                dropzoneCount++;
-                                const dz = document.createElement("div");
-                                dz.classList.add("dropzone");
-                                dz.dataset.index = dropzoneCount;
+                            initSizeSelection(zoneElement) {
+                                const sizeToggles = zoneElement.querySelectorAll('.size-toggle-btn');
+                                const sizeContent = zoneElement.querySelector('.size-control-content');
+                                const packageSelector = zoneElement.querySelector('.package-selector');
+                                const packageItems = zoneElement.querySelectorAll('.select-item');
+                                const sizePreview = zoneElement.querySelector('.size-preview');
+                                const sizeChips = zoneElement.querySelector('.size-chips');
+                                const clearPackageBtn = zoneElement.querySelector('.clear-package');
 
-                                const packages = getSizePackages();
-                                const packageOptions = packages.map(p =>
-                                    `
-                                    <div class="select-item" data-value="${p.name}">
+                                // Size mode switching
+                                sizeToggles.forEach(toggle => {
+                                    toggle.addEventListener('click', () => {
+                                        const target = toggle.dataset.target;
+
+                                        // Update active button
+                                        sizeToggles.forEach(t => t.classList.remove('active'));
+                                        toggle.classList.add('active');
+
+                                        // Show corresponding content
+                                        const containers = sizeContent.querySelectorAll('> div');
+                                        containers.forEach(container => {
+                                            container.classList.remove('active');
+                                            if (container.classList.contains(`${target}-container`)) {
+                                                container.classList.add('active');
+                                            }
+                                        });
+                                    });
+                                });
+
+                                // Package selector
+                                packageSelector.addEventListener('click', (e) => {
+                                    e.stopPropagation();
+                                    const items = zoneElement.querySelector('.select-items');
+                                    items.classList.toggle('show');
+                                    packageSelector.classList.toggle('active');
+                                });
+
+                                // Close selector when clicking outside
+                                document.addEventListener('click', () => {
+                                    const items = zoneElement.querySelector('.select-items');
+                                    items.classList.remove('show');
+                                    packageSelector.classList.remove('active');
+                                });
+
+                                // Package selection
+                                packageItems.forEach(item => {
+                                    item.addEventListener('click', () => {
+                                        const packageName = item.dataset.value;
+                                        const range = item.querySelector('.package-range').textContent;
+
+                                        // Update selected package
+                                        const selectedText = packageSelector.querySelector('.select-text');
+                                        selectedText.textContent = packageName;
+
+                                        // Generate size chips
+                                        this.generateSizeChips(range, sizeChips);
+
+                                        // Update badge
+                                        const badge = zoneElement.querySelector('#selectedPackageName');
+                                        badge.textContent = packageName;
+
+                                        // Close selector
+                                        const items = zoneElement.querySelector('.select-items');
+                                        items.classList.remove('show');
+                                        packageSelector.classList.remove('active');
+                                    });
+                                });
+
+                                // Clear package
+                                clearPackageBtn.addEventListener('click', () => {
+                                    sizeChips.innerHTML = '';
+                                    const selectedText = packageSelector.querySelector('.select-text');
+                                    selectedText.textContent = 'Select Package';
+                                    const badge = zoneElement.querySelector('#selectedPackageName');
+                                    badge.textContent = 'Not Selected';
+                                });
+
+                                // Size creator
+                                const saveSizeBtn = zoneElement.querySelector('.save-size');
+                                const cancelCreateBtn = zoneElement.querySelector('.cancel-create');
+                                const addExceptionBtn = zoneElement.querySelector('.add-exception');
+                                const exceptionsList = zoneElement.querySelector('.exceptions-list-creator');
+
+                                saveSizeBtn.addEventListener('click', () => {
+                                    const fromSize = zoneElement.querySelector('.from-size').value;
+                                    const toSize = zoneElement.querySelector('.to-size').value;
+
+                                    if (fromSize && toSize && parseInt(fromSize) < parseInt(toSize)) {
+                                        // Create new package
+                                        const range = `${fromSize}-${toSize}`;
+                                        const exceptions = Array.from(exceptionsList.querySelectorAll('.exception-chip'))
+                                            .map(chip => chip.textContent.replace('×', '').trim());
+
+                                        // Add to package list
+                                        this.addNewPackage(zoneElement, fromSize, toSize, exceptions);
+
+                                        // Switch back to package selector
+                                        sizeToggles[0].click();
+
+                                        // Clear creator
+                                        zoneElement.querySelector('.from-size').value = '';
+                                        zoneElement.querySelector('.to-size').value = '';
+                                        exceptionsList.innerHTML = '';
+                                    } else {
+                                        alert('Please enter valid size range (From must be less than To)');
+                                    }
+                                });
+
+                                cancelCreateBtn.addEventListener('click', () => {
+                                    sizeToggles[0].click();
+                                });
+
+                                addExceptionBtn.addEventListener('click', () => {
+                                    const exceptionValue = zoneElement.querySelector('.exception-value').value.trim();
+                                    if (exceptionValue) {
+                                        const chip = document.createElement('div');
+                                        chip.className = 'exception-chip';
+                                        chip.innerHTML = `
+                    ${exceptionValue}
+                    <span class="remove-exception" style="cursor:pointer">×</span>
+                `;
+
+                                        chip.querySelector('.remove-exception').addEventListener('click', () => {
+                                            chip.remove();
+                                        });
+
+                                        exceptionsList.appendChild(chip);
+                                        zoneElement.querySelector('.exception-value').value = '';
+                                    }
+                                });
+                            }
+
+                            initImageColorPicker(imageSwatches, zoneElement) {
+                                // Add click handler to image swatches
+                                const imageSwatch = imageSwatches.querySelector('.image-swatch');
+                                imageSwatch.addEventListener('click', () => {
+                                    // In a real implementation, this would open a file picker
+                                    // For demo, we'll use a sample image
+                                    const sampleImage = 'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&h=300&fit=crop';
+                                    this.openColorPickerFromImage(sampleImage, zoneElement);
+                                });
+                            }
+
+                            openColorPickerModal(colorBtn, colorNameInput) {
+                                const modal = document.getElementById('colorPickerModal');
+                                modal.classList.add('show');
+
+                                // Set current color
+                                const currentColor = colorBtn.dataset.color;
+                                const preview = document.getElementById('selectedColorPreview');
+                                const hexSpan = document.getElementById('selectedColorHex');
+
+                                preview.style.backgroundColor = currentColor;
+                                hexSpan.textContent = currentColor;
+
+                                // Set up modal buttons
+                                const confirmBtn = document.getElementById('confirmColorPick');
+                                const cancelBtn = document.getElementById('cancelColorPick');
+
+                                const confirmHandler = () => {
+                                    const selectedColor = hexSpan.textContent;
+                                    colorBtn.style.backgroundColor = selectedColor;
+                                    colorBtn.dataset.color = selectedColor;
+                                    colorNameInput.value = 'From Image';
+                                    this.updateRecentColors(selectedColor, 'From Image');
+                                    modal.classList.remove('show');
+
+                                    // Clean up
+                                    confirmBtn.removeEventListener('click', confirmHandler);
+                                    cancelBtn.removeEventListener('click', cancelHandler);
+                                };
+
+                                const cancelHandler = () => {
+                                    modal.classList.remove('show');
+
+                                    // Clean up
+                                    confirmBtn.removeEventListener('click', confirmHandler);
+                                    cancelBtn.removeEventListener('click', cancelHandler);
+                                };
+
+                                confirmBtn.addEventListener('click', confirmHandler);
+                                cancelBtn.addEventListener('click', cancelHandler);
+                            }
+
+                            openColorPickerFromImage(imageUrl, zoneElement) {
+                                const modal = document.getElementById('colorPickerModal');
+                                const image = document.getElementById('colorSourceImage');
+                                const picker = document.getElementById('colorPicker');
+                                const preview = document.getElementById('selectedColorPreview');
+                                const hexSpan = document.getElementById('selectedColorHex');
+                                const rgbSpan = document.getElementById('selectedColorRgb');
+                                const sizeSlider = document.getElementById('circleSize');
+                                const sizeValue = document.getElementById('circleSizeValue');
+
+                                // Load image
+                                image.src = imageUrl;
+
+                                // Show modal
+                                modal.classList.add('show');
+
+                                // Initialize color picker
+                                this.initImageColorPickerInteraction(image, picker, preview, hexSpan, rgbSpan);
+
+                                // Circle size control
+                                sizeSlider.addEventListener('input', (e) => {
+                                    const size = e.target.value;
+                                    sizeValue.textContent = size + 'px';
+                                    picker.style.width = size + 'px';
+                                    picker.style.height = size + 'px';
+                                });
+
+                                // Set up modal buttons for this instance
+                                const confirmBtn = document.getElementById('confirmColorPick');
+                                const cancelBtn = document.getElementById('cancelColorPick');
+
+                                const confirmHandler = () => {
+                                    const selectedColor = hexSpan.textContent;
+                                    const colorBtn = zoneElement.querySelector('.color-preview-btn');
+                                    const colorName = zoneElement.querySelector('.color-name');
+
+                                    colorBtn.style.backgroundColor = selectedColor;
+                                    colorBtn.dataset.color = selectedColor;
+                                    colorName.value = 'From Image';
+                                    this.updateRecentColors(selectedColor, 'From Image');
+                                    modal.classList.remove('show');
+
+                                    // Clean up
+                                    confirmBtn.removeEventListener('click', confirmHandler);
+                                    cancelBtn.removeEventListener('click', cancelHandler);
+                                };
+
+                                const cancelHandler = () => {
+                                    modal.classList.remove('show');
+
+                                    // Clean up
+                                    confirmBtn.removeEventListener('click', confirmHandler);
+                                    cancelBtn.removeEventListener('click', cancelHandler);
+                                };
+
+                                confirmBtn.addEventListener('click', confirmHandler);
+                                cancelBtn.addEventListener('click', cancelHandler);
+                            }
+
+                            initImageColorPickerInteraction(image, picker, preview, hexSpan, rgbSpan) {
+                                let isDragging = false;
+                                const canvas = document.createElement('canvas');
+                                const ctx = canvas.getContext('2d');
+
+                                // Set picker position to center
+                                const imgRect = image.getBoundingClientRect();
+                                picker.style.left = (imgRect.width / 2 - 15) + 'px';
+                                picker.style.top = (imgRect.height / 2 - 15) + 'px';
+
+                                // Mouse events for dragging
+                                picker.addEventListener('mousedown', (e) => {
+                                    isDragging = true;
+                                    e.preventDefault();
+                                });
+
+                                document.addEventListener('mousemove', (e) => {
+                                    if (!isDragging) return;
+
+                                    const imgRect = image.getBoundingClientRect();
+                                    const modalRect = image.parentElement.getBoundingClientRect();
+
+                                    let x = e.clientX - imgRect.left;
+                                    let y = e.clientY - imgRect.top;
+
+                                    // Constrain to image bounds
+                                    x = Math.max(0, Math.min(x, imgRect.width));
+                                    y = Math.max(0, Math.min(y, imgRect.height));
+
+                                    picker.style.left = (x - parseFloat(picker.style.width) / 2) + 'px';
+                                    picker.style.top = (y - parseFloat(picker.style.height) / 2) + 'px';
+
+                                    // Update color
+                                    updateColorAtPosition(x, y);
+                                });
+
+                                document.addEventListener('mouseup', () => {
+                                    isDragging = false;
+                                });
+
+                                // Click on image to move picker
+                                image.addEventListener('click', (e) => {
+                                    const imgRect = image.getBoundingClientRect();
+                                    const x = e.clientX - imgRect.left;
+                                    const y = e.clientY - imgRect.top;
+
+                                    picker.style.left = (x - parseFloat(picker.style.width) / 2) + 'px';
+                                    picker.style.top = (y - parseFloat(picker.style.height) / 2) + 'px';
+
+                                    updateColorAtPosition(x, y);
+                                });
+
+                                function updateColorAtPosition(x, y) {
+                                    // Get image data at position
+                                    canvas.width = image.width;
+                                    canvas.height = image.height;
+                                    ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+
+                                    const pixelX = Math.floor(x * (image.width / imgRect.width));
+                                    const pixelY = Math.floor(y * (image.height / imgRect.height));
+
+                                    const pixelData = ctx.getImageData(pixelX, pixelY, 1, 1).data;
+                                    const r = pixelData[0];
+                                    const g = pixelData[1];
+                                    const b = pixelData[2];
+
+                                    const hex = '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+
+                                    // Update display
+                                    preview.style.backgroundColor = hex;
+                                    hexSpan.textContent = hex;
+                                    rgbSpan.textContent = `rgb(${r}, ${g}, ${b})`;
+                                }
+
+                                // Initial color update
+                                setTimeout(() => {
+                                    updateColorAtPosition(
+                                        parseFloat(picker.style.left) + parseFloat(picker.style.width) / 2,
+                                        parseFloat(picker.style.top) + parseFloat(picker.style.height) / 2
+                                    );
+                                }, 100);
+                            }
+
+                            handleFiles(files, imageList, imageCount) {
+                                const maxImages = 10;
+                                const currentCount = imageList.querySelectorAll('.image-item').length;
+
+                                if (currentCount + files.length > maxImages) {
+                                    alert(`Maximum ${maxImages} images allowed. You can add ${maxImages - currentCount} more.`);
+                                    return;
+                                }
+
+                                Array.from(files).slice(0, maxImages - currentCount).forEach(file => {
+                                    if (file.type.startsWith('image/')) {
+                                        const reader = new FileReader();
+
+                                        reader.onload = (e) => {
+                                            this.addImageElement(e.target.result, file.name, imageList, imageCount);
+                                        };
+
+                                        reader.readAsDataURL(file);
+                                    }
+                                });
+                            }
+
+                            addImageFromUrl(url, imageList, imageCount) {
+                                const maxImages = 10;
+                                const currentCount = imageList.querySelectorAll('.image-item').length;
+
+                                if (currentCount >= maxImages) {
+                                    alert(`Maximum ${maxImages} images allowed.`);
+                                    return;
+                                }
+
+                                // Create a temporary image to validate URL
+                                const img = new Image();
+                                img.crossOrigin = 'anonymous';
+
+                                img.onload = () => {
+                                    this.addImageElement(url, 'URL Image', imageList, imageCount);
+                                };
+
+                                img.onerror = () => {
+                                    alert('Could not load image from URL. Please check the URL and try again.');
+                                };
+
+                                img.src = url;
+                            }
+
+                            addImageElement(src, filename, imageList, imageCount) {
+                                // Remove empty state if present
+                                const emptyState = imageList.querySelector('.empty-state');
+                                if (emptyState) {
+                                    emptyState.remove();
+                                }
+
+                                const imageItem = document.createElement('div');
+                                imageItem.className = 'image-item';
+                                imageItem.innerHTML = `
+            <div class="image-preview">
+                <img src="${src}" alt="${filename}">
+                <div class="image-overlay">
+                   
+                    <button class="btn-rounded btn-rounded-absolute remove-image">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="image-info">
+                <span class="image-name">${filename.substring(0, 20)}${filename.length > 20 ? '...' : ''}</span>
+                <span class="image-size">${this.formatFileSize(src)}</span>
+            </div>
+        `;
+
+                                // Add event listeners
+                                const removeBtn = imageItem.querySelector('.remove-image');
+                                // const colorBtn = imageItem.querySelector('.use-for-color');
+
+                                removeBtn.addEventListener('click', () => {
+                                    imageItem.remove();
+                                    this.updateImageCount(imageList, imageCount);
+
+                                    // Show empty state if no images left
+                                    if (imageList.querySelectorAll('.image-item').length === 0) {
+                                        imageList.innerHTML = `
+                    <div class="empty-state">
+                        <i class="bi bi-images"></i>
+                        <p>No images added yet</p>
+                    </div>
+                `;
+                                    }
+                                });
+
+
+
+                                imageList.appendChild(imageItem);
+                                this.updateImageCount(imageList, imageCount);
+                            }
+
+                            updateImageCount(imageList, imageCount) {
+                                const count = imageList.querySelectorAll('.image-item').length;
+                                imageCount.textContent = `${count} image${count !== 1 ? 's' : ''}`;
+                            }
+
+                            formatFileSize(src) {
+                                // For data URLs, estimate size
+                                if (src.startsWith('data:')) {
+                                    const base64Length = src.length - (src.indexOf(',') + 1);
+                                    const padding = src.endsWith('==') ? 2 : src.endsWith('=') ? 1 : 0;
+                                    const fileSize = (base64Length * 0.75) - padding;
+                                    return this.bytesToSize(fileSize);
+                                }
+                                return 'Unknown size';
+                            }
+
+                            bytesToSize(bytes) {
+                                const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+                                if (bytes === 0) return '0 Bytes';
+                                const i = Math.floor(Math.log(bytes) / Math.log(1024));
+                                return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
+                            }
+
+                            generateSizeChips(range, container) {
+                                container.innerHTML = '';
+                                const [from, to] = range.split('-').map(Number);
+
+                                for (let i = from; i <= to; i++) {
+                                    const chip = document.createElement('div');
+                                    chip.className = 'size-chip';
+                                    chip.innerHTML = `
+                ${i}
+                <span class="remove-chip">×</span>
+            `;
+
+                                    chip.querySelector('.remove-chip').addEventListener('click', () => {
+                                        chip.remove();
+                                    });
+
+                                    container.appendChild(chip);
+                                }
+                            }
+
+                            addNewPackage(zoneElement, from, to, exceptions) {
+                                const packageList = zoneElement.querySelector('.select-items');
+                                const packageName = `Custom ${from}-${to}`;
+
+                                const packageItem = document.createElement('div');
+                                packageItem.className = 'select-item';
+                                packageItem.dataset.value = packageName;
+                                packageItem.innerHTML = `
             <div class="icon">
                 <i class="bi bi-box"></i>
             </div>
             <div class="package-info">
-                <span class="package-name">${p.name}</span>
-                <span class="package-range">${p.from}-${p.to}</span>
+                <span class="package-name">${packageName}</span>
+                <span class="package-range">${from}-${to}${exceptions.length > 0 ? ` (+${exceptions.length})` : ''}</span>
             </div>
-        </div>
-                                    `
-                                ).join("");
+            <div class="package-actions">
+                <button class="btn btn-xs btn-outline edit-package">
+                    <i class="bi bi-pencil"></i>
+                </button>
+            </div>
+        `;
 
-                                dz.innerHTML = `
-                                                    <h5>Collection Zone ${dropzoneCount}</h5>
-                                                    <p>Drag & drop images or paste URLs here (max 10)</p>
-                                                    <div><i class="bi bi-cloud-arrow-up"></i></div>
-                                                    <div class="image-list">No Images Added Yet</div>
-                                                    
-                                                    <div class="color-size-controls">
-                                                        <div class="color-section">
-                                                            <label>Color Selection</label>
-                                                            <div class="toggle-buttons">
-                                                                <button type="button" class="btn btn-sm btn-outline toggle-color-mode active" data-mode="picker">
-                                                                    <i class="bi bi-eyedropper"></i> Color Picker
-                                                                </button>
-                                                                <button type="button" class="btn btn-sm btn-outline toggle-color-mode" data-mode="image">
-                                                                    <i class="bi bi-image"></i> From Image
-                                                                </button>
+                                // Add click handler
+                                packageItem.addEventListener('click', () => {
+                                    const selectedText = zoneElement.querySelector('.select-text');
+                                    selectedText.textContent = packageName;
+
+                                    // Generate size chips including exceptions
+                                    this.generateSizeChipsWithExceptions(from, to, exceptions, zoneElement);
+
+                                    // Update badge
+                                    const badge = zoneElement.querySelector('#selectedPackageName');
+                                    badge.textContent = packageName;
+
+                                    // Close selector
+                                    const items = zoneElement.querySelector('.select-items');
+                                    items.classList.remove('show');
+                                    zoneElement.querySelector('.package-selector').classList.remove('active');
+                                });
+
+                                packageList.appendChild(packageItem);
+                            }
+
+                            generateSizeChipsWithExceptions(from, to, exceptions, zoneElement) {
+                                const sizeChips = zoneElement.querySelector('.size-chips');
+                                sizeChips.innerHTML = '';
+
+                                // Add regular sizes
+                                for (let i = from; i <= to; i++) {
+                                    if (!exceptions.includes(i.toString())) {
+                                        this.addSizeChip(i, sizeChips);
+                                    }
+                                }
+
+                                // Add exceptions
+                                exceptions.forEach(exception => {
+                                    this.addSizeChip(exception, sizeChips, true);
+                                });
+                            }
+
+                            addSizeChip(size, container, isException = false) {
+                                const chip = document.createElement('div');
+                                chip.className = `size-chip ${isException ? 'exception-chip' : ''}`;
+                                chip.innerHTML = `
+            ${size}
+            <span class="remove-chip">×</span>
+        `;
+
+                                chip.querySelector('.remove-chip').addEventListener('click', () => {
+                                    chip.remove();
+                                });
+
+                                container.appendChild(chip);
+                            }
+
+                            updateRecentColors(color, name) {
+                                // In a real implementation, this would update localStorage
+                                // For demo, we'll just update the UI
+                                const recentColors = document.querySelector('.color-swatches');
+
+                                // Check if color already exists
+                                const existing = Array.from(recentColors.querySelectorAll('.color-swatch'))
+                                    .find(swatch => swatch.dataset.color === color);
+
+                                if (!existing) {
+                                    // Add new color
+                                    const swatch = document.createElement('div');
+                                    swatch.className = 'color-swatch';
+                                    swatch.style.backgroundColor = color;
+                                    swatch.dataset.color = color;
+                                    swatch.dataset.name = name;
+
+                                    swatch.addEventListener('click', () => {
+                                        const colorInput = document.querySelector('.color-input');
+                                        // const colorBtn = document.querySelector('.color-preview-btn');
+                                        const colorName = document.querySelector('.color-name');
+
+                                        colorInput.value = color;
+                                        // colorBtn.style.backgroundColor = color;
+                                        // colorBtn.dataset.color = color;
+                                        colorName.value = name;
+                                    });
+
+                                    // Keep only 6 recent colors
+                                    if (recentColors.children.length >= 6) {
+                                        recentColors.removeChild(recentColors.lastChild);
+                                    }
+
+                                    recentColors.prepend(swatch);
+                                }
+                            }
+
+                            updateZoneNumbers() {
+                                const zones = document.querySelectorAll('.dropzone');
+                                zones.forEach((zone, index) => {
+                                    zone.querySelector('.zone-number').textContent = index + 1;
+                                    zone.dataset.index = index + 1;
+                                });
+                            }
+
+                            toggleAllSettings() {
+                                const allSections = document.querySelectorAll('.dropzone-content');
+                                const isHidden = allSections[0]?.style.display === 'none';
+
+                                allSections.forEach(section => {
+                                    section.style.display = isHidden ? 'block' : 'none';
+                                });
+
+                                const toggleBtns = document.querySelectorAll('.toggle-zone');
+                                toggleBtns.forEach(btn => {
+                                    btn.innerHTML = isHidden ?
+                                        '<i class="bi bi-chevron-up"></i>' :
+                                        '<i class="bi bi-chevron-down"></i>';
+                                });
+
+                                const mainBtn = document.getElementById('toggleAllSettings');
+                                mainBtn.innerHTML = isHidden ?
+                                    '<i class="bi bi-gear"></i> Hide All Settings' :
+                                    '<i class="bi bi-gear"></i> Show All Settings';
+                            }
+                        }
+
+                        // Initialize when DOM is loaded
+                        document.addEventListener('DOMContentLoaded', () => {
+                            window.collectionZoneManager = new CollectionZoneManager();
+                        });
+                    </script>
+
+                    <!-- Modal for color selection from image -->
+                    <div id="colorPickerModal" class="modal">
+                        <div class="modal-content">
+                            <h3><i class="bi bi-palette"></i> Select Color from Image</h3>
+                            <p>Click on the image or drag the circle to choose a color</p>
+
+                            <div class="circle-size-control">
+                                <label><i class="bi bi-circle"></i> Selection Size:</label>
+                                <input type="range" id="circleSize" min="10" max="100" value="30">
+                                <span id="circleSizeValue">30px</span>
+                            </div>
+
+                            <div class="crop-container">
+                                <img id="colorSourceImage" src="" alt="Source for color selection">
+                                <div class="crop-circle" id="colorPicker">
+                                    <i class="bi bi-eyedropper"></i>
+                                </div>
+                                <div class="zoom-preview" id="zoomPreview"></div>
+                            </div>
+
+                            <div class="selected-color-info">
+                                <div class="color-preview" id="selectedColorPreview"></div>
+                                <div class="color-details">
+                                    <p class="color-hex" id="selectedColorHex">#4e73df</p>
+                                    <p class="color-rgb" id="selectedColorRgb">rgb(78, 115, 223)</p>
+                                </div>
+                                <div class="color-actions">
+                                    <button class="btn btn-sm btn-outline copy-color"
+                                        data-clipboard-target="#selectedColorHex">
+                                        <i class="bi bi-clipboard"></i> Copy
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="modal-actions">
+                                <button id="cancelColorPick" class="btn btn-outline">
+                                    <i class="bi bi-x-circle"></i> Cancel
+                                </button>
+                                <button id="confirmColorPick" class="btn btn-primary">
+                                    <i class="bi bi-check-circle"></i> Apply Color
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Template for a dropzone -->
+                    <template id="dropzoneTemplate">
+                        <div class="dropzone">
+                            <div class="dropzone-header">
+                                <div class="zone-title">
+                                    <i class="bi bi-collection"></i>
+                                    <h5>Collection Zone <span class="zone-number">1</span></h5>
+                                </div>
+                                <div class="zone-actions">
+                                    <button class="btn-rounded btn-outline toggle-zone">
+                                        <i class="bi bi-chevron-up"></i>
+                                    </button>
+                                    <button class="btn-rounded btn-danger delete-zone">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="dropzone-content">
+                                <div class="upload-area" data-zone-index="1">
+                                    <div class="upload-icon">
+                                        <i class="bi bi-cloud-arrow-up"></i>
+                                    </div>
+                                    <p class="upload-text">Drag & drop images or paste URLs here</p>
+                                    <p class="upload-subtext">Max 10 images per zone • Supports JPG, PNG, WebP</p>
+                                    <input type="file" class="file-input" accept="image/*" multiple
+                                        style="display: none;">
+
+                                    <div class="url-input-container">
+                                        <button class="btn btn-sm btn-outline browse-btn">
+                                            <i class="bi bi-folder2-open"></i> Browse Files
+                                        </button>
+                                        <input type="text" class="url-input" placeholder="Paste image URL here...">
+                                        <button class="btn btn-sm btn-primary add-url-btn">
+                                            <i class="bi bi-link"></i> Add
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="image-list-container">
+                                    <div class="image-list-header">
+                                        <span class="image-count">0 images</span>
+                                        <button class="btn btn-sm btn-outline clear-all-btn">
+                                            <i class="bi bi-trash"></i> Clear All
+                                        </button>
+                                    </div>
+                                    <div class="image-list">
+                                        <div class="empty-state">
+                                            <p>No images added yet</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="color-size-controls">
+                                    <!-- Color Section -->
+                                    <div class="control-section color-section">
+                                        <div class="section-header">
+                                            <i class="bi bi-palette"></i>
+                                            <label>Color Selection</label>
+                                            <div class="section-badge" id="selectedColorName">Blue</div>
+                                        </div>
+
+                                        <div class="toggle-buttons">
+                                            <button type="button" class="btn btn-sm toggle-color-mode active"
+                                                data-mode="picker">
+                                                <i class="bi bi-eyedropper"></i> Color Picker
+                                            </button>
+                                            <button type="button" class="btn btn-sm toggle-color-mode"
+                                                data-mode="image">
+                                                <i class="bi bi-image"></i> From Image
+                                            </button>
+                                            <button type="button" class="btn btn-sm toggle-color-mode"
+                                                data-mode="preset">
+                                                <i class="bi bi-collection"></i> Presets
+                                            </button>
+                                        </div>
+
+                                        <div class="color-control-content">
+                                            <!-- Color Picker -->
+                                            <div class="color-picker-container active">
+                                                <div class="color-input-group">
+                                                    <div class="color-preview-btn" style="background-color: #4e73df;"
+                                                        data-color="#4e73df">
+                                                        <i class="bi bi-eyedropper"></i>
+                                                    </div>
+                                                    <input type="color" class="color-input" value="#4e73df"
+                                                        title="Click to choose color">
+                                                    <input type="text" class="form-control color-name"
+                                                        placeholder="Color Name" value="Blue">
+                                                    <button class="btn btn-sm btn-outline random-color">
+                                                        <i class="bi bi-shuffle"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="recent-colors">
+                                                    <span class="recent-label">Recent:</span>
+                                                    <div class="color-swatches">
+                                                        <div class="color-swatch" style="background-color: #4e73df;"
+                                                            data-color="#4e73df" data-name="Blue"></div>
+                                                        <div class="color-swatch" style="background-color: #e74a3b;"
+                                                            data-color="#e74a3b" data-name="Red"></div>
+                                                        <div class="color-swatch" style="background-color: #1cc88a;"
+                                                            data-color="#1cc88a" data-name="Green"></div>
+                                                        <div class="color-swatch" style="background-color: #f6c23e;"
+                                                            data-color="#f6c23e" data-name="Yellow"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- From Image -->
+                                            <div class="color-image-container">
+                                                <p>Select an image to use as color source:</p>
+                                                <div class="image-swatches">
+                                                    <div class="image-swatch empty">
+                                                        <i class="bi bi-plus-lg"></i>
+                                                        <span>Select Image</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Color Presets -->
+                                            <div class="color-presets-container">
+                                                <div class="preset-category">
+                                                    <label>Basic Colors</label>
+                                                    <div class="preset-swatches">
+                                                        <div class="preset-swatch" style="background-color: #000000;"
+                                                            data-color="#000000" data-name="Black"></div>
+                                                        <div class="preset-swatch"
+                                                            style="background-color: #ffffff; border: 1px solid #ddd;"
+                                                            data-color="#ffffff" data-name="White"></div>
+                                                        <div class="preset-swatch" style="background-color: #e74a3b;"
+                                                            data-color="#e74a3b" data-name="Red"></div>
+                                                        <div class="preset-swatch" style="background-color: #1cc88a;"
+                                                            data-color="#1cc88a" data-name="Green"></div>
+                                                        <div class="preset-swatch" style="background-color: #4e73df;"
+                                                            data-color="#4e73df" data-name="Blue"></div>
+                                                        <div class="preset-swatch" style="background-color: #f6c23e;"
+                                                            data-color="#f6c23e" data-name="Yellow"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="preset-category">
+                                                    <label>Pastel Colors</label>
+                                                    <div class="preset-swatches">
+                                                        <div class="preset-swatch" style="background-color: #ffb6c1;"
+                                                            data-color="#ffb6c1" data-name="Light Pink"></div>
+                                                        <div class="preset-swatch" style="background-color: #b0e0e6;"
+                                                            data-color="#b0e0e6" data-name="Powder Blue"></div>
+                                                        <div class="preset-swatch" style="background-color: #98fb98;"
+                                                            data-color="#98fb98" data-name="Pale Green"></div>
+                                                        <div class="preset-swatch" style="background-color: #fffacd;"
+                                                            data-color="#fffacd" data-name="Lemon Chiffon"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Size Section -->
+                                    <div class="control-section size-section">
+                                        <div class="section-header">
+                                            <i class="bi bi-rulers"></i>
+                                            <label>Size Selection</label>
+                                            <div class="section-badge" id="selectedPackageName">Not Selected</div>
+                                        </div>
+
+                                        <div class="toggle-buttons">
+                                            <button type="button" class="btn btn-sm size-toggle-btn active"
+                                                data-target="package-selector">
+                                                <i class="bi bi-grip-horizontal"></i> Choose Package
+                                            </button>
+                                            <button type="button" class="btn btn-sm size-toggle-btn"
+                                                data-target="size-creator">
+                                                <i class="bi bi-plus"></i> Create New
+                                            </button>
+                                        </div>
+
+                                        <div class="size-control-content">
+                                            <!-- Package Selector -->
+                                            <div class="package-selector-container active">
+                                                <div class="elegant-select">
+                                                    <div class="select-selected package-selector">
+                                                        <i class="bi bi-box"></i>
+                                                        <span class="select-text">Select Package</span>
+                                                        <i class="bi bi-chevron-down"></i>
+                                                    </div>
+                                                    <div class="select-items package-select">
+                                                        <div class="select-item" data-value="men shoes">
+                                                            <div class="icon">
+                                                                <i class="bi bi-box"></i>
                                                             </div>
-                                                            
-                                                            <div class="color-picker-container">
-                                                                <div class="elegant-color-input">
-                                                                    <div class="color-display" style="background-color: #4e73df"></div>
-                                                                    <input type="text" class="form-input form-control  color-name" placeholder="Color Name" value="Blue">
-                                                                </div>
+                                                            <div class="package-info">
+                                                                <span class="package-name">Men Shoes</span>
+                                                                <span class="package-range">40-45</span>
                                                             </div>
-                                                            
-                                                            <div class="color-image-container" style="display:none;">
-                                                                <p>Select an image to use as color source:</p>
-                                                                <div class="image-swatches"></div>
+                                                            <div class="package-actions">
+                                                                <button class="btn btn-xs btn-outline edit-package">
+                                                                    <i class="bi bi-pencil"></i>
+                                                                </button>
                                                             </div>
                                                         </div>
-                                                        
-                                                        <div class="size-section">
-                                                            <label>Size Selection</label>
-                                                            <div class="toggle-buttons">
-                                                                <button type="button" class="btn btn-sm btn-outline size-toggle-btn create-size-btn" data-target="size-creator">
-                                                                    <i class="bi bi-plus"></i> create new package
-                                                                </button>
-                                                                <button type="button" class="btn btn-sm btn-outline size-toggle-btn choose-package-btn" data-target="package-selector">
-                                                                    <i class="bi bi-grip-horizontal"></i> choose a package
+                                                        <div class="select-item" data-value="women shoes">
+                                                            <div class="icon">
+                                                                <i class="bi bi-box"></i>
+                                                            </div>
+                                                            <div class="package-info">
+                                                                <span class="package-name">Women Shoes</span>
+                                                                <span class="package-range">35-42</span>
+                                                            </div>
+                                                            <div class="package-actions">
+                                                                <button class="btn btn-xs btn-outline edit-package">
+                                                                    <i class="bi bi-pencil"></i>
                                                                 </button>
                                                             </div>
-                                                           
-
-                                                            <div class="elegant-select">
-    <div class="select-selected package-selector" id="packageSelect">
-        <span>Select Package</span>
-        <i class="bi bi-chevron-down"></i>
-    </div>
-    <div class="select-items package-select" id="packageSelectItems">
-     ${packageOptions}
-    </div>
-      <div class="size-preview"></div>
-</div>
-                                                            
-                                                            
-                                                            
-                                                            <div class="size-creator none">
-                                                                <label class="form-label">Create New Size Range</label>
-                                                                <div class="size-inputs">
-                                                                    <input type="text" class="form-input form-control  from-size" placeholder="From">
-                                                                    <input type="text" class="form-input form-control  to-size" placeholder="To">
-                                                                </div>
-                                                                
-                                                                <div class="exceptions-creator">
-                                                                    <label class="form-label">Add Exceptions:</label>
-                                                                    <div class="exceptions-input">
-                                                                        <input type="text" class="form-input form-control  exception-value" placeholder="Size value">
-                                                                        <button class="btn btn-sm btn-primary add-exception">Add</button>
-                                                                    </div>
-                                                                    <div class="exceptions-list-creator"></div>
-                                                                </div>
-                                                                
-                                                                <button class="btn btn-primary save-size" style="margin-top: 15px;">Save Size Range</button>
+                                                        </div>
+                                                        <div class="select-item" data-value="kids shoes">
+                                                            <div class="icon">
+                                                                <i class="bi bi-box"></i>
+                                                            </div>
+                                                            <div class="package-info">
+                                                                <span class="package-name">Kids Shoes</span>
+                                                                <span class="package-range">25-35</span>
+                                                            </div>
+                                                            <div class="package-actions">
+                                                                <button class="btn btn-xs btn-outline edit-package">
+                                                                    <i class="bi bi-pencil"></i>
+                                                                </button>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                `;
+                                                </div>
+                                                <div class="size-preview">
+                                                    <div class="preview-header">
+                                                        <span>Selected Sizes:</span>
+                                                        <button class="btn btn-xs btn-outline clear-package">
+                                                            Clear
+                                                        </button>
+                                                    </div>
+                                                    <div class="size-chips">
+                                                        <!-- Size chips will be added here -->
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Size Creator -->
+                                            <div class="size-creator-container">
+                                                <div class="size-inputs">
+                                                    <div class="input-group">
+                                                        <label>From</label>
+                                                        <input type="number" class="form-control from-size"
+                                                            placeholder="e.g., 35" min="0" max="100">
+                                                    </div>
+                                                    <div class="input-group">
+                                                        <label>To</label>
+                                                        <input type="number" class="form-control to-size"
+                                                            placeholder="e.g., 45" min="0" max="100">
+                                                    </div>
+                                                </div>
+
+                                                <div class="exceptions-creator">
+                                                    <label>Add Exceptions:</label>
+                                                    <div class="exceptions-input">
+                                                        <input type="text" class="form-control exception-value"
+                                                            placeholder="e.g., 38.5">
+                                                        <button class="btn btn-sm btn-primary add-exception">
+                                                            <i class="bi bi-plus"></i> Add
+                                                        </button>
+                                                    </div>
+                                                    <div class="exceptions-list-creator">
+                                                        <!-- Exceptions will be added here -->
+                                                    </div>
+                                                </div>
+
+                                                <div class="creator-actions">
+                                                    <button class="btn btn-outline cancel-create">
+                                                        Cancel
+                                                    </button>
+                                                    <button class="btn btn-primary save-size">
+                                                        <i class="bi bi-save"></i> Save Package
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
 
-                                const imageList = dz.querySelector(".image-list");
-                                const swatchContainer = dz.querySelector(".image-swatches");
-                                const pickContainer = dz.querySelector(".color-picker-container");
-                                const imageContainer = dz.querySelector(".color-image-container");
-                                const colorDisplay = dz.querySelector(".color-display");
-                                const colorName = dz.querySelector(".color-name");
-                                const packageSelect = dz.querySelector(".package-select");
-                                const sizePreview = dz.querySelector(".size-preview");
-                                const sizeCreator = dz.querySelector(".size-creator");
-                                const createSizeBtn = dz.querySelector(".create-size-btn");
-                                const saveSizeBtn = dz.querySelector(".save-size");
-                                const fromSize = dz.querySelector(".from-size");
-                                const toSize = dz.querySelector(".to-size");
-                                const exceptionValue = dz.querySelector(".exception-value");
-                                const addExceptionBtn = dz.querySelector(".add-exception");
-                                const exceptionsListCreator = dz.querySelector(".exceptions-list-creator");
-
-                                // Reset exceptions for this dropzone
-                                currentExceptions = [];
-
-                                // Color display click handler - opens the color picker modal
-                                colorDisplay.addEventListener("click", function () {
-                                    // In a real implementation, this would open a color picker
-                                    alert("Color picker would open here. In a real implementation, this would allow color selection.");
-                                });
-
-                                // Package selector change handler
-                                packageSelect.addEventListener("change", function () {
-                                    const selectedPackage = packages.find(p => p.name === this.value);
-                                    if (selectedPackage) {
-                                        let exceptionsHtml = "";
-                                        if (selectedPackage.exceptions && selectedPackage.exceptions.length > 0) {
-                                            exceptionsHtml = `<div class="exceptions-list">
-                                                                <strong>Exceptions:</strong> 
-                                                                ${selectedPackage.exceptions.map(e => `<span class="exception-chip selected">${e}</span>`).join("")}
-                                                            </div>`;
-                                        }
-
-                                        sizePreview.innerHTML = `
-                                                            <div class="size-range">Sizes: ${selectedPackage.from} to ${selectedPackage.to}</div>
-                                                            <div>Quantity: ${selectedPackage.quantity}</div>
-                                                            ${exceptionsHtml}
-                                                        `;
-                                    } else {
-                                        sizePreview.innerHTML = "";
-                                    }
-                                });
-
-                                toggleButtons.forEach(button => {
-
-                                    button.addEventListener('click', () => {
-
-                                        const targetDivClass = button.getAttribute('data-target');
-
-                                        const targetDiv = document.querySelector(`.${targetDivClass}`);
-
-                                        const otherDiv = targetDiv === packageSelector ? sizeCreator : packageSelector;
-
-                                        targetDiv.classList.remove('none');
-                                        otherDiv.classList.add('none');
-                                        setTimeout(() => {
-
-                                            // Remove the 'visible' class from all other divs
-
-                                            [packageSelector, sizeCreator].forEach(div => {
-
-                                                if (div !== targetDiv) {
-
-                                                    div.classList.remove('visible');
-
-                                                }
-
-                                            });
-                                            // Add the 'visible' class to the target div to trigger opacity and transform transition
-
-                                            targetDiv.classList.add('visible');
-
-                                        }, 10);
-
-                                    });
-
-                                });
-
-                                // Add exception
-                                addExceptionBtn.addEventListener("click", function () {
-                                    const value = exceptionValue.value.trim();
-                                    if (value && !currentExceptions.includes(value)) {
-                                        currentExceptions.push(value);
-                                        updateExceptionsList();
-                                        exceptionValue.value = "";
-                                    }
-                                });
-
-                                function updateExceptionsList() {
-                                    exceptionsListCreator.innerHTML = currentExceptions.map(exp => `
-                                                        <div class="exception-tag">
-                                                            ${exp}
-                                                            <span class="remove" data-value="${exp}">&times;</span>
-                                                        </div>
-                                                    `).join("");
-
-                                    // Add event listeners to remove buttons
-                                    exceptionsListCreator.querySelectorAll(".remove").forEach(btn => {
-                                        btn.addEventListener("click", function () {
-                                            const value = this.getAttribute("data-value");
-                                            currentExceptions = currentExceptions.filter(e => e !== value);
-                                            updateExceptionsList();
-                                        });
-                                    });
-                                }
-
-                                // Save size range
-                                saveSizeBtn.addEventListener("click", function () {
-                                    const fromVal = fromSize.value.trim();
-                                    const toVal = toSize.value.trim();
-
-                                    if (!fromVal || !toVal) {
-                                        alert("Please enter both 'From' and 'To' values");
-                                        return;
-                                    }
-
-                                    const packageName = prompt("Enter a name for this size package:");
-                                    if (!packageName) return;
-
-                                    const newPackage = {
-                                        name: packageName,
-                                        from: fromVal,
-                                        to: toVal,
-                                        quantity: "10", // Default value
-                                        exceptions: currentExceptions,
-                                        date: new Date().toLocaleString()
-                                    };
-
-                                    // Save to local storage
-                                    const packages = getSizePackages();
-                                    packages.push(newPackage);
-                                    localStorage.setItem("sizePackages", JSON.stringify(packages));
-
-                                    // Update select options
-                                    const newOption = document.createElement("option");
-                                    newOption.value = newPackage.name;
-                                    newOption.textContent = `${newPackage.name} (${newPackage.from}-${newPackage.to})`;
-                                    packageSelect.appendChild(newOption);
-
-                                    // Select the new option
-                                    packageSelect.value = newPackage.name;
-                                    packageSelect.dispatchEvent(new Event("change"));
-
-                                    // Reset form
-                                    fromSize.value = "";
-                                    toSize.value = "";
-                                    currentExceptions = [];
-                                    updateExceptionsList();
-                                    sizeCreator.style.display = "none";
-
-                                    alert("Size package saved successfully!");
-                                });
-
-                                // Color mode toggle
-                                dz.querySelectorAll(".toggle-color-mode").forEach(btn => {
-                                    btn.addEventListener("click", () => {
-                                        dz.querySelectorAll(".toggle-color-mode").forEach(b => b.classList.remove("active"));
-                                        btn.classList.add("active");
-
-                                        if (btn.dataset.mode === "picker") {
-                                            pickContainer.style.display = "block";
-                                            imageContainer.style.display = "none";
-                                        } else {
-                                            pickContainer.style.display = "none";
-                                            imageContainer.style.display = "block";
-                                        }
-                                    });
-                                });
-
-                                // Drag and Drop for images
-                                dz.addEventListener("dragover", (e) => {
-                                    e.preventDefault();
-                                    dz.classList.add("dragover");
-                                });
-
-                                dz.addEventListener("dragleave", () => {
-                                    dz.classList.remove("dragover");
-                                });
-
-                                dz.addEventListener("drop", (e) => {
-                                    e.preventDefault();
-                                    dz.classList.remove("dragover");
-
-                                    const files = e.dataTransfer.files;
-                                    if (files.length > 0) {
-                                        [...files].forEach(file => {
-                                            if (file.type.startsWith("image/")) {
-                                                const url = URL.createObjectURL(file);
-                                                renderImage(url, imageList, swatchContainer, dz);
-                                            }
-                                        });
-                                    }
-
-                                    const url = e.dataTransfer.getData("text/plain");
-                                    if (url && (url.startsWith("http://") || url.startsWith("https://"))) {
-                                        renderImage(url, imageList, swatchContainer, dz);
-                                    }
-                                });
-
-                                // Allow pasting image URLs
-                                dz.addEventListener("paste", (e) => {
-                                    const text = e.clipboardData.getData("text");
-                                    if (text && (text.startsWith("http://") || text.startsWith("https://"))) {
-                                        renderImage(text, imageList, swatchContainer, dz);
-                                    }
-                                });
-
-                                dropzonesContainer.appendChild(dz);
-                            }
-
-                            function renderImage(src, container, swatchContainer, dropzone) {
-                                if (container.querySelectorAll(".image-card-upload").length >= 10) {
-                                    alert("Maximum 10 images per Collection Zone");
-                                    return;
-                                }
-
-                                const card = document.createElement("div");
-                                card.classList.add("image-card-upload");
-                                card.innerHTML = `
-                                                    <img src="${src}" onerror="this.src='https://via.placeholder.com/120?text=Invalid+Image'">
-                                                    <div class="main-label">Set Main</div>
-                                                `;
-
-                                // Allow selecting image as swatch
-                                const swatch = document.createElement("div");
-                                swatch.classList.add("swatch-circle");
-                                swatch.style.backgroundImage = `url(${src})`;
-                                swatch.title = "Click to select color from this image";
-
-                                swatch.addEventListener("click", () => {
-                                    // Set up modal for color selection
-                                    colorSourceImage.src = src;
-                                    currentColorPickerContext = {
-                                        dropzone: dropzone,
-                                        swatch: swatch
-                                    };
-
-                                    // Reset picker position and size
-                                    colorPicker.style.left = "50%";
-                                    colorPicker.style.top = "50%";
-                                    colorPicker.style.transform = "translate(-50%, -50%)";
-                                    colorPicker.style.width = "100px";
-                                    colorPicker.style.height = "100px";
-                                    circleSize.value = 100;
-                                    circleSizeValue.textContent = "100px";
-
-                                    // Reset color info
-                                    selectedColorInfo.style.display = "none";
-                                    selectedColor = null;
-
-                                    // Show modal
-                                    colorPickerModal.style.display = "flex";
-
-                                    // Select this swatch visually
-                                    swatchContainer.querySelectorAll(".swatch-circle").forEach(s => s.classList.remove("selected"));
-                                    swatch.classList.add("selected");
-                                });
-
-                                swatchContainer.appendChild(swatch);
-
-                                // Main image selector
-                                const label = card.querySelector(".main-label");
-                                label.addEventListener("click", () => {
-                                    const existing = container.querySelectorAll(".main-label.selected");
-                                    if (existing.length < 2 || label.classList.contains("selected")) {
-                                        label.classList.toggle("selected");
-                                        label.textContent = label.classList.contains("selected")
-                                            ? `Main ${existing.length + 1}`
-                                            : "Set Main";
-                                    } else {
-                                        alert("You can only select up to 2 main images!");
-                                    }
-                                });
-
-                                container.appendChild(card);
-                            }
-
-                            // Circle size control
-                            circleSize.addEventListener("input", function () {
-                                const size = this.value + "px";
-                                colorPicker.style.width = size;
-                                colorPicker.style.height = size;
-                                circleSizeValue.textContent = size;
-                            });
-
-                            // Color picker modal functionality
-                            colorSourceImage.addEventListener("mousedown", function (e) {
-                                isDragging = true;
-                                updatePickerPosition(e);
-                                sampleColor(e);
-                            });
-
-                            document.addEventListener("mousemove", function (e) {
-                                if (isDragging) {
-                                    updatePickerPosition(e);
-                                    sampleColor(e);
-                                }
-                            });
-
-                            document.addEventListener("mouseup", function () {
-                                isDragging = false;
-                            });
-
-                            function updatePickerPosition(e) {
-                                if (!isDragging) return;
-
-                                const container = colorPicker.parentElement;
-                                const rect = container.getBoundingClientRect();
-
-                                let x = e.clientX - rect.left;
-                                let y = e.clientY - rect.top;
-
-                                // Keep within bounds
-                                const circleSizeVal = parseInt(getComputedStyle(colorPicker).width) / 2;
-                                x = Math.max(circleSizeVal, Math.min(rect.width - circleSizeVal, x));
-                                y = Math.max(circleSizeVal, Math.min(rect.height - circleSizeVal, y));
-
-                                colorPicker.style.left = x + "px";
-                                colorPicker.style.top = y + "px";
-                                colorPicker.style.transform = "translate(-50%, -50%)";
-                            }
-
-                            function sampleColor(e) {
-                                // In a real implementation, this would sample the color from the image
-                                // at the current cursor position. For this example, we'll generate a random color.
-                                const r = Math.floor(Math.random() * 255);
-                                const g = Math.floor(Math.random() * 255);
-                                const b = Math.floor(Math.random() * 255);
-                                selectedColor = `rgb(${r}, ${g}, ${b})`;
-
-                                // Update the display
-                                selectedColorInfo.style.display = "block";
-                                selectedColorHex.textContent = selectedColor;
-                                selectedColorPreview.style.backgroundColor = selectedColor;
-                            }
-
-                            confirmColorPick.addEventListener("click", function () {
-                                if (currentColorPickerContext && selectedColor) {
-                                    const colorDisplay = currentColorPickerContext.dropzone.querySelector(".color-display");
-                                    const colorNameInput = currentColorPickerContext.dropzone.querySelector(".color-name");
-
-                                    colorDisplay.style.backgroundColor = selectedColor;
-                                    colorNameInput.value = "Selected Color";
-
-                                    // Close modal
-                                    colorPickerModal.style.display = "none";
-                                }
-                            });
-
-                            cancelColorPick.addEventListener("click", function () {
-                                colorPickerModal.style.display = "none";
-                            });
-
-                            // Add initial dropzone
-                            createDropzone();
-
-                            // Add more dropzones
-                            addDropzoneBtn.addEventListener("click", () => createDropzone());
-                        });
-                    </script>
                     <!-- Action Buttons -->
                     <div class="action-buttons">
                         <button class="btn btn-outline">
