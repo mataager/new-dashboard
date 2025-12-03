@@ -731,7 +731,7 @@
                             <input type="text" placeholder="Search orders..." id="orderSearch">
                         </div>
 
-                        <div class="form-group w-200">
+                        <div class="w-200">
                             <label class="form-label"></label>
                             <div class="elegant-select">
                                 <div class="select-selected" id="standardSelect">
@@ -802,6 +802,54 @@
                                     <span><i class="bi bi-cart"></i> 3 items</span>
                                     <span> 147.50 EGP</span>
                                 </div>
+
+                                <!-- Product Images Gallery -->
+                                <div class="product-images-gallery">
+                                    <div class="product-image-item" data-product-id="PROD-001">
+                                        <img src="https://assets.adidas.com/images/w_1880,f_auto,q_auto/b9bd6dc6bbb84a8faa3dae8400320b3e_9366/GX6632_01_00_standard.jpg"
+                                            alt="Product 1">
+                                    </div>
+                                    <div class="product-image-item" data-product-id="PROD-002">
+                                        <img src="https://assets.adidas.com/images/w_1880,f_auto,q_auto/483de19610bb4fa3b3b9288f3a82e751_9366/JP7147_HM9.jpg"
+                                            alt="Product 2">
+                                    </div>
+                                    <div class="product-image-item" data-product-id="PROD-003">
+                                        <img src="https://assets.adidas.com/images/w_1880,f_auto,q_auto/dc055f19dba84019ac8f16f0c782fa14_9366/JH6208_HM6.jpg"
+                                            alt="Product 3">
+                                    </div>
+                                    <!-- Example: When there are more than 4 items -->
+                                    <div class="product-image-item more-items" data-order-id="ORD-001">
+                                        <div class="more-overlay">+2</div>
+                                        <img src="https://assets.adidas.com/images/w_1880,f_auto,q_auto/dc055f19dba84019ac8f16f0c782fa14_9366/JH6208_HM6.jpg"
+                                            alt="More items" class="blurred">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button class="btn btn-outline btn-sm btn-primary view-order-btn"
+                                    data-order-id="ORD-001" data-order-date="2 hours ago" data-order-total="14,750 EGP">
+                                    <i class="bi bi-eye"></i>view
+                                </button>
+                                <button class="btn btn-outline btn-sm btn-primary">
+                                    <i class="bi bi-send"></i> Remind
+                                </button>
+                                <button class="btn btn-outline btn-sm btn-primary">
+                                    <i class="bi bi-telephone-forward"></i> Call
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="customer-order-card" data-status="pending">
+                            <span class="status-badge pending absolute">pending</span>
+                            <div class="customer-order-avatar">JD</div>
+                            <div class="cart-info">
+                                <div class="customer-order-id">-OTIAjJYkpigIRshEPL</div>
+                                <div class="cart-customer">John Doe</div>
+                                <div class="cart-details">
+                                    <span><i class="bi bi-clock"></i> 2 hours ago</span>
+                                    <span><i class="bi bi-cart"></i> 3 items</span>
+                                    <span> 147.50 EGP</span>
+                                </div>
                             </div>
                             <div class="form-actions">
 
@@ -819,6 +867,7 @@
                                 </button>
                             </div>
                         </div>
+
 
                         <div class="customer-order-card" data-status="accepted">
                             <span class="status-badge accepted absolute">Accepted</span>
@@ -1608,14 +1657,14 @@
                                 packageSelector.addEventListener('click', (e) => {
                                     e.stopPropagation();
                                     const items = zoneElement.querySelector('.select-items');
-                                    items.classList.toggle('show');
+                                    items.classList.toggle('open');
                                     packageSelector.classList.toggle('active');
                                 });
 
                                 // Close selector when clicking outside
                                 document.addEventListener('click', () => {
                                     const items = zoneElement.querySelector('.select-items');
-                                    items.classList.remove('show');
+                                    items.classList.remove('open');
                                     packageSelector.classList.remove('active');
                                 });
 
@@ -2266,7 +2315,7 @@
                                             <i class="bi bi-folder2-open"></i> Browse Files
                                         </button>
                                         <input type="text" class="url-input" placeholder="Paste image URL here...">
-                                        <button class="btn btn-sm btn-primary add-url-btn">
+                                        <button class="btn btn-outline add-url-btn">
                                             <i class="bi bi-link"></i> Add
                                         </button>
                                     </div>
@@ -2415,7 +2464,6 @@
                                                     <div class="select-selected package-selector">
                                                         <i class="bi bi-box"></i>
                                                         <span class="select-text">Select Package</span>
-                                                        <i class="bi bi-chevron-down"></i>
                                                     </div>
                                                     <div class="select-items package-select">
                                                         <div class="select-item" data-value="men shoes">
@@ -3576,7 +3624,7 @@
 
                                 <div class="company-cities-section">
                                     <div class="company-cities-grid">
-                                        <div class="form-group w-200">
+                                        <div class="w-200">
                                             <label class="form-label">City</label>
                                             <div class="elegant-select">
                                                 <div class="select-selected" id="citySelectSelected">
@@ -3917,7 +3965,7 @@
                             <button class="btn btn-outline">
                                 <i class="bi bi-arrow-clockwise"></i> Reset Changes
                             </button>
-                            <button class="btn btn-primary">
+                            <button class="btn btn-primary btnsaveallshipsettings">
                                 <i class="bi bi-check-circle"></i> Save All Shipping Settings
                             </button>
                         </div>
@@ -4064,7 +4112,7 @@
                             });
 
                             // Save settings button
-                            const saveBtn = document.querySelector('.btn-primary');
+                            const saveBtn = document.querySelector('.btnsaveallshipsettings');
                             saveBtn.addEventListener('click', function () {
                                 // Show success message
                                 const originalText = this.innerHTML;
@@ -4347,7 +4395,7 @@
 
                         <!-- Carts Filter -->
                         <div class="filter-bar">
-                            <div class="form-group w-200">
+                            <div class="w-200">
                                 <label class="form-label">Filter by:</label>
                                 <div class="elegant-select">
                                     <div class="select-selected" id="standardSelect">
@@ -4373,7 +4421,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group w-200">
+                            <div class="w-200">
                                 <label class="form-label">Sort by:</label>
                                 <div class="elegant-select">
                                     <div class="select-selected" id="standardSelect">
@@ -4516,7 +4564,7 @@
                         </div>
 
                         <div class="filter-bar">
-                            <div class="form-group w-200">
+                            <div class="w-200">
                                 <label class="form-label">Filter by:</label>
                                 <div class="elegant-select">
                                     <div class="select-selected" id="reviewFilterSelected">
@@ -4545,7 +4593,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group w-200">
+                            <div class="w-200">
                                 <label class="form-label">Sort by:</label>
                                 <div class="elegant-select">
                                     <div class="select-selected" id="reviewSortSelected">
@@ -5272,7 +5320,7 @@
                     </button>
                     <!-- Filter Bar -->
                     <div class="filter-bar">
-                        <div class="form-group w-200">
+                        <div class="w-200">
                             <label class="form-label">Filter by:</label>
                             <div class="elegant-select">
                                 <div class="select-selected" id="paymentMethodFilterSelected">
@@ -5295,7 +5343,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group w-200">
+                        <div class="w-200">
                             <label class="form-label">Sort by:</label>
                             <div class="elegant-select">
                                 <div class="select-selected" id="paymentMethodSortSelected">
@@ -5433,7 +5481,7 @@
                 <div class="tab-content animatedtoup show" id="billing-history-content">
                     <!-- Filter Bar -->
                     <div class="filter-bar">
-                        <div class="form-group w-200">
+                        <div class="w-200">
                             <label class="form-label">Filter by:</label>
                             <div class="elegant-select">
                                 <div class="select-selected" id="billingFilterSelected">
@@ -5456,7 +5504,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group w-200">
+                        <div class="w-200">
                             <label class="form-label">Sort by:</label>
                             <div class="elegant-select">
                                 <div class="select-selected" id="billingSortSelected">
@@ -6085,7 +6133,7 @@
                     style="opacity: 1; transform: translateY(0px);">
                     <!-- Filter Bar -->
                     <div class="filter-bar">
-                        <div class="form-group w-200">
+                        <div class="w-200">
                             <label class="form-label">Sort by:</label>
                             <div class="elegant-select">
                                 <div class="select-selected" id="billingSortSelected">
