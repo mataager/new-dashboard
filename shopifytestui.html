@@ -451,6 +451,8 @@
                             <button class="action-btn">
                                 <i class="bi bi-download"></i>
                             </button>
+
+
                             <button class="action-btn">
                                 <i class="bi bi-three-dots"></i>
                             </button>
@@ -751,7 +753,11 @@
                                     <div class="select-item" data-value="30">
                                         <span>Last 30 Days</span>
                                     </div>
+                                    <div class="select-item" data-value="orderRangeSort">
+                                        <span><i class="bi bi-calendar-range"></i> range sorting</span>
+                                    </div>
                                 </div>
+
                             </div>
                         </div>
 
@@ -791,6 +797,72 @@
 
 
                     <div class="customer-orders-list animatedtoup">
+
+
+                        <div class="customer-order-card" data-status="pending">
+
+                            <div class="order-header">
+
+                                <div class="order-meta">
+                                    <div class="customer-order-avatar">JD</div><span>-OTIAjJYkpigIRshEPL</span>
+                                    <span><i class="bi bi-clock"></i> 2 hours ago</span>
+                                    <span class="status-badge pending" style="
+                            margin-left: auto;
+                        ">Pending</span>
+                                </div>
+                            </div>
+                            <div class="order-body">
+                                <!-- <span class="status-badge pending absolute">pending</span> -->
+
+                                <div class="cart-info">
+
+
+                                    <div class="cart-details">
+
+                                        <span>5 items</span>
+                                        <span> 147.50 EGP</span>
+                                    </div>
+
+                                    <!-- Product Images Gallery -->
+                                    <div class="product-images-gallery">
+                                        <div class="product-image-item" data-product-id="PROD-001">
+                                            <img src="https://assets.adidas.com/images/w_1880,f_auto,q_auto/b9bd6dc6bbb84a8faa3dae8400320b3e_9366/GX6632_01_00_standard.jpg"
+                                                alt="Product 1">
+                                        </div>
+                                        <div class="product-image-item" data-product-id="PROD-002">
+                                            <img src="https://assets.adidas.com/images/w_1880,f_auto,q_auto/483de19610bb4fa3b3b9288f3a82e751_9366/JP7147_HM9.jpg"
+                                                alt="Product 2">
+                                        </div>
+                                        <div class="product-image-item" data-product-id="PROD-003">
+                                            <img src="https://assets.adidas.com/images/w_1880,f_auto,q_auto/dc055f19dba84019ac8f16f0c782fa14_9366/JH6208_HM6.jpg"
+                                                alt="Product 3">
+                                        </div>
+                                        <!-- Example: When there are more than 4 items -->
+                                        <div class="product-image-item more-items" data-order-id="ORD-001">
+                                            <div class="more-overlay">+2</div>
+                                            <img src="https://assets.adidas.com/images/w_1880,f_auto,q_auto/dc055f19dba84019ac8f16f0c782fa14_9366/JH6208_HM6.jpg"
+                                                alt="More items" class="blurred">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button class="btn btn-outline btn-sm btn-primary view-order-btn"
+                                        data-order-id="ORD-001" data-order-date="2 hours ago"
+                                        data-order-total="14,750 EGP">
+                                        <i class="bi bi-eye"></i>view
+                                    </button>
+                                    <button class="btn btn-outline btn-sm btn-primary">
+                                        <i class="bi bi-send"></i> Remind
+                                    </button>
+                                    <button class="btn btn-outline btn-sm btn-primary">
+                                        <i class="bi bi-telephone-forward"></i> Call
+                                    </button>
+                                </div>
+                            </div>
+
+
+                        </div>
+
                         <div class="customer-order-card" data-status="pending">
                             <span class="status-badge pending absolute">pending</span>
                             <div class="customer-order-avatar">JD</div>
@@ -1375,7 +1447,7 @@
 
                     <div class="form-container animatedtoup show">
                         <div class="form-header">
-                            <h4 class="form-title"><i class="bi bi-images"></i> Collection Zones</h4>
+                            <h4 class="form-title"><i class="bi bi-box-seam"></i> Product Collection</h4>
                             <div class="form-actions">
                                 <button class="btn btn-outline" id="toggleAllSettings">
                                     <i class="bi bi-gear"></i> Toggle All Settings
@@ -1384,856 +1456,814 @@
                         </div>
 
                         <div id="dropzonesContainer">
-                            <!-- Drop zones will be added dynamically -->
+                            <div class="dropzone" data-index="1">
+                                <div class="dropzone-header">
+                                    <div class="zone-title">
+                                        <i class="bi bi-collection"></i>
+                                        <h5>Product Collection <span class="zone-number">1</span></h5>
+                                    </div>
+                                    <div class="zone-actions">
+                                        <button class="btn-rounded btn-outline toggle-zone"><i
+                                                class="bi bi-chevron-up"></i></button>
+                                        <button class="btn-rounded btn-danger delete-zone"><i
+                                                class="bi bi-trash"></i></button>
+                                    </div>
+                                </div>
+
+                                <div class="dropzone-content" style="display: block;">
+                                    <!-- Product Info -->
+                                    <div class="product-info-section">
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label><i class="bi bi-tag"></i> Product Name</label>
+                                                <input type="text" class="form-control product-name"
+                                                    placeholder="e.g., Nike Air Max 270" value="Nike Air Max 270">
+                                            </div>
+                                            <div class="form-group">
+                                                <label><i class="bi bi-upc"></i> SKU</label>
+                                                <input type="text" class="form-control product-sku"
+                                                    placeholder="NM270-2024">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Upload Section -->
+                                    <div class="upload-section">
+                                        <div class="upload-area" id="mainUploadArea">
+                                            <div class="upload-icon">
+                                                <i class="bi bi-cloud-arrow-up"></i>
+                                            </div>
+                                            <p class="upload-text">Drag & drop product images here</p>
+                                            <p class="upload-subtext">Max 20 images • Supports JPG, PNG, WebP</p>
+                                            <input type="file" id="fileInput" accept="image/*" multiple
+                                                style="display: none;">
+
+                                            <div class="upload-actions">
+                                                <button class="btn btn-outline browse-btn">
+                                                    <i class="bi bi-folder2-open"></i> Browse Files
+                                                </button>
+                                                <div class="url-input-group">
+                                                    <input type="text" class="form-control url-input"
+                                                        placeholder="Image URL">
+                                                    <button class="btn btn-primary add-url-btn">
+                                                        <i class="bi bi-plus"></i> Add
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Image Gallery -->
+                                        <div class="image-gallery">
+                                            <div class="gallery-header">
+                                                <h6><i class="bi bi-images"></i> Uploaded Images</h6>
+                                                <span class="image-counter">0/20 images</span>
+                                            </div>
+                                            <div class="gallery-grid" id="imageGallery">
+                                                <div class="empty-gallery">
+                                                    <i class="bi bi-image"></i>
+                                                    <p>No images uploaded yet</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Color & Size Configuration -->
+                                    <div class="configuration-section">
+                                        <div class="section-header">
+                                            <h5><i class="bi bi-palette"></i> Color & Size Configuration</h5>
+                                            <button class="btn btn-sm btn-primary" id="addVariantBtn">
+                                                <i class="bi bi-plus-circle"></i> Add Variant
+                                            </button>
+                                        </div>
+
+                                        <div class="variants-container" id="variantsContainer">
+                                            <!-- Variant 1 - Blue -->
+                                            <div class="variant-card active" data-variant-id="1">
+                                                <div class="variant-header">
+                                                    <div class="variant-color">
+                                                        <div class="color-selector">
+                                                            <input type="color" class="color-picker" value="#4e73df">
+                                                            <input type="text" class="color-name" value="Blue"
+                                                                placeholder="Color name">
+                                                        </div>
+                                                        <div class="color-preview" style="background-color: #4e73df;">
+                                                        </div>
+                                                    </div>
+                                                    <div class="variant-actions">
+                                                        <button class="btn btn-sm btn-outline assign-images-btn">
+                                                            <i class="bi bi-link"></i> Assign Images
+                                                        </button>
+                                                        <button class="btn btn-sm btn-danger remove-variant">
+                                                            <i class="bi bi-trash"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                                <div class="variant-body">
+                                                    <!-- Assigned Images -->
+                                                    <div class="assigned-images-section">
+                                                        <div class="section-title">
+                                                            <span>Assigned Images</span>
+                                                            <small>Drag images here or click to select</small>
+                                                        </div>
+                                                        <div class="assigned-images-grid" data-variant="1">
+                                                            <div class="drop-zone">
+                                                                <i class="bi bi-plus-lg"></i>
+                                                                <p>Drop images here</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Sizes for this Color -->
+                                                    <div class="sizes-section">
+                                                        <div class="section-title">
+                                                            <span>Available Sizes</span>
+                                                            <button class="btn btn-xs btn-outline select-all-sizes">
+                                                                Select All
+                                                            </button>
+                                                        </div>
+
+                                                        <div class="size-package-selector">
+                                                            <select class="form-control package-select">
+                                                                <option value="">Select size package</option>
+                                                                <option value="men" selected>Men Shoes (40-45)</option>
+                                                                <option value="women">Women Shoes (35-42)</option>
+                                                                <option value="kids">Kids Shoes (25-35)</option>
+                                                                <option value="custom">Custom Range</option>
+                                                            </select>
+                                                        </div>
+
+                                                        <div class="sizes-grid">
+                                                            <!-- Sizes will be generated here -->
+                                                            <div class="size-option selected" data-size="40">40</div>
+                                                            <div class="size-option selected" data-size="41">41</div>
+                                                            <div class="size-option selected" data-size="42">42</div>
+                                                            <div class="size-option selected" data-size="43">43</div>
+                                                            <div class="size-option" data-size="44">44</div>
+                                                            <div class="size-option" data-size="45">45</div>
+                                                        </div>
+
+                                                        <div class="custom-sizes" style="display: none;">
+                                                            <div class="custom-range">
+                                                                <input type="number" class="form-control"
+                                                                    placeholder="From" min="1" max="100">
+                                                                <span>to</span>
+                                                                <input type="number" class="form-control"
+                                                                    placeholder="To" min="1" max="100">
+                                                            </div>
+                                                            <div class="exceptions">
+                                                                <input type="text" class="form-control"
+                                                                    placeholder="Exceptions (e.g., 38.5, 39.5)">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Variant 2 - Red (Example) -->
+                                            <div class="variant-card" data-variant-id="2">
+                                                <div class="variant-header">
+                                                    <div class="variant-color">
+                                                        <div class="color-selector">
+                                                            <input type="color" class="color-picker" value="#e74a3b">
+                                                            <input type="text" class="color-name" value="Red"
+                                                                placeholder="Color name">
+                                                        </div>
+                                                        <div class="color-preview" style="background-color: #e74a3b;">
+                                                        </div>
+                                                    </div>
+                                                    <div class="variant-actions">
+                                                        <button class="btn btn-sm btn-outline assign-images-btn">
+                                                            <i class="bi bi-link"></i> Assign Images
+                                                        </button>
+                                                        <button class="btn btn-sm btn-danger remove-variant">
+                                                            <i class="bi bi-trash"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <!-- Same body structure -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Summary -->
+                                    <div class="summary-section">
+                                        <div class="summary-card">
+                                            <h6><i class="bi bi-check-circle"></i> Configuration Summary</h6>
+                                            <div class="summary-content">
+                                                <div class="summary-item">
+                                                    <span>Total Images:</span>
+                                                    <strong id="totalImages">0</strong>
+                                                </div>
+                                                <div class="summary-item">
+                                                    <span>Color Variants:</span>
+                                                    <strong id="totalVariants">2</strong>
+                                                </div>
+                                                <div class="summary-item">
+                                                    <span>Configured:</span>
+                                                    <span class="badge bg-success" id="configStatus">Complete</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <button id="addDropzoneBtn" class="btn btn-outline">
-                            <i class="bi bi-plus-circle"></i> Add Collection Zone
+                            <i class="bi bi-plus-circle"></i> Add Another Product
                         </button>
                     </div>
-                    <script>
 
-                        class CollectionZoneManager {
+                    <!-- Image Selection Modal -->
+                    <div class="modal fade" id="imageSelectionModal">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Select Images for <span id="modalColorName">Blue</span></h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="modal-gallery" id="modalGallery">
+                                        <!-- Images for selection -->
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-outline"
+                                        data-bs-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn btn-primary" id="confirmSelection">Assign Selected
+                                        Images</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        // Product Configuration Manager
+                        class ProductConfiguration {
                             constructor() {
-                                this.zones = [];
-                                this.currentZoneIndex = 0;
+                                this.product = {
+                                    name: '',
+                                    sku: '',
+                                    variants: [],
+                                    images: []
+                                };
+                                this.currentVariantId = 0;
+                                this.selectedVariant = null;
                                 this.init();
                             }
 
                             init() {
-                                this.loadTemplate();
-                                this.addEventListeners();
-                                this.addDefaultZone();
+                                this.setupEventListeners();
+                                this.loadDefaultData();
+                                this.updateSummary();
                             }
 
-                            loadTemplate() {
-                                // Template is already in the HTML
-                                console.log('Collection Zone Manager initialized');
-                            }
+                            setupEventListeners() {
+                                // File upload
+                                document.querySelector('.browse-btn').addEventListener('click', () => {
+                                    document.getElementById('fileInput').click();
+                                });
 
-                            addEventListeners() {
-                                // Add zone button
-                                document.getElementById('addDropzoneBtn').addEventListener('click', () => this.addZone());
+                                document.getElementById('fileInput').addEventListener('change', (e) => {
+                                    this.handleFileUpload(e.target.files);
+                                });
 
-                                // Toggle all settings button
-                                document.getElementById('toggleAllSettings').addEventListener('click', () => this.toggleAllSettings());
+                                // URL upload
+                                document.querySelector('.add-url-btn').addEventListener('click', () => {
+                                    this.addImageFromURL();
+                                });
 
-                                // Initialize color picker modal
-                                this.initColorPickerModal();
-                            }
-
-                            addDefaultZone() {
-                                this.addZone();
-                            }
-
-                            addZone() {
-                                const container = document.getElementById('dropzonesContainer');
-                                const template = document.getElementById('dropzoneTemplate');
-                                const clone = document.importNode(template.content, true);
-
-                                const zoneNumber = this.zones.length + 1;
-                                clone.querySelector('.zone-number').textContent = zoneNumber;
-
-                                // Set zone index
-                                const zoneElement = clone.querySelector('.dropzone');
-                                zoneElement.dataset.index = zoneNumber;
-
-                                container.appendChild(clone);
-                                this.zones.push(zoneNumber);
-
-                                // Initialize the new zone
-                                this.initZone(zoneElement);
-
-                                // Update zone numbers
-                                this.updateZoneNumbers();
-
-                                // Scroll to new zone
-                                zoneElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-                                // Add highlight animation
-                                zoneElement.classList.add('new-zone');
-                                setTimeout(() => zoneElement.classList.remove('new-zone'), 1000);
-                            }
-
-                            initZone(zoneElement) {
-                                const zoneIndex = zoneElement.dataset.index;
-
-                                // Upload area functionality
-                                const uploadArea = zoneElement.querySelector('.upload-area');
-                                const fileInput = zoneElement.querySelector('.file-input');
-                                const browseBtn = zoneElement.querySelector('.browse-btn');
-                                const urlInput = zoneElement.querySelector('.url-input');
-                                const addUrlBtn = zoneElement.querySelector('.add-url-btn');
-                                const imageList = zoneElement.querySelector('.image-list');
-                                const imageCount = zoneElement.querySelector('.image-count');
-                                const clearAllBtn = zoneElement.querySelector('.clear-all-btn');
+                                // Add variant
+                                document.getElementById('addVariantBtn').addEventListener('click', () => {
+                                    this.addVariant();
+                                });
 
                                 // Drag and drop
-                                ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-                                    uploadArea.addEventListener(eventName, (e) => {
-                                        e.preventDefault();
-                                        e.stopPropagation();
-                                    });
+                                this.setupDragAndDrop();
+
+                                // Size selection
+                                this.setupSizeSelection();
+
+                                // Product info updates
+                                document.querySelector('.product-name').addEventListener('input', (e) => {
+                                    this.product.name = e.target.value;
+                                    this.updateSummary();
                                 });
 
-                                ['dragenter', 'dragover'].forEach(eventName => {
-                                    uploadArea.addEventListener(eventName, () => {
-                                        uploadArea.classList.add('drag-over');
-                                    });
-                                });
-
-                                ['dragleave', 'drop'].forEach(eventName => {
-                                    uploadArea.addEventListener(eventName, () => {
-                                        uploadArea.classList.remove('drag-over');
-                                    });
-                                });
-
-                                uploadArea.addEventListener('drop', (e) => {
-                                    const files = e.dataTransfer.files;
-                                    this.handleFiles(files, imageList, imageCount);
-                                });
-
-                                browseBtn.addEventListener('click', () => fileInput.click());
-
-                                fileInput.addEventListener('change', (e) => {
-                                    this.handleFiles(e.target.files, imageList, imageCount);
-                                });
-
-                                addUrlBtn.addEventListener('click', () => {
-                                    const url = urlInput.value.trim();
-                                    if (url) {
-                                        this.addImageFromUrl(url, imageList, imageCount);
-                                        urlInput.value = '';
-                                    }
-                                });
-
-                                urlInput.addEventListener('keypress', (e) => {
-                                    if (e.key === 'Enter') {
-                                        addUrlBtn.click();
-                                    }
-                                });
-
-                                clearAllBtn.addEventListener('click', () => {
-                                    imageList.innerHTML = `
-                <div class="empty-state">
-                    <p>No images added yet</p>
-                </div>
-            `;
-                                    imageCount.textContent = '0 images';
-                                });
-
-                                // Color selection functionality
-                                this.initColorSelection(zoneElement);
-
-                                // Size selection functionality
-                                this.initSizeSelection(zoneElement);
-
-                                // Zone actions
-                                const toggleBtn = zoneElement.querySelector('.toggle-zone');
-                                const deleteBtn = zoneElement.querySelector('.delete-zone');
-                                const zoneContent = zoneElement.querySelector('.dropzone-content');
-
-                                toggleBtn.addEventListener('click', () => {
-                                    const isHidden = zoneContent.style.display === 'none';
-                                    zoneContent.style.display = isHidden ? 'block' : 'none';
-                                    toggleBtn.innerHTML = isHidden ?
-                                        '<i class="bi bi-chevron-up"></i>' :
-                                        '<i class="bi bi-chevron-down"></i>';
-                                });
-
-                                deleteBtn.addEventListener('click', () => {
-                                    if (this.zones.length > 1) {
-                                        zoneElement.remove();
-                                        this.zones = this.zones.filter(z => z != zoneIndex);
-                                        this.updateZoneNumbers();
-                                    } else {
-                                        alert('At least one collection zone is required');
-                                    }
+                                document.querySelector('.product-sku').addEventListener('input', (e) => {
+                                    this.product.sku = e.target.value;
                                 });
                             }
 
-                            initColorSelection(zoneElement) {
-                                const colorModes = zoneElement.querySelectorAll('.toggle-color-mode');
-                                const colorContent = zoneElement.querySelector('.color-control-content');
-                                const colorPickerBtn = zoneElement.querySelector('.color-preview-btn');
-                                const colorInput = zoneElement.querySelector('.color-input');
-                                const colorName = zoneElement.querySelector('.color-name');
-                                const randomColorBtn = zoneElement.querySelector('.random-color');
-                                const colorSwatches = zoneElement.querySelectorAll('.color-swatch');
-                                const imageSwatches = zoneElement.querySelector('.image-swatches');
-
-                                // Color mode switching
-                                colorModes.forEach(mode => {
-                                    mode.addEventListener('click', () => {
-                                        const modeType = mode.dataset.mode;
-
-                                        // Update active button
-                                        colorModes.forEach(m => m.classList.remove('active'));
-                                        mode.classList.add('active');
-
-                                        // Show corresponding content
-                                        const containers = colorContent.querySelectorAll('> div');
-                                        containers.forEach(container => {
-                                            container.classList.remove('active');
-                                            if (container.classList.contains(`${modeType}-container`) ||
-                                                container.classList.contains(`color-${modeType}-container`)) {
-                                                container.classList.add('active');
-                                            }
-                                        });
-
-                                        // Handle image mode
-                                        if (modeType === 'image') {
-                                            this.initImageColorPicker(imageSwatches, zoneElement);
-                                        }
-                                    });
-                                });
-
-                                // Color picker
-                                colorPickerBtn.addEventListener('click', () => {
-                                    this.openColorPickerModal(colorPickerBtn, colorName);
-                                });
-
-                                colorInput.addEventListener('input', (e) => {
-                                    const color = e.target.value;
-                                    colorPickerBtn.style.backgroundColor = color;
-                                    colorPickerBtn.dataset.color = color;
-                                    this.updateRecentColors(color, colorName.value || 'Custom');
-                                });
-
-                                // Random color
-                                randomColorBtn.addEventListener('click', () => {
-                                    const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
-                                    colorInput.value = randomColor;
-                                    colorPickerBtn.style.backgroundColor = randomColor;
-                                    colorPickerBtn.dataset.color = randomColor;
-                                    colorName.value = 'Random';
-                                    this.updateRecentColors(randomColor, 'Random');
-                                });
-
-                                // Color swatches
-                                colorSwatches.forEach(swatch => {
-                                    swatch.addEventListener('click', () => {
-                                        const color = swatch.dataset.color;
-                                        const name = swatch.dataset.name;
-                                        colorInput.value = color;
-                                        colorPickerBtn.style.backgroundColor = color;
-                                        colorPickerBtn.dataset.color = color;
-                                        colorName.value = name;
-                                        this.updateRecentColors(color, name);
-                                    });
-                                });
-                            }
-
-                            initSizeSelection(zoneElement) {
-                                const sizeToggles = zoneElement.querySelectorAll('.size-toggle-btn');
-                                const sizeContent = zoneElement.querySelector('.size-control-content');
-                                const packageSelector = zoneElement.querySelector('.package-selector');
-                                const packageItems = zoneElement.querySelectorAll('.select-item');
-                                const sizePreview = zoneElement.querySelector('.size-preview');
-                                const sizeChips = zoneElement.querySelector('.size-chips');
-                                const clearPackageBtn = zoneElement.querySelector('.clear-package');
-
-                                // Size mode switching
-                                sizeToggles.forEach(toggle => {
-                                    toggle.addEventListener('click', () => {
-                                        const target = toggle.dataset.target;
-
-                                        // Update active button
-                                        sizeToggles.forEach(t => t.classList.remove('active'));
-                                        toggle.classList.add('active');
-
-                                        // Show corresponding content
-                                        const containers = sizeContent.querySelectorAll('> div');
-                                        containers.forEach(container => {
-                                            container.classList.remove('active');
-                                            if (container.classList.contains(`${target}-container`)) {
-                                                container.classList.add('active');
-                                            }
-                                        });
-                                    });
-                                });
-
-                                // Package selector
-                                packageSelector.addEventListener('click', (e) => {
-                                    e.stopPropagation();
-                                    const items = zoneElement.querySelector('.select-items');
-                                    items.classList.toggle('open');
-                                    packageSelector.classList.toggle('active');
-                                });
-
-                                // Close selector when clicking outside
-                                document.addEventListener('click', () => {
-                                    const items = zoneElement.querySelector('.select-items');
-                                    items.classList.remove('open');
-                                    packageSelector.classList.remove('active');
-                                });
-
-                                // Package selection
-                                packageItems.forEach(item => {
-                                    item.addEventListener('click', () => {
-                                        const packageName = item.dataset.value;
-                                        const range = item.querySelector('.package-range').textContent;
-
-                                        // Update selected package
-                                        const selectedText = packageSelector.querySelector('.select-text');
-                                        selectedText.textContent = packageName;
-
-                                        // Generate size chips
-                                        this.generateSizeChips(range, sizeChips);
-
-                                        // Update badge
-                                        const badge = zoneElement.querySelector('#selectedPackageName');
-                                        badge.textContent = packageName;
-
-                                        // Close selector
-                                        const items = zoneElement.querySelector('.select-items');
-                                        items.classList.remove('show');
-                                        packageSelector.classList.remove('active');
-                                    });
-                                });
-
-                                // Clear package
-                                clearPackageBtn.addEventListener('click', () => {
-                                    sizeChips.innerHTML = '';
-                                    const selectedText = packageSelector.querySelector('.select-text');
-                                    selectedText.textContent = 'Select Package';
-                                    const badge = zoneElement.querySelector('#selectedPackageName');
-                                    badge.textContent = 'Not Selected';
-                                });
-
-                                // Size creator
-                                const saveSizeBtn = zoneElement.querySelector('.save-size');
-                                const cancelCreateBtn = zoneElement.querySelector('.cancel-create');
-                                const addExceptionBtn = zoneElement.querySelector('.add-exception');
-                                const exceptionsList = zoneElement.querySelector('.exceptions-list-creator');
-
-                                saveSizeBtn.addEventListener('click', () => {
-                                    const fromSize = zoneElement.querySelector('.from-size').value;
-                                    const toSize = zoneElement.querySelector('.to-size').value;
-
-                                    if (fromSize && toSize && parseInt(fromSize) < parseInt(toSize)) {
-                                        // Create new package
-                                        const range = `${fromSize}-${toSize}`;
-                                        const exceptions = Array.from(exceptionsList.querySelectorAll('.exception-chip'))
-                                            .map(chip => chip.textContent.replace('×', '').trim());
-
-                                        // Add to package list
-                                        this.addNewPackage(zoneElement, fromSize, toSize, exceptions);
-
-                                        // Switch back to package selector
-                                        sizeToggles[0].click();
-
-                                        // Clear creator
-                                        zoneElement.querySelector('.from-size').value = '';
-                                        zoneElement.querySelector('.to-size').value = '';
-                                        exceptionsList.innerHTML = '';
-                                    } else {
-                                        alert('Please enter valid size range (From must be less than To)');
-                                    }
-                                });
-
-                                cancelCreateBtn.addEventListener('click', () => {
-                                    sizeToggles[0].click();
-                                });
-
-                                addExceptionBtn.addEventListener('click', () => {
-                                    const exceptionValue = zoneElement.querySelector('.exception-value').value.trim();
-                                    if (exceptionValue) {
-                                        const chip = document.createElement('div');
-                                        chip.className = 'exception-chip';
-                                        chip.innerHTML = `
-                    ${exceptionValue}
-                    <span class="remove-exception" style="cursor:pointer">×</span>
-                `;
-
-                                        chip.querySelector('.remove-exception').addEventListener('click', () => {
-                                            chip.remove();
-                                        });
-
-                                        exceptionsList.appendChild(chip);
-                                        zoneElement.querySelector('.exception-value').value = '';
-                                    }
-                                });
-                            }
-
-                            initImageColorPicker(imageSwatches, zoneElement) {
-                                // Add click handler to image swatches
-                                const imageSwatch = imageSwatches.querySelector('.image-swatch');
-                                imageSwatch.addEventListener('click', () => {
-                                    // In a real implementation, this would open a file picker
-                                    // For demo, we'll use a sample image
-                                    const sampleImage = 'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400&h=300&fit=crop';
-                                    this.openColorPickerFromImage(sampleImage, zoneElement);
-                                });
-                            }
-
-                            openColorPickerModal(colorBtn, colorNameInput) {
-                                const modal = document.getElementById('colorPickerModal');
-                                modal.classList.add('show');
-
-                                // Set current color
-                                const currentColor = colorBtn.dataset.color;
-                                const preview = document.getElementById('selectedColorPreview');
-                                const hexSpan = document.getElementById('selectedColorHex');
-
-                                preview.style.backgroundColor = currentColor;
-                                hexSpan.textContent = currentColor;
-
-                                // Set up modal buttons
-                                const confirmBtn = document.getElementById('confirmColorPick');
-                                const cancelBtn = document.getElementById('cancelColorPick');
-
-                                const confirmHandler = () => {
-                                    const selectedColor = hexSpan.textContent;
-                                    colorBtn.style.backgroundColor = selectedColor;
-                                    colorBtn.dataset.color = selectedColor;
-                                    colorNameInput.value = 'From Image';
-                                    this.updateRecentColors(selectedColor, 'From Image');
-                                    modal.classList.remove('show');
-
-                                    // Clean up
-                                    confirmBtn.removeEventListener('click', confirmHandler);
-                                    cancelBtn.removeEventListener('click', cancelHandler);
-                                };
-
-                                const cancelHandler = () => {
-                                    modal.classList.remove('show');
-
-                                    // Clean up
-                                    confirmBtn.removeEventListener('click', confirmHandler);
-                                    cancelBtn.removeEventListener('click', cancelHandler);
-                                };
-
-                                confirmBtn.addEventListener('click', confirmHandler);
-                                cancelBtn.addEventListener('click', cancelHandler);
-                            }
-
-                            openColorPickerFromImage(imageUrl, zoneElement) {
-                                const modal = document.getElementById('colorPickerModal');
-                                const image = document.getElementById('colorSourceImage');
-                                const picker = document.getElementById('colorPicker');
-                                const preview = document.getElementById('selectedColorPreview');
-                                const hexSpan = document.getElementById('selectedColorHex');
-                                const rgbSpan = document.getElementById('selectedColorRgb');
-                                const sizeSlider = document.getElementById('circleSize');
-                                const sizeValue = document.getElementById('circleSizeValue');
-
-                                // Load image
-                                image.src = imageUrl;
-
-                                // Show modal
-                                modal.classList.add('show');
-
-                                // Initialize color picker
-                                this.initImageColorPickerInteraction(image, picker, preview, hexSpan, rgbSpan);
-
-                                // Circle size control
-                                sizeSlider.addEventListener('input', (e) => {
-                                    const size = e.target.value;
-                                    sizeValue.textContent = size + 'px';
-                                    picker.style.width = size + 'px';
-                                    picker.style.height = size + 'px';
-                                });
-
-                                // Set up modal buttons for this instance
-                                const confirmBtn = document.getElementById('confirmColorPick');
-                                const cancelBtn = document.getElementById('cancelColorPick');
-
-                                const confirmHandler = () => {
-                                    const selectedColor = hexSpan.textContent;
-                                    const colorBtn = zoneElement.querySelector('.color-preview-btn');
-                                    const colorName = zoneElement.querySelector('.color-name');
-
-                                    colorBtn.style.backgroundColor = selectedColor;
-                                    colorBtn.dataset.color = selectedColor;
-                                    colorName.value = 'From Image';
-                                    this.updateRecentColors(selectedColor, 'From Image');
-                                    modal.classList.remove('show');
-
-                                    // Clean up
-                                    confirmBtn.removeEventListener('click', confirmHandler);
-                                    cancelBtn.removeEventListener('click', cancelHandler);
-                                };
-
-                                const cancelHandler = () => {
-                                    modal.classList.remove('show');
-
-                                    // Clean up
-                                    confirmBtn.removeEventListener('click', confirmHandler);
-                                    cancelBtn.removeEventListener('click', cancelHandler);
-                                };
-
-                                confirmBtn.addEventListener('click', confirmHandler);
-                                cancelBtn.addEventListener('click', cancelHandler);
-                            }
-
-                            initImageColorPickerInteraction(image, picker, preview, hexSpan, rgbSpan) {
-                                let isDragging = false;
-                                const canvas = document.createElement('canvas');
-                                const ctx = canvas.getContext('2d');
-
-                                // Set picker position to center
-                                const imgRect = image.getBoundingClientRect();
-                                picker.style.left = (imgRect.width / 2 - 15) + 'px';
-                                picker.style.top = (imgRect.height / 2 - 15) + 'px';
-
-                                // Mouse events for dragging
-                                picker.addEventListener('mousedown', (e) => {
-                                    isDragging = true;
-                                    e.preventDefault();
-                                });
-
-                                document.addEventListener('mousemove', (e) => {
-                                    if (!isDragging) return;
-
-                                    const imgRect = image.getBoundingClientRect();
-                                    const modalRect = image.parentElement.getBoundingClientRect();
-
-                                    let x = e.clientX - imgRect.left;
-                                    let y = e.clientY - imgRect.top;
-
-                                    // Constrain to image bounds
-                                    x = Math.max(0, Math.min(x, imgRect.width));
-                                    y = Math.max(0, Math.min(y, imgRect.height));
-
-                                    picker.style.left = (x - parseFloat(picker.style.width) / 2) + 'px';
-                                    picker.style.top = (y - parseFloat(picker.style.height) / 2) + 'px';
-
-                                    // Update color
-                                    updateColorAtPosition(x, y);
-                                });
-
-                                document.addEventListener('mouseup', () => {
-                                    isDragging = false;
-                                });
-
-                                // Click on image to move picker
-                                image.addEventListener('click', (e) => {
-                                    const imgRect = image.getBoundingClientRect();
-                                    const x = e.clientX - imgRect.left;
-                                    const y = e.clientY - imgRect.top;
-
-                                    picker.style.left = (x - parseFloat(picker.style.width) / 2) + 'px';
-                                    picker.style.top = (y - parseFloat(picker.style.height) / 2) + 'px';
-
-                                    updateColorAtPosition(x, y);
-                                });
-
-                                function updateColorAtPosition(x, y) {
-                                    // Get image data at position
-                                    canvas.width = image.width;
-                                    canvas.height = image.height;
-                                    ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
-
-                                    const pixelX = Math.floor(x * (image.width / imgRect.width));
-                                    const pixelY = Math.floor(y * (image.height / imgRect.height));
-
-                                    const pixelData = ctx.getImageData(pixelX, pixelY, 1, 1).data;
-                                    const r = pixelData[0];
-                                    const g = pixelData[1];
-                                    const b = pixelData[2];
-
-                                    const hex = '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
-
-                                    // Update display
-                                    preview.style.backgroundColor = hex;
-                                    hexSpan.textContent = hex;
-                                    rgbSpan.textContent = `rgb(${r}, ${g}, ${b})`;
-                                }
-
-                                // Initial color update
-                                setTimeout(() => {
-                                    updateColorAtPosition(
-                                        parseFloat(picker.style.left) + parseFloat(picker.style.width) / 2,
-                                        parseFloat(picker.style.top) + parseFloat(picker.style.height) / 2
-                                    );
-                                }, 100);
-                            }
-
-                            handleFiles(files, imageList, imageCount) {
-                                const maxImages = 10;
-                                const currentCount = imageList.querySelectorAll('.image-item').length;
-
-                                if (currentCount + files.length > maxImages) {
-                                    alert(`Maximum ${maxImages} images allowed. You can add ${maxImages - currentCount} more.`);
-                                    return;
-                                }
-
-                                Array.from(files).slice(0, maxImages - currentCount).forEach(file => {
-                                    if (file.type.startsWith('image/')) {
-                                        const reader = new FileReader();
-
-                                        reader.onload = (e) => {
-                                            this.addImageElement(e.target.result, file.name, imageList, imageCount);
+                            handleFileUpload(files) {
+                                for (let i = 0; i < Math.min(files.length, 20 - this.product.images.length); i++) {
+                                    const file = files[i];
+                                    const reader = new FileReader();
+
+                                    reader.onload = (e) => {
+                                        const imageData = {
+                                            id: Date.now() + i,
+                                            url: e.target.result,
+                                            name: file.name,
+                                            size: file.size,
+                                            assignedTo: null // null means not assigned to any variant
                                         };
 
-                                        reader.readAsDataURL(file);
-                                    }
-                                });
-                            }
+                                        this.product.images.push(imageData);
+                                        this.renderImageInGallery(imageData);
+                                        this.updateGalleryCounter();
+                                        this.updateSummary();
+                                    };
 
-                            addImageFromUrl(url, imageList, imageCount) {
-                                const maxImages = 10;
-                                const currentCount = imageList.querySelectorAll('.image-item').length;
-
-                                if (currentCount >= maxImages) {
-                                    alert(`Maximum ${maxImages} images allowed.`);
-                                    return;
+                                    reader.readAsDataURL(file);
                                 }
-
-                                // Create a temporary image to validate URL
-                                const img = new Image();
-                                img.crossOrigin = 'anonymous';
-
-                                img.onload = () => {
-                                    this.addImageElement(url, 'URL Image', imageList, imageCount);
-                                };
-
-                                img.onerror = () => {
-                                    alert('Could not load image from URL. Please check the URL and try again.');
-                                };
-
-                                img.src = url;
                             }
 
-                            addImageElement(src, filename, imageList, imageCount) {
+                            addImageFromURL() {
+                                const urlInput = document.querySelector('.url-input');
+                                const url = urlInput.value.trim();
+
+                                if (url && this.isValidImageURL(url)) {
+                                    const imageData = {
+                                        id: Date.now(),
+                                        url: url,
+                                        name: this.getFilenameFromURL(url),
+                                        size: 0,
+                                        assignedTo: null
+                                    };
+
+                                    this.product.images.push(imageData);
+                                    this.renderImageInGallery(imageData);
+                                    this.updateGalleryCounter();
+                                    urlInput.value = '';
+                                    this.updateSummary();
+                                }
+                            }
+
+                            renderImageInGallery(imageData) {
+                                const gallery = document.getElementById('imageGallery');
+
                                 // Remove empty state if present
-                                const emptyState = imageList.querySelector('.empty-state');
-                                if (emptyState) {
-                                    emptyState.remove();
-                                }
+                                const emptyState = gallery.querySelector('.empty-gallery');
+                                if (emptyState) emptyState.remove();
 
-                                const imageItem = document.createElement('div');
-                                imageItem.className = 'image-item';
-                                imageItem.innerHTML = `
+                                const imageCard = document.createElement('div');
+                                imageCard.className = 'image-card';
+                                imageCard.dataset.imageId = imageData.id;
+                                imageCard.draggable = true;
+
+                                imageCard.innerHTML = `
             <div class="image-preview">
-                <img src="${src}" alt="${filename}">
+                <img src="${imageData.url}" alt="${imageData.name}">
                 <div class="image-overlay">
-                   
-                    <button class="btn-rounded btn-rounded-absolute remove-image">
-                        <i class="bi bi-trash"></i>
+                    <button class="btn btn-xs btn-light assign-btn" title="Assign to variant">
+                        <i class="bi bi-link"></i>
                     </button>
                 </div>
             </div>
             <div class="image-info">
-                <span class="image-name">${filename.substring(0, 20)}${filename.length > 20 ? '...' : ''}</span>
-                <span class="image-size">${this.formatFileSize(src)}</span>
+                <small>${this.formatFileSize(imageData.size)}</small>
+                <span class="assigned-badge" style="display: none;">Assigned</span>
             </div>
         `;
 
-                                // Add event listeners
-                                const removeBtn = imageItem.querySelector('.remove-image');
-                                // const colorBtn = imageItem.querySelector('.use-for-color');
+                                // Make image draggable
+                                imageCard.addEventListener('dragstart', (e) => {
+                                    e.dataTransfer.setData('text/plain', imageData.id.toString());
+                                });
 
-                                removeBtn.addEventListener('click', () => {
-                                    imageItem.remove();
-                                    this.updateImageCount(imageList, imageCount);
+                                gallery.appendChild(imageCard);
+                            }
 
-                                    // Show empty state if no images left
-                                    if (imageList.querySelectorAll('.image-item').length === 0) {
-                                        imageList.innerHTML = `
-                    <div class="empty-state">
-                        <i class="bi bi-images"></i>
-                        <p>No images added yet</p>
+                            addVariant() {
+                                this.currentVariantId++;
+                                const variantId = this.currentVariantId;
+
+                                const variant = {
+                                    id: variantId,
+                                    color: '#4e73df',
+                                    name: `Color ${variantId}`,
+                                    images: [],
+                                    sizes: []
+                                };
+
+                                this.product.variants.push(variant);
+                                this.renderVariantCard(variant);
+                                this.updateSummary();
+                            }
+
+                            renderVariantCard(variant) {
+                                const container = document.getElementById('variantsContainer');
+
+                                const variantCard = document.createElement('div');
+                                variantCard.className = 'variant-card';
+                                variantCard.dataset.variantId = variant.id;
+
+                                variantCard.innerHTML = `
+            <div class="variant-header">
+                <div class="variant-color">
+                    <div class="color-selector">
+                        <input type="color" class="color-picker" value="${variant.color}">
+                        <input type="text" class="color-name" value="${variant.name}" placeholder="Color name">
                     </div>
-                `;
+                    <div class="color-preview" style="background-color: ${variant.color};"></div>
+                </div>
+                <div class="variant-actions">
+                    <button class="btn btn-sm btn-outline assign-images-btn">
+                        <i class="bi bi-link"></i> Assign Images
+                    </button>
+                    <button class="btn btn-sm btn-danger remove-variant">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="variant-body">
+                <div class="assigned-images-section">
+                    <div class="section-title">
+                        <span>Assigned Images</span>
+                        <small>Drag images here or click to select</small>
+                    </div>
+                    <div class="assigned-images-grid" data-variant="${variant.id}">
+                        <div class="drop-zone">
+                            <i class="bi bi-plus-lg"></i>
+                            <p>Drop images here</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sizes-section">
+                    <div class="section-title">
+                        <span>Available Sizes</span>
+                        <button class="btn btn-xs btn-outline select-all-sizes">
+                            Select All
+                        </button>
+                    </div>
+                    <div class="size-package-selector">
+                        <select class="form-control package-select">
+                            <option value="">Select size package</option>
+                            <option value="men">Men Shoes (40-45)</option>
+                            <option value="women">Women Shoes (35-42)</option>
+                            <option value="kids">Kids Shoes (25-35)</option>
+                            <option value="custom">Custom Range</option>
+                        </select>
+                    </div>
+                    <div class="sizes-grid">
+                        <!-- Sizes will be populated by package -->
+                    </div>
+                    <div class="custom-sizes" style="display: none;">
+                        <div class="custom-range">
+                            <input type="number" class="form-control" placeholder="From" min="1" max="100">
+                            <span>to</span>
+                            <input type="number" class="form-control" placeholder="To" min="1" max="100">
+                        </div>
+                        <div class="exceptions">
+                            <input type="text" class="form-control" placeholder="Exceptions (e.g., 38.5, 39.5)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+
+                                container.appendChild(variantCard);
+
+                                // Add event listeners for this variant
+                                this.setupVariantEvents(variantCard, variant);
+                            }
+
+                            setupVariantEvents(variantCard, variant) {
+                                // Color picker
+                                const colorPicker = variantCard.querySelector('.color-picker');
+                                const colorName = variantCard.querySelector('.color-name');
+                                const colorPreview = variantCard.querySelector('.color-preview');
+
+                                colorPicker.addEventListener('input', (e) => {
+                                    variant.color = e.target.value;
+                                    colorPreview.style.backgroundColor = e.target.value;
+                                });
+
+                                colorName.addEventListener('input', (e) => {
+                                    variant.name = e.target.value;
+                                });
+
+                                // Assign images button
+                                const assignBtn = variantCard.querySelector('.assign-images-btn');
+                                assignBtn.addEventListener('click', () => {
+                                    this.openImageSelectionModal(variant);
+                                });
+
+                                // Remove variant
+                                const removeBtn = variantCard.querySelector('.remove-variant');
+                                removeBtn.addEventListener('click', () => {
+                                    if (confirm('Remove this color variant?')) {
+                                        this.removeVariant(variant.id);
                                     }
                                 });
 
+                                // Setup drop zone
+                                const dropZone = variantCard.querySelector('.assigned-images-grid');
+                                this.setupDropZone(dropZone, variant.id);
 
-
-                                imageList.appendChild(imageItem);
-                                this.updateImageCount(imageList, imageCount);
+                                // Size package selection
+                                const packageSelect = variantCard.querySelector('.package-select');
+                                packageSelect.addEventListener('change', (e) => {
+                                    this.updateSizesForVariant(variant.id, e.target.value);
+                                });
                             }
 
-                            updateImageCount(imageList, imageCount) {
-                                const count = imageList.querySelectorAll('.image-item').length;
-                                imageCount.textContent = `${count} image${count !== 1 ? 's' : ''}`;
+                            setupDropZone(dropZone, variantId) {
+                                dropZone.addEventListener('dragover', (e) => {
+                                    e.preventDefault();
+                                    dropZone.classList.add('drag-over');
+                                });
+
+                                dropZone.addEventListener('dragleave', () => {
+                                    dropZone.classList.remove('drag-over');
+                                });
+
+                                dropZone.addEventListener('drop', (e) => {
+                                    e.preventDefault();
+                                    dropZone.classList.remove('drag-over');
+
+                                    const imageId = e.dataTransfer.getData('text/plain');
+                                    if (imageId) {
+                                        this.assignImageToVariant(parseInt(imageId), variantId);
+                                    }
+                                });
                             }
 
-                            formatFileSize(src) {
-                                // For data URLs, estimate size
-                                if (src.startsWith('data:')) {
-                                    const base64Length = src.length - (src.indexOf(',') + 1);
-                                    const padding = src.endsWith('==') ? 2 : src.endsWith('=') ? 1 : 0;
-                                    const fileSize = (base64Length * 0.75) - padding;
-                                    return this.bytesToSize(fileSize);
+                            assignImageToVariant(imageId, variantId) {
+                                // Find image and variant
+                                const image = this.product.images.find(img => img.id === imageId);
+                                const variant = this.product.variants.find(v => v.id === variantId);
+
+                                if (image && variant) {
+                                    // Remove from previous variant if assigned
+                                    if (image.assignedTo && image.assignedTo !== variantId) {
+                                        const prevVariant = this.product.variants.find(v => v.id === image.assignedTo);
+                                        if (prevVariant) {
+                                            const index = prevVariant.images.indexOf(imageId);
+                                            if (index > -1) {
+                                                prevVariant.images.splice(index, 1);
+                                            }
+                                        }
+                                    }
+
+                                    // Assign to new variant
+                                    image.assignedTo = variantId;
+                                    if (!variant.images.includes(imageId)) {
+                                        variant.images.push(imageId);
+                                    }
+
+                                    this.updateImageDisplay(imageId);
+                                    this.updateVariantDisplay(variantId);
+                                    this.updateSummary();
                                 }
-                                return 'Unknown size';
                             }
 
-                            bytesToSize(bytes) {
-                                const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+                            updateSizesForVariant(variantId, packageType) {
+                                const variant = this.product.variants.find(v => v.id === variantId);
+                                if (!variant) return;
+
+                                let sizes = [];
+
+                                switch (packageType) {
+                                    case 'men':
+                                        sizes = [40, 41, 42, 43, 44, 45];
+                                        break;
+                                    case 'women':
+                                        sizes = [35, 36, 37, 38, 39, 40, 41, 42];
+                                        break;
+                                    case 'kids':
+                                        sizes = [25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35];
+                                        break;
+                                    case 'custom':
+                                        // Show custom inputs
+                                        const variantCard = document.querySelector(`[data-variant-id="${variantId}"]`);
+                                        variantCard.querySelector('.custom-sizes').style.display = 'block';
+                                        return;
+                                }
+
+                                variant.sizes = sizes;
+                                this.renderSizesForVariant(variantId, sizes);
+                            }
+
+                            renderSizesForVariant(variantId, sizes) {
+                                const variantCard = document.querySelector(`[data-variant-id="${variantId}"]`);
+                                const sizesGrid = variantCard.querySelector('.sizes-grid');
+
+                                sizesGrid.innerHTML = '';
+                                sizes.forEach(size => {
+                                    const sizeOption = document.createElement('div');
+                                    sizeOption.className = 'size-option';
+                                    sizeOption.textContent = size;
+                                    sizeOption.dataset.size = size;
+
+                                    sizeOption.addEventListener('click', () => {
+                                        sizeOption.classList.toggle('selected');
+                                        this.updateVariantSizes(variantId);
+                                    });
+
+                                    sizesGrid.appendChild(sizeOption);
+                                });
+                            }
+
+                            updateVariantSizes(variantId) {
+                                const variant = this.product.variants.find(v => v.id === variantId);
+                                const variantCard = document.querySelector(`[data-variant-id="${variantId}"]`);
+                                const selectedSizes = Array.from(variantCard.querySelectorAll('.size-option.selected'))
+                                    .map(el => parseInt(el.dataset.size));
+
+                                variant.sizes = selectedSizes;
+                            }
+
+                            removeVariant(variantId) {
+                                // Unassign images from this variant
+                                this.product.images.forEach(img => {
+                                    if (img.assignedTo === variantId) {
+                                        img.assignedTo = null;
+                                    }
+                                });
+
+                                // Remove variant
+                                const index = this.product.variants.findIndex(v => v.id === variantId);
+                                if (index > -1) {
+                                    this.product.variants.splice(index, 1);
+                                }
+
+                                // Remove from DOM
+                                const variantCard = document.querySelector(`[data-variant-id="${variantId}"]`);
+                                if (variantCard) variantCard.remove();
+
+                                this.updateSummary();
+                                this.updateAllImageDisplays();
+                            }
+
+                            updateImageDisplay(imageId) {
+                                const imageCard = document.querySelector(`[data-image-id="${imageId}"]`);
+                                if (!imageCard) return;
+
+                                const image = this.product.images.find(img => img.id === imageId);
+                                const badge = imageCard.querySelector('.assigned-badge');
+
+                                if (image.assignedTo) {
+                                    badge.style.display = 'inline-block';
+                                    badge.textContent = 'Assigned';
+                                    imageCard.classList.add('assigned');
+                                } else {
+                                    badge.style.display = 'none';
+                                    imageCard.classList.remove('assigned');
+                                }
+                            }
+
+                            updateVariantDisplay(variantId) {
+                                const variant = this.product.variants.find(v => v.id === variantId);
+                                const variantCard = document.querySelector(`[data-variant-id="${variantId}"]`);
+                                const imagesGrid = variantCard.querySelector('.assigned-images-grid');
+
+                                imagesGrid.innerHTML = '';
+
+                                variant.images.forEach(imageId => {
+                                    const image = this.product.images.find(img => img.id === imageId);
+                                    if (image) {
+                                        const imgElement = document.createElement('div');
+                                        imgElement.className = 'assigned-image';
+                                        imgElement.innerHTML = `<img src="${image.url}" alt="${image.name}">`;
+                                        imagesGrid.appendChild(imgElement);
+                                    }
+                                });
+
+                                if (variant.images.length === 0) {
+                                    imagesGrid.innerHTML = `
+                <div class="drop-zone">
+                    <i class="bi bi-plus-lg"></i>
+                    <p>Drop images here</p>
+                </div>
+            `;
+                                }
+                            }
+
+                            updateAllImageDisplays() {
+                                this.product.images.forEach(img => {
+                                    this.updateImageDisplay(img.id);
+                                });
+                            }
+
+                            updateSummary() {
+                                document.getElementById('totalImages').textContent = this.product.images.length;
+                                document.getElementById('totalVariants').textContent = this.product.variants.length;
+
+                                // Check if configuration is complete
+                                const allVariantsConfigured = this.product.variants.every(v =>
+                                    v.images.length > 0 && v.sizes.length > 0
+                                );
+
+                                const statusBadge = document.getElementById('configStatus');
+                                if (allVariantsConfigured && this.product.variants.length > 0) {
+                                    statusBadge.textContent = 'Complete';
+                                    statusBadge.className = 'badge bg-success';
+                                } else if (this.product.variants.length > 0) {
+                                    statusBadge.textContent = 'In Progress';
+                                    statusBadge.className = 'badge bg-warning';
+                                } else {
+                                    statusBadge.textContent = 'Not Started';
+                                    statusBadge.className = 'badge bg-secondary';
+                                }
+                            }
+
+                            updateGalleryCounter() {
+                                const counter = document.querySelector('.image-counter');
+                                counter.textContent = `${this.product.images.length}/20 images`;
+                            }
+
+                            // Utility methods
+                            isValidImageURL(url) {
+                                return /\.(jpg|jpeg|png|webp|gif)$/i.test(url);
+                            }
+
+                            getFilenameFromURL(url) {
+                                return url.split('/').pop().split('?')[0];
+                            }
+
+                            formatFileSize(bytes) {
                                 if (bytes === 0) return '0 Bytes';
-                                const i = Math.floor(Math.log(bytes) / Math.log(1024));
-                                return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
+                                const k = 1024;
+                                const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+                                const i = Math.floor(Math.log(bytes) / Math.log(k));
+                                return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
                             }
 
-                            generateSizeChips(range, container) {
-                                container.innerHTML = '';
-                                const [from, to] = range.split('-').map(Number);
+                            loadDefaultData() {
+                                // Load default variants
+                                this.product.variants = [
+                                    {
+                                        id: 1,
+                                        color: '#4e73df',
+                                        name: 'Blue',
+                                        images: [],
+                                        sizes: [40, 41, 42, 43, 44, 45]
+                                    },
+                                    {
+                                        id: 2,
+                                        color: '#e74a3b',
+                                        name: 'Red',
+                                        images: [],
+                                        sizes: []
+                                    }
+                                ];
 
-                                for (let i = from; i <= to; i++) {
-                                    const chip = document.createElement('div');
-                                    chip.className = 'size-chip';
-                                    chip.innerHTML = `
-                ${i}
-                <span class="remove-chip">×</span>
+                                this.currentVariantId = 2;
+
+                                // Render default variants
+                                this.product.variants.forEach(variant => {
+                                    this.renderVariantCard(variant);
+                                });
+                            }
+
+                            // Modal methods
+                            openImageSelectionModal(variant) {
+                                this.selectedVariant = variant;
+                                const modal = new bootstrap.Modal(document.getElementById('imageSelectionModal'));
+                                this.populateModalGallery();
+                                modal.show();
+                            }
+
+                            populateModalGallery() {
+                                const modalGallery = document.getElementById('modalGallery');
+                                modalGallery.innerHTML = '';
+
+                                this.product.images.forEach(image => {
+                                    const isAssigned = image.assignedTo === this.selectedVariant.id;
+                                    const isAssignedToOther = image.assignedTo && image.assignedTo !== this.selectedVariant.id;
+
+                                    const imageCard = document.createElement('div');
+                                    imageCard.className = `modal-image-card ${isAssigned ? 'selected' : ''} ${isAssignedToOther ? 'disabled' : ''}`;
+
+                                    imageCard.innerHTML = `
+                <img src="${image.url}" alt="${image.name}">
+                <div class="modal-image-overlay">
+                    ${isAssigned ? '<i class="bi bi-check-circle-fill"></i>' : ''}
+                    ${isAssignedToOther ? '<i class="bi bi-lock"></i>' : ''}
+                </div>
+                <input type="checkbox" class="image-checkbox" 
+                       ${isAssigned ? 'checked' : ''}
+                       ${isAssignedToOther ? 'disabled' : ''}>
             `;
 
-                                    chip.querySelector('.remove-chip').addEventListener('click', () => {
-                                        chip.remove();
+                                    imageCard.addEventListener('click', () => {
+                                        if (!isAssignedToOther) {
+                                            const checkbox = imageCard.querySelector('.image-checkbox');
+                                            checkbox.checked = !checkbox.checked;
+                                            imageCard.classList.toggle('selected', checkbox.checked);
+                                        }
                                     });
 
-                                    container.appendChild(chip);
-                                }
-                            }
-
-                            addNewPackage(zoneElement, from, to, exceptions) {
-                                const packageList = zoneElement.querySelector('.select-items');
-                                const packageName = `Custom ${from}-${to}`;
-
-                                const packageItem = document.createElement('div');
-                                packageItem.className = 'select-item';
-                                packageItem.dataset.value = packageName;
-                                packageItem.innerHTML = `
-            <div class="icon">
-                <i class="bi bi-box"></i>
-            </div>
-            <div class="package-info">
-                <span class="package-name">${packageName}</span>
-                <span class="package-range">${from}-${to}${exceptions.length > 0 ? ` (+${exceptions.length})` : ''}</span>
-            </div>
-            <div class="package-actions">
-                <button class="btn btn-xs btn-outline edit-package">
-                    <i class="bi bi-pencil"></i>
-                </button>
-            </div>
-        `;
-
-                                // Add click handler
-                                packageItem.addEventListener('click', () => {
-                                    const selectedText = zoneElement.querySelector('.select-text');
-                                    selectedText.textContent = packageName;
-
-                                    // Generate size chips including exceptions
-                                    this.generateSizeChipsWithExceptions(from, to, exceptions, zoneElement);
-
-                                    // Update badge
-                                    const badge = zoneElement.querySelector('#selectedPackageName');
-                                    badge.textContent = packageName;
-
-                                    // Close selector
-                                    const items = zoneElement.querySelector('.select-items');
-                                    items.classList.remove('show');
-                                    zoneElement.querySelector('.package-selector').classList.remove('active');
+                                    modalGallery.appendChild(imageCard);
                                 });
-
-                                packageList.appendChild(packageItem);
-                            }
-
-                            generateSizeChipsWithExceptions(from, to, exceptions, zoneElement) {
-                                const sizeChips = zoneElement.querySelector('.size-chips');
-                                sizeChips.innerHTML = '';
-
-                                // Add regular sizes
-                                for (let i = from; i <= to; i++) {
-                                    if (!exceptions.includes(i.toString())) {
-                                        this.addSizeChip(i, sizeChips);
-                                    }
-                                }
-
-                                // Add exceptions
-                                exceptions.forEach(exception => {
-                                    this.addSizeChip(exception, sizeChips, true);
-                                });
-                            }
-
-                            addSizeChip(size, container, isException = false) {
-                                const chip = document.createElement('div');
-                                chip.className = `size-chip ${isException ? 'exception-chip' : ''}`;
-                                chip.innerHTML = `
-            ${size}
-            <span class="remove-chip">×</span>
-        `;
-
-                                chip.querySelector('.remove-chip').addEventListener('click', () => {
-                                    chip.remove();
-                                });
-
-                                container.appendChild(chip);
-                            }
-
-                            updateRecentColors(color, name) {
-                                // In a real implementation, this would update localStorage
-                                // For demo, we'll just update the UI
-                                const recentColors = document.querySelector('.color-swatches');
-
-                                // Check if color already exists
-                                const existing = Array.from(recentColors.querySelectorAll('.color-swatch'))
-                                    .find(swatch => swatch.dataset.color === color);
-
-                                if (!existing) {
-                                    // Add new color
-                                    const swatch = document.createElement('div');
-                                    swatch.className = 'color-swatch';
-                                    swatch.style.backgroundColor = color;
-                                    swatch.dataset.color = color;
-                                    swatch.dataset.name = name;
-
-                                    swatch.addEventListener('click', () => {
-                                        const colorInput = document.querySelector('.color-input');
-                                        // const colorBtn = document.querySelector('.color-preview-btn');
-                                        const colorName = document.querySelector('.color-name');
-
-                                        colorInput.value = color;
-                                        // colorBtn.style.backgroundColor = color;
-                                        // colorBtn.dataset.color = color;
-                                        colorName.value = name;
-                                    });
-
-                                    // Keep only 6 recent colors
-                                    if (recentColors.children.length >= 6) {
-                                        recentColors.removeChild(recentColors.lastChild);
-                                    }
-
-                                    recentColors.prepend(swatch);
-                                }
-                            }
-
-                            updateZoneNumbers() {
-                                const zones = document.querySelectorAll('.dropzone');
-                                zones.forEach((zone, index) => {
-                                    zone.querySelector('.zone-number').textContent = index + 1;
-                                    zone.dataset.index = index + 1;
-                                });
-                            }
-
-                            toggleAllSettings() {
-                                const allSections = document.querySelectorAll('.dropzone-content');
-                                const isHidden = allSections[0]?.style.display === 'none';
-
-                                allSections.forEach(section => {
-                                    section.style.display = isHidden ? 'block' : 'none';
-                                });
-
-                                const toggleBtns = document.querySelectorAll('.toggle-zone');
-                                toggleBtns.forEach(btn => {
-                                    btn.innerHTML = isHidden ?
-                                        '<i class="bi bi-chevron-up"></i>' :
-                                        '<i class="bi bi-chevron-down"></i>';
-                                });
-
-                                const mainBtn = document.getElementById('toggleAllSettings');
-                                mainBtn.innerHTML = isHidden ?
-                                    '<i class="bi bi-gear"></i> Hide All Settings' :
-                                    '<i class="bi bi-gear"></i> Show All Settings';
                             }
                         }
 
                         // Initialize when DOM is loaded
                         document.addEventListener('DOMContentLoaded', () => {
-                            window.collectionZoneManager = new CollectionZoneManager();
+                            window.productConfig = new ProductConfiguration();
                         });
                     </script>
 
@@ -2957,7 +2987,7 @@
 
 
 
-                    <div class="tab-content animatedtoup show active" id="Modes-content">
+                    <div class="tab-content animatedtoup show" id="Modes-content">
                         <div class="dashboard-layout">
 
 
@@ -3298,49 +3328,73 @@
 
 
                     <div class="tab-content animatedtoup show" id="Shipping-content">
+                        <div class="form-header">
+                            <div class="form-actions">
+                                <button class="btn btn-outline" id="addshippingmethod">
+                                    <i class="bi bi-plus-circle"></i> Add shipping method
+                                </button>
+                                <button class="btn btn-outline">
+                                    <i class="bi bi-arrow-clockwise"></i> Reset Changes
+                                </button>
+                            </div>
+                        </div>
 
 
 
                         <div class="companies-section">
                             <div class="companies-grid">
-                                <div class="company-card active" data-company="Byyourown">
+                                <div class="company-card active" couriertype="Byyourown">
                                     <div class="company-header">
                                         <div class="company-logo">B</div>
-                                        <div class="company-name">By your own</div>
+                                        <div class="company-name">Default courier</div>
                                     </div>
                                     <div class="company-price">40 EGP</div>
                                     <span class="company-status status-active">Active</span>
                                 </div>
-                                <div class="company-card active" data-company="bosta">
+
+                                <div class="company-card">
                                     <div class="company-header">
-                                        <div class="company-logo">B</div>
+                                        <div class="company-logo">
+                                            <img src="https://app.bosta.co/images/bosta_en.png" alt="Aramex"
+                                                style="width: 30px; height: 30px;">
+                                        </div>
+
                                         <div class="company-name">Bosta</div>
                                     </div>
                                     <div class="company-price">40 EGP</div>
                                     <span class="company-status status-active">Active</span>
                                 </div>
 
-                                <div class="company-card" data-company="aramex">
+                                <div class="company-card">
                                     <div class="company-header">
-                                        <div class="company-logo">A</div>
+                                        <div class="company-logo">
+                                            <img src="https://cdn.worldvectorlogo.com/logos/aramex-logo-1.svg"
+                                                alt="Aramex" style="width: 30px; height: 30px;">
+                                        </div>
                                         <div class="company-name">Aramex</div>
                                     </div>
                                     <div class="company-price">45 EGP</div>
                                     <span class="company-status status-active">Active</span>
                                 </div>
 
-                                <div class="company-card" data-company="dhl">
+                                <div class="company-card">
                                     <div class="company-header">
-                                        <div class="company-logo">D</div>
+                                        <div class="company-logo">
+                                            <img src="https://cdn.worldvectorlogo.com/logos/dhl-1.svg" alt="DHL"
+                                                style="width: 30px; height: 30px;">
+                                        </div>
                                         <div class="company-name">DHL</div>
                                     </div>
                                     <div class="company-price">60 EGP</div>
                                     <span class="company-status status-inactive">Inactive</span>
                                 </div>
 
-                                <div class="company-card" data-company="fedex">
+                                <div class="company-card">
                                     <div class="company-header">
-                                        <div class="company-logo">F</div>
+                                        <div class="company-logo">
+                                            <img src="https://cdn.worldvectorlogo.com/logos/fedex-express-6.svg"
+                                                alt="FedEx" style="width: 30px; height: 30px;">
+                                        </div>
                                         <div class="company-name">FedEx</div>
                                     </div>
                                     <div class="company-price">55 EGP</div>
@@ -3348,157 +3402,92 @@
                                 </div>
                             </div>
 
-                            <!-- Bosta Company Details -->
                             <div class="company-details active" id="Byyourown-details">
                                 <div class="company-details-header">
-                                    <div class="company-details-title">By your own Shipping Settings</div>
+                                    <div class="company-details-title">Default courier Settings</div>
+                                    <button class="btn btn-outline">
+                                        <i class="bi bi-plus"></i>add option</button>
                                 </div>
 
-                                <div class="company-default-fee">
-                                    <label class="form-label">By your own Default Fee (EGP)</label>
-                                    <input type="number" class="form-input" value="40">
-                                    <div class="upload-hint">This fee will apply to all cities for Bosta unless
-                                        specified below</div>
-                                </div>
 
-                                <div class="company-cities-section">
-                                    <div class="company-cities-grid">
-                                        <div class="w-200">
-                                            <label class="form-label">City</label>
-                                            <div class="elegant-select">
-                                                <div class="select-selected" id="citySelectSelected">
+
+                                <div class="company-cities-section" style="
+                                                                    gap: 20px;
+                                                                    display: flex;
+                                                                    flex-wrap: wrap;
+                                                                    align-items: baseline;
+                                                                ">
+
+                                    <div class="company-default-fee w-200">
+                                        <label class="form-label">Default Fee (EGP)</label>
+                                        <input type="number" class="form-input" value="40">
+
+                                    </div>
+                                    <div class="w-200">
+                                        <label class="form-label">City</label>
+                                        <div class="elegant-select">
+                                            <div class="select-selected" id="citySelectSelected">
+                                                <span>
+                                                    Luxor
+                                                </span>
+                                            </div>
+                                            <div class="select-items" id="citySelectItems">
+                                                <div class="select-item" data-value="">
                                                     <span>Select a city</span>
                                                 </div>
-                                                <div class="select-items" id="citySelectItems">
-                                                    <div class="select-item" data-value="">
-                                                        <span>Select a city</span>
-                                                    </div>
-                                                    <div class="select-item" data-value="cairo">
-                                                        <span>Cairo</span>
-                                                    </div>
-                                                    <div class="select-item" data-value="alexandria">
-                                                        <span>Alexandria</span>
-                                                    </div>
-                                                    <div class="select-item" data-value="giza">
-                                                        <span>Giza</span>
-                                                    </div>
-                                                    <div class="select-item" data-value="luxor">
-                                                        <span>Luxor</span>
-                                                    </div>
-                                                    <div class="select-item" data-value="aswan">
-                                                        <span>Aswan</span>
-                                                    </div>
+                                                <div class="select-item" data-value="cairo">
+                                                    <span>Cairo</span>
                                                 </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="form-label">Special Fee (EGP)</label>
-                                            <input type="number" class="form-input" placeholder="Enter special fee">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <button class="btn btn-outline" style="height: 42px;">
-                                                <i class="bi bi-plus"></i> Add
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    <div class="company-cities-list">
-                                        <div class="special-fees-list">
-                                            <div class="fee-item">
-                                                <span class="fee-city">Cairo</span>
-                                                <div>
-                                                    <span class="fee-amount">25 EGP</span>
-                                                    <div class="fee-actions">
-                                                        <button class="btn-icon edit" title="Edit"><i
-                                                                class="bi bi-pencil"></i></button>
-                                                        <button class="btn-icon delete" title="Delete"><i
-                                                                class="bi bi-trash"></i></button>
-                                                    </div>
+                                                <div class="select-item" data-value="alexandria">
+                                                    <span>Alexandria</span>
                                                 </div>
-                                            </div>
-                                            <div class="fee-item">
-                                                <span class="fee-city">Alexandria</span>
-                                                <div>
-                                                    <span class="fee-amount">30 EGP</span>
-                                                    <div class="fee-actions">
-                                                        <button class="btn-icon edit" title="Edit"><i
-                                                                class="bi bi-pencil"></i></button>
-                                                        <button class="btn-icon delete" title="Delete"><i
-                                                                class="bi bi-trash"></i></button>
-                                                    </div>
+                                                <div class="select-item" data-value="giza">
+                                                    <span>Giza</span>
+                                                </div>
+                                                <div class="select-item selected" data-value="luxor">
+                                                    <span>Luxor</span>
+                                                </div>
+                                                <div class="select-item" data-value="aswan">
+                                                    <span>Aswan</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <!-- Bosta Company Details -->
-                            <div class="company-details " id="bosta-details">
-                                <div class="company-details-header">
-                                    <div class="company-details-title">Bosta Shipping Settings</div>
-                                </div>
-
-                                <div class="company-default-fee">
-                                    <label class="form-label">Bosta Default Fee (EGP)</label>
-                                    <input type="number" class="form-input" value="40">
-                                    <div class="upload-hint">This fee will apply to all cities for Bosta unless
-                                        specified below</div>
-                                </div>
-
-                                <div class="company-cities-section">
-                                    <div class="section-title">Bosta Special City Fees</div>
-
-                                    <div class="company-cities-grid">
-                                        <div class="form-group">
-                                            <label class="form-label">City</label>
-                                            <select class="form-select">
-                                                <option value="">Select a city</option>
-                                                <option value="cairo">Cairo</option>
-                                                <option value="alexandria">Alexandria</option>
-                                                <option value="giza">Giza</option>
-                                                <option value="luxor">Luxor</option>
-                                                <option value="aswan">Aswan</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="form-label">Special Fee (EGP)</label>
-                                            <input type="number" class="form-input" placeholder="Enter special fee">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <button class="btn btn-outline" style="height: 42px;">
-                                                <i class="bi bi-plus"></i> Add
-                                            </button>
-                                        </div>
+                                    <div class="">
+                                        <label class="form-label">Special Fee (EGP)</label>
+                                        <input type="number" class="form-input" placeholder="Enter special fee">
                                     </div>
 
-                                    <div class="company-cities-list">
-                                        <div class="special-fees-list">
-                                            <div class="fee-item">
-                                                <span class="fee-city">Cairo</span>
-                                                <div>
-                                                    <span class="fee-amount">25 EGP</span>
-                                                    <div class="fee-actions">
-                                                        <button class="btn-icon edit" title="Edit"><i
-                                                                class="bi bi-pencil"></i></button>
-                                                        <button class="btn-icon delete" title="Delete"><i
-                                                                class="bi bi-trash"></i></button>
-                                                    </div>
+
+                                </div>
+                                <div class="company-cities-list">
+                                    <div class="special-fees-list">
+                                        <div class="fee-item">
+                                            <span class="fee-city">Cairo</span>
+                                            <div style="
+                                            display: flex;
+                                            gap: 8px;
+                                            flex-direction: column;
+                                            align-items: center;
+                                        ">
+                                                <span class="fee-amount">34 EGP</span>
+                                                <div class="fee-actions">
+                                                    <button class="btn-icon btn-outline edit" title="Edit"><i
+                                                            class="bi bi-pencil"></i></button>
+                                                    <button class="btn-icon delete" title="Delete"><i
+                                                            class="bi bi-trash"></i></button>
                                                 </div>
                                             </div>
-                                            <div class="fee-item">
-                                                <span class="fee-city">Alexandria</span>
-                                                <div>
-                                                    <span class="fee-amount">30 EGP</span>
-                                                    <div class="fee-actions">
-                                                        <button class="btn-icon edit" title="Edit"><i
-                                                                class="bi bi-pencil"></i></button>
-                                                        <button class="btn-icon delete" title="Delete"><i
-                                                                class="bi bi-trash"></i></button>
-                                                    </div>
+                                        </div>
+                                        <div class="fee-item">
+                                            <span class="fee-city">Alexandria</span>
+                                            <div>
+                                                <span class="fee-amount">30 EGP</span>
+                                                <div class="fee-actions">
+                                                    <button class="btn-icon edit" title="Edit"><i
+                                                            class="bi bi-pencil"></i></button>
+                                                    <button class="btn-icon delete" title="Delete"><i
+                                                            class="bi bi-trash"></i></button>
                                                 </div>
                                             </div>
                                         </div>
@@ -3506,208 +3495,8 @@
                                 </div>
                             </div>
 
-                            <!-- Aramex Company Details -->
-                            <div class="company-details" id="aramex-details">
-                                <div class="company-details-header">
-                                    <div class="company-details-title">Aramex Shipping Settings</div>
-                                </div>
-
-                                <div class="company-default-fee">
-                                    <label class="form-label">Aramex Default Fee (EGP)</label>
-                                    <input type="number" class="form-input" value="45">
-                                    <div class="upload-hint">This fee will apply to all cities for Aramex unless
-                                        specified below</div>
-                                </div>
-
-                                <div class="company-cities-section">
-                                    <div class="section-title">Aramex Special City Fees</div>
-
-                                    <div class="company-cities-grid">
-                                        <div class="form-group">
-                                            <label class="form-label">City</label>
-                                            <select class="form-select">
-                                                <option value="">Select a city</option>
-                                                <option value="cairo">Cairo</option>
-                                                <option value="alexandria">Alexandria</option>
-                                                <option value="giza">Giza</option>
-                                                <option value="luxor">Luxor</option>
-                                                <option value="aswan">Aswan</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="form-label">Special Fee (EGP)</label>
-                                            <input type="number" class="form-input" placeholder="Enter special fee">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <button class="btn btn-outline" style="height: 42px;">
-                                                <i class="bi bi-plus"></i> Add
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    <div class="company-cities-list">
-                                        <div class="special-fees-list">
-                                            <div class="fee-item">
-                                                <span class="fee-city">Cairo</span>
-                                                <div>
-                                                    <span class="fee-amount">35 EGP</span>
-                                                    <div class="fee-actions">
-                                                        <button class="btn-icon edit" title="Edit"><i
-                                                                class="bi bi-pencil"></i></button>
-                                                        <button class="btn-icon delete" title="Delete"><i
-                                                                class="bi bi-trash"></i></button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="fee-item">
-                                                <span class="fee-city">Giza</span>
-                                                <div>
-                                                    <span class="fee-amount">40 EGP</span>
-                                                    <div class="fee-actions">
-                                                        <button class="btn-icon edit" title="Edit"><i
-                                                                class="bi bi-pencil"></i></button>
-                                                        <button class="btn-icon delete" title="Delete"><i
-                                                                class="bi bi-trash"></i></button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- DHL Company Details -->
-                            <div class="company-details" id="dhl-details">
-                                <div class="company-details-header">
-                                    <div class="company-details-title">DHL Shipping Settings</div>
-                                </div>
-
-                                <div class="company-default-fee">
-                                    <label class="form-label">DHL Default Fee (EGP)</label>
-                                    <input type="number" class="form-input" value="60">
-                                    <div class="upload-hint">This fee will apply to all cities for DHL unless specified
-                                        below</div>
-                                </div>
-
-                                <div class="company-cities-section">
-                                    <div class="section-title">DHL Special City Fees</div>
-
-                                    <div class="company-cities-grid">
-                                        <div class="form-group">
-                                            <label class="form-label">City</label>
-                                            <select class="form-select">
-                                                <option value="">Select a city</option>
-                                                <option value="cairo">Cairo</option>
-                                                <option value="alexandria">Alexandria</option>
-                                                <option value="giza">Giza</option>
-                                                <option value="luxor">Luxor</option>
-                                                <option value="aswan">Aswan</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="form-label">Special Fee (EGP)</label>
-                                            <input type="number" class="form-input" placeholder="Enter special fee">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <button class="btn btn-outline" style="height: 42px;">
-                                                <i class="bi bi-plus"></i> Add
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    <div class="company-cities-list">
-                                        <div class="special-fees-list">
-                                            <div class="no-fees-message">No special city fees configured for DHL</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- FedEx Company Details -->
-                            <div class="company-details" id="fedex-details">
-                                <div class="company-details-header">
-                                    <div class="company-details-title">FedEx Shipping Settings</div>
-                                </div>
-
-                                <div class="company-default-fee">
-                                    <label class="form-label">FedEx Default Fee (EGP)</label>
-                                    <input type="number" class="form-input" value="55">
-                                    <div class="upload-hint">This fee will apply to all cities for FedEx unless
-                                        specified below</div>
-                                </div>
-
-                                <div class="company-cities-section">
-                                    <div class="section-title">FedEx Special City Fees</div>
-
-                                    <div class="company-cities-grid">
-                                        <div class="form-group">
-                                            <label class="form-label">City</label>
-                                            <select class="form-select">
-                                                <option value="">Select a city</option>
-                                                <option value="cairo">Cairo</option>
-                                                <option value="alexandria">Alexandria</option>
-                                                <option value="giza">Giza</option>
-                                                <option value="luxor">Luxor</option>
-                                                <option value="aswan">Aswan</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="form-label">Special Fee (EGP)</label>
-                                            <input type="number" class="form-input" placeholder="Enter special fee">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <button class="btn btn-outline" style="height: 42px;">
-                                                <i class="bi bi-plus"></i> Add
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    <div class="company-cities-list">
-                                        <div class="special-fees-list">
-                                            <div class="fee-item">
-                                                <span class="fee-city">Luxor</span>
-                                                <div>
-                                                    <span class="fee-amount">65 EGP</span>
-                                                    <div class="fee-actions">
-                                                        <button class="btn-icon edit" title="Edit"><i
-                                                                class="bi bi-pencil"></i></button>
-                                                        <button class="btn-icon delete" title="Delete"><i
-                                                                class="bi bi-trash"></i></button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="fee-item">
-                                                <span class="fee-city">Aswan</span>
-                                                <div>
-                                                    <span class="fee-amount">70 EGP</span>
-                                                    <div class="fee-actions">
-                                                        <button class="btn-icon edit" title="Edit"><i
-                                                                class="bi bi-pencil"></i></button>
-                                                        <button class="btn-icon delete" title="Delete"><i
-                                                                class="bi bi-trash"></i></button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
 
-                        <div class="form-actions">
-                            <button class="btn btn-outline">
-                                <i class="bi bi-arrow-clockwise"></i> Reset Changes
-                            </button>
-                            <button class="btn btn-primary btnsaveallshipsettings">
-                                <i class="bi bi-check-circle"></i> Save All Shipping Settings
-                            </button>
-                        </div>
                     </div>
 
                     <script>
@@ -3718,7 +3507,7 @@
 
                             companyCards.forEach(card => {
                                 card.addEventListener('click', function () {
-                                    const company = this.getAttribute('data-company');
+                                    const company = this.getAttribute('couriertype');
 
                                     // Remove active class from all cards and details
                                     companyCards.forEach(c => c.classList.remove('active'));
@@ -5057,53 +4846,7 @@
                     <button class="btn btn-primary" id="addPaymentMethodBtn">
                         <i class="bi bi-plus-circle"></i> Add Payment Method
                     </button>
-                    <!-- Filter Bar -->
-                    <div class="filter-bar">
-                        <div class="w-200">
-                            <label class="form-label">Filter by:</label>
-                            <div class="elegant-select">
-                                <div class="select-selected" id="paymentMethodFilterSelected">
-                                    <span>All Payment Methods</span>
-                                </div>
-                                <div class="select-items" id="paymentMethodFilterItems">
-                                    <div class="select-item" data-value="all">
-                                        <span>All Payment Methods</span>
-                                    </div>
-                                    <div class="select-item" data-value="cards">
-                                        <span>Credit/Debit Cards</span>
-                                    </div>
-                                    <div class="select-item" data-value="wallets">
-                                        <span>Digital Wallets</span>
-                                    </div>
-                                    <div class="select-item" data-value="bank">
-                                        <span>Bank Accounts</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="w-200">
-                            <label class="form-label">Sort by:</label>
-                            <div class="elegant-select">
-                                <div class="select-selected" id="paymentMethodSortSelected">
-                                    <span>Newest First</span>
-                                </div>
-                                <div class="select-items" id="paymentMethodSortItems">
-                                    <div class="select-item" data-value="newest">
-                                        <span>Newest First</span>
-                                    </div>
-                                    <div class="select-item" data-value="oldest">
-                                        <span>Oldest First</span>
-                                    </div>
-                                    <div class="select-item" data-value="type">
-                                        <span>Payment Type</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
                     <div class="form-group">
                         <input type="text" class="form-input" placeholder="Search payment methods..."
                             id="paymentMethodSearch">
@@ -5823,7 +5566,7 @@
                                     <th>Status</th>
                                     <th>Orders</th>
                                     <th>Revenue</th>
-                                    <th>Days Left</th>
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -5834,14 +5577,7 @@
                                     <td><span class="status-badge active">Active</span></td>
                                     <td>127</td>
                                     <td>$3,450.75</td>
-                                    <td>
-                                        <div class="days-progress">
-                                            <div class="progress-bar">
-                                                <div class="progress-fill" style="width: 65%"></div>
-                                            </div>
-                                            <span class="days-text">23 days</span>
-                                        </div>
-                                    </td>
+
 
                                 </tr>
                                 <tr class="subscription-row" data-status="expired">
@@ -5851,14 +5587,7 @@
                                     <td><span class="status-badge completed">Expired</span></td>
                                     <td>98</td>
                                     <td>$2,150.50</td>
-                                    <td>
-                                        <div class="days-progress">
-                                            <div class="progress-bar">
-                                                <div class="progress-fill expired" style="width: 100%"></div>
-                                            </div>
-                                            <span class="days-text">0 days</span>
-                                        </div>
-                                    </td>
+
 
                                 </tr>
                             </tbody>
@@ -5901,7 +5630,7 @@
                         <table class="site-table">
                             <thead>
                                 <tr>
-                                    <th>Customer</th>
+                                    <th>Paid By</th>
                                     <th>Date</th>
                                     <th>Amount</th>
                                     <th>Payment Method</th>
@@ -5913,7 +5642,6 @@
                                 <tr>
                                     <td>
                                         <div class="customer-info">
-                                            <div class="customer-avatar">SO</div>
                                             <div class="customer-details">
                                                 <div class="customer-name">systemowner</div>
                                                 <div class="customer-email">systemowner@example.com</div>
@@ -5943,9 +5671,8 @@
                                 <tr>
                                     <td>
                                         <div class="customer-info">
-                                            <div class="customer-avatar">SO</div>
                                             <div class="customer-details">
-                                                <div class="customer-name">systemowner</div>
+                                                <div class="customer-name">ahmed mohamed</div>
                                                 <div class="customer-email">systemowner@example.com</div>
                                             </div>
                                         </div>
