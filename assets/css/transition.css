@@ -41,11 +41,7 @@
   }
 
   /* Button transitions */
-  .btn {
-      transition: all 0.25s var(--transition-type) !important;
-      position: relative;
-      overflow: hidden;
-  }
+
 
   /* Form element transitions */
   .form-control,

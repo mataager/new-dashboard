@@ -53,14 +53,21 @@ html.theme-loaded body {
     --card-specBg1: linear-gradient(135deg, #3498db, #2c3e50);
     --border-color: #e1e3e5;
     --hover-color: #f1f2f3;
-    --shadow: 0 1px 3px rgba(0, 0, 0, 0.1)
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --btncolor: #f6f6f7;
+    --btnbg: linear-gradient(to right, #3a7bd5, #00d2ff);
+    --btndeletebg: linear-gradient(to right, #890e1a, #ff1100);
+    --transition-ease: ease;
 }
 
 [data-theme="dark"] {
+    --btncolor: #d3d3d3;
     --sidebar-bg: #1d1d1d;
     --text-color: #e3e3e3;
     --text-color-secondary: #6c757d;
     --card-bg: #2a2a2a;
+    --btntextcolor: #e3e3e3;
+    --btnbg: linear-gradient(to right, #333333, #0c0c0c);
     --border-color: #3d3d3d;
     --hover-color: #333333
 }
@@ -86,6 +93,10 @@ html.theme-loaded body {
     position: absolute !important;
 }
 
+.toleft {
+    margin-left: auto;
+}
+
 body {
     background-color: var(--card-bg);
     color: var(--text-color);
@@ -109,6 +120,7 @@ body {
 }
 
 .sidebar-header {
+    height: 55px;
     padding: 15px;
     display: flex;
     white-space: nowrap;
@@ -121,7 +133,7 @@ body {
 }
 
 .sidebar.collapsed .sidebar-header {
-    justify-content: center;
+    display: none;
 }
 
 .sidebar.collapsed .nav-text {
@@ -131,6 +143,22 @@ body {
 .sidebar.collapsed .logo-container {
     display: none;
 }
+
+.topbar {
+    border-bottom: 1px solid var(--border-color);
+    width: 100%;
+    padding: 15px;
+    background-color: var(--sidebar-bg);
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 49px;
+    align-items: center;
+}
+
 
 .logo-container {
     display: flex;
@@ -368,8 +396,8 @@ h3 {
 .day-night {
     position: relative;
     display: inline-block;
-    width: 60px;
-    height: 30px;
+    width: 52px;
+    height: 22px;
     margin-left: 10px;
 }
 
@@ -393,10 +421,10 @@ h3 {
 
 .switch-handle {
     position: absolute;
-    height: 22px;
-    width: 22px;
-    left: 4px;
-    bottom: 4px;
+    height: 18px;
+    width: 18px;
+    left: 2px;
+    bottom: 2px;
     background-color: #fff;
     border-radius: 50%;
     transition: .4s;
@@ -1201,14 +1229,36 @@ body {
 }
 
 .btn {
+    /* Your existing styles */
+    /* transition: all 0.25s var(--transition-ease) !important; */
+    position: relative;
+    overflow: hidden;
+    background: var(--btnbg);
+    color: var(--btncolor);
     padding: 10px 20px;
     border-radius: var(--border-radius);
     cursor: pointer;
-    font-weight: 500;
     display: flex;
     align-items: center;
     gap: 8px;
-    transition: var(--transition);
+    font-weight: 400;
+    border: 1px solid var(--border-color);
+    /* New properties for smooth gradient reversal */
+    background-size: 200% 100%;
+    /* Double width for animation */
+    background-position: left center;
+    /* Start position */
+    transition:
+        background-position 0.5s var(--transition-ease),
+        color 0.25s var(--transition-ease),
+        border-color 0.25s var(--transition-ease);
+}
+
+.btn:hover {
+    background-position: right center;
+    /* End position - this reverses the gradient */
+
+    /* Optional: if you want border to disappear */
 }
 
 .btn-primary {
@@ -1221,21 +1271,13 @@ body {
     background: var(--secondary);
 }
 
-.btn-outline {
-    background: transparent;
-    border: 1px solid var(--primary);
-    color: var(--primary);
-}
+
 
 .btn-outline-selected {
-    background: var(--primary) !important;
-    color: white !important;
+    background-position: right center;
 }
 
-.btn-outline:hover {
-    background: var(--primary);
-    color: white;
-}
+
 
 .date-filter {
     color: var(--text-color);
@@ -1518,18 +1560,6 @@ body {
     justify-content: flex-end;
 }
 
-.btn {
-    padding: 10px 20px;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    font-weight: 400;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: var(--transition);
-    border: none;
-}
-
 .btn-primary {
     background: var(--primary);
     color: white;
@@ -1539,16 +1569,7 @@ body {
     background: var(--secondary);
 }
 
-.btn-outline {
-    border: 1px solid var(--primary-color);
-    color: var(--primary-color);
-    background: transparent;
-}
 
-.btn-outline:hover {
-    background: var(--primary);
-    color: white;
-}
 
 .btn-rounded {
     border: 1px solid var(--border-color);
@@ -1871,7 +1892,7 @@ body {
 }
 
 .toggle-option.active {
-    background: var(--primary);
+    background: var(--btnbg);
     color: white;
 }
 
@@ -3213,10 +3234,7 @@ html {
     border-radius: 4px;
 }
 
-.btn-icon:hover {
-    color: #4e73df;
-    background-color: #f8f9fa;
-}
+
 
 /* Reviews Section */
 .filter-bar {
@@ -3224,6 +3242,8 @@ html {
     gap: 16px;
     margin-bottom: 20px;
     flex-wrap: wrap;
+    align-items: flex-end;
+    flex-direction: row-reverse;
 }
 
 .filter-group {
@@ -3239,16 +3259,21 @@ html {
 
 /* 4 */
 .reviews-list {
-    border: 1px solid var();
+    padding: 10px;
+    display: flex;
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     overflow: hidden;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .review-item {
+    border-radius: var(--border-radius);
     font-size: 14px;
     color: var(--text-color);
     padding: 16px;
-    border-bottom: 1px solid var(--border-color);
+    background: var(--hover-color);
 }
 
 .review-item:last-child {
@@ -3860,7 +3885,7 @@ html {
 
 @media (max-width: 1040px) {
     .filter-bar {
-        flex-direction: column;
+        flex-direction: row;
     }
 
     .cart-details {
@@ -4030,6 +4055,10 @@ html {
         height: auto;
         position: relative;
         flex-direction: column;
+    }
+
+    .topbar {
+        display: none;
     }
 
     .toggle-btn {
@@ -5250,9 +5279,7 @@ html {
     margin-bottom: 20px;
 }
 
-.chart-title {
-    font-weight: 400;
-}
+
 
 
 .chart-actions a {
@@ -5370,9 +5397,9 @@ html {
 .traffic-header,
 .forecast-header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    justify-content: space-between;
 }
 
 .traffic-metrics {
@@ -6746,32 +6773,18 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 30px;
+    padding: 10px 15px;
     border-bottom: 1px solid var(--border-color);
     top: 0;
     z-index: 10;
 }
 
-.side-panel-close {
-    background: none;
-    border: none;
-    font-size: 0.8rem;
-    cursor: pointer;
-    color: var(--gray-color);
-    transition: var(--transition);
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--light-gray);
+.side-panel-header-txt {
+    font-weight: 300;
+    margin: 0;
+    font-size: 18px;
 }
 
-.side-panel-close:hover {
-    background-color: var(--primary-color);
-    color: white;
-}
 
 .side-panel-content {
     padding: 30px;
@@ -6819,10 +6832,6 @@ html {
 @media (max-width: 768px) {
     .side-panel-header {
         padding: 20px;
-    }
-
-    .side-panel-title {
-        font-size: 1.5rem;
     }
 
     .side-panel-content {
@@ -7948,7 +7957,7 @@ html {
 .traffic-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     margin-bottom: 24px;
 }
 
@@ -7957,7 +7966,6 @@ html {
 }
 
 .chart-title {
-    margin-bottom: 20px;
     font-size: 16px;
     color: var(--text-color);
     font-weight: 400;
@@ -8295,7 +8303,7 @@ html {
     align-items: center;
     margin-top: 20px;
     padding-top: 16px;
-    border-top: 1px solid #f1f5f9;
+    border-top: 1px solid var(--border-color);
 }
 
 .confidence-level {
@@ -8334,9 +8342,9 @@ html {
 
     .traffic-header,
     .forecast-header {
-        flex-direction: column;
         gap: 12px;
     }
+
 
     .chart-footer,
     .forecast-footer {
@@ -9269,8 +9277,10 @@ input:checked+.slider:before {
 }
 
 .btn-icon {
-    background: white;
-    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+    background: var(--btnbg);
+    color: var(--btncolor);
     border-radius: 25px;
     width: 36px;
     height: 36px;
@@ -9278,14 +9288,21 @@ input:checked+.slider:before {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 0.2s ease;
-    color: var(--gray);
+    border: 1px solid var(--border-color);
+    background-size: 200% 100%;
+    background-position: left center;
+    transition: background-position 0.5s var(--transition-ease), color 0.25s var(--transition-ease), border-color 0.25s var(--transition-ease);
+
+}
+
+.btn-icon-sm {
+    font-size: 12px;
+    width: 30px !important;
+    height: 30px !important;
 }
 
 .btn-icon:hover {
-    background: #f8f9fa;
-    color: var(--dark);
-    border-color: #adb5bd;
+    background-position: right center;
 }
 
 .btn-icon.edit:hover {
@@ -9316,9 +9333,7 @@ input:checked+.slider:before {
 }
 
 .btn-danger {
-    background: var(--card-bg);
-    color: #bd2130;
-    border: 1px solid #bd2130;
+    background: var(--btndeletebg);
 }
 
 .btn-danger:hover {
@@ -9518,11 +9533,7 @@ input:checked+.slider:before {
 
 /* Theme Selector Section */
 .theme-selector-section {
-    border: 1px solid var(--border-color);
-    background-color: var(--card-bg);
-    border-radius: 15px;
-    padding: 30px;
-    margin-bottom: 40px;
+    padding: 10px;
 }
 
 
