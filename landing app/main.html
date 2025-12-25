@@ -1,0 +1,398 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matager - Modern Data Management Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="particles-js"><canvas class="particles-js-canvas-el" width="899" height="636"
+            style="width: 100%; height: 100%;"></canvas></div>
+    <!-- Animated Background -->
+    <div class="gradient-bg"></div>
+
+    <!-- Header -->
+
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+        <div class="scroll-dot active" data-section="hero-section"></div>
+        <div class="scroll-dot" data-section="features-section"></div>
+        <div class="scroll-dot" data-section="demo-section"></div>
+        <div class="scroll-dot" data-section="cta-section"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="section hero-section active">
+            <div class="section-content">
+                <div class="hero-text">
+
+                    <h1 class="hero-title">Launch an online store and start selling today</h1>
+                    <p class="hero-subtitle">A comprehensive e-commerce platform featuring inventory management, order
+                        processing, customer analytics, and seamless
+                        payment integrations. Designed for modern retailers.</p>
+                    <div class="cta-buttons">
+                        <button class="btn-primary">Get Started Free</button>
+                        <button class="btn-secondary">View Demo</button>
+                    </div>
+                    <div class="pro-announcement">
+                        <div class="pro-title">🚀 Pro Version Now Available</div>
+                        <p class="pro-desc">Unlock advanced features, priority support, and unlimited projects with
+                            Matager Pro.</p>
+                        <button class="waitlist-btn">Upgrade to Pro</button>
+                    </div>
+                </div>
+                <section class="login-container">
+                    <p class="login-subtitle">Sign in to continue</p>
+
+                    <form class="login-form" id="login-form">
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" id="email" class="form-input" placeholder="you@example.com" required="">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" class="form-label">Password</label>
+                            <div class="password-container">
+                                <input type="password" id="password" class="form-input"
+                                    placeholder="Enter your password" required="">
+                                <button type="button" class="toggle-password" id="toggle-password">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-options">
+                            <div class="remember-me">
+                                <input type="checkbox" id="remember" class="remember-checkbox">
+                                <label for="remember">Remember me</label>
+                            </div>
+                            <a href="#" class="forgot-link">Forgot password?</a>
+                        </div>
+
+                        <button type="submit" class="login-btn">Sign In <i
+                                class="fa-solid fa-arrow-right-to-bracket"></i></button>
+
+                        <div class="divider">
+                            <div class="divider-line"></div>
+                            <div class="divider-text">Or</div>
+                            <div class="divider-line"></div>
+                        </div>
+
+                        <div class="social-login">
+                            <button type="button" class="social-btn">
+                                <i class="fa-solid fa-user-plus"></i>
+                                Sign Up
+                            </button>
+
+                        </div>
+
+                        <div class="signup-link">
+                            Don't have an account? <a href="#">Sign up for free</a>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="section features-section">
+            <div class="section-content">
+                <div class="section-header">
+                    <h2 class="section-title">Powerful Features for Data Teams</h2>
+                    <p class="section-subtitle">Matager provides everything you need to manage your data pipeline from
+                        ingestion to visualization.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3 class="feature-title">Data Integration</h3>
+                        <p class="feature-desc">Connect to multiple data sources including SQL, NoSQL, APIs, and cloud
+                            storage with ease.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="feature-title">Advanced Analytics</h3>
+                        <p class="feature-desc">Perform complex data analysis with built-in statistical tools and
+                            machine learning capabilities.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="feature-title">Developer Friendly</h3>
+                        <p class="feature-desc">Full API support, SDKs for popular languages, and extensive
+                            documentation.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="feature-title">Enterprise Security</h3>
+                        <p class="feature-desc">Role-based access control, data encryption, and compliance with industry
+                            standards.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h3 class="feature-title">Real-time Updates</h3>
+                        <p class="feature-desc">Live data streaming and instant updates to keep your dashboards and
+                            reports current.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3 class="feature-title">Cloud Native</h3>
+                        <p class="feature-desc">Deploy anywhere - cloud, on-premise, or hybrid with containerized
+                            architecture.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demo Section -->
+        <section id="demo" class="section demo-section">
+            <div class="section-content">
+                <div class="demo-text" style="
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(2, 132, 199, 0.05));
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-radius: 24px;
+    padding: 4rem;
+">
+                    <div class="hero-tagline">Simple Integration</div>
+                    <h2 class="section-title">Get Started in Minutes</h2>
+                    <p class="hero-subtitle">Matager's intuitive API and comprehensive SDKs make integration seamless.
+                        Here's how easy it is to connect your data source.</p>
+                    <div class="cta-buttons">
+                        <button class="btn-primary">View Documentation</button>
+                        <button class="btn-secondary">Try Live Demo</button>
+                    </div>
+                </div>
+                <div class="demo-visual">
+                    <div class="code-block">
+                        <div class="code-header">
+                            <div class="code-title">JavaScript SDK Example</div>
+                            <button class="copy-btn">Copy Code</button>
+                        </div>
+                        <pre><code><span class="code-keyword">import</span> { Matager } <span class="code-keyword">from</span> <span class="code-string">'matager-sdk'</span>;
+
+<span class="code-comment">// Initialize with your API key</span>
+<span class="code-keyword">const</span> matager = <span class="code-keyword">new</span> <span class="code-function">Matager</span>({
+  apiKey: <span class="code-string">'your-api-key-here'</span>,
+  environment: <span class="code-string">'production'</span>
+});
+
+<span class="code-comment">// Connect to your data source</span>
+<span class="code-keyword">await</span> matager.<span class="code-function">connectDataSource</span>({
+  type: <span class="code-string">'postgresql'</span>,
+  host: <span class="code-string">'localhost'</span>,
+  database: <span class="code-string">'analytics'</span>,
+  port: <span class="code-string">'5432'</span>
+});
+
+<span class="code-comment">// Run a query and visualize results</span>
+<span class="code-keyword">const</span> results = <span class="code-keyword">await</span> matager.<span class="code-function">query</span>(<span class="code-string">'SELECT * FROM users WHERE active = true'</span>);
+
+<span class="code-comment">// Create a dashboard widget</span>
+matager.<span class="code-function">createWidget</span>({
+  type: <span class="code-string">'barChart'</span>,
+  data: results,
+  title: <span class="code-string">'Active Users'</span>
+});</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="cta" class="section cta-section">
+            <div class="section-content">
+                <div class="cta-card">
+                    <h2 class="cta-title">Ready to Transform Your Business Workflow?</h2>
+                    <p class="cta-subtitle">Join thousands of data teams using Matager to streamline their data
+                        operations. Start for free with no credit card required.</p>
+                    <div class="cta-form">
+                        <input type="email" class="cta-input" placeholder="Enter your work email">
+                        <button class="btn-primary">Get Started Free</button>
+                    </div>
+                    <p style="margin-top: 1.5rem; color: #94a3b8; font-size: 0.9rem;">Free 14-day trial • No credit card
+                        required</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="#" class="footer-link">Documentation</a>
+            <a href="#" class="footer-link">API Reference</a>
+            <a href="#" class="footer-link">Support</a>
+            <a href="#" class="footer-link">Privacy Policy</a>
+            <a href="#" class="footer-link">Terms of Service</a>
+        </div>
+        <div class="copyright">
+            © 2025 Matager. All rights reserved.
+        </div>
+    </footer>
+    <script>
+        // Create snowflakes
+
+        // Scroll animations
+        document.addEventListener('DOMContentLoaded', function () {
+
+
+            const sections = document.querySelectorAll('.section');
+            const scrollDots = document.querySelectorAll('.scroll-dot');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            // Set first section as active initially
+            let currentSection = 0;
+
+            // Function to update active section
+            function updateActiveSection() {
+                // Calculate which section is currently in view
+                const scrollPosition = window.scrollY + window.innerHeight / 3;
+
+                sections.forEach((section, index) => {
+                    const sectionTop = section.offsetTop;
+                    const sectionBottom = sectionTop + section.offsetHeight;
+
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                        // Remove active class from all sections
+                        sections.forEach(s => {
+                            s.classList.remove('active', 'previous');
+                        });
+
+                        // Add previous class to previous section if exists
+                        if (index > 0) {
+                            sections[index - 1].classList.add('previous');
+                        }
+
+                        // Add active class to current section
+                        section.classList.add('active');
+                        currentSection = index;
+
+                        // Update scroll dots
+                        scrollDots.forEach(dot => dot.classList.remove('active'));
+                        scrollDots[index].classList.add('active');
+
+                        // Update nav links
+                        navLinks.forEach(link => link.classList.remove('active'));
+                        navLinks[index].classList.add('active');
+                    }
+                });
+            }
+
+            // Scroll to section when clicking on nav links or dots
+            function scrollToSection(index) {
+                sections[index].scrollIntoView({ behavior: 'smooth' });
+                currentSection = index;
+            }
+
+            // Add click events to scroll dots
+            scrollDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => scrollToSection(index));
+            });
+
+            // Add click events to nav links
+            navLinks.forEach((link, index) => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    scrollToSection(index);
+                });
+            });
+
+            // Update on scroll
+            window.addEventListener('scroll', updateActiveSection);
+
+            // Initialize
+            updateActiveSection();
+
+            // Copy code button
+            const copyBtn = document.querySelector('.copy-btn');
+            copyBtn.addEventListener('click', function () {
+                const code = document.querySelector('pre').textContent;
+                navigator.clipboard.writeText(code).then(() => {
+                    const originalText = copyBtn.textContent;
+                    copyBtn.textContent = 'Copied!';
+                    setTimeout(() => {
+                        copyBtn.textContent = originalText;
+                    }, 2000);
+                });
+            });
+
+            // Form submission
+            const ctaForm = document.querySelector('.cta-form');
+            const ctaInput = document.querySelector('.cta-input');
+            const ctaButton = ctaForm.querySelector('.btn-primary');
+
+            ctaForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const email = ctaInput.value.trim();
+
+                if (email && validateEmail(email)) {
+                    ctaButton.textContent = 'Submitting...';
+                    ctaButton.disabled = true;
+
+                    // Simulate API call
+                    setTimeout(() => {
+                        ctaButton.textContent = 'Thank You!';
+                        ctaInput.value = '';
+
+                        setTimeout(() => {
+                            ctaButton.textContent = 'Get Started Free';
+                            ctaButton.disabled = false;
+                        }, 3000);
+                    }, 1500);
+                }
+            });
+
+            // Email validation
+            function validateEmail(email) {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(email);
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Initialize Particles.js
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: "#6c5ce7" },
+                shape: { type: "circle" },
+                opacity: { value: 0.5, random: true },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: "#6c5ce7", opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 3, direction: "none", random: true, straight: false, out_mode: "out" }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: { enable: true, mode: "repulse" },
+                    onclick: { enable: true, mode: "push" }
+                }
+            }
+        });
+
+        // Theme Toggle
+
+    </script>
+
+</body>
+
+</html>
