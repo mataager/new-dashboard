@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matager Pro - Upgrade Plans</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6c5ce7;
+            --primary-light: #8a7bef;
+            --primary-dark: #5649c0;
+            --secondary: #00cec9;
+            --dark: #2d3436;
+            --light: #f9f9f9;
+            --gray: #dfe6e9;
+            --gray-dark: #b2bec3;
+            --success: #00b894;
+            --warning: #fdcb6e;
+            --danger: #e17055;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #334155;
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Background Particles */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo i {
+            font-size: 1.8rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link.active {
+            color: var(--primary);
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .user-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn-outline {
+            padding: 0.6rem 1.5rem;
+            border: 1px solid var(--primary);
+            background: transparent;
+            color: var(--primary);
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Pricing Container */
+        .pricing-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #64748b;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Plan Highlight */
+        .plan-highlight {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .highlight-card {
+            background: white;
+            padding: 1.5rem 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            max-width: 350px;
+        }
+
+        .highlight-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .highlight-text h3 {
+            font-size: 1rem;
+            color: var(--dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .highlight-text p {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        /* Plans Grid */
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .plan-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 2.5rem 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .plan-card.popular {
+            border: 2px solid var(--primary);
+            transform: scale(1.05);
+        }
+
+        .plan-card.popular:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.3);
+        }
+
+        .plan-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .plan-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .plan-desc {
+            color: #64748b;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .plan-price {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .price-amount {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--dark);
+        }
+
+        .price-period {
+            color: #64748b;
+            font-size: 1rem;
+            margin-left: 0.3rem;
+        }
+
+        .plan-features {
+            flex-grow: 1;
+            margin-bottom: 2rem;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-item {
+            padding: 0.8rem 0;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+
+        .feature-item i {
+            color: var(--success);
+            margin-right: 0.8rem;
+            font-size: 0.9rem;
+        }
+
+        .feature-item.disabled {
+            color: #94a3b8;
+        }
+
+        .feature-item.disabled i {
+            color: #cbd5e1;
+        }
+
+        .plan-actions {
+            text-align: center;
+        }
+
+        .btn-plan {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.3);
+        }
+
+        .btn-secondary {
+            background: #f1f5f9;
+            color: var(--dark);
+        }
+
+        .btn-secondary:hover {
+            background: #e2e8f0;
+        }
+
+        .current-plan {
+            background: linear-gradient(90deg, var(--success), #00d8a7);
+            color: white;
+            pointer-events: none;
+        }
+
+        /* Comparison Table */
+        .comparison-section {
+            margin-top: 5rem;
+        }
+
+        .comparison-table {
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .table-header {
+            display: grid;
+            grid-template-columns: 2fr repeat(5, 1fr);
+            background: #f8fafc;
+            border-bottom: 1px solid #e2e8f0;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .table-row {
+            display: grid;
+            grid-template-columns: 2fr repeat(5, 1fr);
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .table-row:last-child {
+            border-bottom: none;
+        }
+
+        .table-cell {
+            padding: 1.2rem 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-cell {
+            font-weight: 500;
+        }
+
+        .plan-cell {
+            text-align: center;
+            justify-content: center;
+        }
+
+        .check-cell {
+            color: var(--success);
+            font-size: 1.2rem;
+        }
+
+        .cross-cell {
+            color: #cbd5e1;
+            font-size: 1.2rem;
+        }
+
+        .limited-cell {
+            color: var(--warning);
+            font-weight: 500;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-top: 5rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .faq-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--dark);
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: var(--radius);
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .faq-answer {
+            padding: 0 2rem 1.5rem;
+            color: #64748b;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-toggle i {
+            transform: rotate(180deg);
+        }
+
+        .faq-toggle {
+            transition: var(--transition);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 5%;
+            margin-top: 5rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-link {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-link:hover {
+            color: white;
+        }
+
+        .copyright {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .plan-card.popular {
+                transform: scale(1);
+            }
+
+            .plan-card.popular:hover {
+                transform: translateY(-10px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .plans-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .table-header,
+            .table-row {
+                grid-template-columns: 1.5fr repeat(5, 0.8fr);
+            }
+
+            .table-cell {
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .plan-highlight {
+                flex-direction: column;
+            }
+
+            .highlight-card {
+                width: 100%;
+            }
+
+            .comparison-table {
+                overflow-x: auto;
+            }
+
+            .table-header,
+            .table-row {
+                min-width: 800px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Particles -->
+    <div id="particles-js"></div>
+
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo">
+            <i class="fas fa-chart-network"></i>
+            <span>Matager</span>
+        </a>
+
+        <div class="nav-links">
+            <a href="#" class="nav-link">Dashboard</a>
+            <a href="#" class="nav-link active">Upgrade</a>
+            <a href="#" class="nav-link">Features</a>
+            <a href="#" class="nav-link">Docs</a>
+            <a href="#" class="nav-link">Support</a>
+        </div>
+
+        <div class="user-actions">
+            <span class="user-name">Pro User</span>
+            <button class="btn-outline" onclick="window.location.href='#'">
+                <i class="fas fa-arrow-left"></i> Back to App
+            </button>
+        </div>
+    </header>
+
+    <!-- Pricing Container -->
+    <div class="pricing-container">
+        <!-- Header -->
+        <div class="pricing-header">
+            <h1 class="section-title">Upgrade to Matager Pro</h1>
+            <p class="section-subtitle">Choose the perfect plan for your business needs. All plans include our core
+                features with additional benefits at higher tiers.</p>
+
+            <div class="plan-highlight">
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="highlight-text">
+                        <h3>Priority Support</h3>
+                        <p>Get help within 2 hours with Pro plans</p>
+                    </div>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-infinity"></i>
+                    </div>
+                    <div class="highlight-text">
+                        <h3>Unlimited Projects</h3>
+                        <p>No limits on projects or data sources</p>
+                    </div>
+                </div>
+
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="highlight-text">
+                        <h3>Advanced Analytics</h3>
+                        <p>Machine learning and predictive models</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Plans Grid -->
+        <div class="plans-grid">
+            <!-- Basic Plan -->
+            <div class="plan-card">
+                <div class="plan-header">
+                    <h3 class="plan-name">Basic</h3>
+                    <p class="plan-desc">For individuals and small projects</p>
+
+                    <div class="plan-price">
+                        <span class="price-amount">$0</span>
+                        <span class="price-period">/month</span>
+                    </div>
+
+                    <div class="current-plan-indicator">
+                        <small>Your current plan</small>
+                    </div>
+                </div>
+
+                <div class="plan-features">
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Up to 3 data sources</span>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Basic analytics</span>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>1GB data storage</span>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Community support</span>
+                        </li>
+                        <li class="feature-item disabled">
+                            <i class="fas fa-times"></i>
+                            <span>Priority support</span>
+                        </li>
+                        <li class="feature-item disabled">
+                            <i class="fas fa-times"></i>
+                            <span>Advanced ML models</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="plan-actions">
+                    <button class="btn-plan btn-secondary current-plan">
+                        <i class="fas fa-check-circle"></i> Current Plan
+                    </button>
+                </div>
+            </div>
+
+            <!-- Starter Plan -->
+            <div class="plan-card">
+                <div class="plan-header">
+                    <h3 class="plan-name">Starter</h3>
+                    <p class="plan-desc">For growing businesses</p>
+
+                    <div class="plan-price">
+                        <span class="price-amount">$29</span>
+                        <span class="price-period">/month</span>
+                    </div>
+                </div>
+
+                <div class="plan-features">
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Up to 10 data sources</span>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Advanced analytics</span>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>10GB data storage</span>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Email support</span>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Basic ML models</span>
+                        </li>
+                        <li class="feature-item disabled">
+                            <i class="fas fa-times"></i>
+                            <span>Priority support</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="plan-actions">
+                    <button class="btn-plan btn-primary" onclick="selectPlan('starter')">
+                        <i class="fas fa-arrow-up"></i> Upgrade Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- Professional Plan (Most Popular) -->
+            <div class="plan-card popular">
+                <div class="popular-badge">MOST POPULAR</div>
+
+                <div class="plan-header">
+                    <h3 class="plan-name">Professional</h3>
+                    <p class="plan-desc">For teams and agencies</p>
+
+                    <div class="plan-price">
+                        <span class="price-amount">$79</span>
+                        <span class="price-period">/month</span>
+                    </div>
+
+                    <small>Billed annually: $59/month</small>
+                </div>
+
+                <div class="plan-features">
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Unlimited data sources</span>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Advanced analytics</span>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>100GB data storage</span>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Priority support (24h)</span>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Advanced ML models</span>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Team collaboration</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="plan-actions">
+                    <button class="btn-plan btn-primary" onclick="selectPlan('professional')">
+                        <i class="fas fa-bolt"></i> Upgrade to Pro
+                    </button>
+                </div>
+            </div>
+
+            <!-- Business Plan -->
+            <div class="plan-card">
+                <div class="plan-header">
+                    <h3 class="plan-name">Business</h3>
+                    <p class="plan-desc">For larger organizations</p>
+
+                    <div class="plan-price">
+                        <span class="price-amount">$199</span>
+                        <span class="price-period">/month</span>
+                    </div>
+                </div>
+
+                <div class="plan-features">
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Unlimited data sources</span>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Enterprise analytics</span>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>1TB data storage</span>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Priority support (2h)</span>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Custom ML models</span>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Advanced security</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="plan-actions">
+                    <button class="btn-plan btn-primary" onclick="selectPlan('business')">
+                        <i class="fas fa-building"></i> Upgrade Now
+                    </button>
+                </div>
+            </div>
+
+            <!-- Enterprise Plan -->
+            <div class="plan-card">
+                <div class="plan-header">
+                    <h3 class="plan-name">Enterprise</h3>
+                    <p class="plan-desc">For mission-critical deployments</p>
+
+                    <div class="plan-price">
+                        <span class="price-amount">Custom</span>
+                    </div>
+
+                    <small>Tailored to your needs</small>
+                </div>
+
+                <div class="plan-features">
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Unlimited everything</span>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Custom analytics suite</span>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Unlimited storage</span>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>24/7 dedicated support</span>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Custom AI/ML solutions</span>
+                        </li>
+                        <li class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>SLA & custom contracts</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="plan-actions">
+                    <button class="btn-plan btn-primary" onclick="selectPlan('enterprise')">
+                        <i class="fas fa-headset"></i> Contact Sales
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature Comparison Table -->
+        <div class="comparison-section">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 2rem;">Plan Comparison</h2>
+
+            <div class="comparison-table">
+                <div class="table-header">
+                    <div class="table-cell">Feature</div>
+                    <div class="table-cell">Basic</div>
+                    <div class="table-cell">Starter</div>
+                    <div class="table-cell">Professional</div>
+                    <div class="table-cell">Business</div>
+                    <div class="table-cell">Enterprise</div>
+                </div>
+
+                <div class="table-row">
+                    <div class="table-cell feature-cell">Data Sources</div>
+                    <div class="table-cell plan-cell">3</div>
+                    <div class="table-cell plan-cell">10</div>
+                    <div class="table-cell plan-cell">Unlimited</div>
+                    <div class="table-cell plan-cell">Unlimited</div>
+                    <div class="table-cell plan-cell">Unlimited</div>
+                </div>
+
+                <div class="table-row">
+                    <div class="table-cell feature-cell">Data Storage</div>
+                    <div class="table-cell plan-cell">1 GB</div>
+                    <div class="table-cell plan-cell">10 GB</div>
+                    <div class="table-cell plan-cell">100 GB</div>
+                    <div class="table-cell plan-cell">1 TB</div>
+                    <div class="table-cell plan-cell">Unlimited</div>
+                </div>
+
+                <div class="table-row">
+                    <div class="table-cell feature-cell">Support</div>
+                    <div class="table-cell plan-cell">Community</div>
+                    <div class="table-cell plan-cell">Email</div>
+                    <div class="table-cell plan-cell check-cell"><i class="fas fa-check"></i></div>
+                    <div class="table-cell plan-cell check-cell"><i class="fas fa-check"></i></div>
+                    <div class="table-cell plan-cell check-cell"><i class="fas fa-check"></i></div>
+                </div>
+
+                <div class="table-row">
+                    <div class="table-cell feature-cell">Priority Support</div>
+                    <div class="table-cell plan-cell cross-cell"><i class="fas fa-times"></i></div>
+                    <div class="table-cell plan-cell cross-cell"><i class="fas fa-times"></i></div>
+                    <div class="table-cell plan-cell limited-cell">24 hours</div>
+                    <div class="table-cell plan-cell limited-cell">2 hours</div>
+                    <div class="table-cell plan-cell check-cell"><i class="fas fa-check"></i></div>
+                </div>
+
+                <div class="table-row">
+                    <div class="table-cell feature-cell">ML / AI Features</div>
+                    <div class="table-cell plan-cell cross-cell"><i class="fas fa-times"></i></div>
+                    <div class="table-cell plan-cell limited-cell">Basic</div>
+                    <div class="table-cell plan-cell check-cell"><i class="fas fa-check"></i></div>
+                    <div class="table-cell plan-cell check-cell"><i class="fas fa-check"></i></div>
+                    <div class="table-cell plan-cell check-cell"><i class="fas fa-check"></i></div>
+                </div>
+
+                <div class="table-row">
+                    <div class="table-cell feature-cell">Team Members</div>
+                    <div class="table-cell plan-cell">1</div>
+                    <div class="table-cell plan-cell">3</div>
+                    <div class="table-cell plan-cell">10</div>
+                    <div class="table-cell plan-cell">50</div>
+                    <div class="table-cell plan-cell">Unlimited</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I switch plans at any time?</span>
+                    <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                    Yes, you can upgrade or downgrade your plan at any time. When upgrading, you'll be charged a
+                    prorated amount for the remainder of your billing cycle. When downgrading, the changes will take
+                    effect at the start of your next billing cycle.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Is there a free trial for paid plans?</span>
+                    <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                    Yes, all paid plans come with a 14-day free trial. You can test all the features of the plan without
+                    providing credit card information. After 14 days, you'll need to choose a plan to continue using the
+                    service.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What payment methods do you accept?</span>
+                    <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                    We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and bank transfers
+                    for annual plans. For Enterprise plans, we also accept purchase orders and can arrange custom
+                    payment terms.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Do you offer discounts for non-profits or educational institutions?</span>
+                    <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                    Yes, we offer a 50% discount for registered non-profit organizations and educational institutions.
+                    Please contact our sales team with proof of your status to get the discount applied to your account.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What happens to my data if I cancel my subscription?</span>
+                    <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                </div>
+                <div class="faq-answer">
+                    Your data is preserved for 30 days after cancellation, during which you can reactivate your account
+                    and retain all data. After 30 days, your data will be permanently deleted from our servers. We
+                    recommend exporting your data before cancellation if you wish to keep it.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="#" class="footer-link">Documentation</a>
+            <a href="#" class="footer-link">API Reference</a>
+            <a href="#" class="footer-link">Support</a>
+            <a href="#" class="footer-link">Privacy Policy</a>
+            <a href="#" class="footer-link">Terms of Service</a>
+        </div>
+        <div class="copyright">
+            © 2025 Matager. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Initialize Particles.js
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 60, density: { enable: true, value_area: 800 } },
+                color: { value: "#6c5ce7" },
+                shape: { type: "circle" },
+                opacity: { value: 0.3, random: true },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: "#6c5ce7", opacity: 0.2, width: 1 },
+                move: { enable: true, speed: 2, direction: "none", random: true, straight: false, out_mode: "out" }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: { enable: true, mode: "repulse" },
+                    onclick: { enable: true, mode: "push" }
+                }
+            }
+        });
+
+
+
+        // Plan Selection
+        function selectPlan(plan) {
+            const planNames = {
+                'starter': 'Starter',
+                'professional': 'Professional',
+                'business': 'Business',
+                'enterprise': 'Enterprise'
+            };
+
+            const price = {
+                'starter': 29,
+                'professional': 79,
+                'business': 199,
+                'enterprise': 'custom'
+            };
+
+            // Show confirmation modal
+            if (plan === 'enterprise') {
+                alert("Thank you for your interest in our Enterprise plan! Our sales team will contact you within 24 hours.");
+                // In a real implementation, this would redirect to a contact form
+                // window.location.href = '/contact-sales';
+            } else {
+                const confirmUpgrade = confirm(`You've selected the ${planNames[plan]} plan for $${price[plan]}/month. Proceed to checkout?`);
+
+                if (confirmUpgrade) {
+                    // In a real implementation, this would redirect to a checkout page
+                    // window.location.href = `/checkout?plan=${plan}`;
+
+                    // Simulate successful upgrade
+                    const upgradeBtn = document.querySelector(`.plan-card:nth-child(${plan === 'starter' ? 2 : plan === 'professional' ? 3 : 4}) .btn-plan`);
+                    upgradeBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+                    upgradeBtn.disabled = true;
+
+                    setTimeout(() => {
+                        upgradeBtn.innerHTML = '<i class="fas fa-check"></i> Upgraded Successfully!';
+                        upgradeBtn.style.background = 'linear-gradient(90deg, #00b894, #00d8a7)';
+
+                        // Show success message
+                        alert(`Congratulations! Your account has been upgraded to the ${planNames[plan]} plan. You now have access to all premium features.`);
+                    }, 1500);
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>
