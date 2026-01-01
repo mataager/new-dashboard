@@ -9,10 +9,10 @@
 </head>
 
 <body>
-    <div id="particles-js"><canvas class="particles-js-canvas-el" width="1139" height="6024"
-            style="width: 100%; height: 100%;"></canvas></div>
+
     <!-- Animated Background -->
     <div class="gradient-bg"></div>
+
 
     <!-- Header -->
 
@@ -23,87 +23,18 @@
         <div class="scroll-dot" data-section="App-section"></div>
         <div class="scroll-dot active" data-section="demo-section"></div>
         <div class="scroll-dot" data-section="Pricing-section"></div>
+        <div class="scroll-dot" data-section="fac-section"></div>
         <div class="scroll-dot" data-section="cta-section"></div>
     </div>
 
     <!-- Main Content -->
     <div class="main-content">
-        <!-- Hero Section -->
-        <!-- <section id="home" class="section hero-section">
-            <div class="section-content">
-                <div class="hero-text">
-
-                    <h1 class="hero-title">Launch an online store and start selling today</h1>
-                    <p class="hero-subtitle">A comprehensive e-commerce platform featuring inventory management, order
-                        processing, customer analytics, and seamless
-                        payment integrations. Designed for modern retailers.</p>
-                    <div class="cta-buttons">
-                        <button class="btn-primary">Get Started</button>
-                        <button class="btn-secondary">View Demo</button>
-                    </div>
-                    <div class="pro-announcement">
-                        <div class="pro-title">🚀 Pro Version Now Available</div>
-                        <p class="pro-desc">Unlock advanced features, priority support, and unlimited projects with
-                            Matager Pro.</p>
-                        <button class="waitlist-btn">Upgrade to Pro</button>
-                    </div>
-                </div>
-                <section class="login-container">
-                    <p class="login-subtitle">Sign in to continue</p>
-
-                    <form class="login-form" id="login-form">
-                        <div class="form-group">
-                            <label for="email" class="form-label">Email Address</label>
-                            <input type="email" id="email" class="form-input" placeholder="you@example.com" required="">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="password" class="form-label">Password</label>
-                            <div class="password-container">
-                                <input type="password" id="password" class="form-input"
-                                    placeholder="Enter your password" required="">
-                                <button type="button" class="toggle-password" id="toggle-password">
-                                    <i class="far fa-eye"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="form-options">
-                            <div class="remember-me">
-                                <input type="checkbox" id="remember" class="remember-checkbox">
-                                <label for="remember">Remember me</label>
-                            </div>
-                            <a href="#" class="forgot-link">Forgot password?</a>
-                        </div>
-
-                        <button type="submit" class="login-btn">Sign In <i
-                                class="fa-solid fa-arrow-right-to-bracket"></i></button>
-
-                        <div class="divider">
-                            <div class="divider-line"></div>
-                            <div class="divider-text">Or</div>
-                            <div class="divider-line"></div>
-                        </div>
-
-                        <div class="social-login">
-                            <button type="button" class="social-btn">
-                                Get Started
-                            </button>
-
-                        </div>
-
-                        <div class="signup-link">
-                            Don't have an account? <a href="#">Sign up for free</a>
-                        </div>
-                    </form>
-                </section>
-            </div>
-        </section> -->
         <section id="home" class="section hero-section active">
             <div class="section-content">
                 <div class="hero-text">
-                    <h1 class="hero-title">Launch an online store and start selling today</h1>
-                    <p class="hero-subtitle">A comprehensive e-commerce platform featuring inventory management, order
+                    <h1 class="hero-title">Launch an E-Commerce Platform and start <span class="highlight-text">selling
+                            Now</span> </h1>
+                    <p class="hero-subtitle">A compined e-commerce platform featuring inventory management, order
                         processing, customer analytics, and seamless payment integrations. Designed for modern
                         retailers.</p>
                     <div class="cta-buttons">
@@ -153,9 +84,6 @@
                             <div class="password-container">
                                 <input type="password" id="password" class="form-input"
                                     placeholder="Enter your password" required>
-                                <button type="button" class="toggle-password" id="toggle-password">
-                                    <i class="far fa-eye"></i>
-                                </button>
                             </div>
                         </div>
 
@@ -194,7 +122,7 @@
                         <div class="additional-field" id="phone-field">
                             <div class="form-group">
                                 <label for="phone" class="form-label">Phone Number</label>
-                                <input type="tel" id="phone" class="form-input" placeholder="+1 (555) 123-4567">
+                                <input type="tel" id="phone" class="form-input" placeholder="(+20) 1010-773-587">
                             </div>
                         </div>
 
@@ -258,7 +186,7 @@
                 const socialBtn = document.getElementById('social-btn');
                 const signupLink = document.getElementById('signup-link');
                 const switchToSignup = document.getElementById('switch-to-signup');
-                const togglePasswordBtn = document.getElementById('toggle-password');
+                // const togglePasswordBtn = document.getElementById('toggle-password');
                 const passwordInput = document.getElementById('password');
                 const successMessage = document.getElementById('success-message');
                 const backToLoginBtn = document.getElementById('back-to-login');
@@ -277,11 +205,11 @@
                 const totalSteps = 5; // email, password, name, business, phone/terms
 
                 // Toggle password visibility
-                togglePasswordBtn.addEventListener('click', function () {
-                    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-                    passwordInput.setAttribute('type', type);
-                    this.innerHTML = type === 'password' ? '<i class="far fa-eye"></i>' : '<i class="far fa-eye-slash"></i>';
-                });
+                // togglePasswordBtn.addEventListener('click', function () {
+                //     const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                //     passwordInput.setAttribute('type', type);
+                //     this.innerHTML = type === 'password' ? '<i class="far fa-eye"></i>' : '<i class="far fa-eye-slash"></i>';
+                // });
 
                 // Get Started button click - expand form to signup
                 getStartedBtn.addEventListener('click', expandToSignup);
@@ -300,7 +228,7 @@
                     // Change UI to signup mode
                     formTitle.textContent = 'Create Your Account';
                     submitBtn.innerHTML = 'Create Account <i class="fas fa-user-plus"></i>';
-                    socialBtn.textContent = 'Sign Up with Google';
+
                     signupLink.innerHTML = 'Already have an account? <a href="#" id="switch-to-login">Sign in</a>';
 
                     // Add event listener for the new "Sign in" link
@@ -340,7 +268,6 @@
                     // Reset UI to login mode
                     formTitle.textContent = 'Sign in to continue';
                     submitBtn.innerHTML = 'Sign In <i class="fa-solid fa-arrow-right-to-bracket"></i>';
-                    socialBtn.textContent = 'Get Started';
                     signupLink.innerHTML = 'Don\'t have an account? <a href="#" id="switch-to-signup">Sign up for free</a>';
 
                     // Add event listener for the new "Sign up" link
@@ -454,7 +381,6 @@
             <div class="section-content">
                 <div class="left-div">
                     <div class="demo-text">
-                        <div class="hero-tagline">Get The App Advantage</div>
                         <h2 class="section-title">Manage Everything <span class="highlight-text">On The Go</span></h2>
                         <p class="hero-subtitle">Download our app for full functionality, instant notifications,
                             and
@@ -516,7 +442,6 @@
             <div class="section-content">
                 <div class="right-div">
                     <div class="demo-text">
-                        <div class="hero-tagline">Simple Integration</div>
                         <h2 class="section-title">Get Started in Minutes</h2>
                         <p class="hero-subtitle">Matager's intuitive API and comprehensive SDKs make integration
                             seamless.
@@ -581,274 +506,280 @@
             </div>
         </section>
 
+
+
         <section id="Pricing" class="section Pricing-section">
             <div class="pricing-container">
                 <!-- Header -->
                 <div class="pricing-header">
                     <h1 class="section-title">Pricing Plans</h1>
-                    <p class="section-subtitle">Choose the perfect plan for your business needs. All plans include our
-                        core
+                    <p class="section-subtitle">Choose the perfect plan for your business needs. All plans include
+                        our core
                         features with additional benefits at higher tiers.</p>
-
-
-                </div>
-
-                <!-- Plans Grid -->
-                <div class="plans-grid">
-                    <!-- Basic Plan -->
-                    <div class="plan-card">
-                        <div class="plan-header">
-                            <h3 class="plan-name">Basic</h3>
-                            <p class="plan-desc">For individuals and small projects</p>
-
-                            <div class="plan-price">
-                                <span class="price-amount">$0</span>
-                                <span class="price-period">/month</span>
-                            </div>
-
-                            <div class="current-plan-indicator">
-                                <small>Your current plan</small>
-                            </div>
-                        </div>
-
-                        <div class="plan-features">
-                            <ul class="feature-list">
-                                <li class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Up to 3 data sources</span>
-                                </li>
-                                <li class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Basic analytics</span>
-                                </li>
-                                <li class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>1GB data storage</span>
-                                </li>
-                                <li class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Community support</span>
-                                </li>
-                                <li class="feature-item disabled">
-                                    <i class="fas fa-times"></i>
-                                    <span>Priority support</span>
-                                </li>
-                                <li class="feature-item disabled">
-                                    <i class="fas fa-times"></i>
-                                    <span>Advanced ML models</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="plan-actions">
-                            <button class="btn-plan btn-secondary current-plan">
-                                <i class="fas fa-check-circle"></i> Current Plan
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Starter Plan -->
-                    <div class="plan-card">
-                        <div class="plan-header">
-                            <h3 class="plan-name">Starter</h3>
-                            <p class="plan-desc">For growing businesses</p>
-
-                            <div class="plan-price">
-                                <span class="price-amount">$29</span>
-                                <span class="price-period">/month</span>
-                            </div>
-                        </div>
-
-                        <div class="plan-features">
-                            <ul class="feature-list">
-                                <li class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Up to 10 data sources</span>
-                                </li>
-                                <li class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Advanced analytics</span>
-                                </li>
-                                <li class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>10GB data storage</span>
-                                </li>
-                                <li class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Email support</span>
-                                </li>
-                                <li class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Basic ML models</span>
-                                </li>
-                                <li class="feature-item disabled">
-                                    <i class="fas fa-times"></i>
-                                    <span>Priority support</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="plan-actions">
-                            <button class="btn-plan btn-primary" onclick="selectPlan('starter')">
-                                <i class="fas fa-arrow-up"></i> Upgrade Now
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Professional Plan (Most Popular) -->
-                    <div class="plan-card popular">
-                        <div class="popular-badge">MOST POPULAR</div>
-
-                        <div class="plan-header">
-                            <h3 class="plan-name">Professional</h3>
-                            <p class="plan-desc">For teams and agencies</p>
-
-                            <div class="plan-price">
-                                <span class="price-amount">$79</span>
-                                <span class="price-period">/month</span>
-                            </div>
-
-                            <small>Billed annually: $59/month</small>
-                        </div>
-
-                        <div class="plan-features">
-                            <ul class="feature-list">
-                                <li class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Unlimited data sources</span>
-                                </li>
-                                <li class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Advanced analytics</span>
-                                </li>
-                                <li class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>100GB data storage</span>
-                                </li>
-                                <li class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Priority support (24h)</span>
-                                </li>
-                                <li class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Advanced ML models</span>
-                                </li>
-                                <li class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Team collaboration</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="plan-actions">
-                            <button class="btn-plan btn-primary" onclick="selectPlan('professional')">
-                                <i class="fas fa-bolt"></i> Upgrade to Pro
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Business Plan -->
-                    <div class="plan-card">
-                        <div class="plan-header">
-                            <h3 class="plan-name">Business</h3>
-                            <p class="plan-desc">For larger organizations</p>
-
-                            <div class="plan-price">
-                                <span class="price-amount">$199</span>
-                                <span class="price-period">/month</span>
-                            </div>
-                        </div>
-
-                        <div class="plan-features">
-                            <ul class="feature-list">
-                                <li class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Unlimited data sources</span>
-                                </li>
-                                <li class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Enterprise analytics</span>
-                                </li>
-                                <li class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>1TB data storage</span>
-                                </li>
-                                <li class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Priority support (2h)</span>
-                                </li>
-                                <li class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Custom ML models</span>
-                                </li>
-                                <li class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Advanced security</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="plan-actions">
-                            <button class="btn-plan btn-primary" onclick="selectPlan('business')">
-                                <i class="fas fa-building"></i> Upgrade Now
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Enterprise Plan -->
-                    <div class="plan-card">
-                        <div class="plan-header">
-                            <h3 class="plan-name">Enterprise</h3>
-                            <p class="plan-desc">For mission-critical deployments</p>
-
-                            <div class="plan-price">
-                                <span class="price-amount">Custom</span>
-                            </div>
-
-                            <small>Tailored to your needs</small>
-                        </div>
-
-                        <div class="plan-features">
-                            <ul class="feature-list">
-                                <li class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Unlimited everything</span>
-                                </li>
-                                <li class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Custom analytics suite</span>
-                                </li>
-                                <li class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Unlimited storage</span>
-                                </li>
-                                <li class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>24/7 dedicated support</span>
-                                </li>
-                                <li class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>Custom AI/ML solutions</span>
-                                </li>
-                                <li class="feature-item">
-                                    <i class="fas fa-check"></i>
-                                    <span>SLA &amp; custom contracts</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="plan-actions">
-                            <button class="btn-plan btn-primary" onclick="selectPlan('enterprise')">
-                                <i class="fas fa-headset"></i> Contact Sales
-                            </button>
-                        </div>
+                    <div class="view-toggle">
+                        <button class="toggle-btn active" data-view="plans">
+                            <i class="fas fa-layer-group"></i> Plans
+                        </button>
+                        <button class="toggle-btn" data-view="comparison">
+                            <i class="fas fa-chart-bar"></i> Comparison
+                        </button>
                     </div>
                 </div>
 
-                <!-- Feature Comparison Table -->
+
+
+                <!-- Plans Section -->
+                <div class="plans-section">
+                    <div class="plans-grid">
+                        <!-- Basic Plan -->
+                        <div class="plan-card" data-plan="basic">
+                            <div class="plan-header">
+                                <h3 class="plan-name">Basic</h3>
+                                <p class="plan-desc">For individuals and small projects</p>
+                                <div class="plan-price">
+                                    <span class="price-amount">$0</span>
+                                    <span class="price-period">/month</span>
+                                </div>
+                                <div class="current-plan-indicator">
+                                    <small>Your current plan</small>
+                                </div>
+                            </div>
+                            <div class="plan-features">
+                                <ul class="feature-list">
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Up to 3 data sources</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Basic analytics</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>1GB data storage</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Community support</span>
+                                    </li>
+                                    <li class="feature-item disabled">
+                                        <i class="fas fa-times"></i>
+                                        <span>Priority support</span>
+                                    </li>
+                                    <li class="feature-item disabled">
+                                        <i class="fas fa-times"></i>
+                                        <span>Advanced ML models</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="plan-actions">
+                                <button class="btn-plan btn-secondary current-plan">
+                                    <i class="fas fa-check-circle"></i> Current Plan
+                                </button>
+                            </div>
+                            <button class="expand-btn">
+                                View Details <i class="expand-icon fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+
+                        <!-- Starter Plan -->
+                        <div class="plan-card" data-plan="starter">
+                            <div class="plan-header">
+                                <h3 class="plan-name">Starter</h3>
+                                <p class="plan-desc">For growing businesses</p>
+                                <div class="plan-price">
+                                    <span class="price-amount">$29</span>
+                                    <span class="price-period">/month</span>
+                                </div>
+                            </div>
+                            <div class="plan-features">
+                                <ul class="feature-list">
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Up to 10 data sources</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Advanced analytics</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>10GB data storage</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Email support</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Basic ML models</span>
+                                    </li>
+                                    <li class="feature-item disabled">
+                                        <i class="fas fa-times"></i>
+                                        <span>Priority support</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="plan-actions">
+                                <button class="btn-plan btn-primary">
+                                    <i class="fas fa-arrow-up"></i> Upgrade Now
+                                </button>
+                            </div>
+                            <button class="expand-btn">
+                                View Details <i class="expand-icon fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+
+                        <!-- Professional Plan (Most Popular) -->
+                        <div class="plan-card popular" data-plan="professional">
+                            <div class="popular-badge">MOST POPULAR</div>
+                            <div class="plan-header">
+                                <h3 class="plan-name">Professional</h3>
+                                <p class="plan-desc">For teams and agencies</p>
+                                <div class="plan-price">
+                                    <span class="price-amount">$79</span>
+                                    <span class="price-period">/month</span>
+                                </div>
+                                <small>Billed annually: $59/month</small>
+                            </div>
+                            <div class="plan-features">
+                                <ul class="feature-list">
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Unlimited data sources</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Advanced analytics</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>100GB data storage</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Priority support (24h)</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Advanced ML models</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Team collaboration</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="plan-actions">
+                                <button class="btn-plan btn-primary">
+                                    <i class="fas fa-bolt"></i> Upgrade to Pro
+                                </button>
+                            </div>
+                            <button class="expand-btn">
+                                View Details <i class="expand-icon fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+
+                        <!-- Business Plan -->
+                        <div class="plan-card" data-plan="business">
+                            <div class="plan-header">
+                                <h3 class="plan-name">Business</h3>
+                                <p class="plan-desc">For larger organizations</p>
+                                <div class="plan-price">
+                                    <span class="price-amount">$199</span>
+                                    <span class="price-period">/month</span>
+                                </div>
+                            </div>
+                            <div class="plan-features">
+                                <ul class="feature-list">
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Unlimited data sources</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Enterprise analytics</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>1TB data storage</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Priority support (2h)</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Custom ML models</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Advanced security</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="plan-actions">
+                                <button class="btn-plan btn-primary">
+                                    <i class="fas fa-building"></i> Upgrade Now
+                                </button>
+                            </div>
+                            <button class="expand-btn">
+                                View Details <i class="expand-icon fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+
+                        <!-- Enterprise Plan -->
+                        <div class="plan-card" data-plan="enterprise">
+                            <div class="plan-header">
+                                <h3 class="plan-name">Enterprise</h3>
+                                <p class="plan-desc">For mission-critical deployments</p>
+                                <div class="plan-price">
+                                    <span class="price-amount">Custom</span>
+                                </div>
+                                <small>Tailored to your needs</small>
+                            </div>
+                            <div class="plan-features">
+                                <ul class="feature-list">
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Unlimited everything</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Custom analytics suite</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Unlimited storage</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>24/7 dedicated support</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Custom AI/ML solutions</span>
+                                    </li>
+                                    <li class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>SLA & custom contracts</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="plan-actions">
+                                <button class="btn-plan btn-primary">
+                                    <i class="fas fa-headset"></i> Contact Sales
+                                </button>
+                            </div>
+                            <button class="expand-btn">
+                                View Details <i class="expand-icon fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comparison Section -->
                 <div class="comparison-section">
-                    <h2 class="section-title" style="text-align: center; margin-bottom: 2rem;">Plan Comparison</h2>
-
                     <div class="comparison-table">
                         <div class="table-header">
                             <div class="table-cell">Feature</div>
@@ -913,78 +844,235 @@
                             <div class="table-cell plan-cell">Unlimited</div>
                         </div>
                     </div>
+                    <div class="scroll-hint">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>Scroll to see all features</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                // Elements
+                const toggleBtns = document.querySelectorAll('.toggle-btn');
+                const plansSection = document.querySelector('.plans-section');
+                const comparisonSection = document.querySelector('.comparison-section');
+                const planCards = document.querySelectorAll('.plan-card');
+                const expandBtns = document.querySelectorAll('.expand-btn');
+
+                // Variables
+                let expandedCard = null;
+                let isMobile = window.innerWidth <= 900;
+
+                // 1. View Toggle Functionality
+                toggleBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const view = btn.dataset.view;
+
+                        // Update active button
+                        toggleBtns.forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+
+                        // Show/hide sections
+                        if (view === 'plans') {
+                            plansSection.classList.remove('hidden');
+                            comparisonSection.classList.remove('active');
+                        } else {
+                            plansSection.classList.add('hidden');
+                            comparisonSection.classList.add('active');
+                        }
+                    });
+                });
+
+                // 2. Plan Card Expand/Collapse (Mobile Only)
+                function setupMobileCards() {
+                    planCards.forEach(card => {
+                        const features = card.querySelector('.plan-features');
+
+                        // Reset all cards
+                        card.classList.remove('expanded');
+                        if (features) {
+                            features.style.maxHeight = null;
+                        }
+
+                        // Add click handler for mobile
+                        if (isMobile) {
+                            card.addEventListener('click', function (e) {
+                                // Don't trigger if clicking on button
+                                if (e.target.closest('.btn-plan') || e.target.closest('.expand-btn')) {
+                                    return;
+                                }
+
+                                toggleCard(this);
+                            });
+                        }
+                    });
+
+                    // Expand button handlers
+                    expandBtns.forEach(btn => {
+                        btn.addEventListener('click', function (e) {
+                            e.stopPropagation();
+                            const card = this.closest('.plan-card');
+                            toggleCard(card);
+                        });
+                    });
+                }
+
+                function toggleCard(card) {
+                    if (!isMobile) return;
+
+                    if (card === expandedCard) {
+                        // Collapse
+                        card.classList.remove('expanded');
+                        expandedCard = null;
+                    } else {
+                        // Collapse previously expanded card
+                        if (expandedCard) {
+                            expandedCard.classList.remove('expanded');
+                        }
+                        // Expand this card
+                        card.classList.add('expanded');
+                        expandedCard = card;
+
+                        // Scroll to expanded card
+                        setTimeout(() => {
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            });
+                        }, 300);
+                    }
+                }
+
+                // 3. Plan Selection Functionality
+                function selectPlan(planType) {
+                    console.log(`Selected plan: ${planType}`);
+                    // Here you would typically redirect to checkout or show a modal
+                    alert(`You selected the ${planType.toUpperCase()} plan!`);
+                }
+
+                // Add click handlers to upgrade buttons
+                document.querySelectorAll('.btn-primary').forEach(btn => {
+                    btn.addEventListener('click', function (e) {
+                        e.stopPropagation();
+                        const card = this.closest('.plan-card');
+                        const planType = card.dataset.plan;
+                        selectPlan(planType);
+                    });
+                });
+
+                // 4. Handle Window Resize
+                function handleResize() {
+                    const newIsMobile = window.innerWidth <= 900;
+
+                    if (newIsMobile !== isMobile) {
+                        isMobile = newIsMobile;
+                        setupMobileCards();
+
+                        // Reset expanded card on desktop
+                        if (!isMobile && expandedCard) {
+                            expandedCard.classList.remove('expanded');
+                            expandedCard = null;
+                        }
+                    }
+                }
+
+                // 5. Initialize
+                setupMobileCards();
+                window.addEventListener('resize', handleResize);
+
+                // 6. Comparison table scroll hint
+                const scrollHint = document.querySelector('.scroll-hint');
+                const comparisonTable = document.querySelector('.comparison-table');
+
+                if (comparisonTable && scrollHint) {
+                    comparisonTable.addEventListener('scroll', function () {
+                        if (this.scrollLeft > 10) {
+                            scrollHint.style.opacity = '0.5';
+                        } else {
+                            scrollHint.style.opacity = '1';
+                        }
+                    });
+                }
+            });
+        </script>
+
+
+
+
+
+        <section id="Faq" class="section fac-section">
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <h2 class="faq-title">Frequently Asked Questions</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I switch plans at any time?</span>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, you can upgrade or downgrade your plan at any time. When upgrading, you'll be charged a
+                        prorated amount for the remainder of your billing cycle. When downgrading, the changes will
+                        take
+                        effect at the start of your next billing cycle.
+                    </div>
                 </div>
 
-                <!-- FAQ Section -->
-                <div class="faq-section">
-                    <h2 class="faq-title">Frequently Asked Questions</h2>
-
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>Can I switch plans at any time?</span>
-                            <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
-                        </div>
-                        <div class="faq-answer">
-                            Yes, you can upgrade or downgrade your plan at any time. When upgrading, you'll be charged a
-                            prorated amount for the remainder of your billing cycle. When downgrading, the changes will
-                            take
-                            effect at the start of your next billing cycle.
-                        </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is there a free trial for paid plans?</span>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
                     </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>Is there a free trial for paid plans?</span>
-                            <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
-                        </div>
-                        <div class="faq-answer">
-                            Yes, all paid plans come with a 14-day free trial. You can test all the features of the plan
-                            without
-                            providing credit card information. After 14 days, you'll need to choose a plan to continue
-                            using the
-                            service.
-                        </div>
+                    <div class="faq-answer">
+                        Yes, all paid plans come with a 14-day free trial. You can test all the features of the plan
+                        without
+                        providing credit card information. After 14 days, you'll need to choose a plan to continue
+                        using the
+                        service.
                     </div>
+                </div>
 
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>What payment methods do you accept?</span>
-                            <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
-                        </div>
-                        <div class="faq-answer">
-                            We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and bank
-                            transfers
-                            for annual plans. For Enterprise plans, we also accept purchase orders and can arrange
-                            custom
-                            payment terms.
-                        </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What payment methods do you accept?</span>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
                     </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>Do you offer discounts for non-profits or educational institutions?</span>
-                            <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
-                        </div>
-                        <div class="faq-answer">
-                            Yes, we offer a 50% discount for registered non-profit organizations and educational
-                            institutions.
-                            Please contact our sales team with proof of your status to get the discount applied to your
-                            account.
-                        </div>
+                    <div class="faq-answer">
+                        We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and bank
+                        transfers
+                        for annual plans. For Enterprise plans, we also accept purchase orders and can arrange
+                        custom
+                        payment terms.
                     </div>
+                </div>
 
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>What happens to my data if I cancel my subscription?</span>
-                            <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
-                        </div>
-                        <div class="faq-answer">
-                            Your data is preserved for 30 days after cancellation, during which you can reactivate your
-                            account
-                            and retain all data. After 30 days, your data will be permanently deleted from our servers.
-                            We
-                            recommend exporting your data before cancellation if you wish to keep it.
-                        </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you offer discounts for non-profits or educational institutions?</span>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, we offer a 50% discount for registered non-profit organizations and educational
+                        institutions.
+                        Please contact our sales team with proof of your status to get the discount applied to your
+                        account.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What happens to my data if I cancel my subscription?</span>
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        Your data is preserved for 30 days after cancellation, during which you can reactivate your
+                        account
+                        and retain all data. After 30 days, your data will be permanently deleted from our servers.
+                        We
+                        recommend exporting your data before cancellation if you wish to keep it.
                     </div>
                 </div>
             </div>
@@ -994,7 +1082,7 @@
         <section id="cta" class="section cta-section">
             <div class="section-content">
                 <div class="cta-card">
-                    <h2 class="cta-title">Ready to Transform Your Business Workflow?</h2>
+                    <h2 class="cta-title">Ready to Transform Your Business Workflow</h2>
                     <p class="cta-subtitle">Join thousands of data teams using Matager to streamline their data
                         operations. Start for free with no credit card required.</p>
                     <div class="cta-form">
@@ -1142,28 +1230,7 @@
         });
     </script>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        // Initialize Particles.js
-        particlesJS("particles-js", {
-            particles: {
-                number: { value: 80, density: { enable: true, value_area: 800 } },
-                color: { value: "#6c5ce7" },
-                shape: { type: "circle" },
-                opacity: { value: 0.5, random: true },
-                size: { value: 3, random: true },
-                line_linked: { enable: true, distance: 150, color: "#6c5ce7", opacity: 0.4, width: 1 },
-                move: { enable: true, speed: 3, direction: "none", random: true, straight: false, out_mode: "out" }
-            },
-            interactivity: {
-                detect_on: "canvas",
-                events: {
-                    onhover: { enable: true, mode: "repulse" },
-                    onclick: { enable: true, mode: "push" }
-                }
-            }
-        });
-
         // Theme Toggle
 
 
